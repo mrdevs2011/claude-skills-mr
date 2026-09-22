@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>token</title>
+<style>
+  html, body { height: 100%; margin: 0; }
+  body {
+    display: flex; align-items: center; justify-content: center;
+    background: #0b0b0c; color: #eaeaea;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  #token {
+    font-size: clamp(14px, 4vw, 22px);
+    letter-spacing: 0.5px;
+    padding: 18px 24px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background: #141416;
+    cursor: pointer;
+    user-select: all;
+    word-break: break-all;
+    max-width: 90vw;
+  }
+</style>
+</head>
+<body>
+<div id="token">...</div>
+<script>
+  const SALT = "instructions-mcp-v1";
+
+  async function tokenForHost(host) {
+    const clean = host.split(":")[0].toLowerCase();
+    const data = new TextEncoder().encode(clean + SALT);
+    const digest = await crypto.subtle.digest("SHA-256", data);
+    return [...new Uint8Array(digest)]
+      .map((b) => b.toString(16).padStart(2, "0"))
+      .join("")
+      .slice(0, 32);
+  }
+
+  tokenForHost(location.hostname).then((t) => {
+    const el = document.getElementById("token");
+    el.textContent = t;
+    el.title = "Bosib nusxa olish uchun belgila";
+  });
+</script>
+</body>
+</html>
