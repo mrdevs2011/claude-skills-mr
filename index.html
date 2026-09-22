@@ -26,25 +26,10 @@
 </style>
 </head>
 <body>
-<div id="token">...</div>
+<div id="token">H7RLjWiiZm1lh0sSSrSytQS4h-KDnZU_</div>
 <script>
-  const SALT = "instructions-mcp-v1";
-
-  async function tokenForHost(host) {
-    const clean = host.split(":")[0].toLowerCase();
-    const data = new TextEncoder().encode(clean + SALT);
-    const digest = await crypto.subtle.digest("SHA-256", data);
-    return [...new Uint8Array(digest)]
-      .map((b) => b.toString(16).padStart(2, "0"))
-      .join("")
-      .slice(0, 32);
-  }
-
-  tokenForHost(location.hostname).then((t) => {
-    const el = document.getElementById("token");
-    el.textContent = t;
-    el.title = "Bosib nusxa olish uchun belgila";
-  });
+  const el = document.getElementById("token");
+  el.title = "Bosib nusxa olish uchun belgila";
 </script>
 </body>
 </html>
