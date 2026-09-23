@@ -208,6 +208,8 @@ shu toolning o'z tavsifida.
 **Terminal/kod ishga tushirish, fayl tizimi, buyruq bajarish:**
 → `cmc` connectordagi (yoki hub ichidagi `cmc__`) `run_command` toolini ishlat.
 → Xavfsizlik va tasdiqlash qoidalari shu toolning o'z tavsifida yozilgan.
+→ `run_command` g'alati xato bersa (connector xatosi, "xavfli buyruq bloklandi",
+  timeout) — avval `search_skills("cmc")` bilan tegishli skillni o'qi.
 → Agar hech qanday `run_command` topilmasa yoki ishlamasa — "Connectorlar: MR
   zimmasida" bo'limidagi tashxisga bo'l (avval **A**: hub uxlab qolgan bo'lishi
   mumkin, keyin **B**: `cmc --start`), MR ga aniq nima qilishini ayt va
@@ -224,12 +226,14 @@ shu toolning o'z tavsifida.
   ishlat. Tartib: pastdagi "CMMGH: push tartibi" bo'limi.
 
 **Blender modeli / 3D obyekt so'ralsa ("mashina yasab ber", "blender'da ...", "model yarat"):**
-→ Bu qoida "Pure texnik savol" qoidasidan ustun: `search_skills` ga borma.
-→ `cmc` `run_command` bilan `cat ~/blender/SKILL.md` ni o'qi va u yerdagi
-  "AVTOMATIK ISH TARTIBI" ni bajar. Server o'zi yoqiladi, brauzer o'zi ochiladi,
-  natija (BUILD OK / BUILD XATO) qaytadi.
+→ Bu qoida "Pure texnik savol" qoidasidan ustun: umumiy qidiruvga ketma, aniq
+  skill id bor.
+→ `get_skill("blender/BlenderModelAutoWorkflowViaWebblender")` ni o'qi (topilmasa
+  `search_skills("blender")`) va u yerdagi tartibni bajar. Skript yozishdan oldin
+  `cmc` bilan `~/blender/SKILL.md` ni ham o'qi (bpy qoidalari). Server o'zi
+  yoqiladi, brauzer o'zi ochiladi, natija (BUILD OK / BUILD XATO) qaytadi.
 → Foydalanuvchidan hech narsa so'rama va serverni qo'lda yoqishini kutma.
-→ `run_command` yo'q bo'lsa — kompyuter ulanmagan; foydalanuvchiga shuni ayt.
+→ `run_command` yo'q yoki ishlamasa — "Connectorlar: MR zimmasida" bo'limidagi tashxis.
 
 **Pure texnik savol (kod yozish, debug, arxitektura, loyiha bo'yicha maslahat):**
 → Connectorlarga (lifemr/cmc) borma. Aniq xato matni yoki kalit so'z
@@ -346,11 +350,11 @@ so'ramaguncha qoldir. Repo shishib ketgan bo'lsa, buni eslat.
 3. Suhbat turi (personal / texnik / terminal / push / blender) ni aniqla.
 4. Texnik bo'lsa — `list_skills`, kerakli id(lar)ni `get_skill` bilan o'qi.
    Personal/terminal/push bo'lsa — tegishli connectorga bor va yuqoridagi
-   qoidalarga amal qil. Blender bo'lsa — yuqoridagi Blender qoidasi (skill qidirma).
+   qoidalarga amal qil. Blender bo'lsa — yuqoridagi Blender qoidasi (aniq skill id bilan).
 5. Fayl kompyuterga tushishi kerak va `run_command` bor bo'lsa — uploads orqali o'tkaz (yuqoridagi bo'lim).
 6. Ikki yoki undan ortiq connector/skill kerak bo'lsa — ketma-ket bor, har
    birining o'z qoidasini qo'llab.
 
 ---
 
-**Eslatma:** Bu fayl faqat yo'nalish beradi — "nimani qanday qilish" javobi har doim o'sha connectorning o'z ichida. Faqat CMMGH push tartibi va uploads uzatish qoidasi shu yerda yozilgan. Blender ishining tartibi kompyuterdagi `~/blender/SKILL.md` da.
+**Eslatma:** Bu fayl faqat yo'nalish beradi — "nimani qanday qilish" javobi har doim o'sha connectorning o'z ichida. Faqat CMMGH push tartibi va uploads uzatish qoidasi shu yerda yozilgan. Blender ishining tartibi katalogdagi `blender/BlenderModelAutoWorkflowViaWebblender` skill'ida, bpy skript qoidalari kompyuterdagi `~/blender/SKILL.md` da.
