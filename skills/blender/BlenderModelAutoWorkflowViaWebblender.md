@@ -14,19 +14,21 @@ tushadi, `server.py` uni `blender --background` bilan headless ishga tushirib
 
 ## Talab
 - `cmc` `run_command` ishlayotgan bo'lishi. Ishlamasa — `instruction.md` dagi
-  "Connectorlar: MR zimmasida" bo'limi.
-- Kompyuterda `~/blender/` papkasi va `/usr/bin/blender` bor.
+  "Connectorlar: MR zimmasida" bo'limi. cmc dan qanday foydalanish: skill
+  `cmc/cmc-ishlatish`.
+- Kompyuterda `~/.blender/` papkasi (yashirin papka, oldin `~/blender/` edi) va
+  `/usr/bin/blender` bor.
 - Fayllar: `server.py`, `index.html`, `push.py`, `SKILL.md` (bpy qoidalari),
   `tmp/` (skriptlar), `output/model.glb`.
 
 ## Tartib (aynan shu)
-1. **Qoidalarni o'qi:** `cat ~/blender/SKILL.md`. Headless bpy skript qoidalari shu
+1. **Qoidalarni o'qi:** `cat ~/.blender/SKILL.md`. Headless bpy skript qoidalari shu
    yerda (sahnani tozalash, export'ni o'zing yozmaslik, versiya farqlari, 120
    soniya limit). Uni o'qimasdan skript yozma.
-2. **Skriptni yoz:** `~/blender/tmp/NOM.py` ga (heredoc, terminator `PYEOF`).
+2. **Skriptni yoz:** `~/.blender/tmp/NOM.py` ga (heredoc, terminator `PYEOF`).
    Heredoc ichida `<< 'EOF'` matni va backtick yozma (cmc xato berishi mumkin:
    `search_skills("cmc")`).
-3. **Yubor:** `python3 ~/blender/push.py ~/blender/tmp/NOM.py`
+3. **Yubor:** `python3 ~/.blender/push.py ~/.blender/tmp/NOM.py`
    `push.py` o'zi: server o'chiq bo'lsa yoqadi (tasodifiy port), sahifa yopiq
    bo'lsa brauzerda ochadi, kodni yuboradi (editor'ga tushadi, preview o'zi ochiladi)
    va build natijasini kutadi (24 soniyagacha).
@@ -36,7 +38,7 @@ tushadi, `server.py` uni `blender --background` bilan headless ishga tushirib
      o'chirilmagan bo'lishi mumkin (`--factory-startup` sahnada Cube bilan boshlanadi).
    - `BUILD XATO: tur - xabar | qator: N` (2): xato matni, qator va maslahatga
      qarab skriptni tuzat, qayta yubor. Ko'pi bilan 3 urinish, keyin xatoni MR ga ayt.
-   - `build hali tugamadi` (3): 10-15 soniya kutib `python3 ~/blender/push.py --result`.
+   - `build hali tugamadi` (3): 10-15 soniya kutib `python3 ~/.blender/push.py --result`.
    - `sahifa ochilmadi. Qo'lda och: URL` (1): MR ga shu URL ni ayt.
 5. **MR ga qisqa javob:** tayyor, nima yasaldi (raqamlar), brauzerda ko'rsin.
    Chiroyliligini ko'ra olmaysan. MR "g'ildirak kichik" desa, skriptni o'zgartirib
@@ -52,6 +54,9 @@ tushadi, `server.py` uni `blender --background` bilan headless ishga tushirib
 ## Tuzoqlar
 - Eski server (`/status` yo'q) topilsa, `push.py` uni qayta yoqadi. Ochiq sahifa
   yo'qoladi, yangi tab ochiladi.
+- Server qayta yoqilsa (masalan `--stop` dan keyin yoki papka ko'chirilgach) editor
+  bo'sh qoladi, chunki kod brauzer xotirasida turadi. Oxirgi skriptni `push.py` bilan
+  qayta yubor: `python3 ~/.blender/push.py ~/.blender/tmp/NOM.py`.
 - Sahifa fon tabda bo'lsa ham kod keladi (sahifa serverni doim tinglab turadi).
 - Server ko'tarilmasa: `push.py` "server ko'tarilmadi, log: /tmp/webblender.log"
   deydi. Logni o'qi (port band yoki `flask` yo'q bo'lishi mumkin).
@@ -59,9 +64,11 @@ tushadi, `server.py` uni `blender --background` bilan headless ishga tushirib
   validligi) va §8 (yorug'lik/kamera).
 - `server.py` `0.0.0.0` da ishlaydi, `/run` parolsiz: shu tarmoqdagi istalgan
   qurilma Blender kodini ishga tushira oladi (`/push` va `/status` faqat localhost).
+- Papka yo'li o'zgargan bo'lsa (`~/.blender`), `push.py` dagi `DIR` va
+  `toggle-webblender.sh` dagi `cd $HOME/.blender` ham shunga mos bo'lishi shart.
 
 ## Xulosa — bu skillni o'qib nimani bilib oldingiz
-- Blender so'ralsa: `SKILL.md` ni o'qi, skriptni `~/blender/tmp/` ga yoz,
+- Blender so'ralsa: `SKILL.md` ni o'qi, skriptni `~/.blender/tmp/` ga yoz,
   `push.py` bilan yubor. Server va brauzerni qo'lda boshqarma.
 - Natija `BUILD OK` (raqamlar bilan) yoki `BUILD XATO` (qator raqami bilan) bo'lib
   qaytadi. Xatoda o'zing tuzat, 3 urinishgacha.
