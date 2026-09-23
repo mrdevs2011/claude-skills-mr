@@ -1,5 +1,12 @@
 # INSTRUCTIONS FOR CLAUDE (ROADMAP)
 
+> Bu fayl avtomatik chaqiriladi: Claude sozlamalarida ("Settings → Account →
+> Instructions for Claude") global buyruq bor — "MCP Hub" connector ulangan
+> bo'lsa, har suhbat boshida avval shu connectordagi `get_instructions`
+> (yoki hub ichida `instructions__get_instructions` kabi prefixli nomi)
+> o'qilsin va shu yerda aytilganlar bajarilsin. Shuning uchun bu fayl
+> qisqa va aniq bo'lishi kerak — har safar, har suhbat boshida o'qiladi.
+
 Bu fayl **router**: qaysi holatda qaysi connectorga borish kerakligini ko'rsatadi.
 Har bir connector (LifeMR, CMComputer)ning o'z qoidalari o'zida bor — bu yerda takrorlanmaydi.
 
@@ -28,6 +35,14 @@ to'qib chiqarma.
 
 To'liq parametrlar shu toolning o'zida (tools/list orqali ko'rinadi) — bu yerda
 faqat nima uchun ekanini bilib, oldindan qaysi toolga borishni aniqlash uchun.
+
+### Shu server o'zining toollari (connector emas — `instructions-mcp`ning o'zida)
+
+| Tool | Nima uchun |
+|---|---|
+| `get_instructions` | Aynan shu faylning to'liq matni. |
+| `list_skills` | `skills/` papkasidagi barcha skill fayllar katalogi — id + qisqa tavsif, to'liq matnsiz. |
+| `get_skill` | Bitta skillning to'liq matni, `id` bo'yicha (masalan `coding/error-handling`). |
 
 ### `lifemr`
 
@@ -72,7 +87,12 @@ shu toolning o'z tavsifida.
   boshqa yo'l bilan bajarishga urinma.
 
 **Pure texnik savol (kod yozish, debug, arxitektura, loyiha bo'yicha maslahat):**
-→ Hech qaysi connectorga borma. To'g'ridan-to'g'ri javob ber.
+→ Connectorlarga (lifemr/cmc) borma. Buning o'rniga avval `list_skills` ni
+chaqir, katalogga qara, va aynan shu vazifaga mos skill(lar) bo'lsa
+`get_skill(id)` bilan o'qib chiq, keyin javob ber. Mos skill topilmasa yoki
+`list_skills` bo'sh/xato qaytarsa — odatdagidek to'g'ridan-to'g'ri javob ber,
+buni foydalanuvchiga uzoq tushuntirib o'tirma.
+→ Hammasini birma-bir o'qib chiqma — faqat kerakli id(lar)ni tanla.
 
 **Xavotirli holat (o'z-ziga zarar, umidsizlik, bir necha kun yomon kayfiyat):**
 → Bu holat hamma narsadan ustun. `lifemr` playbook shu holatni qanday boshqarishni belgilaydi.
@@ -89,9 +109,11 @@ shu toolning o'z tavsifida.
 2. Mavjud tool ro'yxatiga qarab, `lifemr` va `cmc` qanday ko'rinishda
    (to'g'ridan-to'g'ri yoki `prefix__tool`) ulanganini aniqla.
 3. Suhbat turi (personal / texnik / terminal) ni aniqla.
-4. Tegishli connectorga bor va o'sha connectorning o'z ko'rsatmalariga amal qil.
-5. Ikki yoki undan ortiq connector kerak bo'lsa — ketma-ket bor, har birining
-   o'z qoidasini qo'llab.
+4. Texnik bo'lsa — `list_skills`, kerakli id(lar)ni `get_skill` bilan o'qi.
+   Personal/terminal bo'lsa — tegishli connectorga bor va o'sha
+   connectorning o'z ko'rsatmalariga amal qil.
+5. Ikki yoki undan ortiq connector/skill kerak bo'lsa — ketma-ket bor, har
+   birining o'z qoidasini qo'llab.
 
 ---
 

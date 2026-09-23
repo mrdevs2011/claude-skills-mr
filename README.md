@@ -27,10 +27,74 @@ qo'shayotganda aynan shu yo'llarga so'rov yuboradi — shuning uchun
   o'qiladi), va `get_instructions` doim xato qaytargan bo'lardi.
 - `token.md`, `instruction.md` o'zgarishsiz qoldi.
 
+# Claude sozlamalari (global "Instructions for Claude")
+
+Bu server o'zi hech narsani majburlay olmaydi — Claude'ni har safar
+`get_instructions`ni chaqirishga undaydigan narsa Claude.ai'ning
+**Settings → Account → Instructions for Claude** maydonidagi matn (bu
+matn repo'da emas, Claude tomonida saqlanadi, shuning uchun shu yerda
+zaxira sifatida yozib qo'yamiz):
+
+```
+Siz MCP Hub nomli connector ulangan bo'lsangiz, shu connectorga ulanib
+birinchi navbatda get_instructions ni o'qib chiqishingiz kerak va shu
+yerda aytilgan ishlarni qilasiz!
+```
+
+Eslatma: bu matn faqat "MCP Hub" nomli gateway orqali ulangan holatni
+nazarda tutadi. Agar bu server (`claude-skills-mr` / `instructions-mcp`)
+to'g'ridan-to'g'ri, hub'siz ulangan bo'lsa, tool nomi oddiy
+`get_instructions` bo'ladi (prefixsiz) — `instruction.md`dagi "Tool
+nomlari haqida" bo'limi ikkala holatni ham aniqlab beradi, shuning uchun
+matnni o'zgartirish shart emas. Faqat ikkalasi ham qamrab olinishini
+xohlasang, shu matnni shunga almashtirish mumkin:
+
+```
+Har suhbat boshida: agar sizda get_instructions (yoki
+hub__get_instructions kabi prefixli) nomli tool mavjud bo'lsa, birinchi
+navbatda shuni chaqiring va u qaytargan qoidalarga to'liq amal qiling.
+```
+
+# Skill tizimi (list_skills / get_skill)
+
+`instruction.md` endi faqat **router** — kichik va qisqa. Mavzuga oid
+batafsil qoidalar (masalan, kod yozishda xatolik chiqsa nima qilish kerak)
+`skills/` papkasidagi alohida `.md` fayllarda, papka bo'yicha guruhlangan:
+
+```
+skills/
+  coding/
+    error-handling.md
+    focus.md
+```
+
+Har bir skill fayl frontmatter bilan boshlanadi:
+
+```md
+---
+name: coding-error-handling
+description: Qisqa tavsif — qachon kerak bo'lishi
+---
+
+Skillning to'liq matni shu yerda.
+```
+
+Ikkita yangi tool shuni boshqaradi:
+
+- **`list_skills`** — barcha skillarning id + qisqa tavsifini qaytaradi
+  (to'liq matnsiz — engil, kontekstni to'ldirmaydi).
+- **`get_skill`** — bitta skillning to'liq matnini `id` bo'yicha qaytaradi
+  (masalan `coding/error-handling`).
+
+Claude texnik vazifa boshida avval `list_skills`ni chaqiradi, keyin faqat
+kerakli skill(lar)ni `get_skill` bilan o'qiydi — hammasini birdan emas.
+Yangi skill qo'shish uchun `skills/<papka>/<nom>.md` faylini shu formatda
+yozib qo'yish yetarli, kodga tegish shart emas.
+
 # Qanday deploy qilish
 
-1. Shu papkadagi fayllarni GitHub repo'ga (yoki mavjud
-   `instruction-claude` repo'ga) push qil — struktura shunday bo'lishi kerak:
+1. Shu papkadagi fayllarni GitHub repo'ga push qil — struktura shunday
+   bo'lishi kerak:
    ```
    /index.html
    /instruction.md
@@ -38,6 +102,8 @@ qo'shayotganda aynan shu yo'llarga so'rov yuboradi — shuning uchun
    /package.json
    /vercel.json
    /api/index.js
+   /skills/coding/error-handling.md
+   /skills/coding/focus.md
    ```
 2. Vercel avtomatik qayta deploy qiladi (yoki `vercel --prod`).
 3. Tekshirish:

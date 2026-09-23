@@ -6,7 +6,7 @@ H7RLjWiiZm1lh0sSSrSytQS4h-KDnZU_
 
 ## Ulash URL
 
-https://instruction-claude.vercel.app/mcp?k=H7RLjWiiZm1lh0sSSrSytQS4h-KDnZU_
+https://claude-skills-mr.vercel.app/mcp?k=H7RLjWiiZm1lh0sSSrSytQS4h-KDnZU_
 
 Yoki header orqali:
 

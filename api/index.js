@@ -5,18 +5,67 @@
 // functions under /api. See vercel.json for the path routing.
 
 import crypto from "node:crypto";
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 
 const TOKEN = process.env.TOKEN || "H7RLjWiiZm1lh0sSSrSytQS4h-KDnZU_";
-// On Vercel the repo is read-only at runtime; instruction.md is bundled
-// alongside this function's project root.
+// On Vercel the repo is read-only at runtime; instruction.md/skills bundled
+// alongside this function's project root (see vercel.json includeFiles).
 const INSTRUCTION_FILE =
   process.env.INSTRUCTION_FILE || path.join(process.cwd(), "instruction.md");
+const SKILLS_DIR = process.env.SKILLS_DIR || path.join(process.cwd(), "skills");
 
 // NOTE: pendingCodes only lives for the lifetime of one function instance.
 // Fine here since /token never actually validates the code anyway.
 const pendingCodes = new Map();
+
+// --- Skill fayllar: har biri "---\nname: ...\ndescription: ...\n---\n<matn>"
+// shaklida. Frontmatter faqat list_skills uchun (katalog), to'liq matn esa
+// get_skill orqali kerak bo'lgandagina o'qiladi.
+
+function parseFrontmatter(raw) {
+  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
+  if (!match) return { meta: {}, body: raw };
+  const meta = {};
+  for (const line of match[1].split(/\r?\n/)) {
+    const m = line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
+    if (m) meta[m[1]] = m[2].trim();
+  }
+  return { meta, body: match[2] };
+}
+
+async function walkSkillFiles(dir, base = dir) {
+  let entries;
+  try {
+    entries = await readdir(dir, { withFileTypes: true });
+  } catch {
+    return [];
+  }
+  const files = [];
+  for (const entry of entries) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...(await walkSkillFiles(full, base)));
+    } else if (entry.isFile() && entry.name.endsWith(".md")) {
+      // id: fayl yo'li, papkadan boshlab, kengaytmasiz, "/" bilan — masalan
+      // skills/coding/focus.md -> "coding/focus"
+      const id = path.relative(base, full).replace(/\\/g, "/").replace(/\.md$/, "");
+      files.push({ id, full });
+    }
+  }
+  return files;
+}
+
+function resolveSkillPath(id) {
+  // Path traversal himoyasi: "..", boshida "/" bo'lmasin, faqat SKILLS_DIR ichida qolsin.
+  if (typeof id !== "string" || !id || id.includes("..") || path.isAbsolute(id)) {
+    return null;
+  }
+  const full = path.join(SKILLS_DIR, `${id}.md`);
+  const rel = path.relative(SKILLS_DIR, full);
+  if (rel.startsWith("..") || path.isAbsolute(rel)) return null;
+  return full;
+}
 
 function send(res, status, body) {
   const payload = typeof body === "string" ? body : JSON.stringify(body);
@@ -56,9 +105,30 @@ const TOOLS = [
     description: "instruction.md faylining hozirgi to'liq matnini qaytaradi (har safar diskdan qayta o'qiladi).",
     inputSchema: { type: "object", properties: {} },
   },
+  {
+    name: "list_skills",
+    description:
+      "skills/ papkasidagi barcha skill fayllarning katalogini qaytaradi (id + qisqa tavsif, to'liq matnsiz). " +
+      "Texnik/kod vazifasi boshida shu toolni chaqir, keyin faqat kerakli skillni get_skill bilan o'qi — " +
+      "hammasini birdan o'qib, kontekstni to'ldirma.",
+    inputSchema: { type: "object", properties: {} },
+  },
+  {
+    name: "get_skill",
+    description:
+      "Bitta skillning to'liq matnini qaytaradi. `id` list_skills natijasidagi id bo'lishi kerak " +
+      "(masalan \"coding/error-handling\").",
+    inputSchema: {
+      type: "object",
+      properties: {
+        id: { type: "string", description: "Skill id, masalan: coding/error-handling" },
+      },
+      required: ["id"],
+    },
+  },
 ];
 
-async function handleToolCall(name) {
+async function handleToolCall(name, args = {}) {
   if (name === "get_instructions") {
     try {
       const text = await readFile(INSTRUCTION_FILE, "utf8");
@@ -70,6 +140,54 @@ async function handleToolCall(name) {
       };
     }
   }
+
+  if (name === "list_skills") {
+    const files = await walkSkillFiles(SKILLS_DIR);
+    if (files.length === 0) {
+      return { content: [{ type: "text", text: "Hozircha hech qanday skill yo'q (skills/ bo'sh)." }] };
+    }
+    const items = [];
+    for (const f of files) {
+      try {
+        const raw = await readFile(f.full, "utf8");
+        const { meta } = parseFrontmatter(raw);
+        items.push({
+          id: f.id,
+          name: meta.name || f.id,
+          description: meta.description || "",
+        });
+      } catch {
+        // o'qib bo'lmagan faylni jim tashlab ketamiz
+      }
+    }
+    items.sort((a, b) => a.id.localeCompare(b.id));
+    const lines = items.map((i) => `- **${i.id}** (${i.name}): ${i.description}`);
+    const text = `Mavjud skillar (${items.length}):\n\n${lines.join("\n")}\n\nTo'liq matn uchun get_skill(id) ni chaqir.`;
+    return { content: [{ type: "text", text }] };
+  }
+
+  if (name === "get_skill") {
+    const id = args?.id;
+    const full = resolveSkillPath(id);
+    if (!full) {
+      return {
+        content: [{ type: "text", text: `Noto'g'ri skill id: ${JSON.stringify(id)}` }],
+        isError: true,
+      };
+    }
+    try {
+      const raw = await readFile(full, "utf8");
+      const { meta, body } = parseFrontmatter(raw);
+      const header = meta.name ? `# ${meta.name}\n\n` : "";
+      return { content: [{ type: "text", text: `${header}${body.trim()}\n` }] };
+    } catch (err) {
+      return {
+        content: [{ type: "text", text: `"${id}" skillni o'qib bo'lmadi: ${err.message}` }],
+        isError: true,
+      };
+    }
+  }
+
   throw new Error(`Noma'lum tool: ${name}`);
 }
 
@@ -206,7 +324,7 @@ export default async function handler(req, res) {
       return send(res, 200, jsonRpcResult(id, { tools: TOOLS }));
     }
     if (method === "tools/call") {
-      const result = await handleToolCall(payload.params?.name);
+      const result = await handleToolCall(payload.params?.name, payload.params?.arguments);
       return send(res, 200, jsonRpcResult(id, result));
     }
     if (method === "resources/list") {
