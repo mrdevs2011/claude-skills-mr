@@ -43,6 +43,7 @@ faqat nima uchun ekanini bilib, oldindan qaysi toolga borishni aniqlash uchun.
 | `get_instructions` | Aynan shu faylning to'liq matni. |
 | `list_skills` | `skills/` papkasidagi barcha skill fayllar katalogi — id + qisqa tavsif, to'liq matnsiz. |
 | `get_skill` | Bitta skillning to'liq matni, `id` bo'yicha (masalan `coding/error-handling`). |
+| `search_skills` | Skill id'ni bilmasang: xato matni/kalit so'z bo'yicha qidiradi (masalan "vercel", "race condition", "undefined"), mos skillar + snippet qaytadi. |
 
 ### `lifemr`
 
@@ -87,10 +88,13 @@ shu toolning o'z tavsifida.
   boshqa yo'l bilan bajarishga urinma.
 
 **Pure texnik savol (kod yozish, debug, arxitektura, loyiha bo'yicha maslahat):**
-→ Connectorlarga (lifemr/cmc) borma. Buning o'rniga avval `list_skills` ni
-chaqir, katalogga qara, va aynan shu vazifaga mos skill(lar) bo'lsa
-`get_skill(id)` bilan o'qib chiq, keyin javob ber. Mos skill topilmasa yoki
-`list_skills` bo'sh/xato qaytarsa — odatdagidek to'g'ridan-to'g'ri javob ber,
+→ Connectorlarga (lifemr/cmc) borma. Aniq xato matni yoki kalit so'z
+(masalan "vercel", "undefined", "race condition") bilan **avval
+`search_skills(query)`** ni chaqir — bu id'ni oldindan bilishni talab
+qilmaydi. Natija bo'sh yoki noaniq bo'lsa, `list_skills` bilan to'liq
+katalogga qara. Aynan shu vazifaga mos skill topilsa, `get_skill(id)` bilan
+to'liq matnini o'qib chiq, keyin javob ber. Hech narsa mos kelmasa yoki
+skill toollari xato qaytarsa — odatdagidek to'g'ridan-to'g'ri javob ber,
 buni foydalanuvchiga uzoq tushuntirib o'tirma.
 → Hammasini birma-bir o'qib chiqma — faqat kerakli id(lar)ni tanla.
 

@@ -64,9 +64,45 @@ batafsil qoidalar (masalan, kod yozishda xatolik chiqsa nima qilish kerak)
 ```
 skills/
   coding/
-    error-handling.md
-    focus.md
+    GeneralDebuggingProcessWhenCodeErrorsOrBreaks.md        # umumiy debug tartibi (meta-skill)
+    StayScopedToRequestedTaskAvoidUnrequestedChanges.md     # umumiy "vazifaga aniq qolish" (meta-skill)
+    vercel/
+      VercelListenInsteadOfHandlerExportCauses404OnAllRoutes.md
+      VercelCustomRouteNotMatchingApiFilenameReturns404MissingRewrites.md
+      VercelRuntimeReadFileEnoentMissingIncludeFilesConfig.md
+      VercelEntireProjectServedAsStaticSiteMissingApiOrVercelJson.md
+    async/
+      AsyncFunctionReturnsPendingPromiseInsteadOfValueMissingAwait.md
+      ArrayMapWithAsyncCallbackReturnsPromiseArrayNotValues.md
+      UnhandledPromiseRejectionCrashMissingTryCatchAroundAwait.md
+      AsyncRaceConditionDependentTasksStartedInParallelWithPromiseAll.md
+    null/
+      CannotReadPropertiesOfUndefinedOrNullTypeErrorDiagnosis.md
+      FalsyZeroOrEmptyStringWronglyTreatedAsMissingValueBug.md
 ```
+
+Skillar ataylab **juda tor va bitta nuqtaga qaratilgan**: har biri faqat
+BITTA aniq simptom (masalan "aynan shu xato matni", "aynan shu holat") →
+BITTA aniq sabab → BITTA aniq tuzatishdan iborat. Umumiy "yaxshi kod yozish"
+maslahatlari yo'q — maqsad shuki, Claude biror xatoga duch kelganda,
+`search_skills` orqali mos skillni topib, uni o'qib chiqishi bilanoq —
+boshqa variantlarni tekshirib o'tirmasdan — aynan sababni va tuzatishni
+bir o'qishda tushunib olishi. `error-handling.md` va `focus.md` bundan
+mustasno — ular bitta bug turi emas, umumiy debug jarayoni bo'yicha
+meta-qoidalar, shuning uchun kengroq qoladi.
+
+**Fayl nomlash qoidasi:** har bir skill faylining nomi o'zi nima haqida
+ekanini bildirib turadi (masalan
+`VercelListenInsteadOfHandlerExportCauses404OnAllRoutes.md`) — uzun
+bo'lsa ham mayli, qisqartma yoki noaniq nom ishlatilmaydi. Har bir skill
+faylining o'zi ham bir xil qolipda yoziladi:
+
+- **Header — "Nima uchun bu skill kerak":** bu skill qachon kerak
+  bo'lishi, boshqa o'xshash skillardan nimasi bilan farqlanishi.
+- **Section — asosiy qism:** Simptom (aynan shu) → Sabab (100%) →
+  Tasdiqlash → Tuzatish (aynan shu).
+- **Footer — "Xulosa":** shu skillni o'qigach nimani bilib olgani, 2-3
+  qisqa band bilan.
 
 Har bir skill fayl frontmatter bilan boshlanadi:
 
@@ -79,17 +115,26 @@ description: Qisqa tavsif — qachon kerak bo'lishi
 Skillning to'liq matni shu yerda.
 ```
 
-Ikkita yangi tool shuni boshqaradi:
+Uchta tool shuni boshqaradi:
 
 - **`list_skills`** — barcha skillarning id + qisqa tavsifini qaytaradi
   (to'liq matnsiz — engil, kontekstni to'ldirmaydi).
 - **`get_skill`** — bitta skillning to'liq matnini `id` bo'yicha qaytaradi
   (masalan `coding/error-handling`).
+- **`search_skills`** — `query` so'zi/iborasi bo'yicha **id, sarlavha,
+  tavsif VA to'liq matn ichidan** qidiradi. Masalan `query: "vercel"`
+  desa, ichida "vercel" so'zi uchraydigan barcha skill fayllar (id +
+  tavsif + topilgan joy atrofidagi qisqa snippet) qaytadi. Bu Claude
+  aniq skill id'ni bilmasa-yu, faqat xato matni yoki mavzu bilan qidirmoqchi
+  bo'lsa kerak bo'ladi — `list_skills`dan farqli, matn ichini ham qamrab
+  oladi, faqat tavsifni emas.
 
-Claude texnik vazifa boshida avval `list_skills`ni chaqiradi, keyin faqat
+Claude texnik vazifa boshida — agar aniq xato matni/kalit so'z bo'lsa —
+avval `search_skills`ni, aks holda `list_skills`ni chaqiradi, keyin faqat
 kerakli skill(lar)ni `get_skill` bilan o'qiydi — hammasini birdan emas.
 Yangi skill qo'shish uchun `skills/<papka>/<nom>.md` faylini shu formatda
-yozib qo'yish yetarli, kodga tegish shart emas.
+yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
+`list_skills` avtomatik ko'radi.
 
 # Qanday deploy qilish
 
@@ -102,8 +147,18 @@ yozib qo'yish yetarli, kodga tegish shart emas.
    /package.json
    /vercel.json
    /api/index.js
-   /skills/coding/error-handling.md
-   /skills/coding/focus.md
+   /skills/coding/GeneralDebuggingProcessWhenCodeErrorsOrBreaks.md
+   /skills/coding/StayScopedToRequestedTaskAvoidUnrequestedChanges.md
+   /skills/coding/vercel/VercelListenInsteadOfHandlerExportCauses404OnAllRoutes.md
+   /skills/coding/vercel/VercelCustomRouteNotMatchingApiFilenameReturns404MissingRewrites.md
+   /skills/coding/vercel/VercelRuntimeReadFileEnoentMissingIncludeFilesConfig.md
+   /skills/coding/vercel/VercelEntireProjectServedAsStaticSiteMissingApiOrVercelJson.md
+   /skills/coding/async/AsyncFunctionReturnsPendingPromiseInsteadOfValueMissingAwait.md
+   /skills/coding/async/ArrayMapWithAsyncCallbackReturnsPromiseArrayNotValues.md
+   /skills/coding/async/UnhandledPromiseRejectionCrashMissingTryCatchAroundAwait.md
+   /skills/coding/async/AsyncRaceConditionDependentTasksStartedInParallelWithPromiseAll.md
+   /skills/coding/null/CannotReadPropertiesOfUndefinedOrNullTypeErrorDiagnosis.md
+   /skills/coding/null/FalsyZeroOrEmptyStringWronglyTreatedAsMissingValueBug.md
    ```
 2. Vercel avtomatik qayta deploy qiladi (yoki `vercel --prod`).
 3. Tekshirish:

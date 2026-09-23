@@ -67,6 +67,55 @@ function resolveSkillPath(id) {
   return full;
 }
 
+// search_skills: id, sarlavha, tavsif VA matn ichidan so'z(lar) bo'yicha qidiradi.
+// Masalan "vercel" desa, ichida "vercel" so'zi uchraydigan barcha skill
+// fayllar (id + tavsif + topilgan joy atrofidagi qisqa snippet) qaytadi.
+async function searchSkillFiles(query) {
+  const q = String(query || "").trim();
+  if (!q) return [];
+  const terms = q.toLowerCase().split(/\s+/).filter(Boolean);
+  const files = await walkSkillFiles(SKILLS_DIR);
+  const results = [];
+  for (const f of files) {
+    let raw;
+    try {
+      raw = await readFile(f.full, "utf8");
+    } catch {
+      continue;
+    }
+    const { meta, body } = parseFrontmatter(raw);
+    const haystack = `${f.id}\n${meta.name || ""}\n${meta.description || ""}\n${body}`.toLowerCase();
+    const matchedTerms = terms.filter((t) => haystack.includes(t));
+    if (matchedTerms.length === 0) continue;
+
+    const lowerBody = body.toLowerCase();
+    let idx = -1;
+    for (const t of matchedTerms) {
+      idx = lowerBody.indexOf(t);
+      if (idx !== -1) break;
+    }
+    let snippet = "";
+    if (idx !== -1) {
+      const start = Math.max(0, idx - 60);
+      const end = Math.min(body.length, idx + 120);
+      snippet =
+        (start > 0 ? "…" : "") +
+        body.slice(start, end).replace(/\s+/g, " ").trim() +
+        (end < body.length ? "…" : "");
+    }
+
+    results.push({
+      id: f.id,
+      name: meta.name || f.id,
+      description: meta.description || "",
+      score: matchedTerms.length,
+      snippet,
+    });
+  }
+  results.sort((a, b) => b.score - a.score || a.id.localeCompare(b.id));
+  return results;
+}
+
 function send(res, status, body) {
   const payload = typeof body === "string" ? body : JSON.stringify(body);
   res.writeHead(status, {
@@ -124,6 +173,24 @@ const TOOLS = [
         id: { type: "string", description: "Skill id, masalan: coding/error-handling" },
       },
       required: ["id"],
+    },
+  },
+  {
+    name: "search_skills",
+    description:
+      "skills/ papkasidagi barcha .md fayllar ichidan (id, sarlavha, tavsif VA to'liq matn) `query` " +
+      "so'zi bo'yicha qidiradi — masalan \"vercel\" desa, ichida \"vercel\" so'zi uchraydigan barcha " +
+      "skill fayllar chiqadi. Xato matni yoki mavzu bo'yicha qidirmoqchi bo'lsang, lekin aniq skill id'ni " +
+      "bilmasang, list_skills o'rniga shu toolni ishlat.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        query: {
+          type: "string",
+          description: "Qidiruv so'zi yoki qisqa ibora, masalan: vercel, 404, race condition",
+        },
+      },
+      required: ["query"],
     },
   },
 ];
@@ -186,6 +253,27 @@ async function handleToolCall(name, args = {}) {
         isError: true,
       };
     }
+  }
+
+  if (name === "search_skills") {
+    const query = args?.query;
+    if (typeof query !== "string" || !query.trim()) {
+      return {
+        content: [{ type: "text", text: "search_skills uchun `query` matn parametri kerak." }],
+        isError: true,
+      };
+    }
+    const results = await searchSkillFiles(query);
+    if (results.length === 0) {
+      return { content: [{ type: "text", text: `"${query}" bo'yicha hech qanday skill topilmadi.` }] };
+    }
+    const lines = results.map(
+      (r) => `- **${r.id}** (${r.name}): ${r.description}${r.snippet ? `\n  → ...${r.snippet}...` : ""}`
+    );
+    const text = `"${query}" bo'yicha topilgan skillar (${results.length}):\n\n${lines.join(
+      "\n\n"
+    )}\n\nTo'liq matn uchun get_skill(id) ni chaqir.`;
+    return { content: [{ type: "text", text }] };
   }
 
   throw new Error(`Noma'lum tool: ${name}`);
