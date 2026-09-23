@@ -340,12 +340,14 @@ deganda uy papkasini tushun (`/` ga oddiy foydalanuvchi yoza olmaydi). Aynan
 **Tozalash (majburiy):**
 - Muvaffaqiyatli ko'chirilgan har fayl repo'dan o'chiriladi, foydalanuvchi alohida
   aytishi shart emas. Har transferdan keyin repo bo'sh bo'lishi kerak.
-- O'chirish faqat kompyuterdagi nusxa tekshirilgandan keyin. Tekshiruv o'tmasa
-  yoki ko'chirish yiqilsa, fayl repo'da qoladi: foydalanuvchiga ayt va muammo
-  hal bo'lgach o'zing tozala.
+- O'chirish kompyuterdagi nusxa tekshirilgandan keyin. Ko'chirish yiqilsa, fayl
+  repo'da faqat qayta urinish tugaguncha turadi: foydalanuvchiga ayt, hal bo'lgach
+  yoki foydalanuvchi kerak emas desa o'zing o'chir.
+- Repo'da eskirgan, kerak bo'lmagan fayl (chala qolgan, backup, eski nusxa) topilsa,
+  uni kompyuterga ko'chirmasdan shunchaki o'chir. Foydalanuvchi buni oldindan
+  aytgan: GitHub'da keraksiz fayl turmasin. Har transfer boshida va oxirida
+  `~/.gh-api.sh GET /repos/mrdevs2011/uploads/contents` bilan repo'ni tekshir.
 - Istisno: foydalanuvchi aniq "uploads'da qoldir" desa, o'chirma.
-- Repo'ni ba'zan tekshir (`~/.gh-api.sh GET /repos/mrdevs2011/uploads/contents`);
-  ichida chala qolgan fayl bo'lsa, nusxasini kompyuterda tekshirib o'chir.
 - Eslatma: git tarixida fayl izi qoladi. Sirli fayllarni (kalit, parol) baribir
   uploads orqali o'tkazma.
 
