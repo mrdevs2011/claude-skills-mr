@@ -117,22 +117,34 @@ echo ok                             # cmc tirikmi tekshirish
 
 ## 6. Fayl kompyuterga o'tishi kerak bo'lsa (uploads orqali)
 Sandbox (Claude bulutida) va MR kompyuteri bir-birini ko'rmaydi. Fayl
-`mrdevs2011/uploads` (private) repo orqali o'tadi. Faqat `run_command` ishlayotgan
-bo'lsa va fayl kompyuterga tushishi kerak bo'lsa:
+`mrdevs2011/uploads` (private) repo orqali o'tadi. **Repo doim bo'sh turadi:**
+fayl kompyuterga tushib tekshirilgach repo'dan o'chiriladi.
+Faqat `run_command` ishlayotgan bo'lsa va fayl kompyuterga tushishi kerak bo'lsa:
 
 1. `get_upload_token` (connector `connectmymcpgithub`) ni chaqir.
 2. Sandbox'da faylni repo rootiga qo'shib `git push origin main` qil.
-3. `run_command` bilan kompyuterda vaqtinchalik papkaga klonla, kerakli qismini
-   manzilga ko'chir, klonni o'chir:
+3. Kompyuterda tayyor skriptni ishlat:
    ```bash
-   set -e; T='<token>'; D=$(mktemp -d)
-   GIT_TERMINAL_PROMPT=0 git clone -q --depth 1 "https://x-access-token:${T}@github.com/mrdevs2011/uploads.git" "$D/r" 2>&1 | sed 's/github_pat_[A-Za-z0-9_]*/***/g'
-   cp -a "$D/r/<nom>" "<manzil>/<nom>"; rm -rf "$D"
+   ~/.uploads-pull.sh NOM [MANZIL_PAPKA]
    ```
-4. Tekshir: manzilda fayllar bormi, soni mosmi. MR ga to'liq yo'lni ayt.
+   U klonlaydi, ko'chiradi, fayl soni va hajmini tekshiradi, mos kelsa repo'dan
+   o'chirib push qiladi va vaqtinchalik papkani tozalaydi. Token
+   `~/.gh-mrtoken.txt` dan `~/.gh-askpass.sh` orqali olinadi.
+4. Kutilgan chiqish: `OK: <yo'l> (N fayl, M bayt). uploads repo'dan o'chirildi.`
+   MR ga to'liq yo'lni ayt.
 
+Skript kodlari: `3` repo'da nom yo'q, `4` manzilda shu nom bor (ustidan yozmaydi,
+nomini o'zgartir yoki so'ra), `5` tekshiruv mos kelmadi (repo'dan o'chirmaydi).
 Manzil aytilmasa `~`. Fayl 100 MB dan katta bo'lsa GitHub qabul qilmaydi: MR ga ayt.
 `run_command` ishlamasa uploads'ga push qilma; faylni chatda ber.
+
+GitHub API va git push uchun token yordamchilari (token chatga tushmaydi):
+- `GIT_ASKPASS=~/.gh-askpass.sh GIT_TERMINAL_PROMPT=0 git push`
+- `~/.gh-api.sh METHOD /yo'l [json]` (masalan `GET /user`, workflowlar, repolar).
+  Repo o'chirish faqat MR repo nomini aytganda va nomni qayta tasdiqlatib.
+- Tokenni `cat`/`echo` qilma, `set -x` ishlatma.
+- Skript yozilganda cmc `rm -rf`/`git rm` so'zi bor buyruqni `hard_write` deb
+  bloklaydi: MR aniq so'ragan bo'lsagina `confirmed:true` qo'y.
 
 ## 7. cmc ishlamasa: tashxis (taxmin bilan talab qilma)
 1. **Bir nechta connector (yoki hammasi) javob bermasa** → hub uxlab qolgan (A).
