@@ -9,7 +9,7 @@
 
 Bu fayl **router**: qaysi holatda qaysi connectorga borish kerakligini ko'rsatadi.
 Har bir connector (LifeMR, CMComputer, CMMGH)ning o'z qoidalari o'zida bor — bu yerda takrorlanmaydi.
-Faqat CMMGH uchun push tartibi pastda alohida yozilgan, chunki u bir necha qadamdan iborat.
+Faqat CMMGH uchun push tartibi va uploads orqali kompyuterga uzatish qoidasi pastda alohida yozilgan, chunki ular bir necha qadamdan iborat.
 
 ## Tool nomlari haqida (muhim)
 
@@ -73,7 +73,7 @@ faqat nima uchun ekanini bilib, oldindan qaysi toolga borishni aniqlash uchun.
 
 | Tool | Nima uchun |
 |---|---|
-| `get_upload_token` | `mrdevs2011/uploads` repo'siga push qilish uchun GitHub token qaytaradi. Faqat foydalanuvchi zip/fayl push/upload qil desa chaqir. |
+| `get_upload_token` | `mrdevs2011/uploads` repo'siga push qilish uchun GitHub token qaytaradi. Faqat fayl uploads orqali o'tkazilishi kerak bo'lganda chaqir (foydalanuvchi so'rasa yoki pastdagi "Uploads: markaziy uzatish nuqtasi" qoidasi bo'yicha). |
 
 ---
 
@@ -96,10 +96,15 @@ shu toolning o'z tavsifida.
   ishlamayapti (server o'chiq yoki tunnel yo'q); foydalanuvchiga shuni ayt,
   boshqa yo'l bilan bajarishga urinma.
 
-**Foydalanuvchi zip/fayl'ni GitHub'ga push/upload qil desa ("zip'ni uploads'ga tashla", "push qil"):**
+**Fayl/papka foydalanuvchining KOMPYUTERIGA o'tishi kerak bo'lsa (zip, loyiha, patch, yaratilgan fayllar) va `cmc` `run_command` mavjud bo'lsa:**
+→ Foydalanuvchi "uploads'ga ko'chir" demasa ham, shu yo'lni o'zing tanla:
+  sandbox → `uploads` repo (CMMGH) → `run_command` bilan kompyuterga.
+→ Tartib: pastdagi "Uploads: markaziy uzatish nuqtasi" bo'limi.
+→ Bu yerda Google Drive connectoriga ketma: u base64 bilan sekin ishlaydi.
+
+**Foydalanuvchi faqat GitHub'ga push/upload so'rasa ("zip'ni uploads'ga tashla", "push qil"):**
 → `connectmymcpgithub` connectorini (yoki hub ichidagi `connectmymcpgithub__`)
-  ishlat. Google Drive connectoriga ketma: u base64 bilan sekin ishlaydi.
-→ Tartib (pastdagi "CMMGH: push tartibi" bo'limi).
+  ishlat. Tartib: pastdagi "CMMGH: push tartibi" bo'limi.
 
 **Pure texnik savol (kod yozish, debug, arxitektura, loyiha bo'yicha maslahat):**
 → Connectorlarga (lifemr/cmc) borma. Aniq xato matni yoki kalit so'z
@@ -158,6 +163,54 @@ bash qiladi.
 
 ---
 
+## Uploads: markaziy uzatish nuqtasi
+
+`mrdevs2011/uploads` (private) — sandbox va foydalanuvchi kompyuteri o'rtasidagi
+**markaziy o'tkazma joyi**. Sandbox Claude'ning bulutida, kompyuter esa alohida:
+ular bir-birini ko'rmaydi, shuning uchun fayl shu repo orqali o'tadi.
+
+**Qachon ishlatiladi:** faqat `cmc` (`run_command`) ishlayotgan bo'lsa VA biror
+narsa kompyuterga tushishi kerak bo'lsa. Foydalanuvchi har safar "uploads'ga
+ko'chir" deb aytishi shart emas — bu qoidani o'zing bil va o'zing qil.
+
+**Qachon ishlatilmaydi:**
+- `run_command` yo'q yoki xato bersa: uploads'ga push qilma. Faylni `present_files`
+  bilan chatda ber va sababini bir jumlada ayt.
+- Fayl faqat chatda ko'rsatilishi kerak bo'lsa yoki kompyuterga tushishi so'ralmagan bo'lsa.
+- Fayl 100 MB dan katta bo'lsa (GitHub qabul qilmaydi): foydalanuvchiga ayt.
+
+**Tartib:**
+1. `get_upload_token` ni chaqir.
+2. Bash (sandbox): faylni/papkani `uploads` repo rootiga qo'sh, commit va
+   `git push origin main` (yuqoridagi "CMMGH: push tartibi").
+3. `run_command` (kompyuter): repo'ni vaqtinchalik papkaga klonla, kerakli
+   qismini manzilga ko'chir, klonni o'chir. Namuna:
+   ```bash
+   set -e; T='<token>'; D=$(mktemp -d)
+   GIT_TERMINAL_PROMPT=0 git clone -q --depth 1 "https://x-access-token:${T}@github.com/mrdevs2011/uploads.git" "$D/r" 2>&1 | sed 's/github_pat_[A-Za-z0-9_]*/***/g'
+   cp -a "$D/r/<nom>" "<manzil>/<nom>"; rm -rf "$D"
+   ```
+4. Tekshir: manzilda fayllar bormi, soni repo'dagi bilan mosmi.
+5. Foydalanuvchiga qayerga qo'yilganini ayt (to'liq yo'l).
+
+**Manzil:** foydalanuvchi aytmasa, uy papkasi (`~`) ga qo'y. "Root papka"
+deganda uy papkasini tushun (`/` ga oddiy foydalanuvchi yoza olmaydi). Aynan
+`/` yoki `sudo` kerak bo'lsa, avval so'ra: bu xavfli buyruq (`confirmed:true`).
+Manzilda shu nomli fayl/papka bor bo'lsa, ustidan yozma: nomini o'zgartir yoki so'ra.
+
+**Kompyuterda tokenni qoldirma:**
+- Klonni doim vaqtinchalik papkaga qil va oxirida o'chir.
+- `git remote`, `.git/config`, `~/.gitconfig` va shell tarixiga tokenni yozma.
+- Kompyuterga `.git` bilan to'liq klon kerak bo'lsa, tokensiz URL bilan qil
+  va foydalanuvchining o'z git kirishini ishlat.
+- Token CMC buyruqlar tarixida ko'rinib qolishi mumkin: shu sababli uzoq
+  muddatli token ishlatma va uploads repo'ni private saqla.
+
+**Tozalash:** uploads repo'dagi fayllarni o'zing o'chirma. Foydalanuvchi
+so'ramaguncha qoldir. Repo shishib ketgan bo'lsa, buni eslat.
+
+---
+
 ## Tartib
 
 1. Har suhbat boshida: shu faylni (`get_instructions`, to'g'ridan-to'g'ri yoki
@@ -168,9 +221,10 @@ bash qiladi.
 4. Texnik bo'lsa — `list_skills`, kerakli id(lar)ni `get_skill` bilan o'qi.
    Personal/terminal/push bo'lsa — tegishli connectorga bor va yuqoridagi
    qoidalarga amal qil.
-5. Ikki yoki undan ortiq connector/skill kerak bo'lsa — ketma-ket bor, har
+5. Fayl kompyuterga tushishi kerak va `run_command` bor bo'lsa — uploads orqali o'tkaz (yuqoridagi bo'lim).
+6. Ikki yoki undan ortiq connector/skill kerak bo'lsa — ketma-ket bor, har
    birining o'z qoidasini qo'llab.
 
 ---
 
-**Eslatma:** Bu fayl faqat yo'nalish beradi — "nimani qanday qilish" javobi har doim o'sha connectorning o'z ichida. Faqat CMMGH push tartibi shu yerda yozilgan.
+**Eslatma:** Bu fayl faqat yo'nalish beradi — "nimani qanday qilish" javobi har doim o'sha connectorning o'z ichida. Faqat CMMGH push tartibi va uploads uzatish qoidasi shu yerda yozilgan.
