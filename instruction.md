@@ -218,7 +218,8 @@ shu toolning o'z tavsifida.
 
 **Fayl/papka foydalanuvchining KOMPYUTERIGA o'tishi kerak bo'lsa (zip, loyiha, patch, yaratilgan fayllar) va `cmc` `run_command` mavjud bo'lsa:**
 → Foydalanuvchi "uploads'ga ko'chir" demasa ham, shu yo'lni o'zing tanla:
-  sandbox → `uploads` repo (CMMGH) → `run_command` bilan kompyuterga.
+  sandbox → `uploads` repo (CMMGH) → `run_command` bilan kompyuterga
+  (`~/.uploads-pull.sh`), keyin fayl repo'dan o'chiriladi (repo doim bo'sh).
 → Tartib: pastdagi "Uploads: markaziy uzatish nuqtasi" bo'limi.
 → Bu yerda Google Drive connectoriga ketma: u base64 bilan sekin ishlaydi.
 
@@ -286,16 +287,19 @@ bash qiladi.
   chiqishida ko'rinib qolsa, `sed 's/github_pat_[A-Za-z0-9_]*/***/g'` bilan yashir.
 - Tokenni instruction, skill yoki memory fayllariga yozma.
 - Token faqat `uploads` repo uchun. Boshqa repolarga ishlatishga urinma.
-- `uploads` repo'da faqat foydalanuvchi so'ragan fayllarni yoz. Mavjud fayllarni
-  so'ramasdan o'chirma yoki ustidan yozma.
+- `uploads` repo'da faqat foydalanuvchi so'ragan fayllarni yoz. Repo — vaqtinchalik
+  o'tkazma: ko'chirilgan faylni tekshirgach o'chir (pastdagi "Uploads" bo'limi).
+  Boshqa, o'zing yozmagan fayllarni so'ramasdan o'chirma yoki ustidan yozma.
 
 ---
 
-## Uploads: markaziy uzatish nuqtasi
+## Uploads: markaziy uzatish nuqtasi (doim bo'sh turadi)
 
 `mrdevs2011/uploads` (private) — sandbox va foydalanuvchi kompyuteri o'rtasidagi
-**markaziy o'tkazma joyi**. Sandbox Claude'ning bulutida, kompyuter esa alohida:
+**vaqtinchalik o'tkazma joyi**. Sandbox Claude'ning bulutida, kompyuter esa alohida:
 ular bir-birini ko'rmaydi, shuning uchun fayl shu repo orqali o'tadi.
+**Bu repo'da fayl doim yo'q bo'lishi kerak:** fayl kompyuterga tushib, tekshirilgach
+repo'dan darhol o'chiriladi. Repo saqlash joyi emas.
 
 **Qachon ishlatiladi:** faqat `cmc` (`run_command`) ishlayotgan bo'lsa VA biror
 narsa kompyuterga tushishi kerak bo'lsa. Foydalanuvchi har safar "uploads'ga
@@ -308,34 +312,48 @@ ko'chir" deb aytishi shart emas — bu qoidani o'zing bil va o'zing qil.
 - Fayl 100 MB dan katta bo'lsa (GitHub qabul qilmaydi): foydalanuvchiga ayt.
 
 **Tartib:**
-1. `get_upload_token` ni chaqir.
+1. `get_upload_token` ni chaqir (token faqat sandbox bash'da ishlatiladi, chatga yozilmaydi).
 2. Bash (sandbox): faylni/papkani `uploads` repo rootiga qo'sh, commit va
    `git push origin main` (yuqoridagi "CMMGH: push tartibi").
-3. `run_command` (kompyuter): repo'ni vaqtinchalik papkaga klonla, kerakli
-   qismini manzilga ko'chir, klonni o'chir. Namuna:
-   ```bash
-   set -e; T='<token>'; D=$(mktemp -d)
-   GIT_TERMINAL_PROMPT=0 git clone -q --depth 1 "https://x-access-token:${T}@github.com/mrdevs2011/uploads.git" "$D/r" 2>&1 | sed 's/github_pat_[A-Za-z0-9_]*/***/g'
-   cp -a "$D/r/<nom>" "<manzil>/<nom>"; rm -rf "$D"
-   ```
-4. Tekshir: manzilda fayllar bormi, soni repo'dagi bilan mosmi.
-5. Foydalanuvchiga qayerga qo'yilganini ayt (to'liq yo'l).
+3. `run_command` (kompyuter): tayyor skriptni ishlat:
+   `~/.uploads-pull.sh NOM [MANZIL_PAPKA]`
+   Skript o'zi: repo'ni vaqtinchalik papkaga klonlaydi, `NOM` ni manzilga ko'chiradi
+   (manzil aytilmasa `~`), fayllar soni va hajmini tekshiradi, **mos kelsagina** repo'dan
+   o'chirib push qiladi, vaqtinchalik papkani tozalaydi. Token `~/.gh-mrtoken.txt`
+   dan `~/.gh-askpass.sh` orqali olinadi, buyruqda ko'rinmaydi.
+   Chiqish `OK: <yo'l> (N fayl, M bayt). uploads repo'dan o'chirildi.` bo'lishi kerak.
+4. Foydalanuvchiga qayerga qo'yilganini ayt (to'liq yo'l).
+
+**Skript kodlari:**
+- `0` OK: ko'chirildi, tekshirildi, repo'dan o'chirildi.
+- `3` repo'da `NOM` yo'q (push bo'lmagan yoki nom xato).
+- `4` manzilda shu nomli fayl/papka bor: ustidan yozmadi, repo'dan o'chirmadi.
+  Nomini o'zgartir yoki foydalanuvchidan so'ra, keyin qayta ishga tushir.
+- `5` tekshiruv mos kelmadi: repo'dan o'chirmadi, manzildagi nusxani ko'rib chiq.
+- Skript yo'q bo'lsa (yoki `run_command` bloklasa): qo'lda klonla, ko'chir, tekshir,
+  keyin `git rm`, commit va push qil. Qoida o'zgarmaydi: tekshirmasdan o'chirma.
 
 **Manzil:** foydalanuvchi aytmasa, uy papkasi (`~`) ga qo'y. "Root papka"
 deganda uy papkasini tushun (`/` ga oddiy foydalanuvchi yoza olmaydi). Aynan
 `/` yoki `sudo` kerak bo'lsa, avval so'ra: bu xavfli buyruq (`confirmed:true`).
-Manzilda shu nomli fayl/papka bor bo'lsa, ustidan yozma: nomini o'zgartir yoki so'ra.
+
+**Tozalash (majburiy):**
+- Muvaffaqiyatli ko'chirilgan har fayl repo'dan o'chiriladi, foydalanuvchi alohida
+  aytishi shart emas. Har transferdan keyin repo bo'sh bo'lishi kerak.
+- O'chirish faqat kompyuterdagi nusxa tekshirilgandan keyin. Tekshiruv o'tmasa
+  yoki ko'chirish yiqilsa, fayl repo'da qoladi: foydalanuvchiga ayt va muammo
+  hal bo'lgach o'zing tozala.
+- Istisno: foydalanuvchi aniq "uploads'da qoldir" desa, o'chirma.
+- Repo'ni ba'zan tekshir (`~/.gh-api.sh GET /repos/mrdevs2011/uploads/contents`);
+  ichida chala qolgan fayl bo'lsa, nusxasini kompyuterda tekshirib o'chir.
+- Eslatma: git tarixida fayl izi qoladi. Sirli fayllarni (kalit, parol) baribir
+  uploads orqali o'tkazma.
 
 **Kompyuterda tokenni qoldirma:**
-- Klonni doim vaqtinchalik papkaga qil va oxirida o'chir.
-- `git remote`, `.git/config`, `~/.gitconfig` va shell tarixiga tokenni yozma.
-- Kompyuterga `.git` bilan to'liq klon kerak bo'lsa, tokensiz URL bilan qil
-  va foydalanuvchining o'z git kirishini ishlat.
-- Token CMC buyruqlar tarixida ko'rinib qolishi mumkin: shu sababli uzoq
-  muddatli token ishlatma va uploads repo'ni private saqla.
-
-**Tozalash:** uploads repo'dagi fayllarni o'zing o'chirma. Foydalanuvchi
-so'ramaguncha qoldir. Repo shishib ketgan bo'lsa, buni eslat.
+- Token faqat `~/.gh-mrtoken.txt` da (ruxsat 600). Uni `cat`/`echo` qilma, `set -x`
+  ishlatma, chiqishni token maskasi bilan o'ta.
+- `git remote`, `.git/config`, `~/.gitconfig`, shell tarixiga token yozma.
+- Klonni doim vaqtinchalik papkaga qil va oxirida o'chir (skript shunday qiladi).
 
 ---
 
