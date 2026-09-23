@@ -8,26 +8,29 @@
 > qisqa va aniq bo'lishi kerak — har safar, har suhbat boshida o'qiladi.
 
 Bu fayl **router**: qaysi holatda qaysi connectorga borish kerakligini ko'rsatadi.
-Har bir connector (LifeMR, CMComputer)ning o'z qoidalari o'zida bor — bu yerda takrorlanmaydi.
+Har bir connector (LifeMR, CMComputer, CMMGH)ning o'z qoidalari o'zida bor — bu yerda takrorlanmaydi.
+Faqat CMMGH uchun push tartibi pastda alohida yozilgan, chunki u bir necha qadamdan iborat.
 
 ## Tool nomlari haqida (muhim)
 
-`lifemr` va `cmc` bu yerda **connector nomlari**, tool nomlarining boshlanishi emas.
-Ular senga ikki xil ko'rinishda kelishi mumkin:
+`lifemr`, `cmc` va `connectmymcpgithub` (CMMGH) bu yerda **connector nomlari**,
+tool nomlarining boshlanishi emas. Ular senga ikki xil ko'rinishda kelishi mumkin:
 
-- **To'g'ridan-to'g'ri ulangan bo'lsa:** tool nomi aynan shunday — `get_guide`, `run_command`.
+- **To'g'ridan-to'g'ri ulangan bo'lsa:** tool nomi aynan shunday — `get_guide`,
+  `run_command`, `get_upload_token`.
 - **`mcp-hub` orqali ulangan bo'lsa** (bitta gateway ostida bir nechta connector
   yig'ilgan): tool nomi `prefix__tool` shaklida — masalan `lifemr__get_guide`,
-  `cmc__run_command`. Bu shu `instructions-mcp`ning o'ziga ham tegishli: agar
-  sen bu faylni ham hub orqali (masalan `instructions__get_instructions`)
-  o'qigan bo'lsang, xuddi shu hub ichida `lifemr__...` va `cmc__...` toollarini
-  ham qidir — alohida connector deb qidirma.
+  `cmc__run_command`, `connectmymcpgithub__get_upload_token`. Bu shu
+  `instructions-mcp`ning o'ziga ham tegishli: agar sen bu faylni ham hub orqali
+  (masalan `instructions__get_instructions`) o'qigan bo'lsang, xuddi shu hub
+  ichida `lifemr__...`, `cmc__...` va `connectmymcpgithub__...` toollarini ham
+  qidir — alohida connector deb qidirma.
 
 Qaysi ko'rinishda ekanini bilish uchun: mavjud tool ro'yxatiga qara. Nomi
-`get_guide`/`run_command` bilan tugaydigan (yoki aynan shunday) va tavsifida
-`[lifemr]` / `[cmc]` yoki shunga o'xshash belgi bor toolni ishlat. Agar hech
-qanday mos tool topilmasa — connector ulanmagan, foydalanuvchiga ayt, o'zingdan
-to'qib chiqarma.
+`get_guide` / `run_command` / `get_upload_token` bilan tugaydigan (yoki aynan
+shunday) va tavsifida `[lifemr]` / `[cmc]` / `[CMMGH]` yoki shunga o'xshash belgi
+bor toolni ishlat. Agar hech qanday mos tool topilmasa — connector ulanmagan,
+foydalanuvchiga ayt, o'zingdan to'qib chiqarma.
 
 ---
 
@@ -66,6 +69,12 @@ faqat nima uchun ekanini bilib, oldindan qaysi toolga borishni aniqlash uchun.
 | `run_command` | Foydalanuvchining kompyuterida buyruq bajaradi. Xavfli buyruqlar `confirmed:true` talab qiladi. |
 | `get_recent_commands` | Oxirgi bajarilgan buyruqlar tarixi (audit). |
 
+### `connectmymcpgithub` (CMMGH)
+
+| Tool | Nima uchun |
+|---|---|
+| `get_upload_token` | `mrdevs2011/uploads` repo'siga push qilish uchun GitHub token qaytaradi. Faqat foydalanuvchi zip/fayl push/upload qil desa chaqir. |
+
 ---
 
 ## Qayerga borish kerak?
@@ -87,6 +96,11 @@ shu toolning o'z tavsifida.
   ishlamayapti (server o'chiq yoki tunnel yo'q); foydalanuvchiga shuni ayt,
   boshqa yo'l bilan bajarishga urinma.
 
+**Foydalanuvchi zip/fayl'ni GitHub'ga push/upload qil desa ("zip'ni uploads'ga tashla", "push qil"):**
+→ `connectmymcpgithub` connectorini (yoki hub ichidagi `connectmymcpgithub__`)
+  ishlat. Google Drive connectoriga ketma: u base64 bilan sekin ishlaydi.
+→ Tartib (pastdagi "CMMGH: push tartibi" bo'limi).
+
 **Pure texnik savol (kod yozish, debug, arxitektura, loyiha bo'yicha maslahat):**
 → Connectorlarga (lifemr/cmc) borma. Aniq xato matni yoki kalit so'z
 (masalan "vercel", "undefined", "race condition") bilan **avval
@@ -106,19 +120,57 @@ buni foydalanuvchiga uzoq tushuntirib o'tirma.
 
 ---
 
+## CMMGH: push tartibi
+
+Maqsad: sandbox'dagi faylni (masalan `/mnt/user-data/uploads/x.zip` yoki o'zing
+yaratgan fayl) `mrdevs2011/uploads` repo'siga tez yuklash. Base64'ni Claude emas,
+bash qiladi.
+
+1. Foydalanuvchi aniq push/upload so'ramaguncha `get_upload_token` ni chaqirma.
+2. `get_upload_token` ni chaqir. U `{ "token": "github_pat_..." }` qaytaradi.
+3. Bash (tokenni o'zgaruvchiga ol, hech qachon javob matniga yozma):
+   ```bash
+   T='<token>'
+   git clone -q "https://x-access-token:${T}@github.com/mrdevs2011/uploads.git" /tmp/uploads-repo
+   cd /tmp/uploads-repo
+   cp /path/to/file.zip .
+   git config user.email "cmmgh@local"; git config user.name "CMMGH"
+   git add file.zip && git commit -qm "add file.zip"
+   git push origin main
+   ```
+4. Push muvaffaqiyatli bo'lsa, foydalanuvchiga fayl nomini va commit hash'ni ayt.
+   Repo linki: `https://github.com/mrdevs2011/uploads`.
+5. Xato chiqsa, xato matnini ayt (tokenni yashirib) va boshqa yo'l bilan
+   aylanib o'tishga urinma:
+   - `403` yoki `Permission denied`: token muddati tugagan yoki huquqi yetarli emas.
+     Foydalanuvchiga Vercel'da `GH_TOKEN` ni yangilashni ayt.
+   - `401` MCP tomonida: `MCP_AUTH_TOKEN` noto'g'ri, hub'dagi URL'ni tekshirtir.
+   - Fayl 100 MB dan katta bo'lsa, GitHub qabul qilmaydi. Foydalanuvchiga ayt.
+     Releases ishlatma: `uploads.github.com` sandbox'da ruxsat etilmagan.
+
+**Xavfsizlik:**
+- Tokenni javobda, fayl ichida, commit xabarida va log'da ko'rsatma. Buyruq
+  chiqishida ko'rinib qolsa, `sed 's/github_pat_[A-Za-z0-9_]*/***/g'` bilan yashir.
+- Tokenni instruction, skill yoki memory fayllariga yozma.
+- Token faqat `uploads` repo uchun. Boshqa repolarga ishlatishga urinma.
+- `uploads` repo'da faqat foydalanuvchi so'ragan fayllarni yoz. Mavjud fayllarni
+  so'ramasdan o'chirma yoki ustidan yozma.
+
+---
+
 ## Tartib
 
 1. Har suhbat boshida: shu faylni (`get_instructions`, to'g'ridan-to'g'ri yoki
    hub orqali) o'qi.
-2. Mavjud tool ro'yxatiga qarab, `lifemr` va `cmc` qanday ko'rinishda
-   (to'g'ridan-to'g'ri yoki `prefix__tool`) ulanganini aniqla.
-3. Suhbat turi (personal / texnik / terminal) ni aniqla.
+2. Mavjud tool ro'yxatiga qarab, `lifemr`, `cmc` va `connectmymcpgithub` qanday
+   ko'rinishda (to'g'ridan-to'g'ri yoki `prefix__tool`) ulanganini aniqla.
+3. Suhbat turi (personal / texnik / terminal / push) ni aniqla.
 4. Texnik bo'lsa — `list_skills`, kerakli id(lar)ni `get_skill` bilan o'qi.
-   Personal/terminal bo'lsa — tegishli connectorga bor va o'sha
-   connectorning o'z ko'rsatmalariga amal qil.
+   Personal/terminal/push bo'lsa — tegishli connectorga bor va yuqoridagi
+   qoidalarga amal qil.
 5. Ikki yoki undan ortiq connector/skill kerak bo'lsa — ketma-ket bor, har
    birining o'z qoidasini qo'llab.
 
 ---
 
-**Eslatma:** Bu fayl faqat yo'nalish beradi — "nimani qanday qilish" javobi har doim o'sha connectorning o'z ichida.
+**Eslatma:** Bu fayl faqat yo'nalish beradi — "nimani qanday qilish" javobi har doim o'sha connectorning o'z ichida. Faqat CMMGH push tartibi shu yerda yozilgan.
