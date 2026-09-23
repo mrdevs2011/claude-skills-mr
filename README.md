@@ -66,19 +66,43 @@ skills/
   coding/
     GeneralDebuggingProcessWhenCodeErrorsOrBreaks.md        # umumiy debug tartibi (meta-skill)
     StayScopedToRequestedTaskAvoidUnrequestedChanges.md     # umumiy "vazifaga aniq qolish" (meta-skill)
+    HallucinatedMethodOrPropertyIsNotAFunctionTypeError.md  # AI o'ylab topgan metod
+    ReferenceErrorXIsNotDefinedMissingImportOrTypo.md       # import yo'q / typo
+    WrongDataShapeAssumptionSilentWrongResultOrCrash.md     # noto'g'ri data shape taxmini
     vercel/
       VercelListenInsteadOfHandlerExportCauses404OnAllRoutes.md
       VercelCustomRouteNotMatchingApiFilenameReturns404MissingRewrites.md
       VercelRuntimeReadFileEnoentMissingIncludeFilesConfig.md
       VercelEntireProjectServedAsStaticSiteMissingApiOrVercelJson.md
+      VercelEnvVarUndefinedAtRuntimeLocalEnvWorks.md         # env lokalda bor, Vercel'da undefined
     async/
       AsyncFunctionReturnsPendingPromiseInsteadOfValueMissingAwait.md
       ArrayMapWithAsyncCallbackReturnsPromiseArrayNotValues.md
       UnhandledPromiseRejectionCrashMissingTryCatchAroundAwait.md
       AsyncRaceConditionDependentTasksStartedInParallelWithPromiseAll.md
+      ForgotToAwaitInMapForEachOrThenChain.md               # map/forEach ichida await unutilgan
     null/
       CannotReadPropertiesOfUndefinedOrNullTypeErrorDiagnosis.md
       FalsyZeroOrEmptyStringWronglyTreatedAsMissingValueBug.md
+    react/
+      ReactDirectStateMutationDoesNotTriggerRerender.md     # state'ni to'g'ridan-to'g'ri mutate
+      ReactMissingKeyPropInListCausesWrongUpdate.md         # ro'yxatda key yo'q yoki indeks
+    deps/
+      PackageUsedButNotInstalledOrNotInPackageJson.md       # paket ishlatilgan, lekin install qilinmagan
+    logic/
+      InvertedConditionOrWrongBooleanCausesOppositeBehavior.md  # teskari shart, jim noto'g'ri natija
+      UsedWrongVariableOrShadowedNameSilentBug.md               # noto'g'ri o'zgaruvchi / shadowing
+      OffByOneErrorInLoopIndexOrSlice.md                        # off-by-one loop/slice
+    refactor/
+      ChangedSignatureOrTypeForgotToUpdateCallSites.md      # signature o'zgardi, call site qoldi
+    attention/
+      FixedSymptomInsteadOfRootCause.md                     # simptom yashirildi, ildiz qoldi
+      ClaimedFixedWithoutActuallyRunningOrVerifying.md      # tekshirmasdan "tuzatildi" deb aytish
+      RewroteWorkingCodeUnrequestedWhileFixingSomethingElse.md  # ishlayotgan kodni so'ralmasdan qayta yozish
+      AnsweredDifferentQuestionThanAsked.md                 # so'ralgan savolga emas, boshqasiga javob
+      HardcodedValueInsteadOfConfigOrParameter.md           # hardcode qilish (URL, kalit, limit)
+    security/
+      LoggedOrReturnedSecretOrSensitiveData.md              # maxfiy ma'lumotni log/qaytarish
 ```
 
 Skillar ataylab **juda tor va bitta nuqtaga qaratilgan**: har biri faqat
