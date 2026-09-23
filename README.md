@@ -81,18 +81,55 @@ skills/
       UnhandledPromiseRejectionCrashMissingTryCatchAroundAwait.md
       AsyncRaceConditionDependentTasksStartedInParallelWithPromiseAll.md
       ForgotToAwaitInMapForEachOrThenChain.md               # map/forEach ichida await unutilgan
+      RaceConditionSharedStateWithoutLockOrQueue.md         # shared state parallel o'zgaradi
+      AsyncFunctionNotMarkedAsyncButUsesAwait.md            # await bor, async yo'q
+      FloatingPromiseNotAwaitedOrReturned.md                # floating promise — chaqirilgan, kutulmagan
+      ThenWithoutCatchOrFinallyResourceLeak.md              # .then bor, .catch/finally yo'q
+      AsyncErrorInFireAndForgetNotLogged.md                 # fire-and-forget xatosi log qilinmagan
+      PromiseAllSettledNeededButUsedAll.md                  # all o'rniga allSettled kerak edi
+      AwaitInLoopSequentialWhenParallelPossible.md          # loop ichida await — parallel mumkin edi
+      MissingAbortControllerForFetchCancellation.md         # fetch bekor qilinmagan (AbortController)
     null/
       CannotReadPropertiesOfUndefinedOrNullTypeErrorDiagnosis.md
       FalsyZeroOrEmptyStringWronglyTreatedAsMissingValueBug.md
     react/
       ReactDirectStateMutationDoesNotTriggerRerender.md     # state'ni to'g'ridan-to'g'ri mutate
       ReactMissingKeyPropInListCausesWrongUpdate.md         # ro'yxatda key yo'q yoki indeks
+      ReactUseEffectMissingOrWrongDependencyArray.md        # useEffect deps noto'g'ri / yo'q
+      ReactStaleClosureInEventHandlerOrCallback.md          # stale closure handler/callback'da
+      ReactStateUpdateDuringRenderOrWrongPhase.md           # render paytida setState / side-effect
+      ReactConditionalHookCallBreaksRulesOfHooks.md         # hook if/loop/return ichida
+      ReactKeyUsingIndexWhenListCanReorder.md               # key={index} reorder da xavfli
+      ReactUncontrolledToControlledInputWarning.md          # uncontrolled → controlled input
+      ReactForgotCleanupInUseEffectSubscription.md          # useEffect cleanup unutilgan
     deps/
       PackageUsedButNotInstalledOrNotInPackageJson.md       # paket ishlatilgan, lekin install qilinmagan
+      WrongPackageVersionOrPeerDependencyConflict.md        # noto'g'ri versiya / peer conflict
+      ImportPathWrongOrCaseSensitiveMismatch.md             # import yo'li / case mismatch (Linux)
+      ForgotToAddTypesPackageForTypeScript.md               # @types paketi o'rnatilmagan
     logic/
       InvertedConditionOrWrongBooleanCausesOppositeBehavior.md  # teskari shart, jim noto'g'ri natija
       UsedWrongVariableOrShadowedNameSilentBug.md               # noto'g'ri o'zgaruvchi / shadowing
       OffByOneErrorInLoopIndexOrSlice.md                        # off-by-one loop/slice
+      EmptyCatchOrSwallowedErrorHidesRealProblem.md             # bo'sh catch — xatoni yutish
+      ComparedWithEqualsWhenStrictOrTypeCoercionBug.md          # == vs === tip majburlash
+      TruthyCheckTreatsValidFalsyAsMissing.md                   # if(value) / || 0 va "" ni yo'qotadi
+      MutatedInputArgumentOrSharedObjectUnexpectedly.md         # argument/shared obyektni mutate
+      StringConcatInsteadOfTemplateOrNumberCoercion.md          # + bilan string concat / raqam chalkashuvi
+      IncorrectNullishVsFalsyChoiceLeadsToWrongDefault.md       # ?? vs || noto'g'ri default
+      ArrayMethodOnNonArrayOrUndefined.md                       # .map/.filter non-array da
+      LoopVariableClosureCaptureWrongValue.md                   # loop o'zgaruvchisi closure'da
+      ObjectReferenceEqualityInsteadOfDeepCompare.md            # obyekt === referens, qiymat emas
+      DivisionByZeroOrModuloWithoutGuard.md                     # 0 ga bo'lish / modulo guard yo'q
+      InfiniteLoopMissingTerminationCondition.md                # cheksiz loop — to'xtash sharti yo'q
+      TypeCoercionInComparisonOrArithmeticUnexpected.md         # tip majburlash solishtirish/arifmetikada
+      DateTimezoneNaiveComparisonBug.md                         # sana timezone e'tiborsiz
+      RegexCatastrophicBacktrackingOrWrongPattern.md            # regex noto'g'ri / catastrophic backtracking
+      NaNPropagatesSilentlyFromInvalidNumberParse.md            # NaN parse dan jim tarqaladi
+      WrongOperatorPrecedenceOrMissingParentheses.md            # operator precedence / qavs yo'q
+      ShallowCopyWhenDeepCopyNeeded.md                          # shallow copy — deep kerak edi
+      FloatingPointPrecisionComparisonBug.md                    # floating point === solishtirish
+      StringIndexOutOfBoundsOrSliceBeyondLength.md              # indeks/slice chegaradan tashqari
     refactor/
       ChangedSignatureOrTypeForgotToUpdateCallSites.md      # signature o'zgardi, call site qoldi
     attention/
@@ -101,8 +138,31 @@ skills/
       RewroteWorkingCodeUnrequestedWhileFixingSomethingElse.md  # ishlayotgan kodni so'ralmasdan qayta yozish
       AnsweredDifferentQuestionThanAsked.md                 # so'ralgan savolga emas, boshqasiga javob
       HardcodedValueInsteadOfConfigOrParameter.md           # hardcode qilish (URL, kalit, limit)
+      CopiedCodeWithoutAdaptingToExistingStyleOrContext.md  # kodni ko'chirib, uslubga moslashtirmaslik
+      DidNotReadExistingCodeBeforeChanging.md               # mavjud kodni o'qimasdan o'zgartirish
+      LeftDebugCodeOrTemporaryHackInFinalVersion.md         # debug/temporary kodni qoldirib ketish
+      OverEngineeredSolutionWhenSimpleFixEnough.md          # oddiy joyda ortiqcha murakkablik
+      IgnoredErrorFromPromiseOrCallbackSilently.md          # promise/callback xatosini e'tiborsiz qoldirish
+      AssumedHappyPathOnlyNoEdgeCaseHandling.md             # faqat happy path, edge case yo'q
+      ChangedTooManyFilesAtOnceWithoutClearPlan.md          # rejasiz ko'p faylni bir yo'la o'zgartirish
+      DidNotCheckReturnValueOrStatusCode.md                 # return/status tekshirilmagan
+      ReintroducedPreviouslyFixedBugWhileEditing.md         # avval tuzatilgan bug'ni qayta kiritish
+      ToldUserToRunCommandWithoutExplainingWhyOrWhatItDoes.md # buyruq berish, tushuntirmaslik
+      GaveIncompleteAnswerStoppedHalfway.md                 # javob yarim yo'lda to'xtagan
+      SuggestedDeprecatedApiOrOutdatedPattern.md            # deprecated API / eskirgan pattern
+      UsedPlaceholderOrFakeDataInProductionPath.md          # placeholder/fake data production yo'lida
+      IgnoredUserConstraintsOrExplicitRequirements.md       # foydalanuvchi cheklovi e'tiborsiz
+      CopiedStackOverflowAnswerWithoutUnderstanding.md      # SO/namuna kodni tushunmasdan ko'chirish
+      DidNotVerifyFixAgainstOriginalErrorMessage.md         # tuzatishni asl xato bilan tekshirmaslik
+      MixedTwoDifferentApproachesInOneSolution.md           # ikki xil yondashuvni aralashtirish
+      AnsweredWithCodeThatDoesNotCompileOrRun.md            # berilgan kod ishga tushmaydi
+      ProvidedSolutionForWrongLanguageOrFramework.md        # noto'g'ri til/framework da yechim
+      IgnoredExistingTestsOrBrokeThemWithoutUpdating.md     # testlarni e'tiborsiz qoldirish/sindirish
     security/
       LoggedOrReturnedSecretOrSensitiveData.md              # maxfiy ma'lumotni log/qaytarish
+      SqlStringConcatenationInjectionRisk.md                # SQL string concat — injection
+      HardcodedSecretInSourceOrCommittedEnv.md              # secret kodda yoki commit qilingan .env
+      EvalOrDynamicCodeExecutionFromUserInput.md            # eval/dynamic code user input dan
 ```
 
 Skillar ataylab **juda tor va bitta nuqtaga qaratilgan**: har biri faqat
