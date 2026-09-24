@@ -101,6 +101,27 @@ alohida so'rov yuborish kerak (masalan katta faylni push qilishda).
 - `422` — validatsiya xatosi (masalan fayl PUT qilishda eski `sha` berilmagan):
   avval `GET contents` bilan joriy `sha` ni ol, keyin `PUT` ga qo'sh.
 
+## 5. Git orqali ishlash (clone → tahrir → commit → push)
+Bir nechta fayl yoki repo ichida ishlash uchun API emas, git qulayroq.
+Hamma narsa `~/Claude/work` ichida bo'ladi (butun ish `~/Claude` ichida):
+```bash
+mkdir -p ~/Claude/work && cd ~/Claude/work
+GIT_ASKPASS="$HOME/.gh-askpass.sh" GIT_TERMINAL_PROMPT=0 git clone -q https://github.com/mrdevs2011/REPO.git
+cd REPO        # tahrirla, sinab ko'r
+git add -A && git -c user.name="MR" -c user.email="mrdevs2011@users.noreply.github.com" commit -q -m "..."
+GIT_ASKPASS="$HOME/.gh-askpass.sh" GIT_TERMINAL_PROMPT=0 git push -q origin HEAD:main
+```
+- `.gh-askpass.sh` tokenni o'zi `~/.gh-mrtoken.txt` dan oladi — buyruqda va
+  chiqishda token ko'rinmaydi. Remote URL doim tokensiz (`https://github.com/...`);
+  tokenni `.git/config` ga yozma.
+- Private repo clone va push `hard_write` bo'ladi: `confirmed:true` kerak
+  (MR so'ragan bo'lsa o'rinli).
+- Branch nomini oldindan bil: `git rev-parse --abbrev-ref HEAD`.
+- CMMGH tokeni (`get_upload_token`) faqat `uploads` uchun. Loyiha repo'sida
+  `403 Permission denied` chiqsa, uni ishlatib ko'rma — `.gh-askpass.sh` ishlat.
+- Push tekshirilgach (`git status -sb` da `main...origin/main`) ish papkasini
+  `instruction.md` dagi `~/Claude` tozalash qoidasiga ko'ra tozala.
+
 ## Xulosa
 - `bash ~/.gh-api.sh METHOD /path [BODY]` — GitHub bilan MR nomidan ishlash.
 - Token hech qachon ko'rinmaydi (skript avtomatik maskalaydi).
