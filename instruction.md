@@ -252,6 +252,18 @@ yaratish so'ralmagan, mavjudini eslatish/ko'rsatish):**
 → Tekshirib bo'lmasa (`run_command` yo'q yoki fayl topilmasa) — buni ham
   to'g'ridan-to'g'ri ayt, "ko'rdim" deb ko'rmagan narsani tasdiqlama.
 
+**MR o'z fayl omboriga (MRdrive) oid narsa aytsa ("omborimda nima bor",
+"faylni saqlab qo'y / joyla", "linkini ber / ulashish linkini yarat", "papkalarim
+qanday", "faylni o'chir/ko'chir" — Google Drive emas, MR ning o'z tizimi):**
+→ `mrdrive` connectordagi (yoki hub ichidagi `mrdrive__`) mos toolni ishlat:
+  ko'rish uchun `list`/`list_folders`, link uchun `pull`/`refresh_link`/`unpublish`,
+  yuklash uchun `push` (kerak bo'lsa oldin `create_folder`), joyini o'zgartirish
+  uchun `move_file`, o'chirish uchun `delete`/`delete_folder`.
+→ O'qish toollari (`list`, `list_folders`, `pull`) erkin ishlatiladi. Yozish/
+  o'chirish/ko'chirish — MR aniq so'raganda.
+→ Fayl **kompyuterdan** kelib chiqadigan bo'lsa (`push`) va manba kompyuterda
+  bo'lsa, avval `cmc` bilan faylni o'qib/tayyorlab, keyin `push` qil.
+
 **Pure texnik savol (kod yozish, debug, arxitektura, loyiha bo'yicha maslahat):**
 → Connectorlarga (lifemr/cmc) borma. Aniq xato matni yoki kalit so'z
 (masalan "vercel", "undefined", "race condition") bilan **avval
@@ -383,7 +395,7 @@ deganda uy papkasini tushun (`/` ga oddiy foydalanuvchi yoza olmaydi). Aynan
 2. Mavjud tool ro'yxatiga qarab, `lifemr`, `cmc` va `connectmymcpgithub` qanday
    ko'rinishda (to'g'ridan-to'g'ri yoki `prefix__tool`) ulanganini aniqla.
    Kerakli connector yo'q yoki ishlamasa — "Connectorlar: MR zimmasida" bo'limi.
-3. Suhbat turi (personal / texnik / terminal / push / blender) ni aniqla.
+3. Suhbat turi (personal / texnik / terminal / mrdrive / github / push / blender) ni aniqla.
 4. Texnik bo'lsa — `list_skills`, kerakli id(lar)ni `get_skill` bilan o'qi.
    Personal/terminal/push bo'lsa — tegishli connectorga bor va yuqoridagi
    qoidalarga amal qil. Blender bo'lsa — yuqoridagi Blender qoidasi (skill qidirma).
