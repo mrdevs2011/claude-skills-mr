@@ -1,7 +1,7 @@
 {
   "functions": {
     "api/index.js": {
-      "includeFiles": "{instruction.md,skills/**}"
+      "includeFiles": "{instruction.md,style.md,skills/**}"
     }
   },
   "rewrites": [
