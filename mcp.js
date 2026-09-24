@@ -25,6 +25,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT = Number(process.env.PORT || 8788);
 const TOKEN = process.env.TOKEN || "H7RLjWiiZm1lh0sSSrSytQS4h-KDnZU_";
 const INSTRUCTION_FILE = process.env.INSTRUCTION_FILE || path.join(__dirname, "instruction.md");
+const STYLE_FILE = process.env.STYLE_FILE || path.join(__dirname, "style.md");
 const SKILLS_DIR = process.env.SKILLS_DIR || path.join(__dirname, "skills");
 
 // authorize bosqichida berilgan bir martalik "code" -> redirect_uri xaritasi.
@@ -162,6 +163,14 @@ const TOOLS = [
     inputSchema: { type: "object", properties: {} },
   },
   {
+    name: "get_style",
+    description:
+      "style.md faylining hozirgi to'liq matnini qaytaradi (har safar diskdan qayta o'qiladi). " +
+      "Foydalanuvchi bilan qanday gaplashish, qanday ohangda bo'lish kerakligi shu yerda — " +
+      "har suhbat boshida get_instructions'dan keyin majburiy o'qiladi.",
+    inputSchema: { type: "object", properties: {} },
+  },
+  {
     name: "list_skills",
     description:
       "skills/ papkasidagi barcha skill fayllarning katalogini qaytaradi (id + qisqa tavsif, to'liq matnsiz). " +
@@ -210,6 +219,18 @@ async function handleToolCall(name, args = {}) {
     } catch (err) {
       return {
         content: [{ type: "text", text: `instruction.md o'qib bo'lmadi: ${err.message}` }],
+        isError: true,
+      };
+    }
+  }
+
+  if (name === "get_style") {
+    try {
+      const text = await readFile(STYLE_FILE, "utf8");
+      return { content: [{ type: "text", text }] };
+    } catch (err) {
+      return {
+        content: [{ type: "text", text: `style.md o'qib bo'lmadi: ${err.message}` }],
         isError: true,
       };
     }
