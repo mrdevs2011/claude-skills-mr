@@ -269,6 +269,21 @@ avtomatik javob emas!):**
     repo ekanini aniqlay olmadim) — qaysi repo'ga push qilay?" Taxmin qilib
     yangi repo yaratib yubormang yoki `uploads`da qoldirib "push qildim" deb
     aytma — bu chala bajarilgan hisoblanadi.
+→ **"push qil" hech qachon `uploads`ga push qilishni anglatmaydi.** `uploads`
+  — markaziy ish maydoni (central workspace): sandbox'dagi fayl kompyuterga
+  yetib olguncha turadigan vaqtinchalik joy, xolos. U "push qilingan joy"
+  emas. `uploads`ga tashlab "push qildim" deb aytish — chala ish.
+→ **Loyiha repo'siga push tartibi (sandbox'da o'zgargan fayllar bo'lsa):**
+  1. Fayllarni/zip'ni `uploads` orqali kompyuterga tushir (`~/.uploads-pull.sh`),
+     shunda `uploads` yana bo'sh qoladi.
+  2. Kompyuterda loyiha repo'sini clone qil va o'zgargan fayllarni farq
+     bo'yicha tekshir (`diff -rq`) — nima o'zgarganini aniq bil, repo'dagi
+     boshqa fayllarni bosib ketma.
+  3. Commit + push: token kompyuterda qoladi
+     (`GIT_ASKPASS=~/.gh-askpass.sh git push`, yoki `~/.gh-api.sh`). Push
+     `hard_write` bo'lgani uchun `confirmed:true` kerak — MR push so'ragani
+     uchun bu o'rinli.
+  4. Natijani ayt: repo nomi, commit hash, qaysi fayllar o'zgargani.
 → Agar MR aniq "uploads'ga tashla" yoki "kompyuterimga tushirib qo'y" desa —
   shundagina to'g'ridan-to'g'ri `connectmymcpgithub` connectorini (yoki hub
   ichidagi `connectmymcpgithub__`) ishlat. Tartib: pastdagi "CMMGH: push
@@ -363,11 +378,16 @@ bash qiladi.
 - `run_command`ga yuboradigan buyruq matnida tokenni **literal string**
   sifatida yozganingda ham (masalan `T='github_pat_...'`), bu butun buyruq
   foydalanuvchiga (tool chaqiruvi sifatida) ko'rinadi — bu ham oshkor qilish
-  hisoblanadi. Iloji boricha bitta chaqiruvda клон+push qilib, tokenning
+  hisoblanadi. Iloji boricha bitta chaqiruvda clone+push qilib, tokenning
   ko'rinish oynasini qisqart. Push tugagach javobda buyruqning o'zini ham
   qayta ko'rsatma (faqat natija: fayl nomi, commit hash, repo link — yetarli).
 - Buyruq chiqishida token ko'rinib qolsa, `sed 's/github_pat_[A-Za-z0-9_]*/***/g'`
   bilan yashir — bu ham javobga, ham keyingi buyruqlarga tegishli.
+- Sandbox'da token faqat `uploads` ko'prigi uchun kerak. Loyiha repolariga
+  push/commit uchun `get_upload_token` chaqirma — kompyuterdagi
+  `~/.gh-askpass.sh` / `~/.gh-api.sh` ishlat: token u yerda qoladi va
+  chatda hech qachon ko'rinmaydi. Token ko'rinadigan yo'l qancha kam
+  ishlatilsa, shuncha xavfsiz.
 - Tokenni instruction, skill yoki memory fayllariga yozma.
 - Token faqat `uploads` repo uchun. Boshqa repolarga ishlatishga urinma
   (boshqa repolar uchun `~/.gh-api.sh` / `github-ishlatish` skill bor).
