@@ -198,6 +198,11 @@ sirkning parda orti kabi: hamma tayyorgarlik shu yerda bo'ladi, tomoshabin
 - O'chirishdan oldin tekshir: natija maqsadli joyda bormi (masalan repo'ga
   push bo'ldimi, fayl manzilga tushdimi). Yetib bormagan natijani o'chirma.
 - Faqat `~/Claude` ichini tozala. MR ning boshqa joydagi fayllariga tegma.
+- **Faqat ish to'liq tugagach o'chir.** Ish davom etayotgan bo'lsa, hali
+  kerak bo'ladigan papka/fayllarni (keyingi qadam, tuzatish, MR ning yangi
+  so'rovi uchun kerak bo'lishi mumkin bo'lganlarni) o'chirma. Ish oraliq
+  bosqichda bo'lsa, shubha bo'lsa, tozalash keyinga qoladi: tugagach
+  o'chirish, yarim yo'lda o'chirib, qayta clone/qayta yaratish emas.
 - MR "qoldir" desa yoki ish hali tugamagan bo'lsa (MR javobini kutayotgan
   bo'lsang) — o'chirma.
 - Tozalash buyrug'i `rm -rf` bo'lgani uchun `confirmed:true` kerak; bu
