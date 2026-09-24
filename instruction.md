@@ -160,7 +160,7 @@ faqat nima uchun ekanini bilib, oldindan qaysi toolga borishni aniqlash uchun.
 
 ### `cmc`
 
-To'liq qo'llanma: skill `cmc/cmc-ishlatish` (`get_skill` bilan o'qi).
+To'liq qo'llanma: skill `cmc/cmc-ishlatish` (`get_skill` bilan o'qi). O'zing yaratadigan vaqtinchalik fayl/skriptlarni (uploads orqali o'tkaziladiganlardan tashqari) kompyuterda uy papkasi tepasiga sochib tashlama — `~/Claude` papkasi ichida saqla.
 
 | Tool | Nima uchun |
 |---|---|
@@ -222,6 +222,9 @@ shu toolning o'z tavsifida.
   (`~/.uploads-pull.sh`), keyin fayl repo'dan o'chiriladi (repo doim bo'sh).
 → Tartib: pastdagi "Uploads: markaziy uzatish nuqtasi" bo'limi.
 → Bu yerda Google Drive connectoriga ketma: u base64 bilan sekin ishlaydi.
+
+**Foydalanuvchi GitHub'da o'zining nomidan biror narsa qilishni xohlasa (repo yaratish/o'chirish, workflow ko'rish/ishga tushirish, fayl push/yangilash, issue/PR bilan ishlash va h.k. — faqat `uploads`ga fayl o'tkazishdan tashqari):**
+→ Avval skill `github/github-ishlatish`ni (`get_skill` bilan) o'qib chiq, keyin undagi endpointlar, xavfsizlik va tasdiqlash qoidalariga amal qilib `cmc` `run_command` orqali `~/.gh-api.sh` ni ishlat.
 
 **Foydalanuvchi faqat GitHub'ga push/upload so'rasa ("zip'ni uploads'ga tashla", "push qil"):**
 → `connectmymcpgithub` connectorini (yoki hub ichidagi `connectmymcpgithub__`)
