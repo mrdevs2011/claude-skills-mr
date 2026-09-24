@@ -11,6 +11,37 @@ qachon ko'rmaydi**, chunki skript javobdagi har qanday token-ko'rinishidagi
 qatorni (`github_pat_...`, `ghp_...`, `gho_...`, `ghs_...`) avtomatik `***`
 bilan almashtiradi.
 
+## 0. Avval hal qil: token KERAKMI? (adaptiv, muhim)
+
+Token (`~/.gh-api.sh`) har doim ishlatilmaydi — faqat aynan kerak bo'lganda.
+Claude o'zi hal qiladi, MR dan so'ramaydi:
+
+**Token KERAK EMAS** (token'siz, oddiy `git clone`/ochiq so'rov bilan bajar):
+- Ochiq (public) repo'ni clone/pull qilish, o'qish, fayl ko'rish — token
+  shart emas: `git clone https://github.com/USER/REPO.git`.
+- Public GitHub API so'rovlari (ochiq repo ma'lumoti, ochiq user profili,
+  ochiq issue/PR ro'yxati o'qish) — token'siz oddiy so'rov yetarli.
+- Natija MR ning shaxsiy hisobiga bog'liq bo'lmasa va yozish/o'zgartirish
+  talab qilinmasa.
+
+**Token KERAK** (`~/.gh-api.sh` yoki token bilan autentifikatsiya ishlat):
+- So'rov aniq MR **nomidan** bajarilishi kerak bo'lsa — "mening nomimdan
+  qil", "mening hisobimda", "o'zim qilganday" kabi ma'no anglashilsa.
+- Yozish/o'zgartirish amali: repo yaratish/o'chirish, fayl push/yangilash,
+  workflow ishga tushirish, issue/PR ochish/yopish, repo sozlamalarini
+  o'zgartirish.
+- MR ning **private** repo yoki private ma'lumotiga kirish kerak bo'lsa.
+- Public so'rov rate-limit'ga uchrasa (60/soat) va MR autentifikatsiyalangan
+  limit (5000/soat) kerak bo'lsa.
+
+**Qoida:** ishonchli bo'lmasa — avval token'siz sinab ko'r (masalan oddiy
+`git clone` yoki token'siz `curl`). Ishласа va natija public/o'qish bilan
+cheklangan bo'lsa, shu bilan tugat. Faqat yuqoridagi "token kerak" holatlariga
+to'g'ri kelsa yoki token'siz urinish yetarli bo'lmasa (401/403/404-private,
+yoki rate limit), keyingi qadamda token'ga o't. MR ga nima uchun token
+ishlatilganini (yoki ishlatilmaganini) alohida tushuntirib o'tirish shart
+emas — faqat natijani ayt.
+
 ## 1. Qanday chaqiriladi
 `cmc` connectordagi `run_command` orqali, kompyuterda:
 ```bash
