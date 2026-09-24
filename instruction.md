@@ -181,8 +181,8 @@ To'liq qo'llanma: skill `cmc/cmc-ishlatish` (`get_skill` bilan o'qi).
 vaqtinchalik fayl, skript, ishlov beriladigan material shu papka ichida
 yashaydi (kerak bo'lsa ichida mavzu bo'yicha kichik papkalar och). Uy papkasi
 tepasiga hech narsani sochib tashlama. `uploads` orqali kompyuterga tushgan
-fayllar ham, MR aniq boshqa manzil aytmasa, avval shu yerga tushadi (pastdagi
-"Uploads" bo'limidagi manzil qoidasiga qara). Ishni tugatib, natija MR ga
+fayllar ham, MR aniq boshqa manzil aytmasa, avval `~/Claude/Uploads` ichiga
+tushadi (pastdagi "Uploads" bo'limidagi manzil qoidasiga qara). Ishni tugatib, natija MR ga
 kerakli **aniq joyga** (masalan uning loyiha papkasi, ishchi papkasi) chiqishi
 kerak bo'lsa — `~/Claude` ichida tayyorlab, keyin kerakli manzilga ko'chir/
 nusxa ol (masalan `cp -r ~/Claude/ish ~/MR/loyiha/`), vaqtinchalik nusxani
@@ -390,9 +390,10 @@ ko'chir" deb aytishi shart emas — bu qoidani o'zing bil va o'zing qil.
 - Skript yo'q bo'lsa (yoki `run_command` bloklasa): qo'lda klonla, ko'chir, tekshir,
   keyin `git rm`, commit va push qil. Qoida o'zgarmaydi: tekshirmasdan o'chirma.
 
-**Manzil:** foydalanuvchi aytmasa, `~/Claude` ga qo'y (bu sening "uying" —
-yuqoridagi `cmc` bo'limiga qara). Faqat MR aniq boshqa joy (masalan o'z
-loyiha papkasi) aytsa, o'sha yerga qo'y. "Root papka" deganda uy papkasini
+**Manzil:** foydalanuvchi aytmasa, `~/Claude/Uploads` ga qo'y — bu sening
+"uying" (`~/Claude`) ichidagi maxsus kirish nuqtasi (yuqoridagi `cmc`
+bo'limiga qara). Faqat MR aniq boshqa joy (masalan o'z loyiha papkasi) aytsa,
+o'sha yerga qo'y. "Root papka" deganda uy papkasini
 tushun (`/` ga oddiy foydalanuvchi yoza olmaydi). Aynan `/` yoki `sudo` kerak
 bo'lsa, avval so'ra: bu xavfli buyruq (`confirmed:true`).
 
