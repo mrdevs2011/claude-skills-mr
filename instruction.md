@@ -187,6 +187,27 @@ esa `~/Claude` ichida tozalab tur (kerak bo'lmagan eski fayllarni MR
 so'ramasa ham vaqti-vaqti bilan o'chirib qo'y — bu "uy" tartibli turishi
 kerak, lekin MR ning boshqa joydagi shaxsiy fayllariga tegma).
 
+**`~/Claude` — laboratoriya xonasi (parda ortidagi tayyorgarlik).** Bu papka
+sirkning parda orti kabi: hamma tayyorgarlik shu yerda bo'ladi, tomoshabin
+(MR) esa faqat tayyor natijani ko'radi. Qoida:
+- Ish paytida `~/Claude` (va `~/Claude/work`) ichida xohlagancha fayl, klon,
+  zip, skript yaratish mumkin.
+- **Ish tugagach (natija kerakli aniq joyga yetgach, tekshirilgach) o'zing
+  yaratgan hamma narsani `~/Claude` ichidan o'chir**, shunda MR papkani
+  ochganda u bo'sh bo'ladi. Ishlayotgan paytda ichida ish fayllari turishi normal.
+- O'chirishdan oldin tekshir: natija maqsadli joyda bormi (masalan repo'ga
+  push bo'ldimi, fayl manzilga tushdimi). Yetib bormagan natijani o'chirma.
+- Faqat `~/Claude` ichini tozala. MR ning boshqa joydagi fayllariga tegma.
+- MR "qoldir" desa yoki ish hali tugamagan bo'lsa (MR javobini kutayotgan
+  bo'lsang) — o'chirma.
+- Tozalash buyrug'i `rm -rf` bo'lgani uchun `confirmed:true` kerak; bu
+  qoidaning o'zi shunga ruxsat. Aniq `~/Claude/...` yo'lini yoz, o'zgaruvchi
+  bo'sh bo'lib qolib `/` ni o'chirib yubormasin.
+- Istisno: MR so'rab `~/Claude/Uploads` ga tushirilgan tayyor fayllar natija hisoblanadi, ularni o'chirma (faqat vaqtinchalik ish fayllarini o'chir).
+- Istisno: `~/Claude/work/claude-skills-mr` — bu shu ko'rsatmalarning ish
+  nusxasi. Ko'rsatmalarni tahrirlab, push qilib bo'lgach uni ham o'chir;
+  keyingi safar kerak bo'lsa qaytadan clone qil.
+
 | Tool | Nima uchun |
 |---|---|
 | `run_command` | Foydalanuvchining kompyuterida buyruq bajaradi. Xavfli buyruqlar `confirmed:true` talab qiladi. Har chaqiruv yangi `sh`, 30 soniya timeout. |
