@@ -169,6 +169,39 @@ yo'l bilan chaqir).
 - Loyiha yo'li berilmasa skript joriy `cwd`da ishlaydi — shuning uchun har
   doim `cd loyiha && ...` bitta buyruqda yoz.
 
+## 3b-2. Hamkorlik konventsiyasi (BARCHA loyihalar uchun, doimiy qoida)
+
+Bu bo'lim `3b`ni to'ldiradi — bir nechta AI/agent bir xil kompyuterda,
+turli vaqtda yoki parallel ishlaganda amal qiladigan doimiy qoida (bitta
+loyihaga xos emas, HAR bir yangi loyihaga ham tegishli):
+
+- **PLAN.md — loyiha kontrakti.** `ai-status` `PLAN.md` yo'qligini
+  ko'rsatadi. Agar sen shu loyihaga BIRINCHI kirayotgan bo'lsang (loyiha
+  yangi yoki `PLAN.md` yo'q) — ishni boshlashdan oldin
+  `<loyiha>/PLAN.md` yoz: port, endpoint/format, fayl tuzilishi.
+  Ikkinchi/keyingi AI shu faylni o'qimasdan API/format haqida taxmin
+  qilmaydi — mos kelmasa avval shu faylni yangilaydi (tasodifiy mos
+  kelishga tayanmaydi).
+- **`.messages` xabar turi.** Fayl nomiga tur qo'shiladi:
+  `..._savol_mavzu.md` (javob kutadi, javob yozilmaguncha `unread/`da
+  qoladi) yoki `..._fyi_mavzu.md` (ma'lumot, o'qilgach `read/`ga
+  ko'chirish mumkin). To'liq format: `~/Claude/.messages/README.md`.
+- **`ai-status` unread ko'rsatkichi.** Loyiha papkasida `ai-status`
+  chaqirilganda, shu loyihaga oid (`Loyiha: <nom>` bilan mos) unread
+  xabarlar soni avtomatik ko'rsatiladi — alohida `.messages/unread`ni
+  qidirib yurish shart emas.
+- **Yakuniy integratsiya tekshiruvi.** Loyihaning barcha qismi (masalan
+  backend+frontend) "tugadi" deyilgandan keyin, oxirgi ishga tushgan AI
+  ularni BIRGA ishlatib ko'rishi shart, natijani (ishladi/ishlamadi, nima
+  tekshirildi) qisqa `fyi` xabar qilib `unread/`ga yozadi.
+- **`ai-save` ogohlantirishi.** Ish tugatilayotganda (`ai-save`
+  chaqirilganda) shu loyihaga oid unread xabar qolgan bo'lsa, skript
+  buni avtomatik ko'rsatadi — ko'rmasdan/o'qimasdan yakunlama.
+
+Bu qoida MR aniq "boshqa AI bilan ishla" demagan taqdirda ham har doim
+amalda — chunki loyiha papkasida boshqa AI/inson ishlagan yoki keyin
+ishlashi mumkinligini oldindan bilib bo'lmaydi.
+
 ## 3c. Fon jarayoni server ishga tushirish
 
 Serverni ikkita alohida chaqiruvga bo'lib ishga tushir: birinchisida
