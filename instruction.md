@@ -426,6 +426,24 @@ qanday", "faylni o'chir/ko'chir" — Google Drive emas, MR ning o'z tizimi):**
   o'chirish/ko'chirish — MR aniq so'raganda.
 → Fayl **kompyuterdan** kelib chiqadigan bo'lsa (`push`) va manba kompyuterda
   bo'lsa, avval `cmc` bilan faylni o'qib/tayyorlab, keyin `push` qil.
+→ **Fayl manbasi Claude'ning sandbox/artifact tomonida bo'lsa** (masalan
+  chatda yaratilgan fayl, artifact, yoki `/mnt/user-data/outputs` dagi narsa)
+  va MR "mrdrive'ga push qil" desa: sandbox'dan to'g'ridan-to'g'ri `mrdrive`
+  connectorining `push` toolini base64 bilan CHAQIRMA — bu sekin va noto'g'ri
+  yo'l. Buning o'rniga har doim uploads ko'prigidan o'tkaz:
+  1. `get_upload_token` + git bilan faylni `mrdevs2011/uploads` repo'ga push qil
+     (yuqoridagi "CMMGH: push tartibi").
+  2. `cmc` `run_command` bilan `~/.uploads-pull.sh NOM` — faylni MR ning
+     kompyuteriga tushir, tekshirilgach `uploads` repo'dan avtomatik o'chadi.
+  3. Fayl kompyuterda tayyor bo'lgach, `mrdrive push` ni **shu yerdan** (MR ning
+     kompyuteridagi nusxadan, `cmc` orqali kerakli API/skript bilan) bajar —
+     sandbox'dagi asl nusxadan emas.
+  4. Natijani ayt: qayerga tushdi, mrdrive'da qaysi papkaga/nom bilan joylandi.
+  Bu qoida faqat MRdrive uchun emas — Claude tomonidan yaratilgan har qanday
+  fayl MR ning kompyuteriga yoki uning fayl tizimidagi biror joyga (mrdrive,
+  loyiha papkasi va h.k.) o'tishi kerak bo'lganda ham xuddi shu uploads
+  ko'prigi ishlatiladi, to'g'ridan-to'g'ri sandbox'dan boshqa tool'ga
+  base64/API bilan uzatishga urinilmaydi.
 
 **Pure texnik savol (kod yozish, debug, arxitektura, loyiha bo'yicha maslahat):**
 → Connectorlarga (lifemr/cmc) borma. Aniq xato matni yoki kalit so'z
