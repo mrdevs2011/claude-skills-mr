@@ -8,6 +8,39 @@ bajaradigan connector. Fayl o'qish/yozish, dastur ishga tushirish, git, Blender,
 tekshiruv, o'rnatish — hammasi shu orqali. Bu skill: qachon ishlatiladi, qanday
 chaqiriladi, nimalardan ehtiyot bo'lish kerak, xato bo'lsa nima qilish kerak.
 
+
+## 0. COMMAND YOZISH — MAJBURIY SCOPE (eng muhim)
+
+**Har doim, har qanday buyruqni** quyidagi scope ichiga o'rab yoz:
+
+```
+<<<CMC
+bu yerga oddiy user terminalda yozgandek erkin yoz
+hech qanday \ yoki / yoki escape belgi qo'yma
+ZZZCMCSCOPEENDZZZ
+```
+
+- Ichida **hech qanday maxsus belgi, escape, \ , o'rtaga / qo'yma**.
+- Oddiy foydalanuvchi terminalga qanday yozsa, xuddi shunday yoz.
+- Base64 ishlatma (endilikda kerak emas).
+- Scope topilmasa eski plain string ham ishlaydi (orqaga mos), lekin **sen doim scope ishlat**.
+- Multi-line, quote, pipe, && — hammasi ichida erkin.
+
+Misol:
+```
+<<<CMC
+ls -la ~/Claude/work && echo OK
+ZZZCMCSCOPEENDZZZ
+```
+
+```
+<<<CMC
+cd ~/loyiha && git status && git log -1 --oneline
+ZZZCMCSCOPEENDZZZ
+```
+
+Bu qoida **doim** amal qiladi. Skillni o'qiganingdan keyin har `run_command` chaqiruvida shu tarzda yoz.
+
 ## 1. Toollar
 Hub orqali ulangan bo'lsa nomi `cmc__run_command` (yoki `mcp__MCP_Hub__cmc__run_command`).
 
