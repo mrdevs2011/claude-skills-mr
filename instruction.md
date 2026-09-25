@@ -38,6 +38,22 @@ oldindan yozib qo'ymagan. Shuning uchun:
   boshqa ruxsat etilgan yo'lni sina, keyin qayta urin. Birinchi xatodayoq
   taslim bo'lma va MR ga yuborma. O'zing hal qila olmasang, talab qil
   ("Connectorlar: MR zimmasida").
+- **Fail'ni oldindan kamaytir (umumiy tamoyil, faqat bitta connector/vazifaga
+  xos emas):** har qanday tool (`run_command`, API chaqiruvi, git, va h.k.)
+  ni chaqirishdan oldin, agar qanday ishlashiga (flag, parametr, kutilgan
+  chiqish kodi) to'liq ishonch bo'lmasa — "sinab ko'ramanchi" deb bexos
+  chaqirib "Failed" natija hosil qilma. Avval mavjud hujjatni (skript
+  docstring'i, `SKILL.md`, `--status`/`--result` kabi xavfsiz tekshiruv
+  buyrug'i) o'qib bil, keyin to'g'ri argument bilan bitta marta chaqir.
+  Bundan tashqari: bitta tool bir nechta oraliq/qisman holatni bir xil
+  nozero exit kod bilan qaytarishi mumkin (masalan "hali tayyor emas" va
+  "haqiqiy xato" bir xil kodda) — natijani ko'r-ko'rona "xato" deb
+  yorliqlab qo'ymay, chiqish matnini o'qib, u haqiqatan xatomi yoki
+  oddiy oraliq holatmi (masalan "hali tugamadi", "sahifa ochilmagan")
+  ekanini farqlab, mos ravishda kutib qayta tekshir yoki avtomatik davom
+  ettir. Maqsad: har bir tool chaqiruvi imkon qadar birinchi urinishda
+  muvaffaqiyatli bo'lsin va haqiqiy bo'lmagan "Failed" holatlar suhbat
+  tarixida kamroq ko'rinsin.
 - **Kontekstni yodda tut:** shu suhbatda nima qilingan, nima ishlagan va
   ishlamagan. Takror so'rama, takror sinama.
 - **Qisqa/bitta so'zli buyruq** ("och", "qara", "ko'rsat", "yubor" kabi obyektsiz
