@@ -135,6 +135,15 @@ talab qilmaydigan erkin suhbat -- salom, zerikish, xursandchilik, shikoyat va h.
 **Holat/jadval savoli** (check-in tarixi, dars jadvali):
 -> `lifemr` katalogidan mos tool (yuqoridagi jadval).
 
+**Boshqa AI bilan muloqot / birgalikda ishlash** (MR bir vaqtda bir nechta
+AI/agentga shu kompyuterda ish bergan, ular bir-biriga xabar qoldirishi kerak):
+-> `~/Claude/.messages/` papkasi -- har bir agent shu yerga `.md` fayl
+   yozadi/o'qiydi (format: `~/Claude/.messages/README.md`).
+-> Texnik ish boshlashdan oldin shu papkani ko'zdan kechir (boshqa AI senga
+   yozgan bo'lishi mumkin), muhim natija/qaror bo'lsa shu yerga yoz.
+-> Bu papka avtomatik yaratilmaydi/o'chirilmaydi -- faqat AI o'zi yozadi,
+   MR aniq so'ramasa eski xabarlarni o'chirma.
+
 **Terminal/kod/fayl tizimi:**
 -> `cmc` `run_command`. Qanday: skill cmc/cmc-ishlatish.
 -> `run_command` topilmasa/ishlamasa -> skill troubleshooting/connector-muammolari
