@@ -105,7 +105,7 @@ MR ning o'z fayl ombori (Google Drive emas). Fayllar web ilovada ham ko'rinadi.
 |---|---|
 | `list` / `list_folders` | Fayllar/papkalar ro'yxati. |
 | `pull` / `refresh_link` / `unpublish` | Ochiq link olish/yangilash/bekor qilish. |
-| `push` / `create_folder` | Yuklash (base64) / papka yaratish. |
+| `push` / `create_folder` | Yuklash (MCP base64 — faqat CLI ishlamasa) / papka. Kompyuterdagi fayl uchun: `mrdrive push <yo'l>`. |
 | `move_file` / `delete` / `delete_folder` | Ko'chirish / o'chirish. |
 O'qish toollari erkin. Yozish/o'chirish -- faqat MR aniq so'raganda.
 Kompyuterdan uzatish tartibi: **skill transfer/fayl-uzatish**.
@@ -149,8 +149,10 @@ borishi kerak bo'lsa va `cmc`/`run_command` mavjud bo'lsa — bu yo'lni o'zing
 tanla, foydalanuvchi "uploads'ga ko'chir" demasa ham.
 
 Katta/muhim faylni sandbox'dan to'g'ridan-to'g'ri boshqa connector tool'ga
-(masalan `mrdrive push`) base64 bilan yuborish SEKIN va NOZIK ishlaydi —
-buning o'rniga har doim avval kompyuterga tushir, keyin kompyuterdan davom et.
+(masalan MCP `mrdrive` `push` + content_base64) yuborish SEKIN va NOZIK ishlaydi —
+buning o'rniga har doim avval kompyuterga tushir, keyin kompyuterdan
+`mrdrive push <yo'l>` (lokal CLI) bilan davom et. Base64 ni tool argumentiga
+yozma — CLI o'zi qiladi.
 
 #### 2. CMMGH: sandbox → uploads repo
 
@@ -240,24 +242,35 @@ avtomatik uploads degani emas. Qadamlar:
 
 #### 5. MRdrive'ga uzatish
 
-MRdrive — MR ning o'z fayl ombori (Google Drive emas). Manba sandbox bo'lsa
-(chatda yaratilgan fayl/artifact) va manzil MRdrive bo'lsa: bu ham "manba
-sandbox, manzil kompyuter orqali" holati — orada `cmc` ko'prigi kerak.
+MRdrive — MR ning o'z fayl ombori (Google Drive emas).
 
-Yagona yo'l, ISTISNOSIZ: sandbox → uploads repo (bo'lim 2) → `run_command`
-bilan `~/.uploads-pull.sh` (bo'lim 3) → tekshirilgach uploads'dan o'chirilgan →
-kompyuterdan turib, kompyuterdagi fayldan o'qib (base64) `mrdrive push` bilan
-yakuniy joyga. Fayl qanchalik kichik yoki oddiy bo'lishidan qat'i nazar —
-sandbox'dan mrdrive'ga to'g'ridan-to'g'ri base64 bilan yuborish TAQIQLANADI,
-bosqichni "qisqartirish" yo'q. Sabab: sandbox MR kompyuteriga aloqasi yo'q
-izolyatsiya qilingan muhit — fayl faqat shu ko'prik orqali o'tsa, haqiqatan
-MR kompyuteriga tushgan hisoblanadi. Har safar "qanday o'tkazay" deb so'rash
-shart emas — bajar, qayerga tushganini bir jumlada ayt.
+**Asosiy qoida:** fayl ALLAQACHON kompyuterda bo'lsa — uploads'ga tegma,
+base64 ni tool argumentiga yozma. Faqat bitta CMC buyruq:
 
-MRdrive tool tanlash: ko'rish `list`/`list_folders` erkin. Yuklash `push`
-(kerak bo'lsa oldin `create_folder`). Fayl nomi noaniq bo'lsa avval `list` bilan
-eng mos nomzodni top (tanlaganingni ayt), faqat bir nechtasi teng mos kelsa
-so'ra. Papka aytilmasa: `list_folders`dan mavzuga mos papka top, topilmasa
+```bash
+mrdrive push /to'liq/yo'l/fayl.png [papka]
+```
+
+(`~/.local/bin/mrdrive` — lokal CLI: faylni o'zi o'qiydi, base64 qiladi,
+MCP endpointga yuboradi. Chatda/tool argumentida base64 KO'RINMAYDI.)
+
+Link kerak bo'lsa keyin:
+```bash
+mrdrive pull fayl.png
+```
+
+**Sandbox'dan kelgan fayl** (chatda yaratilgan / artifact) va manzil MRdrive:
+1. sandbox → uploads repo (bo'lim 2)
+2. `~/.uploads-pull.sh NOM` (bo'lim 3) — kompyuterga tushadi
+3. `mrdrive push ~/Claude/Uploads/NOM` (yoki tushgan manzil)
+
+Sandbox'dan `mrdrive` MCP tooliga to'g'ridan-to'g'ri `content_base64` yuborish
+TAQIQLANADI (sekin, nozik, chatni to'ldiradi). Kompyuterdagi CLI orqali bajar.
+
+MRdrive MCP tool'lari (`list`/`pull`/`delete`...) ko'rish/boshqarish uchun erkin.
+Yuklash uchun **afzal**: CMC + `mrdrive push`. MCP `push` toolini faqat CLI
+ishlamasa yoki kichik matn-fayl uchun ishlat.
+Fayl nomi noaniq bo'lsa avval `list` bilan eng mos nomzodni top. Papka aytilmasa
 root'ga yukla va qayerga qo'yganingni ayt.
 
 
