@@ -137,12 +137,14 @@ talab qilmaydigan erkin suhbat -- salom, zerikish, xursandchilik, shikoyat va h.
 
 **Boshqa AI bilan muloqot / birgalikda ishlash** (MR bir vaqtda bir nechta
 AI/agentga shu kompyuterda ish bergan, ular bir-biriga xabar qoldirishi kerak):
--> `~/Claude/.messages/` papkasi -- har bir agent shu yerga `.md` fayl
-   yozadi/o'qiydi (format: `~/Claude/.messages/README.md`).
--> Texnik ish boshlashdan oldin shu papkani ko'zdan kechir (boshqa AI senga
-   yozgan bo'lishi mumkin), muhim natija/qaror bo'lsa shu yerga yoz.
--> Bu papka avtomatik yaratilmaydi/o'chirilmaydi -- faqat AI o'zi yozadi,
-   MR aniq so'ramasa eski xabarlarni o'chirma.
+-> `~/Claude/.messages/unread/` va `.messages/read/` -- to'liq format:
+   `~/Claude/.messages/README.md`.
+-> **Har qanday texnik/cmc ishini boshlashdan oldin majburiy**:
+   `ls -la ~/Claude/.messages/unread` tekshir. Fayl bo'lsa -- o'qi, MR ga
+   qisqa ayt, keyin `read/` ga ko'chir (belgi = papka, fayl ochmasdan ham
+   "yangimi" bilinadi).
+-> Yangi xabar yozsang -- `unread/` ga yoz. Eski `read/` xabarni faqat MR
+   aniq so'raganda o'chir, bitta faylni qayta yozma -- javob uchun yangi fayl.
 
 **Terminal/kod/fayl tizimi:**
 -> `cmc` `run_command`. Qanday: skill cmc/cmc-ishlatish.
