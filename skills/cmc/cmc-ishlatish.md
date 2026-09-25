@@ -144,6 +144,27 @@ the password`. Bu xabarni ko'rsang:
 - **`pgrep -af 'server.py'` o'zini ham topadi** (buyruq matnida shu so'z bor).
   O'zini chiqarib tashlash uchun `pgrep -af '[s]erver.py'` yoz.
 
+## 3b. Loyihada ishlashda: `ai-status` / `ai-save` (avtomatik ishlat)
+
+Skriptlar: `~/Claude/.bin/ai-status` va `~/Claude/.bin/ai-save` (avval `~/bin`da
+edi, endi shu yerga ko'chirilgan — PATH'da bo'lmasligi mumkin, doim to'liq
+yo'l bilan chaqir).
+
+- **Loyiha papkasida texnik ish boshlaganda** (`~/Claude/work/<nom>` yoki MR
+  ko'rsatgan boshqa loyiha papkasi): MR alohida so'ramasa ham, avval
+  `cd <loyiha-yo'li> && ~/Claude/.bin/ai-status` ni chaqir — bu STATUS.md,
+  git holati va oxirgi commitlarni ko'rsatadi, shu orqali oldingi kontekstni
+  tiklaysan.
+- **Loyihada ish tugagach / muhim bosqich yakunlangach** (MR "tugatdik",
+  "shu yerda to'xtaymiz" desa, yoki katta qadam bajarilsa): MR alohida
+  so'ramasa ham
+  `cd <loyiha-yo'li> && ~/Claude/.bin/ai-save "nima qilindi" "keyingi qadam"`
+  ni chaqir — STATUS.md'ga yangi yozuv qo'shiladi.
+- Ikkalasi ham `unknown` risk darajasida — tasdiq kerak emas, lekin nima
+  qilganingni MR ga qisqa ayt.
+- Loyiha yo'li berilmasa skript joriy `cwd`da ishlaydi — shuning uchun har
+  doim `cd loyiha && ...` bitta buyruqda yoz.
+
 ## 4. Xavfsizlik: buyruq turlari
 cmc har buyruqqa `riskLevel` beradi.
 
