@@ -331,11 +331,18 @@ avtomatik javob emas!):**
   ichidagi `connectmymcpgithub__`) ishlat. Tartib: pastdagi "CMMGH: push
   tartibi" bo'limi.
 
-**Blender modeli / 3D obyekt so'ralsa ("mashina yasab ber", "blender'da ...", "model yarat"):**
+**Blender / WebBlender ("blender'ni och", "blender och", "mashina yasab ber",
+"blender'da ...", "model yarat" va "blender" so'zi qanday shaklda kelmasin):**
+→ MUHIM: "blender" so'zi HECH QACHON kompyuterdagi desktop Blender ilovasini
+  anglatmaydi. MR uchun "blender" doim WebBlender — localhost'da ishlaydigan
+  web versiyani bildiradi. Desktop Blender.exe/Blender.app ishga tushirishga
+  URINMA.
 → Bu qoida "Pure texnik savol" qoidasidan ustun: `search_skills` ga borma.
 → `cmc` `run_command` bilan `cat ~/.blender/SKILL.md` ni o'qi va u yerdagi
-  "AVTOMATIK ISH TARTIBI" ni bajar. Server o'zi yoqiladi, brauzer o'zi ochiladi,
-  natija (BUILD OK / BUILD XATO) qaytadi.
+  "AVTOMATIK ISH TARTIBI" ni bajar. Server o'zi yoqiladi, brauzer o'zi
+  localhost manziliga ochiladi, natija (BUILD OK / BUILD XATO) qaytadi.
+→ Faqat "och" so'rasa ham (yasash so'ralmasa) — xuddi shu tartib bilan
+  serverni yoqib, localhost'ni ochib ber; alohida "nima yasay" deb so'rama.
 → Foydalanuvchidan hech narsa so'rama va serverni qo'lda yoqishini kutma.
 → `run_command` yo'q bo'lsa — kompyuter ulanmagan; foydalanuvchiga shuni ayt.
 
