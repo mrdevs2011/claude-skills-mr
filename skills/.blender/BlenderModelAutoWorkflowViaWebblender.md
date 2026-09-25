@@ -32,14 +32,35 @@ tushadi, `server.py` uni `blender --background` bilan headless ishga tushirib
    `push.py` o'zi: server o'chiq bo'lsa yoqadi (tasodifiy port), sahifa yopiq
    bo'lsa brauzerda ochadi, kodni yuboradi (editor'ga tushadi, preview o'zi ochiladi)
    va build natijasini kutadi (24 soniyagacha).
-4. **Natijani o'qi** (matn + chiqish kodi):
+4. **Natijani o'qi** (matn + chiqish kodi). **MUHIM:** `push.py` chiqish kodi
+   0 dan boshqa bo'lsa ham (`exitCode: 3` yoki `ok: false`), bu HAR DOIM
+   haqiqiy xato degani emas — quyidagi ikkita holat ham xuddi shu kod (3) bilan
+   qaytadi va ikkalasi ham normal, kutilgan oraliq holat, "Failed" deb
+   ko'rsatilishiga qaramasdan:
    - `BUILD OK: N obyekt, M vertex, o'lcham x,y,z` (0): raqamlar mantiqiymi
      tekshir. Kutilganidan ortiq obyekt yoki katta o'lcham chiqsa, standart Cube
      o'chirilmagan bo'lishi mumkin (`--factory-startup` sahnada Cube bilan boshlanadi).
-   - `BUILD XATO: tur - xabar | qator: N` (2): xato matni, qator va maslahatga
-     qarab skriptni tuzat, qayta yubor. Ko'pi bilan 3 urinish, keyin xatoni MR ga ayt.
-   - `build hali tugamadi` (3): 10-15 soniya kutib `python3 ~/.blender/push.py --result`.
-   - `sahifa ochilmadi. Qo'lda och: URL` (1): MR ga shu URL ni ayt.
+   - `BUILD XATO: tur - xabar | qator: N` (2): haqiqiy xato. Xato matni, qator
+     va maslahatga qarab skriptni tuzat, qayta yubor. Ko'pi bilan 3 urinish,
+     keyin xatoni MR ga ayt.
+   - `build hali tugamadi` (3, `sahifa ochiq bo'lsa`): haqiqiy xato EMAS —
+     Blender hali render qilyapti. O'zing 10-15 soniya kutib (masalan `sleep 12`),
+     keyin `python3 ~/.blender/push.py --result` ni qayta chaqir. MR ga xato
+     sifatida ko'rsatma, oddiy "hali tugamadi" deb ich-ichingda hisobla.
+   - `sahifa hali ochilmagan. Qo'lda och: URL` (3, `push` chiqishida): haqiqiy
+     xato EMAS — kod yuborildi, faqat sahifa ochiq emas. **`push.py` brauzerni
+     avtomatik ochmaydi** (bu eski hujjatda va kodning o'zida `open_browser()`
+     funksiyasi bor-u, lekin `main()` uni chaqirmaydi — bilib qo'y, taxmin qilib
+     "o'zi ochadi" deb kutma). Shuning uchun bu holatda MR dan so'ramasdan,
+     xato deb ham hisoblamasdan, ketma-ket o'zing bajar:
+     ```bash
+     DISPLAY=:0 xdg-open http://localhost:PORT >/dev/null 2>&1 &
+     sleep 1
+     ```
+     keyin `push.py --status` bilan `sahifa ochiq: True` bo'lganini tasdiqla.
+     Shundan keyingina natijani (`BUILD OK/XATO`) tekshir. Bularning bari bitta
+     vazifa ichidagi ketma-ket qadamlar — MR ga alohida "ochib qo'yaymi?" deb
+     so'rash shart emas, avtomatik ish tartibining bir qismi.
 5. **MR ga qisqa javob:** tayyor, nima yasaldi (raqamlar), brauzerda ko'rsin.
    Chiroyliligini ko'ra olmaysan. MR "g'ildirak kichik" desa, skriptni o'zgartirib
    qayta yubor: editor'ga yangi kod o'zi tushadi.

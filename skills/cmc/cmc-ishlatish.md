@@ -58,6 +58,15 @@ Qachon ishlatilmaydi:
 - **`~` = `/home/muhamad`.** Kerak bo'lsa `$HOME` ishlat.
 - **Yashirin papkalar:** `ls` ularni ko'rsatmaydi, `ls -a` ishlat (masalan
   `~/.blender`).
+- **Flag/parametrni taxmin qilib sinama.** Notanish skript yoki dastur uchun
+  `--help`, `-h` kabi flag borligiga ishonch bo'lmasa, avval shu narsani
+  chaqirib "ko'raman" deb urinma — bu ko'pincha xato bilan qaytadi (`exitCode
+  != 0`) va bekorga "Failed" ko'rinishida qayd bo'ladi, xolos hech qanday
+  foyda bermaydi. Buning o'rniga avval `cat SKRIPT` yoki mos `SKILL.md`/
+  docstring bilan qanday chaqirilishini o'qib bil, keyin to'g'ri argument
+  bilan bitta marta chaqir. Maqsad: har bir `run_command` chaqiruvi birinchi
+  urinishdayoq muvaffaqiyatli bo'lishi kerak, "sinab ko'raman" rejimida
+  ishlatilmaydi.
 - **Kompyuter oddiy foydalanuvchi huquqida.** `/` ga yozib bo'lmaydi. "Root papka"
   deganda uy papkasini (`~`) tushun. `sudo` faqat aniq kerak bo'lsa va oldin MR dan
   so'rab.
