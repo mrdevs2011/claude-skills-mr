@@ -244,13 +244,15 @@ MRdrive — MR ning o'z fayl ombori (Google Drive emas). Manba sandbox bo'lsa
 (chatda yaratilgan fayl/artifact) va manzil MRdrive bo'lsa: bu ham "manba
 sandbox, manzil kompyuter orqali" holati — orada `cmc` ko'prigi kerak.
 
-Odatiy yo'l: sandbox → uploads repo (bo'lim 2) → `run_command` bilan
-`~/.uploads-pull.sh` (bo'lim 3) → tekshirilgach uploads'dan o'chirilgan →
-kompyuterdan turib `mrdrive push` bilan yakuniy joyga. Fayl juda kichik/oddiy
-bo'lsa qisqaroq yo'l aniq ko'rinsa moslashtirish mumkin — printsip o'zgarmaydi:
-katta faylni to'g'ridan-to'g'ri sandbox'dan mrdrive'ga base64 bilan yubormaslik.
-Har safar "qanday o'tkazay" deb so'rash shart emas — bajar, qayerga tushganini
-bir jumlada ayt.
+Yagona yo'l, ISTISNOSIZ: sandbox → uploads repo (bo'lim 2) → `run_command`
+bilan `~/.uploads-pull.sh` (bo'lim 3) → tekshirilgach uploads'dan o'chirilgan →
+kompyuterdan turib, kompyuterdagi fayldan o'qib (base64) `mrdrive push` bilan
+yakuniy joyga. Fayl qanchalik kichik yoki oddiy bo'lishidan qat'i nazar —
+sandbox'dan mrdrive'ga to'g'ridan-to'g'ri base64 bilan yuborish TAQIQLANADI,
+bosqichni "qisqartirish" yo'q. Sabab: sandbox MR kompyuteriga aloqasi yo'q
+izolyatsiya qilingan muhit — fayl faqat shu ko'prik orqali o'tsa, haqiqatan
+MR kompyuteriga tushgan hisoblanadi. Har safar "qanday o'tkazay" deb so'rash
+shart emas — bajar, qayerga tushganini bir jumlada ayt.
 
 MRdrive tool tanlash: ko'rish `list`/`list_folders` erkin. Yuklash `push`
 (kerak bo'lsa oldin `create_folder`). Fayl nomi noaniq bo'lsa avval `list` bilan
