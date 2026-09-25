@@ -136,15 +136,39 @@ talab qilmaydigan erkin suhbat -- salom, zerikish, xursandchilik, shikoyat va h.
 -> `lifemr` katalogidan mos tool (yuqoridagi jadval).
 
 **Boshqa AI bilan muloqot / birgalikda ishlash** (MR bir vaqtda bir nechta
-AI/agentga shu kompyuterda ish bergan, ular bir-biriga xabar qoldirishi kerak):
+AI/agentga shu kompyuterda ish bergan -- bitta loyihaning turli qismini
+taqsimlab bergan bo'lishi mumkin, buni aniq aytmasa ham):
 -> `~/Claude/.messages/unread/` va `.messages/read/` -- to'liq format:
    `~/Claude/.messages/README.md`.
--> **Har qanday texnik/cmc ishini boshlashdan oldin majburiy**:
-   `ls -la ~/Claude/.messages/unread` tekshir. Fayl bo'lsa -- o'qi, MR ga
-   qisqa ayt, keyin `read/` ga ko'chir (belgi = papka, fayl ochmasdan ham
-   "yangimi" bilinadi).
+-> **Umumiy loyihani aniqlash:** agar MR senga bergan vazifa boshqa birov
+   (odam yoki boshqa AI) bilan bir xil loyiha papkasida ishlashni talab
+   qilsa -- MR "bir-biringiz bilan gaplashinglar" deb ALOHIDA aytmasa ham,
+   bu avtomatik ravishda **faol hamkorlik rejimi**ni bildiradi. Belgilar:
+   MR vazifa tavsifida boshqa qism/qatlam borligini aytadi (masalan "backend
+   yoz, frontend allaqachon/alohida qilinyapti"), yoki loyiha papkasida
+   o'zing yozmagan fayllar/README bor, yoki `.messages`da shu loyihaga oid
+   yozuv bor.
+-> **Faol rejimda nima qiladi (bitta tekshiruv bilan cheklanmaydi):**
+   1. Ishni boshlashda: `unread/`ni tekshir, shu loyihaga oid xabar bo'lsa
+      o'qi va hisobga ol, keyin `read/`ga ko'chir.
+   2. Ishlash davomida MUHIM qarorga kelganingda (API/interfeys shakli,
+      fayl formati, funksiya/endpoint nomi, papka tuzilishi -- boshqa
+      tomonga ta'sir qiladigan narsa) -- kutib o'tirmasdan darhol
+      `unread/`ga xabar yoz (qaror + savol bo'lsa savol).
+   3. Ish oxiriga yaqin, natijani yakunlashdan oldin -- yana bir bor
+      `unread/`ni tekshir: shu orada senga javob/savol kelgan bo'lishi
+      mumkin, shuni hisobga olib yakunla (kerak bo'lsa kodni moslashtir).
+   4. Agar xabaringda savol bergan bo'lsang va javobni kuta olsang (masalan
+      ishning boshqa qismini davom ettirayotgan bo'lsang) -- vaqti-vaqti
+      bilan (katta bosqichlar orasida) `unread/`ni qayta tekshirib tur,
+      cheksiz kutib o'tirma, o'z ishingni davom ettiraver.
+   5. Ishni tugatganda -- yakuniy holatni (nima qilindi, qaysi interfeys
+      bilan) `unread/`ga qisqa xabar qilib qoldir, hatto javob kutmasang ham
+      -- boshqa tomon keyinroq ishga tushsa shundan xabar topadi.
 -> Yangi xabar yozsang -- `unread/` ga yoz. Eski `read/` xabarni faqat MR
    aniq so'raganda o'chir, bitta faylni qayta yozma -- javob uchun yangi fayl.
+-> MR ga har safar nima yozganingni/o'qiganingni qisqa ayt -- muloqot
+   "orqa fonda yashirin" bo'lmasin.
 
 **Terminal/kod/fayl tizimi:**
 -> `cmc` `run_command`. Qanday: skill cmc/cmc-ishlatish.
