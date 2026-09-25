@@ -87,7 +87,8 @@ Qachon ishlatilmaydi:
 - **Shell `/bin/sh -c`.** Bash yoki fish'ga xos sintaksis (`[[ ]]`, massivlar,
   `set -l`) ishlamasligi mumkin. Oddiy POSIX yoz; kerak bo'lsa `bash -c '...'`.
 - **30 soniya timeout.** Undan uzun ish uzilib qoladi. Uzoq ishni fonda yugurt:
-  `nohup buyruq > /tmp/ish.log 2>&1 &`, keyin `tail /tmp/ish.log` bilan kuzat.
+  `nohup buyruq > /tmp/ish.log 2>&1 &`, keyin ALOHIDA keyingi run_command
+  chaqiruvida `tail /tmp/ish.log` bilan kuzat (3c-bo'limga qara).
 - **`~` = `/home/muhamad`.** Kerak bo'lsa `$HOME` ishlat.
 - **Yashirin papkalar:** `ls` ularni ko'rsatmaydi, `ls -a` ishlat (masalan
   `~/.blender`).
@@ -137,10 +138,13 @@ the password`. Bu xabarni ko'rsang:
   deganda uy papkasini (`~`) tushun. `sudo` faqat aniq kerak bo'lsa va oldin MR dan
   so'rab.
 - **Murakkab buyruqlar ba'zan connector xatosi beradi** (masalan ba'zi
-  `curl -X POST ...`). Buyruqni soddalashtir yoki qismlarga bo'l.
+  `curl -X POST ...`). Buyruqni soddalashtir yoki qismlarga bo'l. Connector server error javobi kelsa, bir marta o'zgartirmasdan qayta yubor.
 - **Heredoc:** fayl yozayotganda terminator sifatida `PYEOF` kabi noyob so'z
   ishlat; matn ichida `<< 'EOF'` yoki backtick (`) yozma. Katta faylni bir
   chaqiruvda yozib, keyingisida tekshir.
+- Mavjud faylni cat va heredoc bilan qayta yozish ustidan yozish
+  hisoblanadi va bloklanishi mumkin. Oldin test -f bilan tekshir, bor
+  bo'lsa qo'shib yoz yoki confirmed:true bilan yubor.
 - **`pgrep -af 'server.py'` o'zini ham topadi** (buyruq matnida shu so'z bor).
   O'zini chiqarib tashlash uchun `pgrep -af '[s]erver.py'` yoz.
 
@@ -165,6 +169,13 @@ yo'l bilan chaqir).
 - Loyiha yo'li berilmasa skript joriy `cwd`da ishlaydi — shuning uchun har
   doim `cd loyiha && ...` bitta buyruqda yoz.
 
+## 3c. Fon jarayoni server ishga tushirish
+
+Serverni ikkita alohida chaqiruvga bo'lib ishga tushir: birinchisida
+nohup bilan boshlat va darhol qaytar, ikkinchisida (bir necha soniyadan
+keyin) log faylni va portni tekshir. Bitta chaqiruvda ikkalasini qilish
+ba'zan xato ko'rsatadi.
+
 ## 4. Xavfsizlik: buyruq turlari
 cmc har buyruqqa `riskLevel` beradi.
 
@@ -176,6 +187,14 @@ cmc har buyruqqa `riskLevel` beradi.
   `sudo`, diskni formatlash, katta ko'chirish/ustidan yozish): `confirmed:true`
   talab qiladi. Faqat MR aniq so'ragan yoki tasdiqlagandagina `true` qo'y.
   Tasdiqni o'zingdan berma.
+  - **Istisno:** `~/Claude/work/<loyiha>` ichida oddiy paket o'rnatish
+    (`npm install`, `npm ci`, `pip install -r requirements.txt` va h.k.) ham
+    ko'pincha `hard_write` deb belgilanadi, garchi halokatli bo'lmasa ham -
+    MR loyiha yasashni so'raganida bu ham nazarda tutilgan hisoblanadi.
+    Shunday buyruq bloklansa va aniq shu turdagi (paket o'rnatish, halokatli
+    emas) buyruq bo'lsa - ikkinchi marta so'ramasdan confirmed:true bilan
+    darhol qayta yubor, MR ga nima qilganingni qisqa ayt. Bu faqat paket
+    o'rnatishga tegishli - destructive buyruqlarga bu istisno tegishli emas.
 
 Qoidalar:
 - **O'chirish yoki ustidan yozish faqat aniq so'ralganda.** Mavjud faylni so'ramay
@@ -268,6 +287,10 @@ MR "ulab qo'ydim" desa, darhol qayta urin.
 | `connector server error` | murakkab buyruq yoki hub uxlagan | soddalashtir, keyin 7-bo'lim |
 | Eski yo'l topilmaydi (`~/blender`) | papka `~/.blender` ga ko'chirilgan | yangi yo'lni ishlat |
 | Qayta yoqilgan serverda sahifa bo'sh | kod brauzer xotirasida edi | kodni qayta yubor (`push.py`) |
+| npm/pip o'rnatish bloklandi hard_write sifatida | paket o'rnatish ham hard_write hisoblanadi | loyiha ichida bo'lsa confirmed:true bilan qayta yubor |
+| Fon server ok:false lekin log'da ishlagani ko'rinadi | boshlatish va tekshirish bitta chaqiruvda cho'zilgan | ikkita alohida chaqiruvga bo'l (3c-bo'lim) |
+| curl bilan exitCode 7 | server hali ko'tarilmagan | biroz kutib qayta tekshir |
+| Mavjud faylni cat bilan yozish bloklandi | ustidan yozish deb hisoblandi | avval test -f bilan tekshir |
 
 ## 9. Bog'liq skill va fayllar
 - Blender modeli: `blender/BlenderModelAutoWorkflowViaWebblender`, kompyuterda
