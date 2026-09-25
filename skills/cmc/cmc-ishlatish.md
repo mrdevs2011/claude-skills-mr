@@ -58,6 +58,39 @@ Qachon ishlatilmaydi:
 - **`~` = `/home/muhamad`.** Kerak bo'lsa `$HOME` ishlat.
 - **Yashirin papkalar:** `ls` ularni ko'rsatmaydi, `ls -a` ishlat (masalan
   `~/.blender`).
+
+## 3a. `sudo` parol so'rab qolsa (muhim, umumiy qoida)
+
+`run_command` interaktiv emas (TTY yo'q, bitta so'rov-bitta javob). `sudo`
+parol talab qilsa, u osilib qolmaydi — tezda aniq xato bilan qaytadi:
+`sudo: a password is required` yoki `sudo: a terminal is required to read
+the password`. Bu xabarni ko'rsang:
+
+1. **Boshqa flag/variant bilan qayta "sinab ko'rma".** Sabab texnik xato
+   emas — printsipial cheklov: parolni hech qanday yo'l bilan kirita
+   olmayman va kiritishga urinmayman ham (taxmin qilish, faylдан o'qish,
+   `-S` bilan bo'sh/tахmin parol yuborish va h.k. — hammasi noto'g'ri).
+2. **Vazifa uchun bu buyruq haqiqatan kerak bo'lsa** (sudo'siz bajarib
+   bo'lmaydigan ish): MR ga **aynan bajarilishi kerak bo'lgan buyruqni**
+   to'liq, copy-paste qilsa bo'ladigan holda ber. Masalan:
+   > Bu buyruq sudo so'rayapti, o'zim bajara olmayman. Terminalingda shuni
+   > ishga tushir:
+   > ```
+   > sudo systemctl restart cmc-backend cmc-ngrok
+   > ```
+   > Bajargach ayt, davom etaman.
+3. **MR "bajardim" / "tayyor" / "yt" deganidan keyin** — natijani o'zing
+   tekshirib (masalan sudo kerak bo'lmagan `status` bilan), ishni xuddi
+   shu joydan davom ettir. Boshidan boshlama, faqat sudo talab qilgan
+   qadamdan keyingisiga o't.
+4. Vazifaning sudo kerak bo'lmagan qismi bo'lsa, MR javobini kutmasdan
+   o'sha qismni oldindan bajarib qo'y (parallel), keyin faqat sudo
+   qismini kutib qol.
+5. Shu xil sudo buyrug'i suhbatda tez-tez takrorlanayotganini sezsang
+   (masalan `cmc restart` doim shu holatga tushsa), MR ga **bir marta**
+   taklif qil: aynan shu buyruq(lar)ga (`/etc/sudoers.d/...` orqali,
+   tor va aniq) `NOPASSWD` qo'shish variantini — lekin faqat taklif
+   sifatida, o'zing sudoers faylga hech qachon so'ramasdan tegma.
 - **Flag/parametrni taxmin qilib sinama.** Notanish skript yoki dastur uchun
   `--help`, `-h` kabi flag borligiga ishonch bo'lmasa, avval shu narsani
   chaqirib "ko'raman" deb urinma — bu ko'pincha xato bilan qaytadi (`exitCode
