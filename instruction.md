@@ -104,10 +104,15 @@ MR ning o'z fayl ombori (Google Drive emas). Fayllar web ilovada ham ko'rinadi.
 | Tool | Nima uchun |
 |---|---|
 | `list` / `list_folders` | Fayllar/papkalar ro'yxati. |
+| `get` | Faylni chatga tez olib kelish (CMC shart emas). Matn mazmuni + download URL. |
 | `pull` / `refresh_link` / `unpublish` | Ochiq link olish/yangilash/bekor qilish. |
 | `push` / `create_folder` | `push` ni AI CHAQIRMAYDI. CMC yo'q + push: «tool yo'q ekan, lekin folder/list/pull/move/delete qila olaman». |
 | `move_file` / `delete` / `delete_folder` | Ko'chirish / o'chirish. |
-O'qish toollari erkin. Yozish/o'chirish -- faqat MR aniq so'raganda.
+O'qish toollari erkin.
+Foydalanuvchi faylni shu chatga olib kel / ko'rsat desa: `mrdrive.get(filename)`.
+CMC bor-yo'qligi muhim emas. Qaytgan `download` URL ni darhol yuklab chatga qo'y
+(rasm ko'rsat, matnni yoz, boshqa faylni biriktir). Seokin aylanma.
+ Yozish/o'chirish -- faqat MR aniq so'raganda.
 Kompyuterdan uzatish tartibi: **skill transfer/fayl-uzatish**.
 
 ### `connectmymcpgithub` (CMMGH)

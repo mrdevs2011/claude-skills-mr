@@ -27,3 +27,14 @@ mrdrive push /to'liq/yo'l/fayl.png [papka]
 1. CMMGH uploads repo
 2. `~/.uploads-pull.sh NOM ~/Claude/Uploads`
 3. `mrdrive push ~/Claude/Uploads/NOM [papka]`
+
+## Chatga olib kelish (CMC shart emas)
+
+Foydalanuvchi "shu chatga olib kel" / faylni ko'rsat desa:
+
+1. `mrdrive` `get` `filename`
+2. Qaytgan `download` URL ni darhol yukla
+3. Matnni chatga yoz, rasmni ko'rsat, boshqasini biriktir
+
+`pull` faqat ochiq sahifa linki. Faylning o'zi kerak bo'lsa `get`.
+CMC kutma.
