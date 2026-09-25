@@ -104,14 +104,17 @@ MR ning o'z fayl ombori (Google Drive emas). Fayllar web ilovada ham ko'rinadi.
 | Tool | Nima uchun |
 |---|---|
 | `list` / `list_folders` | Fayllar/papkalar ro'yxati. |
-| `get` | Faylni chatga tez olib kelish (CMC shart emas). Matn mazmuni + download URL. |
+| `get` | Fayl so'ralsa: link + HAQIQIY fayl. Chatga qo'y, ~/Claude/ ga saqla. Faqat URL yetarli emas. |
 | `pull` / `refresh_link` / `unpublish` | Ochiq link olish/yangilash/bekor qilish. |
 | `push` / `create_folder` | `push` ni AI CHAQIRMAYDI. CMC yo'q + push: «tool yo'q ekan, lekin folder/list/pull/move/delete qila olaman». |
 | `move_file` / `delete` / `delete_folder` | Ko'chirish / o'chirish. |
 O'qish toollari erkin.
-Foydalanuvchi faylni shu chatga olib kel / ko'rsat desa: `mrdrive.get(filename)`.
-CMC bor-yo'qligi muhim emas. Qaytgan `download` URL ni darhol yuklab chatga qo'y
-(rasm ko'rsat, matnni yoz, boshqa faylni biriktir). Seokin aylanma.
+Foydalanuvchi fayl so'rasa (ko'rsat / olib kel / yubor):
+1. `mrdrive.get(filename)` — `link` (share) va `download` URL keladi.
+2. `download` dan HAQIQIY faylni darhol yukla. Faqat URL berib qolma.
+3. Chatga qo'y: matnni yoz, rasmni ko'rsat, boshqasini biriktir.
+4. CMC bor bo'lsa shu faylni `~/Claude/filename` ga ham yoz.
+CMC yo'q bo'lsa ham chatga haqiqiy fayl kelishi shart.
  Yozish/o'chirish -- faqat MR aniq so'raganda.
 Kompyuterdan uzatish tartibi: **skill transfer/fayl-uzatish**.
 
