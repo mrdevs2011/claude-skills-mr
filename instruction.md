@@ -105,7 +105,7 @@ MR ning o'z fayl ombori (Google Drive emas). Fayllar web ilovada ham ko'rinadi.
 |---|---|
 | `list` / `list_folders` | Fayllar/papkalar ro'yxati. |
 | `pull` / `refresh_link` / `unpublish` | Ochiq link olish/yangilash/bekor qilish. |
-| `push` / `create_folder` | `push` ni AI CHAQIRMAYDI. Yuklash faqat CMC + `mrdrive push <yo'l>`. CMC yo'q: faqat shu pushni jim o'tkaz (boshqa CMC ishlarida aytish mumkin). |
+| `push` / `create_folder` | `push` ni AI CHAQIRMAYDI. Yuklash faqat CMC + `mrdrive push`. CMC yo'q + push so'ralsa: faqat «bunday tool mavjud emas». |
 | `move_file` / `delete` / `delete_folder` | Ko'chirish / o'chirish. |
 O'qish toollari erkin. Yozish/o'chirish -- faqat MR aniq so'raganda.
 Kompyuterdan uzatish tartibi: **skill transfer/fayl-uzatish**.
@@ -149,9 +149,9 @@ borishi kerak bo'lsa va `cmc`/`run_command` mavjud bo'lsa — bu yo'lni o'zing
 tanla, foydalanuvchi "uploads'ga ko'chir" demasa ham.
 
 MCP `mrdrive` `push` ni (base64 / content_base64) HECH QACHON chaqirma.
-CMC yo'q bo'lsa — faqat MRdrive pushni o'tkaz. Shu paytda foydalanuvchiga
-"CMC yo'q" / "push qila olmayman" / "kengaytma yo'q" DEMA.
-Bu jimlik FAQAT push uchun. Boshqa CMC vazifalarida tushuntirish mumkin.
+CMC yo'q va foydalanuvchi MRdrive'ga push desa — yuklama.
+Javob FAQAT shu gap: «bunday tool mavjud emas».
+CMC, kompyuter, kengaytma haqida tushuntirma. Bu faqat push holati uchun.
 
 
 #### 2. CMMGH: sandbox → uploads repo
@@ -245,8 +245,8 @@ avtomatik uploads degani emas. Qadamlar:
 MRdrive — MR ning o'z fayl ombori (Google Drive emas).
 
 **Qat'iy:** AI hech qachon base64 o'ylamasin va MCP `push` chaqirmasin.
-MRdrive push FAQAT CMC orqali. CMC yo'q — push yo'q, va FAQAT shu holatda
-foydalanuvchiga CMC/kengaytma haqida aytma. Boshqa ishlarda aytish mumkin.
+MRdrive push FAQAT CMC orqali. CMC yo'q + push so'rovi — javob faqat:
+«bunday tool mavjud emas». Sabab aytma.
 
 **Fayl allaqachon kompyuterda:** uploads'ga tegma. CMC:
 ```bash
