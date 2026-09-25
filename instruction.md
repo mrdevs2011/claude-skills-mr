@@ -327,14 +327,23 @@ avtomatik javob emas!):**
   bo'lsa): avval `github-ishlatish` skill orqali MR ning repolari ro'yxatidan
   (`GET /user/repos`) mos nomdagi repo bor-yo'qligini tekshir (masalan
   `mrdrive`, `mrdrive-app` kabi o'xshash nomlar).
-  - **Mos repo topilsa** → o'zgargan fayllarni to'g'ridan-to'g'ri o'sha repo'ga
-    push qil (`github-ishlatish` skill, Contents API yoki git orqali) —
+  - **Aniq mos nom topilsa** → o'zgargan fayllarni to'g'ridan-to'g'ri o'sha
+    repo'ga push qil (`github-ishlatish` skill, Contents API yoki git orqali) —
     `uploads`ga tashlab qo'yib to'xtama.
-  - **Mos repo topilmasa yoki bir nechta imkoniyat bo'lib, aniq bo'lmasa** →
-    MR dan so'ra: "bro, mrdrive uchun alohida repo yo'q ekan (yoki: qaysi
-    repo ekanini aniqlay olmadim) — qaysi repo'ga push qilay?" Taxmin qilib
-    yangi repo yaratib yubormang yoki `uploads`da qoldirib "push qildim" deb
-    aytma — bu chala bajarilgan hisoblanadi.
+  - **Nom bo'yicha aniq topilmasa, lekin suhbatda hozirgi mavzu bor** (masalan
+    aynan shu suhbatda biror loyiha ustida ishlanayotgan edi) → so'ramasdan
+    oldin qo'shimcha tekshiruv qil: `GET /user/repos?sort=updated&per_page=10`
+    bilan eng oxirgi faollashgan repolarni ko'r. Ulardan biri suhbat mavzusiga
+    (loyiha nomi, oxirgi commit vaqti hozirgi ishga mos kelishi) aniq mos
+    kelsa — o'shanga push qil va qaysi repo'ni tanlaganingni bir jumlada ayt
+    (masalan "eng oxiri ishlagan repo shu ekan, shunga push qildim").
+  - **Hech qanday ishonchli signal topilmasa** (nom ham, suhbat konteksti ham,
+    oxirgi faollik ham bir xil ishonch bermasa) yoki bir nechta imkoniyat
+    bab-baravar bo'lsa → shundagina MR dan so'ra: "bro, mrdrive uchun alohida
+    repo yo'q ekan (yoki: qaysi repo ekanini aniqlay olmadim) — qaysi
+    repo'ga push qilay?" Taxmin qilib yangi repo yaratib yubormang yoki
+    `uploads`da qoldirib "push qildim" deb aytma — bu chala bajarilgan
+    hisoblanadi.
 → **"push qil" hech qachon `uploads`ga push qilishni anglatmaydi.** `uploads`
   — markaziy ish maydoni (central workspace): sandbox'dagi fayl kompyuterga
   yetib olguncha turadigan vaqtinchalik joy, xolos. U "push qilingan joy"
