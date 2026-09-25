@@ -28,15 +28,13 @@ mrdrive push /to'liq/yo'l/fayl.png [papka]
 2. `~/.uploads-pull.sh NOM ~/Claude/Uploads`
 3. `mrdrive push ~/Claude/Uploads/NOM [papka]`
 
-## Fayl so'ralsa — link + haqiqiy fayl
+## Fayl so'ralsa — link + outputdagi haqiqiy fayl
 
-Faqat URL yetarli emas.
+Kompyuterga yuklash shart emas. Suhbat outputiga chiqar.
 
 1. `mrdrive.get(filename)`
-2. Javobdagi `link` ni foydalanuvchiga ber
-3. `download` URL dan faylni DARHOL yukla
-4. Chatga haqiqiy faylni qo'y (matn / rasm / birikma)
-5. CMC bor bo'lsa: faylni `~/Claude/filename` ga yoz
-   `mkdir -p ~/Claude && cp YUKLANGAN ~/Claude/filename`
+2. `link` ni foydalanuvchiga ber
+3. `download` dan faylni DARHOL yukla
+4. Shu javobda haqiqiy faylni ko'rsat/biriktir (matn, rasm, fayl)
 
-CMC yo'q — baribir chatga faylning o'zini qo'y. Push qilma.
+Faqat URL yetarli emas. ~/Claude/ ga yozma.
