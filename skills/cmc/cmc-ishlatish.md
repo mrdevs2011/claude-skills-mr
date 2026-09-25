@@ -148,26 +148,45 @@ the password`. Bu xabarni ko'rsang:
 - **`pgrep -af 'server.py'` o'zini ham topadi** (buyruq matnida shu so'z bor).
   O'zini chiqarib tashlash uchun `pgrep -af '[s]erver.py'` yoz.
 
-## 3b. Loyihada ishlashda: `ai-status` / `ai-save` (avtomatik ishlat)
+## 3b. Loyihada ishlashda: `ai-status` / `ai-save` (avtomatik ishlat, QULF bilan)
 
 Skriptlar: `~/Claude/.bin/ai-status` va `~/Claude/.bin/ai-save` (avval `~/bin`da
 edi, endi shu yerga ko'chirilgan — PATH'da bo'lmasligi mumkin, doim to'liq
 yo'l bilan chaqir).
 
+**MUHIM — har doim o'z agent nomingni ber** (ikkinchi/to'rtinchi argument):
+`ai-status <loyiha-yo'li> <agent-nomi>` va
+`ai-save "nima" "keyingi" <loyiha-yo'li> <agent-nomi>`.
+Agent nomi — sen kim ekaningni bildiradi (masalan `claude`, `grok`, `codex`).
+Bermasang standart `AI` bo'ladi — bu holda boshqa nomsiz agent bilan
+adashtirib yuborishi mumkin, shuning uchun DOIM o'z nomingni ber.
+
 - **Loyiha papkasida texnik ish boshlaganda** (`~/Claude/work/<nom>` yoki MR
   ko'rsatgan boshqa loyiha papkasi): MR alohida so'ramasa ham, avval
-  `cd <loyiha-yo'li> && ~/Claude/.bin/ai-status` ni chaqir — bu STATUS.md,
-  git holati va oxirgi commitlarni ko'rsatadi, shu orqali oldingi kontekstni
-  tiklaysan.
+  `cd <loyiha-yo'li> && ~/Claude/.bin/ai-status . <agent-nomi>` ni chaqir —
+  bu STATUS.md, PLAN.md, unread xabarlar, git holati va oxirgi commitlarni
+  ko'rsatadi, shu orqali oldingi kontekstni tiklaysan.
+- **Bir vaqtning o'zida faqat 1 ta agent ishlashi uchun qulf.** `ai-status`
+  loyiha papkasida `.ai-lock` fayl orqali qulf qo'yadi (agent nomi + vaqt).
+  Boshqa agent nomi bilan chaqirilsa va qulf hali "yangi" (10 daqiqadan kam)
+  bo'lsa — 4 soniya kutib, "band: <agent> yozyapti... kutyapman" deb chiqaradi,
+  3 marta urinadi, baribir band bo'lsa "hozircha band" deb chiqib ketadi
+  (`exit 2`). Shu holatda: MR ga qisqa ayt ("hozir <agent> shu loyihada
+  ishlayapti, birozdan keyin urinib ko'raman/qayta ayt"), zo'rlab kirishga
+  urinma, qulfni qo'lda o'chirma.
+  10 daqiqadan eski qulf "eskirgan" hisoblanib, avtomatik qayta olinadi
+  (agent qulash/ulanish uzilishidan himoya).
 - **Loyihada ish tugagach / muhim bosqich yakunlangach** (MR "tugatdik",
   "shu yerda to'xtaymiz" desa, yoki katta qadam bajarilsa): MR alohida
   so'ramasa ham
-  `cd <loyiha-yo'li> && ~/Claude/.bin/ai-save "nima qilindi" "keyingi qadam"`
-  ni chaqir — STATUS.md'ga yangi yozuv qo'shiladi.
+  `cd <loyiha-yo'li> && ~/Claude/.bin/ai-save "nima qilindi" "keyingi qadam" . <agent-nomi>`
+  ni chaqir — STATUS.md'ga yangi yozuv qo'shiladi VA o'zing qo'ygan qulf
+  bo'shatiladi (agar boshqa agent o'z nomi bilan qayta qulflab olgan bo'lsa,
+  senga tegishli bo'lmagani uchun tegilmaydi).
 - Ikkalasi ham `unknown` risk darajasida — tasdiq kerak emas, lekin nima
   qilganingni MR ga qisqa ayt.
-- Loyiha yo'li berilmasa skript joriy `cwd`da ishlaydi — shuning uchun har
-  doim `cd loyiha && ...` bitta buyruqda yoz.
+- Loyiha yo'li `.` yoki to'liq yo'l bo'lishi mumkin — skript ichida `cd`
+  qiladi, shuning uchun har doim `cd loyiha && ...` bitta buyruqda yoz.
 
 ## 3b-2. Hamkorlik konventsiyasi (BARCHA loyihalar uchun, doimiy qoida)
 
