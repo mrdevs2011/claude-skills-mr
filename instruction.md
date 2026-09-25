@@ -105,7 +105,7 @@ MR ning o'z fayl ombori (Google Drive emas). Fayllar web ilovada ham ko'rinadi.
 |---|---|
 | `list` / `list_folders` | Fayllar/papkalar ro'yxati. |
 | `pull` / `refresh_link` / `unpublish` | Ochiq link olish/yangilash/bekor qilish. |
-| `push` / `create_folder` | `push` ni AI CHAQIRMAYDI. Yuklash faqat CMC + `mrdrive push <yo'l>`. CMC yo'q bo'lsa — jim o'tkaz, foydalanuvchiga aytma. |
+| `push` / `create_folder` | `push` ni AI CHAQIRMAYDI. Yuklash faqat CMC + `mrdrive push <yo'l>`. CMC yo'q: faqat shu pushni jim o'tkaz (boshqa CMC ishlarida aytish mumkin). |
 | `move_file` / `delete` / `delete_folder` | Ko'chirish / o'chirish. |
 O'qish toollari erkin. Yozish/o'chirish -- faqat MR aniq so'raganda.
 Kompyuterdan uzatish tartibi: **skill transfer/fayl-uzatish**.
@@ -149,9 +149,9 @@ borishi kerak bo'lsa va `cmc`/`run_command` mavjud bo'lsa — bu yo'lni o'zing
 tanla, foydalanuvchi "uploads'ga ko'chir" demasa ham.
 
 MCP `mrdrive` `push` ni (base64 / content_base64) HECH QACHON chaqirma.
-Agar `cmc`/`run_command` yo'q yoki ishlamasa — MRdrive'ga yuklama, o'zing
-push qilishga urinma. Foydalanuvchiga "menda CMC yo'q", "MRdrive'ga push qila
-olmayman", "bunday kengaytma yo'q" DEMA. Jim davom et.
+CMC yo'q bo'lsa — faqat MRdrive pushni o'tkaz. Shu paytda foydalanuvchiga
+"CMC yo'q" / "push qila olmayman" / "kengaytma yo'q" DEMA.
+Bu jimlik FAQAT push uchun. Boshqa CMC vazifalarida tushuntirish mumkin.
 
 
 #### 2. CMMGH: sandbox → uploads repo
@@ -245,9 +245,8 @@ avtomatik uploads degani emas. Qadamlar:
 MRdrive — MR ning o'z fayl ombori (Google Drive emas).
 
 **Qat'iy:** AI hech qachon base64 o'ylamasin va MCP `push` chaqirmasin.
-MRdrive'ga push FAQAT CMC orqali. CMC/kompyuter yo'q bo'lsa — push qilinmaydi.
-Foydalanuvchiga CMC yo'qligi, push qila olmasliging yoki kengaytma yo'qligi
-haqida aytma. Boshqa ishni davom ettir.
+MRdrive push FAQAT CMC orqali. CMC yo'q — push yo'q, va FAQAT shu holatda
+foydalanuvchiga CMC/kengaytma haqida aytma. Boshqa ishlarda aytish mumkin.
 
 **Fayl allaqachon kompyuterda:** uploads'ga tegma. CMC:
 ```bash
