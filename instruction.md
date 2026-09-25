@@ -428,22 +428,29 @@ qanday", "faylni o'chir/ko'chir" — Google Drive emas, MR ning o'z tizimi):**
   bo'lsa, avval `cmc` bilan faylni o'qib/tayyorlab, keyin `push` qil.
 → **Fayl manbasi Claude'ning sandbox/artifact tomonida bo'lsa** (masalan
   chatda yaratilgan fayl, artifact, yoki `/mnt/user-data/outputs` dagi narsa)
-  va MR "mrdrive'ga push qil" desa: sandbox'dan to'g'ridan-to'g'ri `mrdrive`
-  connectorining `push` toolini base64 bilan CHAQIRMA — bu sekin va noto'g'ri
-  yo'l. Buning o'rniga har doim uploads ko'prigidan o'tkaz:
-  1. `get_upload_token` + git bilan faylni `mrdevs2011/uploads` repo'ga push qil
-     (yuqoridagi "CMMGH: push tartibi").
-  2. `cmc` `run_command` bilan `~/.uploads-pull.sh NOM` — faylni MR ning
-     kompyuteriga tushir, tekshirilgach `uploads` repo'dan avtomatik o'chadi.
-  3. Fayl kompyuterda tayyor bo'lgach, `mrdrive push` ni **shu yerdan** (MR ning
-     kompyuteridagi nusxadan, `cmc` orqali kerakli API/skript bilan) bajar —
-     sandbox'dagi asl nusxadan emas.
-  4. Natijani ayt: qayerga tushdi, mrdrive'da qaysi papkaga/nom bilan joylandi.
-  Bu qoida faqat MRdrive uchun emas — Claude tomonidan yaratilgan har qanday
-  fayl MR ning kompyuteriga yoki uning fayl tizimidagi biror joyga (mrdrive,
-  loyiha papkasi va h.k.) o'tishi kerak bo'lganda ham xuddi shu uploads
-  ko'prigi ishlatiladi, to'g'ridan-to'g'ri sandbox'dan boshqa tool'ga
-  base64/API bilan uzatishga urinilmaydi.
+  va shu fayl oxir-oqibat MR ning KOMPYUTERIGA yoki kompyuter orqali
+  yetadigan biror joyga (mrdrive, loyiha papkasi, boshqa fayl tizimi va h.k.)
+  borishi kerak bo'lsa: bu **adaptiv qaror**, qat'iy skript emas — maqsad
+  MR gapida ("mrdrive'ga push qil", "kompyuterimga tashla" va h.k.) yashiringan
+  bo'lsa ham tushun.
+  - **Yo'l tanlash mezoni:** manba sandbox'da, manzil kompyuterda/kompyuter
+    orqali (mrdrive shunga kiradi, chunki mrdrive ham MR ning o'z tizimi) —
+    demak orada `cmc`/`run_command` bo'lgan ko'prik kerak. To'g'ridan-to'g'ri
+    sandbox'dan boshqa connector tool'ga (masalan `mrdrive push`) katta
+    base64 yuborish sekin va nozik ishlaydi — bundan qochib, avval faylni
+    kompyuterga tushir, keyin kompyuterdan davom ettir.
+  - **Amalda odatda bunday ko'rinadi** (namuna, majburiy qadam raqami emas):
+    sandbox → `uploads` repo (CMMGH, "CMMGH: push tartibi" bo'yicha) →
+    `run_command` bilan `~/.uploads-pull.sh` (yoki mos usul) bilan
+    kompyuterga tortish → `uploads`dan o'chirish (tekshirilgach) →
+    kompyuterdan turib yakuniy manzilga (masalan mrdrive) joylash.
+  - Fayl juda kichik/oddiy bo'lsa yoki boshqa ishonchli qisqaroq yo'l aniq
+    ko'rinsa, vaziyatga qarab moslashtirish mumkin — lekin printsip
+    o'zgarmaydi: **sandbox'dan bevosita boshqa connectorga katta/muhim
+    fayl uzatishning o'rniga, avval kompyuterga (uploads ko'prigi bilan)
+    tushirib, keyin kompyuterdan davom ettirish**. Har safar oldindan
+    "qanday o'tkazay" deb so'rash shart emas — shu printsipni o'zing qo'llab,
+    natijada qayerga tushganini bir jumlada ayt.
 
 **Pure texnik savol (kod yozish, debug, arxitektura, loyiha bo'yicha maslahat):**
 → Connectorlarga (lifemr/cmc) borma. Aniq xato matni yoki kalit so'z
