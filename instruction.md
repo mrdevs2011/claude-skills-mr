@@ -97,7 +97,7 @@ boshida tekshirib chiqma.
 | `get_schedule` / `set_schedule` | Dars jadvali (o'zgartirish faqat aniq so'ralganda). |
 
 ### `cmc`
-To'liq qo'llanma: **skill cmc/cmc-ishlatish**.
+To'liq qo'llanma (LOKAL, GitHub'da emas): `cat ~/Claude/.skills/my-computer/cmc-ishlatish.md`.
 **ASOSIY QOIDA: kompyuterdagi barcha ish `~/Claude` ichida** (loyihalar
 `~/Claude/work/<nom>`). Bu sening "uying": erkin ish qil, ish tugagach
 (natija kerakli joyga yetgach, tekshirilgach) o'zing yaratgan narsalarni
@@ -371,14 +371,13 @@ borish so'ralsa):
    ishlatiladi (interfeys ichidagi aniq tugma/element bosish, forma
    to'ldirish, drag va h.k. -- URL/buyruq bilan almashtirib bo'lmaydigan
    holat). Shundagina: `ydotool mousemove -a` (absolute mode) ISHLATMA --
-   bu tizimda darhol crash beradi. To'g'ri yo'l: **skill:
-   cmc/koordinataga-bosish** (`get_skill` bilan o'qi -- tayyor
+   bu tizimda darhol crash beradi. To'g'ri yo'l: run_command bilan `cat ~/Claude/.skills/my-computer/koordinataga-bosish.md` o'qi (LOKAL) -- tayyor
    `~/Claude/click-at.sh` skripti bor, qayta yozma).
 
 **Ekran bilan ishlash / UI avtomatlashtirish** (ilova ich, biror narsani bos, matn yoz, screenshot ol, qidiruv qil, xabar o'qi — ya'ni ekrandagi UI bilan har qanday ish):
 -> Avval eng qisqa yo'l: to'g'ridan-to'g'ri buyruq (`Telegram &`) > shortcut (`ydotool key`) > koordinata (`click-at.sh`).
--> To'liq workflow, aniq buyruqlar, misollar: `cat ~/Claude/skills/my-computer/screen-automation.md`
--> Shortcutlar ro'yxati: `cat ~/Claude/skills/my-computer/shortcuts.md`
+-> To'liq workflow, aniq buyruqlar, misollar: `cat ~/Claude/.skills/my-computer/screen-automation.md`
+-> Shortcutlar ro'yxati: `cat ~/Claude/.skills/my-computer/shortcuts.md`
 
 **Klaviatura shortcutlari / Niri WM keybindinglar** ("shortcut bos", "Mod+N bos", "shu tugmani bos", "X+Y kombinatsiyasini bos", "terminalni shortcut bilan och" -- klaviatura kombinatsiyasi yuborish so'ralsa):
 -> **AVVAL to'g'ri yo'lni tekshir:** agar app ishga tushirish kerak bo'lsa -- `run_command` bilan to'g'ridan-to'g'ri dastur nomini yoz (`Telegram &`, `kitty &`, `firefox &`). Shortcut yubormasdan ham ishlaydi va tezroq.
@@ -426,10 +425,10 @@ so'zi qanday shaklda kelmasin):
 5. Kompyuterdagi barcha ish `~/Claude` ichida (loyihalar `~/Claude/work/<nom>`).
    MR ning boshqa papkasiga faqat kerak bo'lganda ("cmc" bo'limiga qara).
 
-**Kompyuter skill fayllari (my-computer):** kompyuter boshqarish, shortcutlar,
+**Kompyuter skill fayllari (my-computer) -- FAQAT LOKAL, GitHub'da emas:** kompyuter boshqarish, shortcutlar,
 fayl uzatish, koordinata bosish, GitHub, Blender kabi ishlarda tegishli skillni
-`~/Claude/skills/my-computer/` papkasidan o'qi. Ro'yxat: `cat ~/Claude/skills/my-computer/README.md`
-yoki `ls ~/Claude/skills/my-computer/`. Bu papkadagi fayllar `instruction.md` dagi
+`~/Claude/.skills/my-computer/` papkasidan o'qi. Ro'yxat: `cat ~/Claude/.skills/my-computer/README.md`
+yoki `ls ~/Claude/.skills/my-computer/`. Bu papkadagi fayllar `instruction.md` dagi
 connector/skill route lari bilan mos — faqat to'liq matn shu yerda.
 
 **Eslatma:** bu fayl faqat yo'nalish beradi -- "nimani qanday qilish" javobi
