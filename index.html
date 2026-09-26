@@ -3,29 +3,60 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>token</title>
+<title>Connector URL</title>
 <style>
   html, body { height: 100%; margin: 0; }
   body {
     display: flex; align-items: center; justify-content: center;
     background: #0b0b0c; color: #eaeaea;
     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    padding: 16px; box-sizing: border-box;
   }
-  #token {
-    font-size: clamp(14px, 4vw, 22px);
-    letter-spacing: 0.5px;
-    padding: 18px 24px;
+  #card {
+    width: 100%; max-width: 560px;
+    border: 1px solid #333; border-radius: 12px;
+    background: #141416; padding: 24px;
+  }
+  label { display: block; font-size: 13px; color: #9a9a9a; margin-bottom: 8px; }
+  input#tok {
+    width: 100%; box-sizing: border-box;
+    font: inherit; font-size: 15px;
+    background: #0b0b0c; color: #eaeaea;
+    border: 1px solid #333; border-radius: 8px;
+    padding: 10px 12px; margin-bottom: 16px;
+  }
+  #url {
+    font-size: clamp(13px, 3.6vw, 18px);
+    letter-spacing: 0.3px;
+    padding: 14px 16px;
     border: 1px solid #333;
     border-radius: 10px;
-    background: #141416;
+    background: #0b0b0c;
     cursor: pointer;
     user-select: all;
     word-break: break-all;
-    max-width: 90vw;
+    min-height: 1.4em;
+    color: #6fcf97;
   }
+  #url:empty::before { content: "Tokenni yuqoriga kiriting"; color: #666; }
+  #note { font-size: 12px; color: #666; margin-top: 12px; line-height: 1.5; }
 </style>
 </head>
 <body>
-<div id="token" title="Bosib nusxa olish uchun belgila">https://claude-skills-mr.vercel.app/mcp?k=H7RLjWiiZm1lh0sSSrSytQS4h-KDnZU_</div>
+<div id="card">
+  <label for="tok">Vercel dashboard'dagi TOKEN qiymati</label>
+  <input id="tok" type="password" autocomplete="off" placeholder="TOKEN ni shu yerga joylang">
+  <div id="url" title="Bosib nusxa olish uchun belgila"></div>
+  <div id="note">Bu sahifa hech narsani hech qayerga yubormaydi — URL faqat shu brauzerda, joyida tuziladi. Token serverga saqlanmaydi va logga yozilmaydi.</div>
+</div>
+<script>
+  const tok = document.getElementById('tok');
+  const out = document.getElementById('url');
+  function render() {
+    const v = tok.value.trim();
+    out.textContent = v ? ('https://claude-skills-mr.vercel.app/mcp?k=' + encodeURIComponent(v)) : '';
+  }
+  tok.addEventListener('input', render);
+</script>
 </body>
 </html>
