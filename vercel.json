@@ -5,12 +5,37 @@
     }
   },
   "rewrites": [
-    { "source": "/mcp", "destination": "/api/index" },
-    { "source": "/health", "destination": "/api/index" },
-    { "source": "/register", "destination": "/api/index" },
-    { "source": "/authorize", "destination": "/api/index" },
-    { "source": "/token", "destination": "/api/index" },
-    { "source": "/.well-known/oauth-authorization-server", "destination": "/api/index" },
-    { "source": "/.well-known/oauth-protected-resource", "destination": "/api/index" }
+    {
+      "source": "/mcp",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/health",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/login",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/register",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/authorize",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/token",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/.well-known/oauth-authorization-server",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/.well-known/oauth-protected-resource",
+      "destination": "/api/index"
+    }
   ]
 }

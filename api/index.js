@@ -14,6 +14,12 @@ if (!TOKEN) {
   // tokenga hech qachon qaytib tushmaslik uchun ataylab shunday.
   console.error("TOKEN environment variable o'rnatilmagan.");
 }
+const EMAIL = process.env.EMAIL;
+const PASS = process.env.PASS;
+const SITE_URL = process.env.URL;
+if (!EMAIL || !PASS || !SITE_URL) {
+  console.error("EMAIL, PASS yoki URL environment variable o'rnatilmagan.");
+}
 // On Vercel the repo is read-only at runtime; instruction.md/skills bundled
 // alongside this function's project root (see vercel.json includeFiles).
 const INSTRUCTION_FILE =
@@ -154,6 +160,20 @@ function checkAuth(req, url) {
   const fromQuery = url.searchParams.get("k");
   const auth = String(req.headers.authorization || "").replace(/^Bearer\s+/i, "").trim();
   return fromQuery === TOKEN || auth === TOKEN;
+}
+
+// Email/parolni hash orqali (timing-safe) tekshiradi -- oddiy === solishtirish
+// o'rniga, javob vaqtidan tokenni taxmin qilib bo'lmasin uchun.
+function safeEqual(a, b) {
+  const ha = crypto.createHash("sha256").update(String(a)).digest();
+  const hb = crypto.createHash("sha256").update(String(b)).digest();
+  return ha.length === hb.length && crypto.timingSafeEqual(ha, hb);
+}
+
+function checkLogin(email, password) {
+  if (!EMAIL || !PASS) return false;
+  if (typeof email !== "string" || typeof password !== "string") return false;
+  return safeEqual(email, EMAIL) && safeEqual(password, PASS);
 }
 
 const TOOLS = [
@@ -411,6 +431,24 @@ export default async function handler(req, res) {
       refresh_token: TOKEN,
       scope: "mcp",
     });
+  }
+
+  if (req.method === "POST" && url.pathname === "/login") {
+    let body = {};
+    try {
+      body = await readBody(req);
+    } catch {
+      return send(res, 400, { error: "JSON kerak" });
+    }
+    const { email, password } = body || {};
+    if (!checkLogin(email, password)) {
+      return send(res, 401, { error: "Email yoki parol xato" });
+    }
+    if (!TOKEN || !SITE_URL) {
+      return send(res, 500, { error: "server_error" });
+    }
+    const base = SITE_URL.replace(/\/+$/, "");
+    return send(res, 200, { url: `${base}/mcp?k=${TOKEN}` });
   }
 
   if (url.pathname !== "/mcp") {

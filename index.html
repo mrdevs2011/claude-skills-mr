@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Connector URL</title>
+<title>Connector kirish</title>
 <style>
   html, body { height: 100%; margin: 0; }
   body {
@@ -13,50 +13,89 @@
     padding: 16px; box-sizing: border-box;
   }
   #card {
-    width: 100%; max-width: 560px;
+    width: 100%; max-width: 480px;
     border: 1px solid #333; border-radius: 12px;
     background: #141416; padding: 24px;
   }
-  label { display: block; font-size: 13px; color: #9a9a9a; margin-bottom: 8px; }
-  input#tok {
+  label { display: block; font-size: 13px; color: #9a9a9a; margin-bottom: 6px; margin-top: 14px; }
+  label:first-of-type { margin-top: 0; }
+  input {
     width: 100%; box-sizing: border-box;
     font: inherit; font-size: 15px;
     background: #0b0b0c; color: #eaeaea;
     border: 1px solid #333; border-radius: 8px;
-    padding: 10px 12px; margin-bottom: 16px;
+    padding: 10px 12px;
   }
-  #url {
-    font-size: clamp(13px, 3.6vw, 18px);
-    letter-spacing: 0.3px;
+  button {
+    width: 100%; margin-top: 18px;
+    font: inherit; font-size: 15px; font-weight: 600;
+    background: #eaeaea; color: #0b0b0c;
+    border: none; border-radius: 8px;
+    padding: 11px 12px; cursor: pointer;
+  }
+  button:disabled { opacity: 0.5; cursor: default; }
+  #result {
+    margin-top: 18px;
+    font-size: clamp(13px, 3.6vw, 17px);
     padding: 14px 16px;
     border: 1px solid #333;
     border-radius: 10px;
     background: #0b0b0c;
-    cursor: pointer;
-    user-select: all;
     word-break: break-all;
-    min-height: 1.4em;
-    color: #6fcf97;
+    display: none;
   }
-  #url:empty::before { content: "Tokenni yuqoriga kiriting"; color: #666; }
-  #note { font-size: 12px; color: #666; margin-top: 12px; line-height: 1.5; }
+  #result.ok { display: block; color: #6fcf97; cursor: pointer; user-select: all; }
+  #result.err { display: block; color: #eb5757; }
+  #note { font-size: 12px; color: #666; margin-top: 14px; line-height: 1.5; }
 </style>
 </head>
 <body>
-<div id="card">
-  <label for="tok">Vercel dashboard'dagi TOKEN qiymati</label>
-  <input id="tok" type="password" autocomplete="off" placeholder="TOKEN ni shu yerga joylang">
-  <div id="url" title="Bosib nusxa olish uchun belgila"></div>
-  <div id="note">Bu sahifa hech narsani hech qayerga yubormaydi — URL faqat shu brauzerda, joyida tuziladi. Token serverga saqlanmaydi va logga yozilmaydi.</div>
-</div>
+<form id="form">
+  <div id="card">
+    <label for="email">Email</label>
+    <input id="email" type="email" autocomplete="username" required>
+    <label for="pass">Parol</label>
+    <input id="pass" type="password" autocomplete="current-password" required>
+    <button id="btn" type="submit">Kirish</button>
+    <div id="result" title="Bosib nusxa olish uchun belgila"></div>
+    <div id="note">Email va parol faqat tekshirish uchun serverga yuboriladi, hech qayerda saqlanmaydi.</div>
+  </div>
+</form>
 <script>
-  const tok = document.getElementById('tok');
-  const out = document.getElementById('url');
-  function render() {
-    const v = tok.value.trim();
-    out.textContent = v ? ('https://claude-skills-mr.vercel.app/mcp?k=' + encodeURIComponent(v)) : '';
-  }
-  tok.addEventListener('input', render);
+  const form = document.getElementById('form');
+  const btn = document.getElementById('btn');
+  const result = document.getElementById('result');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('pass').value;
+    result.className = '';
+    result.textContent = '';
+    btn.disabled = true;
+    btn.textContent = 'Tekshirilmoqda...';
+    try {
+      const res = await fetch('/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await res.json();
+      if (res.ok && data.url) {
+        result.className = 'ok';
+        result.textContent = data.url;
+      } else {
+        result.className = 'err';
+        result.textContent = data.error || 'Xatolik yuz berdi';
+      }
+    } catch {
+      result.className = 'err';
+      result.textContent = 'Serverga ulanib bo\\'lmadi';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Kirish';
+    }
+  });
 </script>
 </body>
 </html>
