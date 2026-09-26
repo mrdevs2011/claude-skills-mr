@@ -328,6 +328,15 @@ Boshqa MCP tool'lar (`list`/`delete`/...) ko'rish uchun erkin.
 Papka aytilmasa root'ga yukla va qayerga qo'yganingni ayt.
 
 
+#### 6. Aksincha yo'nalish: sandbox'ga fayl kerak bo'lsa
+
+MR sandbox'ga (Claude'ning ishchi konteyneriga) o'z kompyuteridan fayl
+yubormoqchi bo'lsa ("skrinshot ol", "shu faylni o'zingga ol", "buni
+sandboxga tashla" kabi, so'z boshqacha kelsa ham xuddi shu ma'no) — xuddi
+shu `uploads` ko'prigi, teskari yo'nalishda (push kompyuterdan, pull
+sandbox'dan). Batafsil: **skill transfer/fayl-uzatish**, "Kompyuterdan
+sandbox'ga (aksincha yo'nalish)" bo'limi.
+
 **GitHub'da MR nomidan ish** (repo yaratish/o'chirish, clone, fayl o'zgartirish,
 commit, push, workflow, issue/PR -- uploads'ga fayl o'tkazishdan tashqari):
 -> Birinchi qadam har doim: `get_skill("github/github-ishlatish")`.

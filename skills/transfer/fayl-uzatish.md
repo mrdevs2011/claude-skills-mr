@@ -60,3 +60,56 @@ Kompyuterga yuklash shart emas. Suhbat outputiga chiqar.
 4. Shu javobda haqiqiy faylni ko'rsat/biriktir (matn, rasm, fayl)
 
 Faqat URL yetarli emas. ~/Claude/ ga yozma.
+
+## Kompyuterdan sandbox'ga (aksincha yo'nalish)
+
+MR ba'zan sandbox'ga (Claude ishlayotgan konteynerga) o'z kompyuteridan
+fayl o'tkazishni so'rashi mumkin ("skrinshot yubor", "shu faylni o'zingga
+ol", "buni sandboxga tashla" kabi). Yo'nalish teskari bo'lsa ham vosita bir
+xil — `uploads` ko'prigi (`mrdevs2011/uploads`, doim bo'sh turishi kerak),
+faqat endi push kompyuterdan, pull esa sandbox tomondan bo'ladi.
+
+### 1. Kompyuter tomonida push (`cmc` `run_command`, bitta chaqiruvda)
+
+```bash
+mkdir -p /tmp/up && cd /tmp/up
+cp /kerakli/fayl(lar) .          # ko'p fayl bo'lsa avval bitta .zip qil
+GIT_ASKPASS="$HOME/.gh-askpass.sh" GIT_TERMINAL_PROMPT=0 \
+  git clone -q https://github.com/mrdevs2011/uploads.git repo
+cp fayl-yoki-zip-nomi repo/
+cd repo
+git -c user.name="MR" -c user.email="mrdevs2011@users.noreply.github.com" \
+  add -A && git commit -q -m "to sandbox: NOM"
+GIT_ASKPASS="$HOME/.gh-askpass.sh" GIT_TERMINAL_PROMPT=0 git push -q origin main
+cd / && rm -rf /tmp/up
+```
+
+Xuddi shu `.gh-askpass.sh` tokeni ishlatiladi (bu token `repo` scope bilan
+barcha loyiha repolariga kira oladi, `uploads` ham shular qatorida) — CMMGH
+tokeni (`get_upload_token`) bu yo'nalishda kerak emas, u faqat sandbox
+tomonidan foydalaniladi. `uploads` private repo, shuning uchun push
+`hard_write` — MR aniq so'raganda `confirmed:true` bilan bajariladi.
+
+### 2. Sandbox tomonida pull (Claude o'zi bajaradi)
+
+1. `connectmymcpgithub.get_upload_token` bilan `uploads` uchun token ol.
+2. `bash_tool`: bitta chaqiruvda
+   `git clone https://x-access-token:$TOKEN@github.com/mrdevs2011/uploads.git`
+   — token javobda hech qachon ko'rsatilmaydi, klondan keyin darhol
+   ishlatilmay qo'yiladi.
+3. Kerakli fayl(lar)ni `/mnt/user-data/outputs/` ga ko'chir (zip bo'lsa
+   avval yech).
+4. `present_files` bilan foydalanuvchiga chiqar — rasm/screenshot bo'lsa
+   shu orqali chatda ko'rinadi, boshqa fayl bo'lsa yuklab olish sifatida.
+
+### 3. Tozalash (majburiy, ikkala yo'nalish uchun ham)
+
+Fayl muvaffaqiyatli o'qib olingach, sandbox darhol o'sha faylni `uploads`
+repo'dan o'chirib push qiladi (bitta qo'shimcha chaqiruvda, token qayta
+chop etilmaydi) — repo yo'nalishidan qat'i nazar doim bo'sh turishi kerak.
+
+### 4. Xavfsizlik
+
+Token (na kompyuter, na sandbox tomonida) hech qachon chatda/javobda
+ko'rsatilmaydi. Boshqa xato/skoup holatlari — yuqoridagi asosiy
+(sandbox→kompyuter) bo'limdagi qoidalar bilan bir xil.
