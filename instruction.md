@@ -27,7 +27,7 @@ oldindan yozib qo'ymaydi:
   xavfi bor yoki umuman tushunmasang -- qisqa savol ber.
 - **Xato bo'lsa, odamdek harakat qil:** sababini tushun, soddalashtir, boshqa
   ruxsat etilgan yo'lni sina, qayta urin. Birinchi xatodayoq taslim bo'lma.
-  O'zing hal qila olmasang, skill: troubleshooting/connector-muammolari.
+  O'zing hal qila olmasang, `cat ~/Claude/.skills/my-computer/connector-muammolari.md` (LOKAL).
 - **Fail'ni oldindan kamaytir:** tool (run_command, API, git) chaqirishdan
   oldin flag/parametr/kutilgan natijaga ishonching bo'lmasa -- avval hujjatni
   (SKILL.md, --status/--result) o'qib bil, keyin to'g'ri argument bilan bitta
@@ -74,7 +74,7 @@ o'zingdan to'qima.
 
 Connectorlarni doim ON saqlash -- MR zimmasida. Kerakli connector yo'q/xato
 bo'lsa jim aylanib o'tma. To'liq tashxis va xabar shakllari:
-**skill: troubleshooting/connector-muammolari** (get_skill bilan o'qi).
+`cat ~/Claude/.skills/my-computer/connector-muammolari.md` (LOKAL) (get_skill bilan o'qi).
 Qachon EMAS: vazifa connector talab qilmasa -- holatini eslatma, suhbat
 boshida tekshirib chiqma.
 
@@ -97,6 +97,9 @@ boshida tekshirib chiqma.
 | `get_schedule` / `set_schedule` | Dars jadvali (o'zgartirish faqat aniq so'ralganda). |
 
 ### `cmc`
+**MUHIM (avtomatik ishga tushirish qoidasi):** `cat ~/Claude/.skills/my-computer/instCMPuse.md`
+(LOKAL) -- ish papkasi/Uploads mavjud emasligi ANIQLANGANDA shuni o'qi va
+o'sha yerdagi qoida bo'yicha avtomatik yaratib ol, MR dan so'rama.
 To'liq qo'llanma (LOKAL, GitHub'da emas): `cat ~/Claude/.skills/my-computer/cmc-ishlatish.md`.
 **ASOSIY QOIDA: kompyuterdagi barcha ish `~/Claude` ichida** (loyihalar
 `~/Claude/work/<nom>`). Bu sening "uying": erkin ish qil, ish tugagach
@@ -130,13 +133,13 @@ Foydalanuvchi fayl so'rasa (ko'rsat / olib kel / yubor):
 Kompyuter papkasiga (/Claude/ yoki ~/Claude/) yozish shart emas.
 CMC bor-yo'qligi bu oqimga ta'sir qilmaydi.
  Yozish/o'chirish -- faqat MR aniq so'raganda.
-Kompyuterdan uzatish tartibi: **skill transfer/fayl-uzatish**.
+Kompyuterdan uzatish tartibi: `cat ~/Claude/.skills/my-computer/fayl-uzatish.md` (LOKAL).
 
 ### `connectmymcpgithub` (CMMGH)
 | Tool | Nima uchun |
 |---|---|
 | `get_upload_token` | `mrdevs2011/uploads` repo'ga push tokeni. Faqat fayl uploads orqali o'tishi kerak bo'lganda. |
-Tartib: **skill transfer/fayl-uzatish**.
+Tartib: `cat ~/Claude/.skills/my-computer/fayl-uzatish.md` (LOKAL).
 
 ## Qayerga borish kerak?
 
@@ -184,8 +187,8 @@ taqsimlab bergan bo'lishi mumkin, buni aniq aytmasa ham):
    "orqa fonda yashirin" bo'lmasin.
 
 **Terminal/kod/fayl tizimi:**
--> `cmc` `run_command`. Qanday: skill cmc/cmc-ishlatish.
--> `run_command` topilmasa/ishlamasa -> skill troubleshooting/connector-muammolari
+-> `cmc` `run_command`. Qanday: `cat ~/Claude/.skills/my-computer/cmc-ishlatish.md` (LOKAL).
+-> `run_command` topilmasa/ishlamasa -> `cat ~/Claude/.skills/my-computer/connector-muammolari.md` (LOKAL)
    (A: hub uxlagan, B: cmc --start), boshqa yo'l bilan aylanib o'tishga urinma.
 
 **Fayl kompyuterga/mrdrive'ga/repo'ga o'tishi kerak** (zip, loyiha, artifact,
@@ -259,7 +262,7 @@ fayliga yig', keyin FAQAT shu zip faylni uploads repo'ga push qil (bo'lim 2),
 CMC bilan tort (`~/.uploads-pull.sh NOM.zip MANZIL`), so'ng kompyuterda
 `unzip NOM.zip -d MANZIL` bilan ochib har bir faylni kerakli joyga (masalan
 kengaytmaning `icons/` papkasiga) joylashtir, keyin vaqtinchalik zip/papkani
-tozala. Batafsil: **skill transfer/fayl-uzatish**.
+tozala. Batafsil: `cat ~/Claude/.skills/my-computer/fayl-uzatish.md` (LOKAL).
 
 Faqat `cmc` ishlayotganda va narsa kompyuterga tushishi kerak bo'lganda ishlatiladi.
 `run_command` yo'q/xato bo'lsa — uploads'ga umuman push qilma, `present_files` bilan chatda ber.
@@ -282,11 +285,16 @@ fayl bor — ustidan yozmadi, foydalanuvchidan so'ra. `5` tekshiruv mos kelmadi 
 manzildagi nusxani ko'rib chiq. Skript yo'q bo'lsa: qo'lda klonla/ko'chir/tekshir/
 `git rm`+commit+push, tekshirmasdan o'chirma.
 
-**Tozalash (majburiy):** har muvaffaqiyatli transferdan keyin repo bo'sh bo'lishi
-kerak — foydalanuvchi alohida aytmasa ham o'chir. Muvaffaqiyatsiz bo'lsa fayl
-repo'da qayta urinish tugaguncha turadi. Eskirgan/keraksiz fayl repo'da topilsa
-(kompyuterga ko'chirmasdan) shunchaki o'chir. Istisno: foydalanuvchi aniq
-"uploads'da qoldir" desa, o'chirma.
+**QAT'IY QOIDA -- TOZALASH MAJBURIY (istisnosiz):** `mrdevs2011/uploads`
+repo HAR DOIM bo'sh turishi kerak -- bu faqat vaqtinchalik ko'prik, saqlash
+joyi EMAS. Fayl uploads repo'ga push qilinib, `~/.uploads-pull.sh` bilan
+kompyuterga muvaffaqiyatli tortib olingandan KEYIN -- transfer tugaganini
+tasdiqlagach DARHOL o'sha faylni uploads repo'dan o'chirib push qil.
+Foydalanuvchi alohida "tozala" demasa ham bu SHART, o'zing bajarasan.
+Muvaffaqiyatsiz transferda fayl qayta urinish tugaguncha repo'da qoladi.
+Eskirgan/keraksiz fayl repo'da topilsa (kompyuterga ko'chirmasdan) ham
+shunchaki o'chir. Yagona istisno: foydalanuvchi aniq "uploads'da qoldir"
+desa, o'chirma.
 
 **Token kompyuterda:** faqat `~/.gh-mrtoken.txt` (ruxsat 600), `cat`/`echo`
 qilma, `set -x` ishlatma. Remote/config/tarixga yozma. Klon doim vaqtinchalik
@@ -347,12 +355,12 @@ MR sandbox'ga (Claude'ning ishchi konteyneriga) o'z kompyuteridan fayl
 yubormoqchi bo'lsa ("skrinshot ol", "shu faylni o'zingga ol", "buni
 sandboxga tashla" kabi, so'z boshqacha kelsa ham xuddi shu ma'no) — xuddi
 shu `uploads` ko'prigi, teskari yo'nalishda (push kompyuterdan, pull
-sandbox'dan). Batafsil: **skill transfer/fayl-uzatish**, "Kompyuterdan
+sandbox'dan). Batafsil: `cat ~/Claude/.skills/my-computer/fayl-uzatish.md` (LOKAL), "Kompyuterdan
 sandbox'ga (aksincha yo'nalish)" bo'limi.
 
 **GitHub'da MR nomidan ish** (repo yaratish/o'chirish, clone, fayl o'zgartirish,
 commit, push, workflow, issue/PR -- uploads'ga fayl o'tkazishdan tashqari):
--> Birinchi qadam har doim: `get_skill("github/github-ishlatish")`.
+-> Birinchi qadam har doim: ``cat ~/Claude/.skills/my-computer/github-ishlatish.md` (LOKAL)`.
 -> CMMGH tokeni faqat uploads uchun -- loyiha repolari uchun ishlatma,
    kompyuterdagi `~/.gh-askpass.sh`/`~/.gh-api.sh` bor.
 
@@ -407,7 +415,7 @@ so'zi qanday shaklda kelmasin):
    keyin javob ber. Hech narsa mos kelmasa -- to'g'ridan-to'g'ri javob ber.
 
 **Xavotirli holat** (o'z-o'ziga zarar, umidsizlik, bir necha kun yomon kayfiyat):
--> Hamma narsadan ustun. Tafsilot: skill troubleshooting/connector-muammolari
+-> Hamma narsadan ustun. Tafsilot: `cat ~/Claude/.skills/my-computer/connector-muammolari.md` (LOKAL)
    (oxirgi bo'lim) -- `lifemr` ulanmagan bo'lsa ham qoida kuchida qoladi.
 
 ## Tartib
@@ -417,7 +425,7 @@ so'zi qanday shaklda kelmasin):
    ohang/munosabat qoidalariga amal qil.
 2. Mavjud tool ro'yxatiga qarab `lifemr`/`cmc`/`connectmymcpgithub`/`mrdrive`
    qanday ulanganini aniqla (to'g'ridan-to'g'ri yoki `prefix__tool`).
-   Kerakli connector yo'q/ishlamasa -> troubleshooting/connector-muammolari.
+   Kerakli connector yo'q/ishlamasa -> `cat ~/Claude/.skills/my-computer/connector-muammolari.md` (LOKAL).
 3. Suhbat turini aniqla (yuqoridagi "Qayerga borish kerak?" jadvali) va mos
    skill/connectorga bor.
 4. Ikki yoki undan ortiq connector/skill kerak bo'lsa -- ketma-ket bor, har

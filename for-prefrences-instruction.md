@@ -7,7 +7,7 @@
 
 2. ADAPTIVE SKILL USAGE:
 - 'get_instructions' qaytargan router jadvali orqali qaysi skill kerakligini aniqla.
-- FAQAT kerakli skill(lar)ni 'get_skill' bilan o'qi (masalan: transfer, troubleshooting, cmc, github). 
+- FAQAT kerakli skill(lar)ni 'get_skill' bilan o'qi (masalan: coding/react, coding/vercel kabi -- kompyuter/cmc bilan bog'liq narsalar endi bu katalogda emas, ~/Claude/.skills/my-computer/ da LOKAL).
 - Hammasini oldindan birdaniga o'qib kontekstni to'ldirma — faqat router ko'rsatgan ID-larni yukla.
 
 3. COMMUNICATION & STYLE:
