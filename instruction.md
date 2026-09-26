@@ -372,7 +372,7 @@ borish so'ralsa):
    to'ldirish, drag va h.k. -- URL/buyruq bilan almashtirib bo'lmaydigan
    holat). Shundagina: `ydotool mousemove -a` (absolute mode) ISHLATMA --
    bu tizimda darhol crash beradi. To'g'ri yo'l: run_command bilan `cat ~/Claude/.skills/my-computer/koordinataga-bosish.md` o'qi (LOKAL) -- tayyor
-   `~/Claude/click-at.sh` skripti bor, qayta yozma).
+   `~/Claude/.bin/click-at/click-at.sh` skripti bor, qayta yozma).
 
 **Ekran bilan ishlash / UI avtomatlashtirish** (ilova ich, biror narsani bos, matn yoz, screenshot ol, qidiruv qil, xabar o'qi — ya'ni ekrandagi UI bilan har qanday ish):
 -> Avval eng qisqa yo'l: to'g'ridan-to'g'ri buyruq (`Telegram &`) > shortcut (`ydotool key`) > koordinata (`click-at.sh`).
@@ -381,8 +381,8 @@ borish so'ralsa):
 
 **Klaviatura shortcutlari / Niri WM keybindinglar** ("shortcut bos", "Mod+N bos", "shu tugmani bos", "X+Y kombinatsiyasini bos", "terminalni shortcut bilan och" -- klaviatura kombinatsiyasi yuborish so'ralsa):
 -> **AVVAL to'g'ri yo'lni tekshir:** agar app ishga tushirish kerak bo'lsa -- `run_command` bilan to'g'ridan-to'g'ri dastur nomini yoz (`Telegram &`, `kitty &`, `firefox &`). Shortcut yubormasdan ham ishlaydi va tezroq.
--> **Shortcut yuborish kerak bo'lsa** (Niri WM ichida UI amal, oyna boshqarish, workspace o'tish kerak bo'lsa): `~/Claude/shortcuts.md` ni o'qi -- u yerda barcha Niri keybindinglar, ydotool raw keycodelari va tayyor buyruq misollari bor.
--> **O'qish:** `run_command`: `cat ~/Claude/shortcuts.md`
+-> **Shortcut yuborish kerak bo'lsa** (Niri WM ichida UI amal, oyna boshqarish, workspace o'tish kerak bo'lsa): `~/Claude/.skills/my-computer/shortcuts.md` ni o'qi -- u yerda barcha Niri keybindinglar, ydotool raw keycodelari va tayyor buyruq misollari bor.
+-> **O'qish:** `run_command`: `cat ~/Claude/.skills/my-computer/shortcuts.md`
 -> **ydotool sintaksis:** `ydotool key KEYCODE:1 KEYCODE:0` (raw keycodes, xdotool emas). Muhit o'zgaruvchilar: `YDOTOOL_SOCKET=/tmp/.ydotool_socket`, `XDG_RUNTIME_DIR=/run/user/1001`, `WAYLAND_DISPLAY=wayland-1`.
 -> Yangi shortcut qo'shilsa yoki config.kdl o'zgarsa -- `shortcuts.md` ni ham yangilat.
 
