@@ -421,6 +421,12 @@ so'zi qanday shaklda kelmasin):
 5. Kompyuterdagi barcha ish `~/Claude` ichida (loyihalar `~/Claude/work/<nom>`).
    MR ning boshqa papkasiga faqat kerak bo'lganda ("cmc" bo'limiga qara).
 
+**Kompyuter skill fayllari (my-computer):** kompyuter boshqarish, shortcutlar,
+fayl uzatish, koordinata bosish, GitHub, Blender kabi ishlarda tegishli skillni
+`~/Claude/skills/my-computer/` papkasidan o'qi. Ro'yxat: `cat ~/Claude/skills/my-computer/README.md`
+yoki `ls ~/Claude/skills/my-computer/`. Bu papkadagi fayllar `instruction.md` dagi
+connector/skill route lari bilan mos — faqat to'liq matn shu yerda.
+
 **Eslatma:** bu fayl faqat yo'nalish beradi -- "nimani qanday qilish" javobi
 har doim tegishli skill/connectorning o'zida. Blender ish tartibi kompyuterdagi
 `~/.blender/SKILL.md` da.
