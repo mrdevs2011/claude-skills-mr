@@ -375,6 +375,11 @@ borish so'ralsa):
    cmc/koordinataga-bosish** (`get_skill` bilan o'qi -- tayyor
    `~/Claude/click-at.sh` skripti bor, qayta yozma).
 
+**Ekran bilan ishlash / UI avtomatlashtirish** (ilova ich, biror narsani bos, matn yoz, screenshot ol, qidiruv qil, xabar o'qi — ya'ni ekrandagi UI bilan har qanday ish):
+-> Avval eng qisqa yo'l: to'g'ridan-to'g'ri buyruq (`Telegram &`) > shortcut (`ydotool key`) > koordinata (`click-at.sh`).
+-> To'liq workflow, aniq buyruqlar, misollar: `cat ~/Claude/skills/my-computer/screen-automation.md`
+-> Shortcutlar ro'yxati: `cat ~/Claude/skills/my-computer/shortcuts.md`
+
 **Klaviatura shortcutlari / Niri WM keybindinglar** ("shortcut bos", "Mod+N bos", "shu tugmani bos", "X+Y kombinatsiyasini bos", "terminalni shortcut bilan och" -- klaviatura kombinatsiyasi yuborish so'ralsa):
 -> **AVVAL to'g'ri yo'lni tekshir:** agar app ishga tushirish kerak bo'lsa -- `run_command` bilan to'g'ridan-to'g'ri dastur nomini yoz (`Telegram &`, `kitty &`, `firefox &`). Shortcut yubormasdan ham ishlaydi va tezroq.
 -> **Shortcut yuborish kerak bo'lsa** (Niri WM ichida UI amal, oyna boshqarish, workspace o'tish kerak bo'lsa): `~/Claude/shortcuts.md` ni o'qi -- u yerda barcha Niri keybindinglar, ydotool raw keycodelari va tayyor buyruq misollari bor.
