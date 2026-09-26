@@ -77,6 +77,8 @@ to'g'ridan-to'g'ri yozish xato beradi — bunday holda python3 bilan JSON ni
 o'zi tuzib, to'g'ridan-to'g'ri xuddi shu token o'zgaruvchisidan foydalanib
 alohida so'rov yuborish kerak (masalan katta faylni push qilishda).
 
+**Eslatma:** bu base64 faqat GitHub API so'rovi ICHIDA, skript/kod orqali ishlatiladi — AI uni hech qachon chat javobida ko'rsatib, keyin CMC buyrug'iga qo'lda joylashtirmaydi (qarang: **skill transfer/fayl-uzatish**, 0-bo'lim). Fayl sandbox'dan kelayotgan bo'lsa, avval `transfer/fayl-uzatish` oqimi bilan kompyuterga tushiriladi, keyin kerak bo'lsa shu yerdagi API bilan push qilinadi.
+
 ## 3. Xavfsizlik qoidalari (o'zgarmas)
 - **Tokenni hech qachon ko'rsatma.** `cat ~/.gh-mrtoken.txt`, `echo $T` qilma.
   Skript javobidagi token-ko'rinishidagi qatorlarni ham qayta chop etma.

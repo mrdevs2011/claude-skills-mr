@@ -23,6 +23,7 @@ ZZZCMCSCOPEENDZZZ
 - Ichida **hech qanday maxsus belgi, escape, \ , o'rtaga / qo'yma**.
 - Oddiy foydalanuvchi terminalga qanday yozsa, xuddi shunday yoz.
 - Base64 ishlatma (endilikda kerak emas).
+- **Fayl o'tkazish uchun ham base64'ni CMC buyrug'iga qo'lda yozib joylashtirma** (masalan `cat > fayl << EOF` ichiga base64 blok qo'yib, keyin `base64 -d`) — bu har doim taqiqlangan, fayl hajmidan qat'i nazar. Fayl(lar)ni sandbox'dan kompyuterga o'tkazish faqat GitHub `uploads` repo orqali (`~/.uploads-pull.sh`), ko'p fayl bo'lsa avval zip qilib. Batafsil: **skill transfer/fayl-uzatish**.
 - Scope topilmasa eski plain string ham ishlaydi (orqaga mos), lekin **sen doim scope ishlat**.
 - Multi-line, quote, pipe, && — hammasi ichida erkin.
 

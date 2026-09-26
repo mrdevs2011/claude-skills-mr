@@ -232,6 +232,22 @@ CMC/kompyuter/kengaytma deb tushuntirma. Qolgan MRdrive tool'lar ishlayveradi.
 
 #### 3. Uploads: kompyuterga tortish (doim bo'sh qolishi kerak)
 
+**QAT'IY, ISTISNOSIZ QOIDA — base64 hech qachon chatda qo'lda ko'chirilmaydi/yozdirilmaydi.**
+Fayl(lar)ni (rasm, ikon, kod, matn — istalgan format, istalgan hajm) sandbox'dan
+kompyuterga o'tkazishning YAGONA yo'li — shu bo'limdagi uploads oqimi
+(`get_upload_token` -> uploads repo'ga push -> `~/.uploads-pull.sh`). AI base64
+matnini javobda ko'rsatib, keyin uni `cat > fayl << EOF ... EOF` + `base64 -d`
+kabi buyruq bilan CMC orqali qo'lda yozdirmasin — bu doim taqiqlangan, fayl
+hajmi kichik yoki katta bo'lishidan qat'i nazar.
+
+Bir nechta fayl o'tkazilishi kerak bo'lsa (masalan bir nechta ikon o'lchami,
+ko'p sahifali loyiha, papka to'liq): avval sandbox'da ularni bitta `.zip`
+fayliga yig', keyin FAQAT shu zip faylni uploads repo'ga push qil (bo'lim 2),
+CMC bilan tort (`~/.uploads-pull.sh NOM.zip MANZIL`), so'ng kompyuterda
+`unzip NOM.zip -d MANZIL` bilan ochib har bir faylni kerakli joyga (masalan
+kengaytmaning `icons/` papkasiga) joylashtir, keyin vaqtinchalik zip/papkani
+tozala. Batafsil: **skill transfer/fayl-uzatish**.
+
 Faqat `cmc` ishlayotganda va narsa kompyuterga tushishi kerak bo'lganda ishlatiladi.
 `run_command` yo'q/xato bo'lsa — uploads'ga umuman push qilma, `present_files` bilan chatda ber.
 
