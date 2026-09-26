@@ -8,6 +8,17 @@ ekrandagi X,Y piksel pozitsiyasiga sichqonchani aniq olib borish va/yoki
 bosish kerak. Bu oddiy `ydotool mousemove -a` bilan ISHLAMAYDI -- sababi
 va to'g'ri usul shu yerda.
 
+## AVVAL TEKSHIR: koordinata umuman kerakmi?
+Bu skillga o'tishdan oldin: natijani **to'g'ridan-to'g'ri buyruq/URL** bilan
+olib bo'ladimi? Bo'lsa -- shuni qil, koordinata/skrinshot zanjiriga umuman
+BORMA (token va vaqtni behuda sarflaydi):
+- "youtube'dan X qo'y" -> web_search bilan video top -> `run_command`:
+  `brave "https://youtube.com/watch?v=..."` -- bitta buyruq.
+- "shu saytni och" -> `brave URL`.
+- "shu faylni och" -> `xdg-open FAYL`.
+Koordinataga bosish **faqat** haqiqiy UI ichida (forma, tugma, drag) buyruq/
+URL bilan almashtirib bo'lmaydigan holatda kerak -- shundagina pastdagisini ishlat.
+
 ## MUHIM: nega absolute mode emas
 `ydotool mousemove -a -x -y` (absolute/EV_ABS) MR ning kompyuterida
 `ydotoold --touch-on` ishga tushirilganda DARHOL CRASH beradi. Shuning

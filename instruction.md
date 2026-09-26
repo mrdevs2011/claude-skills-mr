@@ -347,10 +347,20 @@ commit, push, workflow, issue/PR -- uploads'ga fayl o'tkazishdan tashqari):
 bos", "shu tugmani bos", "kursorni X,Y ga qo'y", "ekranda ana anavi joyni
 bos" -- koordinata yoki ekrandagi biror nuqta/element ko'rsatilib, bosish/
 borish so'ralsa):
--> `ydotool mousemove -a` (absolute mode) ISHLATMA -- bu tizimda darhol
-   crash beradi. To'g'ri yo'l: **skill: cmc/koordinataga-bosish**
-   (`get_skill` bilan o'qi -- tayyor `~/Claude/click-at.sh` skripti bor,
-   qayta yozma).
+-> **AVVAL token-tejamkor yo'lni tekshir:** natija to'g'ridan-to'g'ri buyruq/
+   URL bilan olinadigan bo'lsa (brauzerda sayt/video/qidiruv ochish, dastur
+   ishga tushirish, fayl ochish) -- click-at/skrinshot ZANJIRIGA UMUMAN
+   BORMA. Masalan "youtube'dan qo'shiq qo'y" -> qo'shiqni web_search bilan
+   top, keyin `run_command`: `brave "https://youtube.com/watch?v=XXXXX"`
+   -- bitta buyruq, koordinata/skrinshot shart emas. Xuddi shunday: sayt
+   ochish -> `brave URL`, fayl ochish -> `xdg-open FAYL`.
+-> **Koordinataga bosish FAQAT** haqiqiy UI ichida amal kerak bo'lganda
+   ishlatiladi (interfeys ichidagi aniq tugma/element bosish, forma
+   to'ldirish, drag va h.k. -- URL/buyruq bilan almashtirib bo'lmaydigan
+   holat). Shundagina: `ydotool mousemove -a` (absolute mode) ISHLATMA --
+   bu tizimda darhol crash beradi. To'g'ri yo'l: **skill:
+   cmc/koordinataga-bosish** (`get_skill` bilan o'qi -- tayyor
+   `~/Claude/click-at.sh` skripti bor, qayta yozma).
 
 **Blender / WebBlender** ("blender'ni och", "mashina yasab ber", "blender"
 so'zi qanday shaklda kelmasin):
