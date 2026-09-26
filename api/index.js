@@ -8,7 +8,12 @@ import crypto from "node:crypto";
 import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 
-const TOKEN = process.env.TOKEN || "H7RLjWiiZm1lh0sSSrSytQS4h-KDnZU_";
+const TOKEN = process.env.TOKEN;
+if (!TOKEN) {
+  // Env var qo'yilmasa server ishlamaydi -- git tarixida qolgan eski
+  // tokenga hech qachon qaytib tushmaslik uchun ataylab shunday.
+  console.error("TOKEN environment variable o'rnatilmagan.");
+}
 // On Vercel the repo is read-only at runtime; instruction.md/skills bundled
 // alongside this function's project root (see vercel.json includeFiles).
 const INSTRUCTION_FILE =
@@ -145,6 +150,7 @@ async function readBody(req) {
 }
 
 function checkAuth(req, url) {
+  if (!TOKEN) return false;
   const fromQuery = url.searchParams.get("k");
   const auth = String(req.headers.authorization || "").replace(/^Bearer\s+/i, "").trim();
   return fromQuery === TOKEN || auth === TOKEN;
@@ -384,7 +390,20 @@ export default async function handler(req, res) {
         body = Object.fromEntries(new URLSearchParams(raw));
       }
     } catch {}
-    if (body.code) pendingCodes.delete(body.code);
+
+    // Haqiqiy tekshiruv: kod avval /authorize orqali chiqarilgan bo'lishi
+    // SHART va faqat bir marta ishlatiladi (single-use). Bu oldin umuman
+    // tekshirilmasdan, har qanday kelgan so'rovga TOKEN qaytarib
+    // yuborilishining oldini oladi.
+    const code = body.code;
+    if (!code || !pendingCodes.has(code)) {
+      return send(res, 400, { error: "invalid_grant" });
+    }
+    pendingCodes.delete(code);
+
+    if (!TOKEN) {
+      return send(res, 500, { error: "server_error" });
+    }
     return send(res, 200, {
       access_token: TOKEN,
       token_type: "Bearer",
