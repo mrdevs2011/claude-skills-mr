@@ -20,6 +20,50 @@ const SITE_URL = process.env.URL;
 if (!EMAIL || !PASS || !SITE_URL) {
   console.error("EMAIL, PASS yoki URL environment variable o'rnatilmagan.");
 }
+
+// --- /login uchun urinishlarni cheklash (best-effort: faqat shu funksiya
+// instansiyasi "issiq" turgan davrda ishlaydi, cold start'da tozalanadi --
+// baribir avtomatlashtirilgan hujumni sezilarli sekinlashtiradi va qimmatga
+// tushiradi).
+const LOGIN_MAX_ATTEMPTS = 5;
+const LOGIN_WINDOW_MS = 15 * 60 * 1000;
+const LOGIN_LOCK_MS = 15 * 60 * 1000;
+const loginAttempts = new Map(); // ip -> { count, firstAt, lockedUntil }
+
+function getClientIp(req) {
+  const fwd = String(req.headers["x-forwarded-for"] || "");
+  if (fwd) return fwd.split(",")[0].trim();
+  return req.socket?.remoteAddress || "unknown";
+}
+
+function loginLockStatus(ip) {
+  const rec = loginAttempts.get(ip);
+  if (!rec) return 0;
+  if (rec.lockedUntil && rec.lockedUntil > Date.now()) return rec.lockedUntil - Date.now();
+  return 0;
+}
+
+function recordLoginFailure(ip) {
+  const now = Date.now();
+  const rec = loginAttempts.get(ip) || { count: 0, firstAt: now, lockedUntil: 0 };
+  if (now - rec.firstAt > LOGIN_WINDOW_MS) {
+    rec.count = 0;
+    rec.firstAt = now;
+  }
+  rec.count += 1;
+  if (rec.count >= LOGIN_MAX_ATTEMPTS) {
+    rec.lockedUntil = now + LOGIN_LOCK_MS;
+  }
+  loginAttempts.set(ip, rec);
+}
+
+function resetLoginAttempts(ip) {
+  loginAttempts.delete(ip);
+}
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 // On Vercel the repo is read-only at runtime; instruction.md/skills bundled
 // alongside this function's project root (see vercel.json includeFiles).
 const INSTRUCTION_FILE =
@@ -136,6 +180,20 @@ function send(res, status, body) {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "Content-Type, Authorization, Mcp-Session-Id, MCP-Protocol-Version",
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+  });
+  res.end(payload);
+}
+
+// /login javoblari: CORS wildcard yo'q (faqat o'z sahifasidan, same-origin
+// chaqiriladi -- boshqa sayt javobni o'qiy olmasin) va hech qanday joyda
+// keshlanmasin.
+function sendLogin(res, status, body, extraHeaders = {}) {
+  const payload = JSON.stringify(body);
+  res.writeHead(status, {
+    "Content-Type": "application/json; charset=utf-8",
+    "Cache-Control": "no-store",
+    "X-Content-Type-Options": "nosniff",
+    ...extraHeaders,
   });
   res.end(payload);
 }
@@ -434,21 +492,41 @@ export default async function handler(req, res) {
   }
 
   if (req.method === "POST" && url.pathname === "/login") {
+    const ip = getClientIp(req);
+    const lockedMs = loginLockStatus(ip);
+    if (lockedMs > 0) {
+      await delay(300 + Math.random() * 200);
+      return sendLogin(
+        res,
+        429,
+        { error: "Juda ko'p urinish. Keyinroq qayta urinib ko'ring." },
+        { "Retry-After": String(Math.ceil(lockedMs / 1000)) }
+      );
+    }
+
     let body = {};
     try {
       body = await readBody(req);
     } catch {
-      return send(res, 400, { error: "JSON kerak" });
+      return sendLogin(res, 400, { error: "JSON kerak" });
     }
     const { email, password } = body || {};
-    if (!checkLogin(email, password)) {
-      return send(res, 401, { error: "Email yoki parol xato" });
+    const ok = checkLogin(email, password);
+
+    // To'g'ri/xato javob farqsiz kichik tasodifiy kechikish -- javob
+    // vaqtidan hech narsa bilinmasin va avtomatik urinish qimmatga tushsin.
+    await delay(250 + Math.random() * 250);
+
+    if (!ok) {
+      recordLoginFailure(ip);
+      return sendLogin(res, 401, { error: "Email yoki parol xato" });
     }
+    resetLoginAttempts(ip);
     if (!TOKEN || !SITE_URL) {
-      return send(res, 500, { error: "server_error" });
+      return sendLogin(res, 500, { error: "server_error" });
     }
     const base = SITE_URL.replace(/\/+$/, "");
-    return send(res, 200, { url: `${base}/mcp?k=${TOKEN}` });
+    return sendLogin(res, 200, { url: `${base}/mcp?k=${TOKEN}` });
   }
 
   if (url.pathname !== "/mcp") {
