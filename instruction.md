@@ -343,6 +343,15 @@ commit, push, workflow, issue/PR -- uploads'ga fayl o'tkazishdan tashqari):
 -> CMMGH tokeni faqat uploads uchun -- loyiha repolari uchun ishlatma,
    kompyuterdagi `~/.gh-askpass.sh`/`~/.gh-api.sh` bor.
 
+**Ekranga sichqoncha bilan bosish / koordinataga borish** ("manabu joyga
+bos", "shu tugmani bos", "kursorni X,Y ga qo'y", "ekranda ana anavi joyni
+bos" -- koordinata yoki ekrandagi biror nuqta/element ko'rsatilib, bosish/
+borish so'ralsa):
+-> `ydotool mousemove -a` (absolute mode) ISHLATMA -- bu tizimda darhol
+   crash beradi. To'g'ri yo'l: **skill: cmc/koordinataga-bosish**
+   (`get_skill` bilan o'qi -- tayyor `~/Claude/click-at.sh` skripti bor,
+   qayta yozma).
+
 **Blender / WebBlender** ("blender'ni och", "mashina yasab ber", "blender"
 so'zi qanday shaklda kelmasin):
 -> MUHIM: "blender" HECH QACHON desktop Blender ilovasini anglatmaydi -- MR
