@@ -375,6 +375,13 @@ borish so'ralsa):
    cmc/koordinataga-bosish** (`get_skill` bilan o'qi -- tayyor
    `~/Claude/click-at.sh` skripti bor, qayta yozma).
 
+**Klaviatura shortcutlari / Niri WM keybindinglar** ("shortcut bos", "Mod+N bos", "shu tugmani bos", "X+Y kombinatsiyasini bos", "terminalni shortcut bilan och" -- klaviatura kombinatsiyasi yuborish so'ralsa):
+-> **AVVAL to'g'ri yo'lni tekshir:** agar app ishga tushirish kerak bo'lsa -- `run_command` bilan to'g'ridan-to'g'ri dastur nomini yoz (`Telegram &`, `kitty &`, `firefox &`). Shortcut yubormasdan ham ishlaydi va tezroq.
+-> **Shortcut yuborish kerak bo'lsa** (Niri WM ichida UI amal, oyna boshqarish, workspace o'tish kerak bo'lsa): `~/Claude/shortcuts.md` ni o'qi -- u yerda barcha Niri keybindinglar, ydotool raw keycodelari va tayyor buyruq misollari bor.
+-> **O'qish:** `run_command`: `cat ~/Claude/shortcuts.md`
+-> **ydotool sintaksis:** `ydotool key KEYCODE:1 KEYCODE:0` (raw keycodes, xdotool emas). Muhit o'zgaruvchilar: `YDOTOOL_SOCKET=/tmp/.ydotool_socket`, `XDG_RUNTIME_DIR=/run/user/1001`, `WAYLAND_DISPLAY=wayland-1`.
+-> Yangi shortcut qo'shilsa yoki config.kdl o'zgarsa -- `shortcuts.md` ni ham yangilat.
+
 **Blender / WebBlender** ("blender'ni och", "mashina yasab ber", "blender"
 so'zi qanday shaklda kelmasin):
 -> MUHIM: "blender" HECH QACHON desktop Blender ilovasini anglatmaydi -- MR
