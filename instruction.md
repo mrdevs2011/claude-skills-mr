@@ -114,6 +114,15 @@ kerak bo'lsa clone/tahrirla/push, tekshirilgach o'chir).
 |---|---|
 | `run_command` | MR kompyuterida buyruq bajaradi. Xavfli buyruq `confirmed:true`. Har chaqiruv yangi `sh`, 30s timeout. |
 | `get_recent_commands` | Oxirgi buyruqlar tarixi (audit). |
+**Uzoq davomiylik / parallel session kerak bo'lsa** (bir necha chaqiruv orasida
+cd/export/holat saqlanishi kerak -- masalan build, ko'p bosqichli ish):
+-> `~/Claude/.bin/psession.sh` (tmux-asosli doimiy sessiya) ishlat, har safar
+   yangi `sh` boshlanadigan oddiy `run_command`ga tayanma. Tafsilot: LOKAL
+   `cat ~/Claude/.skills/my-computer/cmc-ishlatish.md`.
+**10 daqiqadan uzoq ish qilsang** (katta refactor, uzoq build) -- `.ai-lock`
+eskirib ketmasligi uchun `~/Claude/.bin/ai-heartbeat` bilan qulfni vaqti-vaqti
+bilan yangilab tur, aks holda boshqa agent "qulf eskirgan" deb parallel yoza
+boshlashi mumkin.
 
 ### `mrdrive`
 MR ning o'z fayl ombori (Google Drive emas). Fayllar web ilovada ham ko'rinadi.
@@ -381,6 +390,11 @@ borish so'ralsa):
    holat). Shundagina: `ydotool mousemove -a` (absolute mode) ISHLATMA --
    bu tizimda darhol crash beradi. To'g'ri yo'l: run_command bilan `cat ~/Claude/.skills/my-computer/koordinataga-bosish.md` o'qi (LOKAL) -- tayyor
    `~/Claude/.bin/click-at/click-at.sh` skripti bor, qayta yozma).
+-> **.Actions bazasi ekran o'lchamiga bog'liq:** action'lar
+   `.Actions/<Ilova>/<WIDTHxHEIGHT>/<Holat>/` tuzilishida saqlanadi -- boshqa
+   monitor/noutbuk ekraniga o'tsa eski koordinatalarni ishlatma, shu o'lcham
+   uchun alohida qayta tasdiqlash kerak bo'ladi. Tafsilot: LOKAL
+   `~/Claude/.Actions/README.md`.
 
 **Ekran bilan ishlash / UI avtomatlashtirish** (ilova ich, biror narsani bos, matn yoz, screenshot ol, qidiruv qil, xabar o'qi — ya'ni ekrandagi UI bilan har qanday ish):
 -> Avval eng qisqa yo'l: to'g'ridan-to'g'ri buyruq (`Telegram &`) > shortcut (`ydotool key`) > koordinata (`click-at.sh`).
