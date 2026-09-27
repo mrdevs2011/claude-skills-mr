@@ -117,7 +117,9 @@ kerak bo'lsa clone/tahrirla/push, tekshirilgach o'chir).
 **Uzoq davomiylik / parallel session kerak bo'lsa** (bir necha chaqiruv orasida
 cd/export/holat saqlanishi kerak -- masalan build, ko'p bosqichli ish):
 -> `~/Claude/.bin/psession.sh` (tmux-asosli doimiy sessiya) ishlat, har safar
-   yangi `sh` boshlanadigan oddiy `run_command`ga tayanma. Tafsilot: LOKAL
+   yangi `sh` boshlanadigan oddiy `run_command`ga tayanma. Har `start` bilan
+   yangi sessiya avtomatik `last`/`who`da "claude" bo'lib ko'rinadi (sudo
+   NOPASSWD, faqat shu bitta skript uchun). Tafsilot: LOKAL
    `cat ~/Claude/.skills/my-computer/cmc-ishlatish.md`.
 **10 daqiqadan uzoq ish qilsang** (katta refactor, uzoq build) -- `.ai-lock`
 eskirib ketmasligi uchun `~/Claude/.bin/ai-heartbeat` bilan qulfni vaqti-vaqti
