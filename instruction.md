@@ -205,6 +205,20 @@ taqsimlab bergan bo'lishi mumkin, buni aniq aytmasa ham):
 -> `run_command` topilmasa/ishlamasa -> `cat ~/Claude/.skills/my-computer/connector-muammolari.md` (LOKAL)
    (A: hub uxlagan, B: cmc --start), boshqa yo'l bilan aylanib o'tishga urinma.
 
+**Yangi suhbat boshida "kompyuterga ulan" (yoki sinonim -- "komputerga kir",
+"kompga ulan" va h.k.) desa (majburiy qoida, 2026-09-27):** shu suhbat uchun
+DARHOL `~/Claude/.bin/psession.sh start SESSION` bilan yangi, shu suhbatga
+xos SESSION nomi (masalan `chat-YYYYMMDD-HHMM`) yaratib ol. Shundan keyin
+o'sha suhbat davomidagi barcha kompyuter buyruqlarini (aynan shu SESSION
+kerak bo'lmasa ham) `psession.sh run SESSION "..."` orqali yubor -- oddiy
+bir martalik `run_command`ga qaytma, MR aniq "endi oddiy kifoya" demaguncha.
+SESSION nomini MR ga bir marta ayt (`tmux attach -t SESSION` bilan
+kuzatishi uchun). Sabab: `cmc-ishlatish.md` 3c-pre bo'limi -- oddiy
+`run_command` har safar yangi, xotirasiz shell, holat saqlanmaydi;
+suhbat boshidanoq psession orqali borilsa, keyinchalik cd/export/fon
+jarayon holatini saqlash kerak bo'lganda alohida qayta boshlashga hojat
+qolmaydi.
+
 **Fayl kompyuterga/mrdrive'ga/repo'ga o'tishi kerak** (zip, loyiha, artifact,
 "push qil" -- yoki sinonim/boshqa so'z bilan aytilsa ham xuddi shu ma'no):
 
