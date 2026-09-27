@@ -117,12 +117,13 @@ kerak bo'lsa clone/tahrirla/push, tekshirilgach o'chir).
 **Uzoq davomiylik / parallel session kerak bo'lsa** (bir necha chaqiruv orasida
 cd/export/holat saqlanishi kerak -- masalan build, ko'p bosqichli ish):
 -> `~/Claude/.bin/psession.sh` (tmux-asosli doimiy sessiya) ishlat, har safar
-   yangi `sh` boshlanadigan oddiy `run_command`ga tayanma. Bu sessiya
-   `muhamad` emas, alohida `Claude` system user'i ostida ishlaydi (izolyatsiya
-   uchun -- `muhamad`ga tegishli user-darajasidagi to'xtatish bunga ta'sir
-   qilmaydi). Har `start` bilan yangi sessiya avtomatik `last`/`who`da
-   "claude" bo'lib ko'rinadi (sudo NOPASSWD, faqat shu ikkita skript uchun).
-   Tafsilot: LOKAL `cat ~/Claude/.skills/my-computer/cmc-ishlatish.md`.
+   yangi `sh` boshlanadigan oddiy `run_command`ga tayanma. Bu sessiya `muhamad`
+   ostida oddiy tmux (alohida "Claude" system user'i 2026-09-27da o'chirilgan --
+   endi izolyatsiya yo'q, lekin MR o'zi ham `tmux attach -t SESSION` bilan
+   sessiyaga jonli ulanib kuzata oladi). Har yangi chat/vazifa uchun alohida,
+   tavsiflovchi SESSION nomi tanla. Har `start` bilan yangi sessiya avtomatik
+   `last`/`who`da "claude:SESSION" bo'lib ko'rinadi (sudo NOPASSWD, faqat shu
+   ikkita skript uchun). Tafsilot: LOKAL `cat ~/Claude/.skills/my-computer/cmc-ishlatish.md`.
 **10 daqiqadan uzoq ish qilsang** (katta refactor, uzoq build) -- `.ai-lock`
 eskirib ketmasligi uchun `~/Claude/.bin/ai-heartbeat` bilan qulfni vaqti-vaqti
 bilan yangilab tur, aks holda boshqa agent "qulf eskirgan" deb parallel yoza
