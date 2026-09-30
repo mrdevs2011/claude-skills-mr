@@ -434,7 +434,8 @@ borish so'ralsa):
 -> **Qurilish:** `qurilish-cli.md` — RCON+forceload+fill default; MR ga `/function` yozdirma.
 -> **Yangi karta:** `yangi-karta-cli.md` (server.jar CLI).
 -> **Skrinshot:** kompyuterda `cu-screenshot`; ko'rsatish uploads yoki mrdrive.
--> `session.lock` bor bo'lsa parallel server ochma. Hardcode qilma. CMC 30s → background+poll.
+-> **session.lock — QAT'IY:** dunyo ochiq bo'lsa (`session.lock` bor) **hech qachon** world fayllariga yozma (level.dat, region, players). Ishni boshlama; ayt: «Dunyo ochiq. Yopmaguningcha ish bajarmayman.» Faqat lock yo'q bo'lganda + backup keyin yoz. Batafsil: `xavfsizlik.md`.
+-> Parallel server/RCON: lock bor dunyoni ochma. Hardcode qilma. CMC 30s → background+poll.
 -> `run_command` yo'q — kompyuter ulanmagan deb ayt.
 
 **Blender / WebBlender** ("blender'ni och", "mashina yasab ber", "blender"
