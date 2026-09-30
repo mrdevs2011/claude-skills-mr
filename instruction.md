@@ -428,16 +428,17 @@ borish so'ralsa):
 -> Yangi shortcut qo'shilsa yoki config.kdl o'zgarsa -- `shortcuts.md` ni ham yangilat.
 
 **Minecraft** (o'yin dunyosi / saves / karta — yaratish, ko'rish, tahrirlash, skrinshot; so'z qanday bo'lmasin):
--> **Adaptiv:** "minecraft", "karta", "dunyo", "yangi karta yarat", "saves", "region", "qasr", "uy oldiga qur", "blok qo'y", "skrinshot", "ko'rsat" yoki shunga o'xshash ma'no — aniq kalit so'z kutma. MR o'yin dunyosi bilan ishlashni xohlasa (yaratish, ro'yxat, tahrir, qurilish, ekranni ko'rsatish) shu yo'l.
--> LOKAL skill: `~/Claude/.skills/my-computer/minecraft/`. Avval `README.md`, keyin vazifaga mos fayl (saves-tuzilishi, world-tahrirlash, launcher-versiya, oynachi-va-komandalar, xavfsizlik).
--> **Yangi karta/dunyo yaratish:** odatda launcher (SKLauncher) yoki o'yin UI orqali — fayl tizimida bo'sh papka yasash yetarli emas. `screen-automation` / shortcut yoki foydalanuvchiga launcher qadamlari; kerak bo'lsa `~/.minecraft/saves/` ni tekshirib yangi nom band emasligini ayt. Seed/rejim so'ralmasa — so'ra yoki odatiy variantni bir jumlada ayt.
--> **Skrinshot / MR ga ko'rsatish** (o'yin holati, qurilish natijasi, "qanday ko'rinadi"):
-   1. Ol: `~/Claude/.bin/cu-screenshot` yoki `grim -t png ~/Claude/screenshots/NOM.png` (screen-automation bilan bir xil vosita).
-   2. MR ga ko'rsatish kerak bo'lsa — eng arzon yo'l: uploads ko'prigi (`fayl-uzatish.md`): kompyuterdan uploads'ga push → sandbox pull → suhbatda haqiqiy rasmni chiqar. Yoki MRdrive kerak bo'lsa: `~/Claude/.bin/cu-shot-share` yoki `mrdrive push FAYL [screenshots]` + link.
-   3. Taxmin qilib "ko'rdim" dema — avval skrinshot ol, keyin ayt.
--> Noma'lum dunyo/koordinata/material — taxmin qilma: `ls ~/.minecraft/saves/` qil yoki bir qator so'ra. Hardcode qilma; har safar kompyuterdan o'qi.
+-> **Adaptiv:** "minecraft", "karta", "dunyo", "yangi karta yarat", "saves", "region", "qasr", "uy oldiga qur", "blok qo'y", "skrinshot", "ko'rsat" yoki shunga o'xshash ma'no — aniq kalit so'z kutma.
+-> LOKAL skill: `~/Claude/.skills/my-computer/minecraft/`. Avval `README.md`, keyin vazifaga mos fayl.
+-> **Yangi karta/dunyo yaratish — CLI birinchi (UI emas):**
+   `cat ~/Claude/.skills/my-computer/minecraft/yangi-karta-cli.md`
+   Usul (tekshirilgan): versiyaga mos `server.jar` → vaqtinchalik papkada `--nogui` ishga tushir → `Done` dan keyin to'xtat → dunyo papkasini `~/.minecraft/saves/` ga ko'chir.
+   Bo'sh papka yasash ishlamaydi. Launcher/Singleplayer UI — faqat CLI ishlamasa yoki MR aniq UI desa.
+   Download/generatsiya uzoq: background + poll (CMC 30s). server.jar ni `~/.minecraft/server-jars/` da cache qil.
+-> **Skrinshot:** `~/Claude/.bin/cu-screenshot` / `grim`; ko'rsatish — uploads ko'prigi yoki `cu-shot-share` / mrdrive. Taxmin bilan "ko'rdim" dema.
+-> Noma'lum nom/koordinata/material — `ls ~/.minecraft/saves/` yoki bir qator so'ra; hardcode qilma.
 -> Yozish oldidan: session.lock, backup (`xavfsizlik.md`). O'yin ochiq bo'lsa region/level.dat yozma.
--> `/fill` yetarli va cheats yoqilgan bo'lsa — fayl tahriridan oldin shu oson yo'lni taklif qil.
+-> `/fill` yetarli bo'lsa fayl tahriridan oldin shuni taklif qil.
 -> `run_command` yo'q — kompyuter ulanmagan, shuni ayt.
 
 **Blender / WebBlender** ("blender'ni och", "mashina yasab ber", "blender"
