@@ -434,7 +434,7 @@ borish so'ralsa):
 -> **Qurilish (qat'iy):** `qurilish-cli.md` — default RCON+forceload+fill/setblock. MR ga chatga `/function`/`/fill`/`/reload` yozdirma; datapack bo'lsa ham RCON bilan o'zing ishga tushir. Ishni yakunla — faqat buyruq matni berib to'xtama. Lock bo'lsa yopilguncha kut, keyin o'zing tugat.
 -> **Yangi karta:** `yangi-karta-cli.md` (server.jar CLI).
 -> **Skrinshot:** kompyuterda `cu-screenshot`; ko'rsatish uploads yoki mrdrive.
--> **session.lock — QAT'IY:** dunyo ochiq bo'lsa (`session.lock` bor) **hech qachon** world fayllariga yozma (level.dat, region, players). Ishni boshlama; ayt: «Dunyo ochiq. Yopmaguningcha ish bajarmayman.» Faqat lock yo'q bo'lganda + backup keyin yoz. Batafsil: `xavfsizlik.md`.
+-> **session.lock:** faqat **nishon** dunyoni tekshir (`saves/DUNYO/session.lock` + `lsof`/`fuser`). Boshqa dunyo locklari / stale lock — ishni to'xtatma; stale bo'lsa `rm` qilib davom et. Faqat nishon **faol** ochiq bo'lsa yozma: «$DUNYO ochiq. Yopmaguningcha shu dunyoga yozmayman.» MR boshqa worldda bo'lsa nishonga yozish OK. Batafsil: `xavfsizlik.md`.
 -> Parallel server/RCON: lock bor dunyoni ochma. Hardcode qilma. CMC 30s → background+poll.
 -> `run_command` yo'q — kompyuter ulanmagan deb ayt.
 
