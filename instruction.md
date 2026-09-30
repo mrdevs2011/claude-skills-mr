@@ -427,9 +427,10 @@ borish so'ralsa):
 -> **ydotool sintaksis:** `ydotool key KEYCODE:1 KEYCODE:0` (raw keycodes, xdotool emas). Muhit o'zgaruvchilar: `YDOTOOL_SOCKET=/tmp/.ydotool_socket`, `XDG_RUNTIME_DIR=/run/user/1001`, `WAYLAND_DISPLAY=wayland-1`.
 -> Yangi shortcut qo'shilsa yoki config.kdl o'zgarsa -- `shortcuts.md` ni ham yangilat.
 
-**Minecraft** (o'yin dunyosi / saves / kartani o'zgartirish — so'z qanday bo'lmasin):
--> **Adaptiv:** "minecraft", "karta", "dunyo", "saves", "region", "qasr", "uy oldiga qur", "blok qo'y", "level.dat" yoki shunga o'xshash ma'no — aniq kalit so'z kutma. MR o'yin fayllarini tahrirlash, dunyoga qurilish qo'yish, saves ni ko'rish/desa shu yo'l.
+**Minecraft** (o'yin dunyosi / saves / karta — yaratish, ko'rish, tahrirlash; so'z qanday bo'lmasin):
+-> **Adaptiv:** "minecraft", "karta", "dunyo", "yangi karta yarat", "saves", "region", "qasr", "uy oldiga qur", "blok qo'y", "level.dat" yoki shunga o'xshash ma'no — aniq kalit so'z kutma. MR o'yin dunyosi bilan ishlashni xohlasa (yaratish, ro'yxat, tahrir, qurilish) shu yo'l.
 -> LOKAL skill: `~/Claude/.skills/my-computer/minecraft/`. Avval `README.md`, keyin vazifaga mos fayl (saves-tuzilishi, world-tahrirlash, launcher-versiya, oynachi-va-komandalar, xavfsizlik).
+-> **Yangi karta/dunyo yaratish:** odatda launcher (SKLauncher) yoki o'yin UI orqali — fayl tizimida bo'sh papka yasash yetarli emas. `screen-automation` / shortcut yoki foydalanuvchiga launcher qadamlari; kerak bo'lsa `~/.minecraft/saves/` ni tekshirib yangi nom band emasligini ayt. Seed/rejim (survival/creative) so'ralmasa — so'ra yoki odatiy creative + cheats deb bir jumlada aytib yaratish yo'lini ko'rsat.
 -> Noma'lum dunyo/koordinata/material — taxmin qilma: `ls ~/.minecraft/saves/` qil yoki bir qator so'ra. Aniq nom/versiya/o'yinchi ismini hardcode qilma; har safar kompyuterdan o'qi.
 -> Yozish oldidan: session.lock yo'qmi, backup olindi mi (`xavfsizlik.md`). O'yin ochiq bo'lsa region/level.dat yozma.
 -> O'yin ichida `/fill` yetarli va cheats yoqilgan bo'lsa — fayl tahriridan oldin shu oson yo'lni taklif qil (eng arzon ishonchli yo'l).
