@@ -427,17 +427,12 @@ borish so'ralsa):
 -> **ydotool sintaksis:** `ydotool key KEYCODE:1 KEYCODE:0` (raw keycodes, xdotool emas). Muhit o'zgaruvchilar: `YDOTOOL_SOCKET=/tmp/.ydotool_socket`, `XDG_RUNTIME_DIR=/run/user/1001`, `WAYLAND_DISPLAY=wayland-1`.
 -> Yangi shortcut qo'shilsa yoki config.kdl o'zgarsa -- `shortcuts.md` ni ham yangilat.
 
-**Minecraft** ("minecraft", "kartani tahrirla", "saves", "region", "qasr qur", "level.dat", "dunyoni o'zgartir" — o'yin fayllari / saves bilan ish):
--> Bu LOKAL skill: `~/Claude/.skills/my-computer/minecraft/`.
--> Avval `cat ~/Claude/.skills/my-computer/minecraft/README.md` o'qi, keyin vazifaga mos fayl:
-   - tuzilish: `saves-tuzilishi.md`
-   - fayl orqali tahrir (blok/qurilish): `world-tahrirlash.md`
-   - launcher/versiya/log: `launcher-versiya.md`
-   - o'yinchi/UUID/buyruqlar: `oynachi-va-komandalar.md`
-   - session.lock, backup, xavfsizlik: `xavfsizlik.md`
--> **Qat'iy:** aniq dunyo nomi, versiya yoki o'yinchi ismini skill/instruction ga hardcode qilma — har safar `ls ~/.minecraft/saves/`, `usercache.json`, `versions/` dan o'qi.
--> Yozishdan oldin: session.lock yo'qligini tekshir, backup ol (`xavfsizlik.md`).
--> O'yin ochiq bo'lsa region/level.dat yozma.
+**Minecraft** (o'yin dunyosi / saves / kartani o'zgartirish — so'z qanday bo'lmasin):
+-> **Adaptiv:** "minecraft", "karta", "dunyo", "saves", "region", "qasr", "uy oldiga qur", "blok qo'y", "level.dat" yoki shunga o'xshash ma'no — aniq kalit so'z kutma. MR o'yin fayllarini tahrirlash, dunyoga qurilish qo'yish, saves ni ko'rish/desa shu yo'l.
+-> LOKAL skill: `~/Claude/.skills/my-computer/minecraft/`. Avval `README.md`, keyin vazifaga mos fayl (saves-tuzilishi, world-tahrirlash, launcher-versiya, oynachi-va-komandalar, xavfsizlik).
+-> Noma'lum dunyo/koordinata/material — taxmin qilma: `ls ~/.minecraft/saves/` qil yoki bir qator so'ra. Aniq nom/versiya/o'yinchi ismini hardcode qilma; har safar kompyuterdan o'qi.
+-> Yozish oldidan: session.lock yo'qmi, backup olindi mi (`xavfsizlik.md`). O'yin ochiq bo'lsa region/level.dat yozma.
+-> O'yin ichida `/fill` yetarli va cheats yoqilgan bo'lsa — fayl tahriridan oldin shu oson yo'lni taklif qil (eng arzon ishonchli yo'l).
 -> `run_command` yo'q — kompyuter ulanmagan, shuni ayt.
 
 **Blender / WebBlender** ("blender'ni och", "mashina yasab ber", "blender"
