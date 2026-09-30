@@ -427,6 +427,19 @@ borish so'ralsa):
 -> **ydotool sintaksis:** `ydotool key KEYCODE:1 KEYCODE:0` (raw keycodes, xdotool emas). Muhit o'zgaruvchilar: `YDOTOOL_SOCKET=/tmp/.ydotool_socket`, `XDG_RUNTIME_DIR=/run/user/1001`, `WAYLAND_DISPLAY=wayland-1`.
 -> Yangi shortcut qo'shilsa yoki config.kdl o'zgarsa -- `shortcuts.md` ni ham yangilat.
 
+**Minecraft** ("minecraft", "kartani tahrirla", "saves", "region", "qasr qur", "level.dat", "dunyoni o'zgartir" — o'yin fayllari / saves bilan ish):
+-> Bu LOKAL skill: `~/Claude/.skills/my-computer/minecraft/`.
+-> Avval `cat ~/Claude/.skills/my-computer/minecraft/README.md` o'qi, keyin vazifaga mos fayl:
+   - tuzilish: `saves-tuzilishi.md`
+   - fayl orqali tahrir (blok/qurilish): `world-tahrirlash.md`
+   - launcher/versiya/log: `launcher-versiya.md`
+   - o'yinchi/UUID/buyruqlar: `oynachi-va-komandalar.md`
+   - session.lock, backup, xavfsizlik: `xavfsizlik.md`
+-> **Qat'iy:** aniq dunyo nomi, versiya yoki o'yinchi ismini skill/instruction ga hardcode qilma — har safar `ls ~/.minecraft/saves/`, `usercache.json`, `versions/` dan o'qi.
+-> Yozishdan oldin: session.lock yo'qligini tekshir, backup ol (`xavfsizlik.md`).
+-> O'yin ochiq bo'lsa region/level.dat yozma.
+-> `run_command` yo'q — kompyuter ulanmagan, shuni ayt.
+
 **Blender / WebBlender** ("blender'ni och", "mashina yasab ber", "blender"
 so'zi qanday shaklda kelmasin):
 -> MUHIM: "blender" HECH QACHON desktop Blender ilovasini anglatmaydi -- MR
@@ -467,7 +480,7 @@ so'zi qanday shaklda kelmasin):
    MR ning boshqa papkasiga faqat kerak bo'lganda ("cmc" bo'limiga qara).
 
 **Kompyuter skill fayllari (my-computer) -- FAQAT LOKAL, GitHub'da emas:** kompyuter boshqarish, shortcutlar,
-fayl uzatish, koordinata bosish, GitHub, Blender kabi ishlarda tegishli skillni
+fayl uzatish, koordinata bosish, GitHub, Blender, Minecraft kabi ishlarda tegishli skillni
 `~/Claude/.skills/my-computer/` papkasidan o'qi. Ro'yxat: `cat ~/Claude/.skills/my-computer/README.md`
 yoki `ls ~/Claude/.skills/my-computer/`. Bu papkadagi fayllar `instruction.md` dagi
 connector/skill route lari bilan mos — faqat to'liq matn shu yerda.
