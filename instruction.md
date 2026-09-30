@@ -431,7 +431,7 @@ borish so'ralsa):
 -> **Ish joyi (qat'iy):** hammasi MR **kompyuterida** (`cmc` `run_command`). Sandboxda `.minecraft`/dunyo yaratma.
    Agar sandboxda fayl yaratish shart bo'lsa: **CMMGH** (`connectmymcpgithub.upload_file` yoki get_upload_token+push) → `mrdevs2011/uploads` → CMC `~/.uploads-pull.sh NOM [MANZIL]` → keyin faqat kompyuterda davom et. Base64+cat taqiqlangan. Tafsilot: `ish-joyi.md`, `fayl-uzatish.md`.
 -> LOKAL skill: `~/Claude/.skills/my-computer/minecraft/` — `README.md`.
--> **Qurilish:** `qurilish-cli.md` — RCON+forceload+fill default; MR ga `/function` yozdirma.
+-> **Qurilish (qat'iy):** `qurilish-cli.md` — default RCON+forceload+fill/setblock. MR ga chatga `/function`/`/fill`/`/reload` yozdirma; datapack bo'lsa ham RCON bilan o'zing ishga tushir. Ishni yakunla — faqat buyruq matni berib to'xtama. Lock bo'lsa yopilguncha kut, keyin o'zing tugat.
 -> **Yangi karta:** `yangi-karta-cli.md` (server.jar CLI).
 -> **Skrinshot:** kompyuterda `cu-screenshot`; ko'rsatish uploads yoki mrdrive.
 -> **session.lock — QAT'IY:** dunyo ochiq bo'lsa (`session.lock` bor) **hech qachon** world fayllariga yozma (level.dat, region, players). Ishni boshlama; ayt: «Dunyo ochiq. Yopmaguningcha ish bajarmayman.» Faqat lock yo'q bo'lganda + backup keyin yoz. Batafsil: `xavfsizlik.md`.
