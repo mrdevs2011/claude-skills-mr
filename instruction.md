@@ -428,16 +428,13 @@ borish so'ralsa):
 -> Yangi shortcut qo'shilsa yoki config.kdl o'zgarsa -- `shortcuts.md` ni ham yangilat.
 
 **Minecraft** (o'yin dunyosi / saves / karta / qasr / qurilish; so'z qanday bo'lmasin):
--> **Adaptiv:** minecraft, karta, dunyo, yangi karta, qasr, uy qur, blok, skrinshot va h.k.
--> LOKAL: `~/Claude/.skills/my-computer/minecraft/` — avval `README.md`.
--> **Qurilish / qasr — to'g'ri yo'l (majburiy o'qi):** `qurilish-cli.md`
-   - **Default:** server.jar + RCON + `forceload` + `fill`/`setblock` + `save-all` + `stop`.
-   - MR ga "worldni och, `/function` yoz" dema — o'zing RCON bilan bajar.
-   - Datapack yozish mumkin, lekin ishga tushirish ham CLI/RCON; qo'lda chat — oxirgi chora.
-   - `session.lock` bor bo'lsa shu dunyoga parallel server ochma (yop yoki boshqa dunyo).
--> **Yangi karta:** `yangi-karta-cli.md` (server.jar, UI emas).
--> **Skrinshot:** `cu-screenshot` / uploads yoki `cu-shot-share`.
--> Hardcode qilma; `ls ~/.minecraft/saves/`. CMC 30s → background + poll.
+-> **Ish joyi (qat'iy):** hammasi MR **kompyuterida** (`cmc` `run_command`). Sandboxda `.minecraft`/dunyo yaratma.
+   Agar sandboxda fayl yaratish shart bo'lsa: **CMMGH** (`connectmymcpgithub.upload_file` yoki get_upload_token+push) → `mrdevs2011/uploads` → CMC `~/.uploads-pull.sh NOM [MANZIL]` → keyin faqat kompyuterda davom et. Base64+cat taqiqlangan. Tafsilot: `ish-joyi.md`, `fayl-uzatish.md`.
+-> LOKAL skill: `~/Claude/.skills/my-computer/minecraft/` — `README.md`.
+-> **Qurilish:** `qurilish-cli.md` — RCON+forceload+fill default; MR ga `/function` yozdirma.
+-> **Yangi karta:** `yangi-karta-cli.md` (server.jar CLI).
+-> **Skrinshot:** kompyuterda `cu-screenshot`; ko'rsatish uploads yoki mrdrive.
+-> `session.lock` bor bo'lsa parallel server ochma. Hardcode qilma. CMC 30s → background+poll.
 -> `run_command` yo'q — kompyuter ulanmagan deb ayt.
 
 **Blender / WebBlender** ("blender'ni och", "mashina yasab ber", "blender"
