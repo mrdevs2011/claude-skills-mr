@@ -427,19 +427,18 @@ borish so'ralsa):
 -> **ydotool sintaksis:** `ydotool key KEYCODE:1 KEYCODE:0` (raw keycodes, xdotool emas). Muhit o'zgaruvchilar: `YDOTOOL_SOCKET=/tmp/.ydotool_socket`, `XDG_RUNTIME_DIR=/run/user/1001`, `WAYLAND_DISPLAY=wayland-1`.
 -> Yangi shortcut qo'shilsa yoki config.kdl o'zgarsa -- `shortcuts.md` ni ham yangilat.
 
-**Minecraft** (o'yin dunyosi / saves / karta — yaratish, ko'rish, tahrirlash, skrinshot; so'z qanday bo'lmasin):
--> **Adaptiv:** "minecraft", "karta", "dunyo", "yangi karta yarat", "saves", "region", "qasr", "uy oldiga qur", "blok qo'y", "skrinshot", "ko'rsat" yoki shunga o'xshash ma'no — aniq kalit so'z kutma.
--> LOKAL skill: `~/Claude/.skills/my-computer/minecraft/`. Avval `README.md`, keyin vazifaga mos fayl.
--> **Yangi karta/dunyo yaratish — CLI birinchi (UI emas):**
-   `cat ~/Claude/.skills/my-computer/minecraft/yangi-karta-cli.md`
-   Usul (tekshirilgan): versiyaga mos `server.jar` → vaqtinchalik papkada `--nogui` ishga tushir → `Done` dan keyin to'xtat → dunyo papkasini `~/.minecraft/saves/` ga ko'chir.
-   Bo'sh papka yasash ishlamaydi. Launcher/Singleplayer UI — faqat CLI ishlamasa yoki MR aniq UI desa.
-   Download/generatsiya uzoq: background + poll (CMC 30s). server.jar ni `~/.minecraft/server-jars/` da cache qil.
--> **Skrinshot:** `~/Claude/.bin/cu-screenshot` / `grim`; ko'rsatish — uploads ko'prigi yoki `cu-shot-share` / mrdrive. Taxmin bilan "ko'rdim" dema.
--> Noma'lum nom/koordinata/material — `ls ~/.minecraft/saves/` yoki bir qator so'ra; hardcode qilma.
--> Yozish oldidan: session.lock, backup (`xavfsizlik.md`). O'yin ochiq bo'lsa region/level.dat yozma.
--> `/fill` yetarli bo'lsa fayl tahriridan oldin shuni taklif qil.
--> `run_command` yo'q — kompyuter ulanmagan, shuni ayt.
+**Minecraft** (o'yin dunyosi / saves / karta / qasr / qurilish; so'z qanday bo'lmasin):
+-> **Adaptiv:** minecraft, karta, dunyo, yangi karta, qasr, uy qur, blok, skrinshot va h.k.
+-> LOKAL: `~/Claude/.skills/my-computer/minecraft/` — avval `README.md`.
+-> **Qurilish / qasr — to'g'ri yo'l (majburiy o'qi):** `qurilish-cli.md`
+   - **Default:** server.jar + RCON + `forceload` + `fill`/`setblock` + `save-all` + `stop`.
+   - MR ga "worldni och, `/function` yoz" dema — o'zing RCON bilan bajar.
+   - Datapack yozish mumkin, lekin ishga tushirish ham CLI/RCON; qo'lda chat — oxirgi chora.
+   - `session.lock` bor bo'lsa shu dunyoga parallel server ochma (yop yoki boshqa dunyo).
+-> **Yangi karta:** `yangi-karta-cli.md` (server.jar, UI emas).
+-> **Skrinshot:** `cu-screenshot` / uploads yoki `cu-shot-share`.
+-> Hardcode qilma; `ls ~/.minecraft/saves/`. CMC 30s → background + poll.
+-> `run_command` yo'q — kompyuter ulanmagan deb ayt.
 
 **Blender / WebBlender** ("blender'ni och", "mashina yasab ber", "blender"
 so'zi qanday shaklda kelmasin):
