@@ -97,6 +97,9 @@ boshida tekshirib chiqma.
 | `get_schedule` / `set_schedule` | Dars jadvali (o'zgartirish faqat aniq so'ralganda). |
 
 ### `cmc`
+**REASON MAJBURIY:** har `run_command` da `reason` — nima uchun buyruq ishga tushayotganini
+aniq yoz (masalan: `loyiha dependencylarini o'rnatish uchun npm install`). Chatga chiqmasa
+ham audit logga yoziladi. Reason'siz chaqirma.
 **MUHIM (avtomatik ishga tushirish qoidasi):** `cat ~/Claude/.skills/my-computer/instCMPuse.md`
 (LOKAL) -- ish papkasi/Uploads mavjud emasligi ANIQLANGANDA shuni o'qi va
 o'sha yerdagi qoida bo'yicha avtomatik yaratib ol, MR dan so'rama.
@@ -112,7 +115,7 @@ dagi tayyor natijalar, va `~/Claude/work/claude-skills-mr` (shu repo -- tahrirla
 kerak bo'lsa clone/tahrirla/push, tekshirilgach o'chir).
 | Tool | Nima uchun |
 |---|---|
-| `run_command` | MR kompyuterida buyruq bajaradi. Xavfli buyruq `confirmed:true`. Har chaqiruv yangi `sh`, 30s timeout. |
+| `run_command` | MR kompyuterida buyruq bajaradi. **reason majburiy** (nima uchun — audit logga). Xavfli buyruq `confirmed:true`. Har chaqiruv yangi `sh`, 30s timeout. |
 | `get_recent_commands` | Oxirgi buyruqlar tarixi (audit). |
 **Uzoq davomiylik / parallel session kerak bo'lsa** (bir necha chaqiruv orasida
 cd/export/holat saqlanishi kerak -- masalan build, ko'p bosqichli ish):
