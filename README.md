@@ -167,6 +167,7 @@ skills/
     AssumedToolCallSucceededWithoutCheckingOutputOrExitCode.md  # tool muvaffaqiyatini tekshirmasdan davom etish
     SequentialToolCallsWhenIndependentOperationsCouldBeParallelized.md  # mustaqil tool'larni ketma-ket qilish, parallel mumkin
     EchoedOrLoggedSecretTokenInCommandOutputOrReport.md  # buyruq/log/hisobotda token yoki secret ochiq chiqarish
+    AssumedFileContentStillMatchesEarlierReadWithoutRereadingBeforeMakingChanges.md  # eski fayl mazmunini taxmin qilib qayta o'qimasdan edit qilish
 
 Skillar ataylab **juda tor va bitta nuqtaga qaratilgan**: har biri faqat
 BITTA aniq simptom (masalan "aynan shu xato matni", "aynan shu holat") →
