@@ -163,6 +163,8 @@ skills/
       SqlStringConcatenationInjectionRisk.md                # SQL string concat — injection
       HardcodedSecretInSourceOrCommittedEnv.md              # secret kodda yoki commit qilingan .env
       EvalOrDynamicCodeExecutionFromUserInput.md            # eval/dynamic code user input dan
+  agent-workflows/
+    AssumedToolCallSucceededWithoutCheckingOutputOrExitCode.md  # tool muvaffaqiyatini tekshirmasdan davom etish
 ```
 
 Skillar ataylab **juda tor va bitta nuqtaga qaratilgan**: har biri faqat
