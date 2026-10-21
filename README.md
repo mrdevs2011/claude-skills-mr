@@ -168,6 +168,8 @@ skills/
     SequentialToolCallsWhenIndependentOperationsCouldBeParallelized.md  # mustaqil tool'larni ketma-ket qilish, parallel mumkin
     EchoedOrLoggedSecretTokenInCommandOutputOrReport.md  # buyruq/log/hisobotda token yoki secret ochiq chiqarish
     AssumedFileContentStillMatchesEarlierReadWithoutRereadingBeforeMakingChanges.md  # eski fayl mazmunini taxmin qilib qayta o'qimasdan edit qilish
+    AgentPreloadedEntireSkillsCatalogIntoContextInsteadOfQueryingSearchSkills.md  # butun skill katalogini context'ga yuklash, search_skills o'rniga
+    CreatedSkillWithoutReadingArchitectureInstructionStyleGuidesFirst.md  # skill yaratishdan oldin qo'llanmalarni o'qimaslik
 
 Skillar ataylab **juda tor va bitta nuqtaga qaratilgan**: har biri faqat
 BITTA aniq simptom (masalan "aynan shu xato matni", "aynan shu holat") →
