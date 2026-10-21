@@ -124,7 +124,7 @@ skills/coding/
   ├── attention/      — simptom vs ildiz, tekshirmasdan "tuzatildi",
   │                     so'ralmagan rewrite, hardcode, boshqa savolga javob
   └── security/       — maxfiy ma'lumotni log qilish yoki qaytarish
-agent-workflows/      — agent ish oqimi, tool chaqiruv tekshiruvi, muvaffaqiyat taxmini
+agent-workflows/      — agent ish oqimi, tool chaqiruv tekshiruvi, muvaffaqiyat taxmini, parallel tool chaqiruv
 ```
 
 ### Meta-skill vs aniq bug skill

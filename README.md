@@ -165,7 +165,7 @@ skills/
       EvalOrDynamicCodeExecutionFromUserInput.md            # eval/dynamic code user input dan
   agent-workflows/
     AssumedToolCallSucceededWithoutCheckingOutputOrExitCode.md  # tool muvaffaqiyatini tekshirmasdan davom etish
-```
+    SequentialToolCallsWhenIndependentOperationsCouldBeParallelized.md  # mustaqil tool'larni ketma-ket qilish, parallel mumkin
 
 Skillar ataylab **juda tor va bitta nuqtaga qaratilgan**: har biri faqat
 BITTA aniq simptom (masalan "aynan shu xato matni", "aynan shu holat") →
