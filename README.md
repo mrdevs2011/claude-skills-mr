@@ -173,6 +173,7 @@ skills/
     PushedToRemoteMainWithoutPullingOrRebasingLatestFirst.md  # pushdan oldin pull/rebase qilmaslik, rejected push
     CreatedDuplicateSkillBecauseDidNotSearchExistingSkillsFirst.md  # yangi skill yaratishdan oldin mavjudlarni qidirmaslik, duplicate
     UsedEditFileOrReplaceWithoutReadingFileContentFirst.md  # edit_file ishlatishdan oldin faylni o'qimaslik, replace xato
+    RepeatedSameToolCallWithIdenticalArgumentsInsteadOfReusingPriorResult.md  # bir xil tool argumentlari bilan qayta chaqirish, oldingi natijani ishlatmaslik
 
 Skillar ataylab **juda tor va bitta nuqtaga qaratilgan**: har biri faqat
 BITTA aniq simptom (masalan "aynan shu xato matni", "aynan shu holat") →
