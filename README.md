@@ -171,6 +171,7 @@ skills/
     AgentPreloadedEntireSkillsCatalogIntoContextInsteadOfQueryingSearchSkills.md  # butun skill katalogini context'ga yuklash, search_skills o'rniga
     CreatedSkillWithoutReadingArchitectureInstructionStyleGuidesFirst.md  # skill yaratishdan oldin qo'llanmalarni o'qimaslik
     PushedToRemoteMainWithoutPullingOrRebasingLatestFirst.md  # pushdan oldin pull/rebase qilmaslik, rejected push
+    CreatedDuplicateSkillBecauseDidNotSearchExistingSkillsFirst.md  # yangi skill yaratishdan oldin mavjudlarni qidirmaslik, duplicate
 
 Skillar ataylab **juda tor va bitta nuqtaga qaratilgan**: har biri faqat
 BITTA aniq simptom (masalan "aynan shu xato matni", "aynan shu holat") →
