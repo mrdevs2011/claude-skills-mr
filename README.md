@@ -184,6 +184,7 @@ skills/
     AddedNewSkillCategoryFolderButForgotToUpdateArchitectureMdCategoryList.md  # yangi kategoriya papkasi yaratilganda architecture.md yangilanmagan
     AgentWroteUserVisibleFilesToTmpOrHomeInsteadOfArtifactsWorkingDirectory.md  # foydalanuvchiga ko'rinadigan fayllarni /tmp yoki $HOME ga yozish, artifacts o'rniga
   productivity/
+    GeneratedLargeCodeBlockInChatInsteadOfWritingToArtifactsFile.md  # katta kod chatda, faylga yozilmagan
     AgentChoseComplexPathWhenDirectReliableToolExisted.md  # to'g'ridan-to'g'ri tool/buyruq bor bo'lsa ham murakkab brauzer/UI yo'li tanlandi
 
 Skillar ataylab **juda tor va bitta nuqtaga qaratilgan**: har biri faqat
