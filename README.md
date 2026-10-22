@@ -177,6 +177,7 @@ skills/
     RepeatedSameToolCallWithIdenticalArgumentsInsteadOfReusingPriorResult.md  # bir xil tool argumentlari bilan qayta chaqirish, oldingi natijani ishlatmaslik
     CalledDependentToolsInSameParallelBatchCausingOrderOrRaceIssues.md  # bog'liq tool'larni parallel batchda chaqirish, tartib/race xato
     AssumedWorkingDirectoryWasCorrectWithoutVerifyingBeforeFileOrGitOperations.md  # ish papkasini tekshirmasdan file/git operatsiya
+    DidNotCreateChecklistOrPlanForMultiStepTaskLeadingToForgottenSteps.md  # murakkab vazifada checklist/reja tuzmasdan boshlash, qadamlar unutiladi
 
 Skillar ataylab **juda tor va bitta nuqtaga qaratilgan**: har biri faqat
 BITTA aniq simptom (masalan "aynan shu xato matni", "aynan shu holat") →
