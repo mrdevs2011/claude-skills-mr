@@ -120,6 +120,7 @@ skills/coding/
   ├── react/          — state mutate, key prop
   ├── deps/           — package.json, install, module not found
   ├── logic/          — teskari shart, noto'g'ri o'zgaruvchi, off-by-one
+  ├── patterns/       — early return, guard clause, nesting kamaytirish
   ├── refactor/       — signature/tip o'zgarishi, call site'lar
   ├── attention/      — simptom vs ildiz, tekshirmasdan "tuzatildi",
   │                     so'ralmagan rewrite, hardcode, boshqa savolga javob
@@ -151,6 +152,7 @@ skills/                  — barcha skill'lar (kategoriya papkalari bilan)
     react/
     deps/
     logic/
+    patterns/
     refactor/
     attention/
     security/
