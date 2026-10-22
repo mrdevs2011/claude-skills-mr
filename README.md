@@ -130,6 +130,7 @@ skills/
       ShallowCopyWhenDeepCopyNeeded.md                          # shallow copy — deep kerak edi
       FloatingPointPrecisionComparisonBug.md                    # floating point === solishtirish
       StringIndexOutOfBoundsOrSliceBeyondLength.md              # indeks/slice chegaradan tashqari
+      NestedObjectPropertyAccessWithoutOptionalChainingThrowsOnUndefined.md  # nested property optional chaining yo'q
     refactor/
       ChangedSignatureOrTypeForgotToUpdateCallSites.md      # signature o'zgardi, call site qoldi
       RepeatedlyCopiedSimilarCodeBlocksInsteadOfExtractingReusableFunction.md  # o'xshash kod bloklari qayta yozilgan, reusable funksiya ajratilmagan
