@@ -132,6 +132,7 @@ skills/
       StringIndexOutOfBoundsOrSliceBeyondLength.md              # indeks/slice chegaradan tashqari
     refactor/
       ChangedSignatureOrTypeForgotToUpdateCallSites.md      # signature o'zgardi, call site qoldi
+      RepeatedlyCopiedSimilarCodeBlocksInsteadOfExtractingReusableFunction.md  # o'xshash kod bloklari qayta yozilgan, reusable funksiya ajratilmagan
     attention/
       FixedSymptomInsteadOfRootCause.md                     # simptom yashirildi, ildiz qoldi
       ClaimedFixedWithoutActuallyRunningOrVerifying.md      # tekshirmasdan "tuzatildi" deb aytish
