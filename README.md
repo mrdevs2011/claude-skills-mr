@@ -178,6 +178,7 @@ skills/
     CalledDependentToolsInSameParallelBatchCausingOrderOrRaceIssues.md  # bog'liq tool'larni parallel batchda chaqirish, tartib/race xato
     AssumedWorkingDirectoryWasCorrectWithoutVerifyingBeforeFileOrGitOperations.md  # ish papkasini tekshirmasdan file/git operatsiya
     DidNotCreateChecklistOrPlanForMultiStepTaskLeadingToForgottenSteps.md  # murakkab vazifada checklist/reja tuzmasdan boshlash, qadamlar unutiladi
+    UsedGitAddDotWithoutReviewingStatusAndDiffIncludingUnintendedFiles.md  # git add . ishlatishdan oldin status/diff tekshirmaslik, noma'lum fayllar commitga tushadi
 
 Skillar ataylab **juda tor va bitta nuqtaga qaratilgan**: har biri faqat
 BITTA aniq simptom (masalan "aynan shu xato matni", "aynan shu holat") →
