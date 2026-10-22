@@ -179,6 +179,8 @@ skills/
     AssumedWorkingDirectoryWasCorrectWithoutVerifyingBeforeFileOrGitOperations.md  # ish papkasini tekshirmasdan file/git operatsiya
     DidNotCreateChecklistOrPlanForMultiStepTaskLeadingToForgottenSteps.md  # murakkab vazifada checklist/reja tuzmasdan boshlash, qadamlar unutiladi
     UsedGitAddDotWithoutReviewingStatusAndDiffIncludingUnintendedFiles.md  # git add . ishlatishdan oldin status/diff tekshirmaslik, noma'lum fayllar commitga tushadi
+  productivity/
+    AgentChoseComplexPathWhenDirectReliableToolExisted.md  # to'g'ridan-to'g'ri tool/buyruq bor bo'lsa ham murakkab brauzer/UI yo'li tanlandi
 
 Skillar ataylab **juda tor va bitta nuqtaga qaratilgan**: har biri faqat
 BITTA aniq simptom (masalan "aynan shu xato matni", "aynan shu holat") →

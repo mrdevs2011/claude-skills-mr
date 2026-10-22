@@ -125,6 +125,7 @@ skills/coding/
   │                     so'ralmagan rewrite, hardcode, boshqa savolga javob
   └── security/       — maxfiy ma'lumotni log qilish yoki qaytarish
 agent-workflows/      — agent ish oqimi, tool chaqiruv tekshiruvi, muvaffaqiyat taxmini, parallel tool chaqiruv, secret mask qilish
+productivity/         — tejamkorlik, eng arzon yo'l tanlash, context boshqaruvi, vazifa samaradorligi
 ```
 
 ### Meta-skill vs aniq bug skill
@@ -154,6 +155,7 @@ skills/                  — barcha skill'lar (kategoriya papkalari bilan)
     attention/
     security/
   agent-workflows/
+  productivity/
   excel-tozalash/
   pdf-yaratish/
   rasm-tahrirlash/
