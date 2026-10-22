@@ -188,6 +188,7 @@ skills/
     AgentRanLongRunningCommandInForegroundWithoutBackgroundingOrTimeout.md  # uzoq buyruqni foreground'da ishga tushirish, session bloklash
     AgentOmittedRequiredRenderXmlElementsForCitationsCardsOrGeneratedFiles.md  # tool id berilgan bo'lsa-da render XML elementlari chiqarilmagan
     AgentUsedSearchConnectedToolsForBuiltInCapabilityInsteadOfDirectFunctionCall.md  # built-in tool uchun search_connected_tools ishlatish, to'g'ridan-to'g'ri call o'rniga
+    AgentReportedTaskCompleteWithoutIncludingRequiredFinalReportFields.md  # vazifa tugaganini aytish, lekin so'ralgan hisobot maydonlarini kiritmaslik
   productivity/
     GeneratedLargeCodeBlockInChatInsteadOfWritingToArtifactsFile.md  # katta kod chatda, faylga yozilmagan
     AgentChoseComplexPathWhenDirectReliableToolExisted.md  # to'g'ridan-to'g'ri tool/buyruq bor bo'lsa ham murakkab brauzer/UI yo'li tanlandi
