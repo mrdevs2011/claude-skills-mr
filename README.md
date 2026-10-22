@@ -187,6 +187,7 @@ skills/
     AgentWroteUserVisibleFilesToTmpOrHomeInsteadOfArtifactsWorkingDirectory.md  # foydalanuvchiga ko'rinadigan fayllarni /tmp yoki $HOME ga yozish, artifacts o'rniga
     AgentRanLongRunningCommandInForegroundWithoutBackgroundingOrTimeout.md  # uzoq buyruqni foreground'da ishga tushirish, session bloklash
     AgentOmittedRequiredRenderXmlElementsForCitationsCardsOrGeneratedFiles.md  # tool id berilgan bo'lsa-da render XML elementlari chiqarilmagan
+    AgentUsedSearchConnectedToolsForBuiltInCapabilityInsteadOfDirectFunctionCall.md  # built-in tool uchun search_connected_tools ishlatish, to'g'ridan-to'g'ri call o'rniga
   productivity/
     GeneratedLargeCodeBlockInChatInsteadOfWritingToArtifactsFile.md  # katta kod chatda, faylga yozilmagan
     AgentChoseComplexPathWhenDirectReliableToolExisted.md  # to'g'ridan-to'g'ri tool/buyruq bor bo'lsa ham murakkab brauzer/UI yo'li tanlandi
