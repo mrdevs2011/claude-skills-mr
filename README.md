@@ -100,6 +100,7 @@ skills/
       HardcodedFilePathsInsteadOfUsingPathlibOrOsPathJoinForPortability.md  # hardcoded path o'rniga pathlib/os.path.join
       UsedManualIndexCounterInsteadOfEnumerateInPythonLoop.md  # qo'lda i += 1 o'rniga enumerate
       PythonRepeatedStringConcatenationInLoopInsteadOfListAppendThenJoin.md  # loop ichida string += o'rniga list + join
+      UsedInListMembershipCheckInLoopInsteadOfSetForO1Lookup.md  # loop ichida list in check o'rniga set O(1)
     react/
       ReactDirectStateMutationDoesNotTriggerRerender.md     # state'ni to'g'ridan-to'g'ri mutate
       ReactMissingKeyPropInListCausesWrongUpdate.md         # ro'yxatda key yo'q yoki indeks
