@@ -200,6 +200,7 @@ skills/
     AgentWroteExecutableScriptOrCommandButDidNotExecuteItToConfirmCorrectness.md  # skript/buyruq yozdi lekin o'zi ishga tushirib tekshirmadi
     AgentAssumedFirstPageOfPaginatedResultsCompleteWithoutCheckingNextOrCursor.md  # paginated natijaning birinchi sahifasini to'liq deb taxmin qilish, keyingi sahifa/cursor tekshirilmagan
     AgentReportedSkillPushCompleteWithoutVerifyingCommitHashAndRemotePushOutput.md  # skill push hisobotida commit hash va push natijasini tekshirmasdan success deyish
+    AgentRespondedInWrongLanguageInsteadOfMatchingUserLanguageDialectAndAlphabet.md  # foydalanuvchi tiliga moslashmasdan noto'g'ri tilda javob berish
   productivity/
     GeneratedLargeCodeBlockInChatInsteadOfWritingToArtifactsFile.md  # katta kod chatda, faylga yozilmagan
     AgentChoseComplexPathWhenDirectReliableToolExisted.md  # to'g'ridan-to'g'ri tool/buyruq bor bo'lsa ham murakkab brauzer/UI yo'li tanlandi
