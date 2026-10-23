@@ -95,6 +95,7 @@ skills/
     patterns/
       PythonMutableDefaultArgumentInFunctionSignatureCausesSharedStateAcrossCalls.md  # mutable default arg shared state
       DeeplyNestedConditionalsInsteadOfEarlyReturnGuardClauses.md  # nested if o'rniga early return
+      HardcodedMagicNumbersOrStringsScatteredInsteadOfNamedConstants.md  # magic number/string o'rniga named constant
     react/
       ReactDirectStateMutationDoesNotTriggerRerender.md     # state'ni to'g'ridan-to'g'ri mutate
       ReactMissingKeyPropInListCausesWrongUpdate.md         # ro'yxatda key yo'q yoki indeks
