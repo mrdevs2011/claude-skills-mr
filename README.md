@@ -101,6 +101,7 @@ skills/
       UsedManualIndexCounterInsteadOfEnumerateInPythonLoop.md  # qo'lda i += 1 o'rniga enumerate
       PythonRepeatedStringConcatenationInLoopInsteadOfListAppendThenJoin.md  # loop ichida string += o'rniga list + join
       UsedInListMembershipCheckInLoopInsteadOfSetForO1Lookup.md  # loop ichida list in check o'rniga set O(1)
+      PythonBareExceptCatchesEverythingIncludingSystemExitAndKeyboardInterrupt.md  # bare except: SystemExit/KeyboardInterrupt ham yutiladi
     react/
       ReactDirectStateMutationDoesNotTriggerRerender.md     # state'ni to'g'ridan-to'g'ri mutate
       ReactMissingKeyPropInListCausesWrongUpdate.md         # ro'yxatda key yo'q yoki indeks
