@@ -169,6 +169,7 @@ skills/
     AddedNewSkillFileButForgotToUpdateReadmeStructureList.md   # yangi skill qo'shildi lekin README yangilanmadi
     AssumedToolCallSucceededWithoutCheckingOutputOrExitCode.md  # tool muvaffaqiyatini tekshirmasdan davom etish
     SequentialToolCallsWhenIndependentOperationsCouldBeParallelized.md  # mustaqil tool'larni ketma-ket qilish, parallel mumkin
+    AgentWroteMathematicalOrTechnicalExpressionsAsPlainTextInsteadOfKaTeX.md  # matematik ifodalarni plain text yozish, KaTeX o'rniga
     EchoedOrLoggedSecretTokenInCommandOutputOrReport.md  # buyruq/log/hisobotda token yoki secret ochiq chiqarish
     AssumedFileContentStillMatchesEarlierReadWithoutRereadingBeforeMakingChanges.md  # eski fayl mazmunini taxmin qilib qayta o'qimasdan edit qilish
     AgentPreloadedEntireSkillsCatalogIntoContextInsteadOfQueryingSearchSkills.md  # butun skill katalogini context'ga yuklash, search_skills o'rniga
