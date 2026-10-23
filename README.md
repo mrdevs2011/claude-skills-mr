@@ -97,6 +97,7 @@ skills/
       DeeplyNestedConditionalsInsteadOfEarlyReturnGuardClauses.md  # nested if o'rniga early return
       HardcodedMagicNumbersOrStringsScatteredInsteadOfNamedConstants.md  # magic number/string o'rniga named constant
       PythonOpenWithoutWithOrContextManagerCausesFileDescriptorLeak.md  # open() without with — file descriptor leak
+      HardcodedFilePathsInsteadOfUsingPathlibOrOsPathJoinForPortability.md  # hardcoded path o'rniga pathlib/os.path.join
     react/
       ReactDirectStateMutationDoesNotTriggerRerender.md     # state'ni to'g'ridan-to'g'ri mutate
       ReactMissingKeyPropInListCausesWrongUpdate.md         # ro'yxatda key yo'q yoki indeks
