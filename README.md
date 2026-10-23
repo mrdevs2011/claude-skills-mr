@@ -209,6 +209,7 @@ skills/
     AgentRespondedInWrongLanguageInsteadOfMatchingUserLanguageDialectAndAlphabet.md  # foydalanuvchi tiliga moslashmasdan noto'g'ri tilda javob berish
     AgentGaveUserInstructionsOrCodeToRunInsteadOfExecutingViaAvailableToolsDirectly.md  # foydalanuvchiga kod/yo'riqnoma berish, o'zi tool orqali bajarmaslik
     CreatedSkillWithShortOrAmbiguousFilenameInsteadOfLongDescriptiveName.md  # skill fayl nomi qisqa/noaniq, uzun aniq nom kerak
+    AgentDidNotUseImageOnlyOrIncludeImageInWebSearchWhenUserRequestedPictures.md  # rasm so'rovida web_search image_only/include_image ishlatmaslik
   productivity/
     GeneratedLargeCodeBlockInChatInsteadOfWritingToArtifactsFile.md  # katta kod chatda, faylga yozilmagan
     AgentChoseComplexPathWhenDirectReliableToolExisted.md  # to'g'ridan-to'g'ri tool/buyruq bor bo'lsa ham murakkab brauzer/UI yo'li tanlandi
