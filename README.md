@@ -224,6 +224,7 @@ skills/
     AgentRespondedInWrongLanguageInsteadOfMatchingUserLanguageDialectAndAlphabet.md  # foydalanuvchi tiliga moslashmasdan noto'g'ri tilda javob berish
     AgentGaveUserInstructionsOrCodeToRunInsteadOfExecutingViaAvailableToolsDirectly.md  # foydalanuvchiga kod/yo'riqnoma berish, o'zi tool orqali bajarmaslik
     CreatedSkillWithShortOrAmbiguousFilenameInsteadOfLongDescriptiveName.md  # skill fayl nomi qisqa/noaniq, uzun aniq nom kerak
+    SkillFrontmatterDescriptionTooGenericOrMissingSymptomKeywordsCausingSearchSkillsMiss.md  # skill description umumiy, simptom kalit so'zlarsiz — search_skills topa olmaydi
     AgentDidNotUseImageOnlyOrIncludeImageInWebSearchWhenUserRequestedPictures.md  # rasm so'rovida web_search image_only/include_image ishlatmaslik
     AgentDescribedImageContentWithoutCallingViewImageToolOnProvidedUrl.md  # rasm URL berilganda view_image chaqirmasdan tasvirlash
     AgentDidNotCleanPreviousSkillsRepoCloneInTmpBeforeRecloningLeadingToStaleOrConflictingState.md  # /tmp/skills-repo ni tozalamasdan qayta clone qilish, eski holat aralashadi
