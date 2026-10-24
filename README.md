@@ -220,6 +220,7 @@ skills/
     CreatedSkillWithShortOrAmbiguousFilenameInsteadOfLongDescriptiveName.md  # skill fayl nomi qisqa/noaniq, uzun aniq nom kerak
     AgentDidNotUseImageOnlyOrIncludeImageInWebSearchWhenUserRequestedPictures.md  # rasm so'rovida web_search image_only/include_image ishlatmaslik
     AgentDidNotCleanPreviousSkillsRepoCloneInTmpBeforeRecloningLeadingToStaleOrConflictingState.md  # /tmp/skills-repo ni tozalamasdan qayta clone qilish, eski holat aralashadi
+    AgentDidNotSearchExistingSkillsBeforeCreatingNewOneLeadingToDuplicatesOrInconsistentFormat.md  # mavjud skilllarni qidirmasdan yangi skill yaratish, takror yoki format xato
   productivity/
     GeneratedLargeCodeBlockInChatInsteadOfWritingToArtifactsFile.md  # katta kod chatda, faylga yozilmagan
     AgentChoseComplexPathWhenDirectReliableToolExisted.md  # to'g'ridan-to'g'ri tool/buyruq bor bo'lsa ham murakkab brauzer/UI yo'li tanlandi
