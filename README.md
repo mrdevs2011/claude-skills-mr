@@ -181,6 +181,7 @@ skills/
       HardcodedSecretInSourceOrCommittedEnv.md              # secret kodda yoki commit qilingan .env
       EvalOrDynamicCodeExecutionFromUserInput.md            # eval/dynamic code user input dan
   agent-workflows/
+    AgentUsedGeneralWebSearchForLiveWeatherSportsOrStructuredDataWhenSpecializedToolAvailable.md  # ob-havo/sport uchun umumiy web_search o'rniga maxsus tool
     AgentUsedTokenInGitCloneUrlCommandLineRiskingExposureInProcessListOrHistory.md  # git clone URL ichida token command line da, process/history ochiq qolishi
     AddedNewSkillFileButForgotToUpdateReadmeStructureList.md   # yangi skill qo'shildi lekin README yangilanmadi
     AssumedToolCallSucceededWithoutCheckingOutputOrExitCode.md  # tool muvaffaqiyatini tekshirmasdan davom etish
