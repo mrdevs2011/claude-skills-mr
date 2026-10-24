@@ -229,6 +229,7 @@ skills/
     AgentPerformedManualFileOperationsWithCatEchoSedInsteadOfUsingDedicatedReadWriteEditTools.md  # matn fayllarini shell (cat/echo/sed) bilan, dedicated tool o'rniga
     AgentProvidedExcessivelyLongResponseForStraightforwardQueryInsteadOfConciseAnswer.md  # oddiy so'rovga haddan tashqari uzun javob
     VagueWebSearchQueryProducedLowRelevanceResultsInsteadOfPreciseOperators.md  # noaniq qidiruv so'rovi past relevantlik
+    AgentLeftTemporaryFilesOrClonesInTmpWithoutCleanupAfterTask.md  # /tmp dagi vaqtinchalik papka/fayllarni vazifa oxirida tozalamagan
 
 Skillar ataylab **juda tor va bitta nuqtaga qaratilgan**: har biri faqat
 BITTA aniq simptom (masalan "aynan shu xato matni", "aynan shu holat") →
