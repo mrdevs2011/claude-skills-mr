@@ -224,6 +224,7 @@ skills/
     AgentGaveUserInstructionsOrCodeToRunInsteadOfExecutingViaAvailableToolsDirectly.md  # foydalanuvchiga kod/yo'riqnoma berish, o'zi tool orqali bajarmaslik
     CreatedSkillWithShortOrAmbiguousFilenameInsteadOfLongDescriptiveName.md  # skill fayl nomi qisqa/noaniq, uzun aniq nom kerak
     AgentDidNotUseImageOnlyOrIncludeImageInWebSearchWhenUserRequestedPictures.md  # rasm so'rovida web_search image_only/include_image ishlatmaslik
+    AgentDescribedImageContentWithoutCallingViewImageToolOnProvidedUrl.md  # rasm URL berilganda view_image chaqirmasdan tasvirlash
     AgentDidNotCleanPreviousSkillsRepoCloneInTmpBeforeRecloningLeadingToStaleOrConflictingState.md  # /tmp/skills-repo ni tozalamasdan qayta clone qilish, eski holat aralashadi
     AgentDidNotSearchExistingSkillsBeforeCreatingNewOneLeadingToDuplicatesOrInconsistentFormat.md  # mavjud skilllarni qidirmasdan yangi skill yaratish, takror yoki format xato
     AgentUsedWriteFileForPartialContentChangeInsteadOfEditFileCausingUnintendedFullOverwrite.md  # qisman o'zgarish kerak bo'lganda write_file ishlatish, to'liq overwrite
