@@ -89,6 +89,7 @@ skills/
       PromiseAllSettledNeededButUsedAll.md                  # all o'rniga allSettled kerak edi
       AwaitInLoopSequentialWhenParallelPossible.md          # loop ichida await — parallel mumkin edi
       MissingAbortControllerForFetchCancellation.md         # fetch bekor qilinmagan (AbortController)
+      UsedTimeSleepInAsyncFunctionBlockingEventLoopInsteadOfAsyncioSleep.md  # time.sleep async da event loop bloklaydi
     null/
       CannotReadPropertiesOfUndefinedOrNullTypeErrorDiagnosis.md
       FalsyZeroOrEmptyStringWronglyTreatedAsMissingValueBug.md
