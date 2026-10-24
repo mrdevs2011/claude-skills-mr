@@ -209,6 +209,7 @@ skills/
     AgentWroteExecutableScriptOrCommandButDidNotExecuteItToConfirmCorrectness.md  # skript/buyruq yozdi lekin o'zi ishga tushirib tekshirmadi
     AgentAssumedFirstPageOfPaginatedResultsCompleteWithoutCheckingNextOrCursor.md  # paginated natijaning birinchi sahifasini to'liq deb taxmin qilish, keyingi sahifa/cursor tekshirilmagan
     AgentReportedSkillPushCompleteWithoutVerifyingCommitHashAndRemotePushOutput.md  # skill push hisobotida commit hash va push natijasini tekshirmasdan success deyish
+    AgentDidNotVerifyAndCreateMissingDotEnvAndDotGitignoreBeforeCommitInSkillRepo.md  # skill repo setupida .env va .gitignore tekshirmasdan/yaratmasdan commit qilish
     AgentRespondedInWrongLanguageInsteadOfMatchingUserLanguageDialectAndAlphabet.md  # foydalanuvchi tiliga moslashmasdan noto'g'ri tilda javob berish
     AgentGaveUserInstructionsOrCodeToRunInsteadOfExecutingViaAvailableToolsDirectly.md  # foydalanuvchiga kod/yo'riqnoma berish, o'zi tool orqali bajarmaslik
     CreatedSkillWithShortOrAmbiguousFilenameInsteadOfLongDescriptiveName.md  # skill fayl nomi qisqa/noaniq, uzun aniq nom kerak
