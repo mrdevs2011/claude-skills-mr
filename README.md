@@ -106,6 +106,7 @@ skills/
       PythonExceptPassSilentlySwallowsErrorsWithoutLoggingOrReraising.md  # except: pass — xato jim yutiladi, log/re-raise yo'q
       UnquotedShellVariableInCommandCausesWordSplittingOrGlobExpansion.md  # qo'shtirnoqsiz $var — word splitting yoki glob expansion
       UsedForLoopWithAppendForSimpleListTransformationInsteadOfListComprehension.md  # oddiy list transform uchun for+append o'rniga list comprehension
+      UsedNestedTernaryOperatorsInsteadOfClearIfElseOrHelperForComplexConditions.md  # nested ternary o'rniga aniq if-else yoki helper
     react/
       ReactDirectStateMutationDoesNotTriggerRerender.md     # state'ni to'g'ridan-to'g'ri mutate
       ReactMissingKeyPropInListCausesWrongUpdate.md         # ro'yxatda key yo'q yoki indeks
