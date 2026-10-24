@@ -109,6 +109,7 @@ skills/
       UsedNestedTernaryOperatorsInsteadOfClearIfElseOrHelperForComplexConditions.md  # nested ternary o'rniga aniq if-else yoki helper
       PythonUsedIsOperatorForValueEqualityCheckInsteadOfEquals.md  # qiymat solishtirishda is o'rniga ==
       PythonUsedEqualityOperatorToCheckNoneInsteadOfIsOperator.md  # None tekshiruvida == o'rniga is ishlatish
+      PythonUsedFloatForMoneyOrCurrencyCalculationsInsteadOfDecimalCausingPrecisionLoss.md  # pul hisobida float o'rniga Decimal
     react/
       ReactDirectStateMutationDoesNotTriggerRerender.md     # state'ni to'g'ridan-to'g'ri mutate
       ReactMissingKeyPropInListCausesWrongUpdate.md         # ro'yxatda key yo'q yoki indeks
