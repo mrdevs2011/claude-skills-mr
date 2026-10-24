@@ -120,6 +120,7 @@ skills/
       ReactKeyUsingIndexWhenListCanReorder.md               # key={index} reorder da xavfli
       ReactUncontrolledToControlledInputWarning.md          # uncontrolled → controlled input
       ReactForgotCleanupInUseEffectSubscription.md          # useEffect cleanup unutilgan
+      ReactUsedUseEffectToSynchronizeDerivedStateInsteadOfComputingDuringRender.md  # derived state useEffect o'rniga render'da hisoblash
     deps/
       PackageUsedButNotInstalledOrNotInPackageJson.md       # paket ishlatilgan, lekin install qilinmagan
       WrongPackageVersionOrPeerDependencyConflict.md        # noto'g'ri versiya / peer conflict
