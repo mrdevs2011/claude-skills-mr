@@ -112,6 +112,7 @@ skills/
       PythonUsedFloatForMoneyOrCurrencyCalculationsInsteadOfDecimalCausingPrecisionLoss.md  # pul hisobida float o'rniga Decimal
       PythonUsedPrintStatementsForLoggingInsteadOfLoggingModule.md  # print() o'rniga logging moduli — daraja va boshqaruv
       UsedObjectSpreadOrDictCopyForNestedDataInsteadOfCopyDeepcopyCausingSharedNestedMutation.md  # shallow copy nested data'da shared mutation
+      JavaScriptUsedLooseEqualityDoubleEqualsInsteadOfStrictTripleEqualsCausingTypeCoercionBugs.md  # JS == o'rniga === — type coercion bug
     react/
       ReactDirectStateMutationDoesNotTriggerRerender.md     # state'ni to'g'ridan-to'g'ri mutate
       ReactMissingKeyPropInListCausesWrongUpdate.md         # ro'yxatda key yo'q yoki indeks
