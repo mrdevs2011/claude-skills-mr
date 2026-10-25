@@ -208,6 +208,7 @@ skills/
     DidNotCreateChecklistOrPlanForMultiStepTaskLeadingToForgottenSteps.md  # murakkab vazifada checklist/reja tuzmasdan boshlash, qadamlar unutiladi
     UsedGitAddDotWithoutReviewingStatusAndDiffIncludingUnintendedFiles.md  # git add . ishlatishdan oldin status/diff tekshirmaslik, noma'lum fayllar commitga tushadi
     AgentUsedBrowserAutomationForSimplePageContentWhenLightweightFetchToolSufficed.md  # oddiy sahifa uchun brauzer ishlatish, engil tool yetarli
+    AgentUsedOpenPageWithoutStartLineOrPatternOnLongPageReceivingTruncatedContent.md  # uzoq sahifani open_page bilan to'liq ochish, pattern/start_line ishlatmaslik, truncated content
     CreatedSkillWithMalformedFrontmatterOrMissingRequiredSections.md  # skill frontmatter noto'g'ri yoki majburiy bo'limlar yetishmaydi
     AddedNewSkillCategoryFolderButForgotToUpdateArchitectureMdCategoryList.md  # yangi kategoriya papkasi yaratilganda architecture.md yangilanmagan
     AgentWroteUserVisibleFilesToTmpOrHomeInsteadOfArtifactsWorkingDirectory.md  # foydalanuvchiga ko'rinadigan fayllarni /tmp yoki $HOME ga yozish, artifacts o'rniga
