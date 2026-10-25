@@ -217,6 +217,7 @@ skills/
     AddedNewSkillCategoryFolderButForgotToUpdateArchitectureMdCategoryList.md  # yangi kategoriya papkasi yaratilganda architecture.md yangilanmagan
     AgentWroteUserVisibleFilesToTmpOrHomeInsteadOfArtifactsWorkingDirectory.md  # foydalanuvchiga ko'rinadigan fayllarni /tmp yoki $HOME ga yozish, artifacts o'rniga
     AgentRanLongRunningCommandInForegroundWithoutBackgroundingOrTimeout.md  # uzoq buyruqni foreground'da ishga tushirish, session bloklash
+    AgentStartedBackgroundBashCommandButNeverCheckedStatusWithGetTerminalCommandOutputBeforeConcludingTask.md  # background bash ishga tushirib statusini get_terminal_command_output bilan tekshirmasdan xulosa qilish
     AgentOmittedRequiredRenderXmlElementsForCitationsCardsOrGeneratedFiles.md  # tool id berilgan bo'lsa-da render XML elementlari chiqarilmagan
     AgentEmittedRenderXmlWithNonexistentCitationIdOrCardId.md  # mavjud bo'lmagan citation_id yoki card_id bilan render XML chiqarish
     AgentUsedSearchConnectedToolsForBuiltInCapabilityInsteadOfDirectFunctionCall.md  # built-in tool uchun search_connected_tools ishlatish, to'g'ridan-to'g'ri call o'rniga
