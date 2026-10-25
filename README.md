@@ -223,6 +223,7 @@ skills/
     AgentStartedBackgroundBashCommandButNeverCheckedStatusWithGetTerminalCommandOutputBeforeConcludingTask.md  # background bash ishga tushirib statusini get_terminal_command_output bilan tekshirmasdan xulosa qilish
     AgentOmittedRequiredRenderXmlElementsForCitationsCardsOrGeneratedFiles.md  # tool id berilgan bo'lsa-da render XML elementlari chiqarilmagan
     AgentEmittedRenderXmlWithNonexistentCitationIdOrCardId.md  # mavjud bo'lmagan citation_id yoki card_id bilan render XML chiqarish
+    AgentEmittedRenderXmlWithUnescapedAmpersandQuotesOrLessThanInAttributes.md  # render XML attribute qiymatlarida &, ", < escape qilinmagan, XML buziladi
     AgentUsedSearchConnectedToolsForBuiltInCapabilityInsteadOfDirectFunctionCall.md  # built-in tool uchun search_connected_tools ishlatish, to'g'ridan-to'g'ri call o'rniga
     AgentCalledCallConnectedToolWithGuessedArgumentsInsteadOfUsingSearchConnectedToolsForSchema.md  # call_connected_tool dan oldin search_connected_tools bilan schema olmaslik
     AgentReportedTaskCompleteWithoutIncludingRequiredFinalReportFields.md  # vazifa tugaganini aytish, lekin so'ralgan hisobot maydonlarini kiritmaslik
