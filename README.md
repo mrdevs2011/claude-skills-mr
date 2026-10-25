@@ -111,6 +111,7 @@ skills/
       PythonUsedEqualityOperatorToCheckNoneInsteadOfIsOperator.md  # None tekshiruvida == o'rniga is ishlatish
       PythonUsedFloatForMoneyOrCurrencyCalculationsInsteadOfDecimalCausingPrecisionLoss.md  # pul hisobida float o'rniga Decimal
       PythonUsedPrintStatementsForLoggingInsteadOfLoggingModule.md  # print() o'rniga logging moduli — daraja va boshqaruv
+      PythonOpenedBinaryFileInTextModeCausingUnicodeDecodeErrorOrDataCorruption.md  # binary faylni 'r'/'w' da ochish — UnicodeDecodeError yoki buzilish
       UsedObjectSpreadOrDictCopyForNestedDataInsteadOfCopyDeepcopyCausingSharedNestedMutation.md  # shallow copy nested data'da shared mutation
       JavaScriptUsedLooseEqualityDoubleEqualsInsteadOfStrictTripleEqualsCausingTypeCoercionBugs.md  # JS == o'rniga === — type coercion bug
     react/
