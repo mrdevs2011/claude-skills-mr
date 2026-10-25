@@ -123,6 +123,7 @@ skills/
       PythonUsedTryExceptForExpectedConditionInsteadOfIfCheck.md  # try/except ni kutilgan holat uchun control flow sifatida ishlatish o'rniga if/get
       JavaScriptUsedForInLoopOnArrayInsteadOfForOfOrTraditionalForCausingIterationOverKeys.md  # massivda for...in — kalitlar (string), elementlar emas
       PythonUsedFromModuleImportStarInsteadOfExplicitImportsCausingNamespacePollutionAndHiddenDependencies.md  # from module import * — namespace ifloslanishi va yashirin dependensiya
+      PythonUsedAssertForValidationThatGetsStrippedUnderOptimizationFlag.md  # assert validatsiya uchun — python -O da o'chiriladi, xato yashirinadi
     react/
       ReactDirectStateMutationDoesNotTriggerRerender.md     # state'ni to'g'ridan-to'g'ri mutate
       ReactMissingKeyPropInListCausesWrongUpdate.md         # ro'yxatda key yo'q yoki indeks
