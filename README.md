@@ -118,6 +118,7 @@ skills/
       PythonModifiedListWhileIteratingOverItCausingSkippedElementsOrIndexError.md  # listni for loop ichida mutate qilish — skip yoki IndexError
       PythonUsedListPopZeroAsQueueInsteadOfCollectionsDequeCausingQuadraticPerformance.md  # list.pop(0) navbat — O(n²), deque ishlat
       PythonUsedGlobalMutableStateToShareDataBetweenFunctionsInsteadOfExplicitParametersOrReturnValues.md  # global mutable o'rniga aniq parametr/return
+      PythonForgotExistOkOrParentsTrueWhenCreatingDirectoriesCausingFileExistsErrorOnRerun.md  # mkdir exist_ok/parents yo'q — FileExistsError qayta ishga tushirishda
     react/
       ReactDirectStateMutationDoesNotTriggerRerender.md     # state'ni to'g'ridan-to'g'ri mutate
       ReactMissingKeyPropInListCausesWrongUpdate.md         # ro'yxatda key yo'q yoki indeks
