@@ -247,6 +247,7 @@ skills/
     AgentDescribedImageContentWithoutCallingViewImageToolOnProvidedUrl.md  # rasm URL berilganda view_image chaqirmasdan tasvirlash
     AgentDidNotCleanPreviousSkillsRepoCloneInTmpBeforeRecloningLeadingToStaleOrConflictingState.md  # /tmp/skills-repo ni tozalamasdan qayta clone qilish, eski holat aralashadi
     AgentDidNotSearchExistingSkillsBeforeCreatingNewOneLeadingToDuplicatesOrInconsistentFormat.md  # mavjud skilllarni qidirmasdan yangi skill yaratish, takror yoki format xato
+    AgentReadEntireLargeFileWithoutOffsetAndLimitWastingContextAndTokens.md  # katta faylni to'liq o'qish, offset/limit ishlatmaslik, context/token sarfi
     AgentUsedWriteFileForPartialContentChangeInsteadOfEditFileCausingUnintendedFullOverwrite.md  # qisman o'zgarish kerak bo'lganda write_file ishlatish, to'liq overwrite
     AgentIncludedRawUnprocessedToolOutputOrStackTraceInFinalUserResponseInsteadOfCleanSummary.md  # xom tool output/stack trace ni yakuniy javobga joylashtirish, toza xulosa o'rniga
   productivity/
