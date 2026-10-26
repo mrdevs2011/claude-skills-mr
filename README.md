@@ -199,6 +199,7 @@ skills/
       HardcodedSecretInSourceOrCommittedEnv.md              # secret kodda yoki commit qilingan .env
       EvalOrDynamicCodeExecutionFromUserInput.md            # eval/dynamic code user input dan
   agent-workflows/
+    AgentReportedSuccessfulPushWithoutVerifyingRemoteCommitAppearedViaGitLogOrStatus.md  # pushdan keyin remote commit tekshirmasdan muvaffaqiyatli deb hisobot
     AgentAnsweredFactualOrCurrentEventQuestionFromMemoryWithoutCallingWebSearchOrRelevantTool.md  # faktual/yangi savolga esdan javob, web_search yoki tegishli tool chaqirilmagan
     AgentUsedGeneralWebSearchForLiveWeatherSportsOrStructuredDataWhenSpecializedToolAvailable.md  # ob-havo/sport uchun umumiy web_search o'rniga maxsus tool
     AgentUsedTokenInGitCloneUrlCommandLineRiskingExposureInProcessListOrHistory.md  # git clone URL ichida token command line da, process/history ochiq qolishi

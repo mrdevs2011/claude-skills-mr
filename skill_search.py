@@ -21,8 +21,11 @@ SKILLS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "skills")
 
 
 def load_skill_index(skills_dir: str = SKILLS_DIR) -> list[dict]:
-    """Har bir skill uchun {name, description, path} qaytaradi."""
+    """Har bir skill uchun {name, description, path} qaytaradi.
+    Ham eski skills/*/SKILL.md, ham hozirgi flat *.md (skills/<kategoriya>/*.md) ni qo'llab-quvvatlaydi.
+    """
     index = []
+    # Eski tuzilma: skills/skill-name/SKILL.md
     for md_path in glob.glob(os.path.join(skills_dir, "*", "SKILL.md")):
         text = open(md_path, encoding="utf-8").read()
         name_m = re.search(r"^name:\s*(.+)$", text, re.MULTILINE)
@@ -33,6 +36,20 @@ def load_skill_index(skills_dir: str = SKILLS_DIR) -> list[dict]:
             "description": desc_m.group(1).strip() if desc_m else "",
             "path": md_path,
         })
+    # Hozirgi tuzilma: skills/<category>/*.md (yoki to'g'ridan-to'g'ri)
+    for md_path in glob.glob(os.path.join(skills_dir, "**", "*.md"), recursive=True):
+        if os.path.basename(md_path) == "SKILL.md":
+            continue  # allaqachon qo'shilgan
+        text = open(md_path, encoding="utf-8").read()
+        name_m = re.search(r"^name:\s*(.+)$", text, re.MULTILINE)
+        desc_m = re.search(r"^description:\s*(.+)$", text, re.MULTILINE)
+        if name_m or desc_m:  # frontmatter bor bo'lsa skill deb hisobla
+            index.append({
+                "name": (name_m.group(1).strip() if name_m
+                         else os.path.splitext(os.path.basename(md_path))[0]),
+                "description": desc_m.group(1).strip() if desc_m else "",
+                "path": md_path,
+            })
     return index
 
 
