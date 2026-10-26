@@ -227,6 +227,7 @@ skills/
     AgentUsedOpenPageWithoutStartLineOrPatternOnLongPageReceivingTruncatedContent.md  # uzoq sahifani open_page bilan to'liq ochish, pattern/start_line ishlatmaslik, truncated content
     CreatedSkillWithMalformedFrontmatterOrMissingRequiredSections.md  # skill frontmatter noto'g'ri yoki majburiy bo'limlar yetishmaydi
     AddedNewSkillCategoryFolderButForgotToUpdateArchitectureMdCategoryList.md  # yangi kategoriya papkasi yaratilganda architecture.md yangilanmagan
+    AgentUsedGenericSkillCreatorDirectoryStructureWithSKILL.mdInsteadOfSingleFlatMarkdownFileMatchingRepoArchitecture.md  # generic skill-creator papka tuzilmasi o'rniga flat .md ishlatmaslik
     AgentWroteUserVisibleFilesToTmpOrHomeInsteadOfArtifactsWorkingDirectory.md  # foydalanuvchiga ko'rinadigan fayllarni /tmp yoki $HOME ga yozish, artifacts o'rniga
     AgentRanLongRunningCommandInForegroundWithoutBackgroundingOrTimeout.md  # uzoq buyruqni foreground'da ishga tushirish, session bloklash
     AgentStartedBackgroundBashCommandButNeverCheckedStatusWithGetTerminalCommandOutputBeforeConcludingTask.md  # background bash ishga tushirib statusini get_terminal_command_output bilan tekshirmasdan xulosa qilish
