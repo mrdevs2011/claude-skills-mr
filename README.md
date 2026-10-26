@@ -237,6 +237,7 @@ skills/
     AgentAssumedFirstPageOfPaginatedResultsCompleteWithoutCheckingNextOrCursor.md  # paginated natijaning birinchi sahifasini to'liq deb taxmin qilish, keyingi sahifa/cursor tekshirilmagan
     AgentReportedSkillPushCompleteWithoutVerifyingCommitHashAndRemotePushOutput.md  # skill push hisobotida commit hash va push natijasini tekshirmasdan success deyish
     AgentDidNotVerifyAndCreateMissingDotEnvAndDotGitignoreBeforeCommitInSkillRepo.md  # skill repo setupida .env va .gitignore tekshirmasdan/yaratmasdan commit qilish
+    AgentDidNotRunGitStatusBeforeGitAddDotToAvoidCommittingUnintendedFiles.md  # git statusni tekshirmasdan git add . qilish, keraksiz/maxfiy fayllar commitga kirishi
     AgentRespondedInWrongLanguageInsteadOfMatchingUserLanguageDialectAndAlphabet.md  # foydalanuvchi tiliga moslashmasdan noto'g'ri tilda javob berish
     AgentGaveUserInstructionsOrCodeToRunInsteadOfExecutingViaAvailableToolsDirectly.md  # foydalanuvchiga kod/yo'riqnoma berish, o'zi tool orqali bajarmaslik
     CreatedSkillWithShortOrAmbiguousFilenameInsteadOfLongDescriptiveName.md  # skill fayl nomi qisqa/noaniq, uzun aniq nom kerak
