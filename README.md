@@ -268,6 +268,7 @@ skills/
     AgentProvidedExcessivelyLongResponseForStraightforwardQueryInsteadOfConciseAnswer.md  # oddiy so'rovga haddan tashqari uzun javob
     VagueWebSearchQueryProducedLowRelevanceResultsInsteadOfPreciseOperators.md  # noaniq qidiruv so'rovi past relevantlik
     AgentLeftTemporaryFilesOrClonesInTmpWithoutCleanupAfterTask.md  # /tmp dagi vaqtinchalik papka/fayllarni vazifa oxirida tozalamagan
+    AgentAttemptedToGenerateDocxPdfPptxXlsxWithoutReadingCorrespondingBundledSkillMdLeadingToInvalidStructureOrMissingCapabilities.md  # maxsus hujjat formatini yaratishdan oldin bundled skill o'qilmagan
 
 Skillar ataylab **juda tor va bitta nuqtaga qaratilgan**: har biri faqat
 BITTA aniq simptom (masalan "aynan shu xato matni", "aynan shu holat") →
