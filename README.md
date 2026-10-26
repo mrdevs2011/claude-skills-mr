@@ -114,6 +114,7 @@ skills/
       PythonUsedFloatForMoneyOrCurrencyCalculationsInsteadOfDecimalCausingPrecisionLoss.md  # pul hisobida float o'rniga Decimal
       PythonUsedPrintStatementsForLoggingInsteadOfLoggingModule.md  # print() o'rniga logging moduli — daraja va boshqaruv
       PythonOpenedBinaryFileInTextModeCausingUnicodeDecodeErrorOrDataCorruption.md  # binary faylni 'r'/'w' da ochish — UnicodeDecodeError yoki buzilish
+      PythonOpenedTextFileWithoutSpecifyingEncodingCausingPlatformDependentUnicodeIssues.md  # matn fayl open() da encoding yo'q — platformaga bog'liq Unicode xato
       UsedObjectSpreadOrDictCopyForNestedDataInsteadOfCopyDeepcopyCausingSharedNestedMutation.md  # shallow copy nested data'da shared mutation
       JavaScriptUsedLooseEqualityDoubleEqualsInsteadOfStrictTripleEqualsCausingTypeCoercionBugs.md  # JS == o'rniga === — type coercion bug
       PythonModifiedListWhileIteratingOverItCausingSkippedElementsOrIndexError.md  # listni for loop ichida mutate qilish — skip yoki IndexError
