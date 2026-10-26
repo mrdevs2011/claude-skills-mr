@@ -94,6 +94,7 @@ skills/
       CannotReadPropertiesOfUndefinedOrNullTypeErrorDiagnosis.md
       FalsyZeroOrEmptyStringWronglyTreatedAsMissingValueBug.md
     patterns/
+      HttpRequestWithoutTimeoutHangsForeverOnUnresponsiveEndpoint.md  # timeout yo'q — HTTP so'rov abadiy osilib qoladi
       PythonUsedUnboundedRecursionForDeepOrLargeInputRiskingRecursionError.md  # cheksiz rekursiya katta/chuqur inputda RecursionError
       PythonMutableDefaultArgumentInFunctionSignatureCausesSharedStateAcrossCalls.md  # mutable default arg shared state
       DeeplyNestedConditionalsInsteadOfEarlyReturnGuardClauses.md  # nested if o'rniga early return
