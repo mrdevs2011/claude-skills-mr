@@ -263,6 +263,7 @@ skills/
     AgentUsedWriteFileForPartialContentChangeInsteadOfEditFileCausingUnintendedFullOverwrite.md  # qisman o'zgarish kerak bo'lganda write_file ishlatish, to'liq overwrite
     AgentIncludedRawUnprocessedToolOutputOrStackTraceInFinalUserResponseInsteadOfCleanSummary.md  # xom tool output/stack trace ni yakuniy javobga joylashtirish, toza xulosa o'rniga
     AgentUsedGenericOrIncompleteCommitMessageInsteadOfRequiredSkillNameAndDescriptionFormat.md  # skill qo'shishda commit xabari "Add new skill: Nom - tavsif" formatida emas, generic yoki to'liq emas
+    AgentAskedClarifyingQuestionForStraightforwardTaskInsteadOfMakingReasonableAssumptionAndProceeding.md  # oddiy vazifada keraksiz savol berish, oqilona taxmin bilan davom etish o'rniga
   productivity/
     GeneratedLargeCodeBlockInChatInsteadOfWritingToArtifactsFile.md  # katta kod chatda, faylga yozilmagan
     AgentChoseComplexPathWhenDirectReliableToolExisted.md  # to'g'ridan-to'g'ri tool/buyruq bor bo'lsa ham murakkab brauzer/UI yo'li tanlandi
