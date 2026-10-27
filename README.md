@@ -132,6 +132,7 @@ skills/
       JavaScriptUsedForInLoopOnArrayInsteadOfForOfOrTraditionalForCausingIterationOverKeys.md  # massivda for...in — kalitlar (string), elementlar emas
       PythonUsedFromModuleImportStarInsteadOfExplicitImportsCausingNamespacePollutionAndHiddenDependencies.md  # from module import * — namespace ifloslanishi va yashirin dependensiya
       PythonUsedAssertForValidationThatGetsStrippedUnderOptimizationFlag.md  # assert validatsiya uchun — python -O da o'chiriladi, xato yashirinadi
+      PythonUsedUnhashableTypeAsDictKeyOrSetElementCausingTypeError.md  # list/dict ni dict key yoki set element qilish — TypeError unhashable
       PythonUsedPlainDictForCountingOrGroupingInsteadOfCollectionsCounterOrDefaultdict.md  # oddiy dict + if-check o'rniga Counter/defaultdict
       PythonOpenWithoutExplicitEncodingCausesPlatformDependentUnicodeErrors.md  # open() da encoding yo'q — platformaga bog'liq UnicodeDecodeError
       PythonUsedRequestsWithoutTimeoutParameterLeadingToPotentialHang.md  # requests.get/post da timeout yo'q — osilib qolishi mumkin
