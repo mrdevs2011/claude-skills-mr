@@ -124,6 +124,7 @@ skills/
       JavaScriptUsedVarKeywordInsteadOfLetOrConstCausingFunctionScopeHoistingAndUnexpectedRedeclaration.md  # var o'rniga let/const — function scope, hoisting, qayta e'lon
       PythonModifiedListWhileIteratingOverItCausingSkippedElementsOrIndexError.md  # listni for loop ichida mutate qilish — skip yoki IndexError
       PythonUsedListPopZeroAsQueueInsteadOfCollectionsDequeCausingQuadraticPerformance.md  # list.pop(0) navbat — O(n²), deque ishlat
+      PythonZipOnUnequalLengthIterablesSilentlyTruncatesWithoutWarningOrError.md  # zip() teng bo'lmagan uzunlikda jim truncation — data loss
       PythonUsedGlobalMutableStateToShareDataBetweenFunctionsInsteadOfExplicitParametersOrReturnValues.md  # global mutable o'rniga aniq parametr/return
       PythonForgotExistOkOrParentsTrueWhenCreatingDirectoriesCausingFileExistsErrorOnRerun.md  # mkdir exist_ok/parents yo'q — FileExistsError qayta ishga tushirishda
       PythonForgotToCallSuperInitInSubclassConstructorCausingMissingParentInitialization.md  # subclass __init__ da super().__init__() yo'q — parent holati yo'q, AttributeError
