@@ -214,6 +214,7 @@ skills/
       HardcodedSecretInSourceOrCommittedEnv.md              # secret kodda yoki commit qilingan .env
       EvalOrDynamicCodeExecutionFromUserInput.md            # eval/dynamic code user input dan
   agent-workflows/
+    AgentReliedOnWebSearchSnippetsForDetailedTechnicalContentInsteadOfOpeningFullPageWithOpenPageTool.md  # batafsil texnik kontent uchun faqat web_search snippet, open_page ishlatmaslik
     AgentDidNotPassSpecificDateParameterToWeatherForecastToolWhenUserNamedParticularDay.md  # aniq kun so'ralganda weather_forecast specific_date parametrini yubormaslik
     AgentDidNotUseDeviceLatitudeLongitudeForWeatherWhenUserAskedAboutCurrentLocation.md  # current location weather uchun device lat/long ishlatmasdan shahar taxmin qilish
     AgentReportedSuccessfulPushWithoutVerifyingRemoteCommitAppearedViaGitLogOrStatus.md  # pushdan keyin remote commit tekshirmasdan muvaffaqiyatli deb hisobot
