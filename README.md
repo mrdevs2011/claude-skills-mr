@@ -132,6 +132,7 @@ skills/
       PythonUsedPlainDictForCountingOrGroupingInsteadOfCollectionsCounterOrDefaultdict.md  # oddiy dict + if-check o'rniga Counter/defaultdict
       PythonOpenWithoutExplicitEncodingCausesPlatformDependentUnicodeErrors.md  # open() da encoding yo'q — platformaga bog'liq UnicodeDecodeError
       PythonUsedRequestsWithoutTimeoutParameterLeadingToPotentialHang.md  # requests.get/post da timeout yo'q — osilib qolishi mumkin
+      PythonUsedOsPathFunctionsInsteadOfPathlibForModernPathOperations.md  # os.path o'rniga pathlib.Path — zamonaviy, zanjirlash mumkin, o'qilishi oson
     react/
       ReactDirectStateMutationDoesNotTriggerRerender.md     # state'ni to'g'ridan-to'g'ri mutate
       ReactMissingKeyPropInListCausesWrongUpdate.md         # ro'yxatda key yo'q yoki indeks
