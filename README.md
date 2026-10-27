@@ -125,6 +125,7 @@ skills/
       PythonUsedListPopZeroAsQueueInsteadOfCollectionsDequeCausingQuadraticPerformance.md  # list.pop(0) navbat — O(n²), deque ishlat
       PythonUsedGlobalMutableStateToShareDataBetweenFunctionsInsteadOfExplicitParametersOrReturnValues.md  # global mutable o'rniga aniq parametr/return
       PythonForgotExistOkOrParentsTrueWhenCreatingDirectoriesCausingFileExistsErrorOnRerun.md  # mkdir exist_ok/parents yo'q — FileExistsError qayta ishga tushirishda
+      PythonForgotToCallSuperInitInSubclassConstructorCausingMissingParentInitialization.md  # subclass __init__ da super().__init__() yo'q — parent holati yo'q, AttributeError
       PythonUsedTryExceptForExpectedConditionInsteadOfIfCheck.md  # try/except ni kutilgan holat uchun control flow sifatida ishlatish o'rniga if/get
       JavaScriptUsedForInLoopOnArrayInsteadOfForOfOrTraditionalForCausingIterationOverKeys.md  # massivda for...in — kalitlar (string), elementlar emas
       PythonUsedFromModuleImportStarInsteadOfExplicitImportsCausingNamespacePollutionAndHiddenDependencies.md  # from module import * — namespace ifloslanishi va yashirin dependensiya
