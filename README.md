@@ -113,6 +113,7 @@ skills/
       PythonUsedIsOperatorForValueEqualityCheckInsteadOfEquals.md  # qiymat solishtirishda is o'rniga ==
       PythonUsedEqualityOperatorToCheckNoneInsteadOfIsOperator.md  # None tekshiruvida == o'rniga is ishlatish
       PythonUsedFloatForMoneyOrCurrencyCalculationsInsteadOfDecimalCausingPrecisionLoss.md  # pul hisobida float o'rniga Decimal
+      PythonUsedPickleLoadOnUntrustedExternalDataCausingArbitraryCodeExecutionRisk.md  # untrusted data uchun pickle.load — RCE xavfi
       PythonUsedPrintStatementsForLoggingInsteadOfLoggingModule.md  # print() o'rniga logging moduli — daraja va boshqaruv
       PythonUsedBracketAccessOnDictWithoutGetOrInCheckCausingKeyError.md  # dict[key] o'rniga .get() yoki 'in' — KeyError oldini olish
       PythonOpenedBinaryFileInTextModeCausingUnicodeDecodeErrorOrDataCorruption.md  # binary faylni 'r'/'w' da ochish — UnicodeDecodeError yoki buzilish
