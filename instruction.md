@@ -447,7 +447,7 @@ so'zi qanday shaklda kelmasin):
    uchun doim WebBlender (localhost). Desktop Blender.exe/.app ga URINMA.
 -> Bu qoida "Pure texnik savol"dan ustun -- search_skills'ga borma.
 -> `run_command` bilan `cat ~/Claude/.skills/my-computer/blender.md` o'qi, "AVTOMATIK ISH
-   TARTIBI"ni bajar (server 9999 portda, buyruqlar shu faylda). Tashqaridan (ngrok) FAQAT o'qish: yozish/tahrirlash faqat localhost'da.
+   TARTIBI"ni bajar (server faqat localhost:9999 da, buyruqlar shu faylda). ngrok 7780 (cmc) da qoladi — 9999 ga o'tkazilmaydi, Blender internetga ochilmagan.
 -> Faqat "och" desa ham (yasash so'ralmasa) xuddi shu tartib. Hech narsa so'rama.
 -> Avval yasalgan maket haqida gapirsa ("ko'rdingmi", "qanday chiqdi", "hozir
    nima holatda"): yaratish emas, **tekshirish** -- `~/Claude/.skills/my-computer/blender.md` dagi
