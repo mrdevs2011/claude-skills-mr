@@ -367,6 +367,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
    /skills/coding/async/AsyncRaceConditionDependentTasksStartedInParallelWithPromiseAll.md
    /skills/coding/null/CannotReadPropertiesOfUndefinedOrNullTypeErrorDiagnosis.md
    /skills/coding/null/FalsyZeroOrEmptyStringWronglyTreatedAsMissingValueBug.md
+      PythonUsedOrForDefaultValueAssignmentOnPotentiallyFalsyValuesInsteadOfExplicitIsNoneCheck.md  # or bilan default — 0/""/False ham almashtiriladi, is None ishlat
   /skills/coding/patterns/PythonUsedGlobalKeywordToModifyModuleLevelVariableInsteadOfReturningValue.md
   /skills/coding/patterns/PythonUsedJsonDumpsOnDataContainingDatetimeSetOrCustomObjectWithoutDefaultHandlerCausingTypeError.md
    ```
