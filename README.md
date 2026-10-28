@@ -219,6 +219,7 @@ skills/
       HardcodedSecretInSourceOrCommittedEnv.md              # secret kodda yoki commit qilingan .env
       EvalOrDynamicCodeExecutionFromUserInput.md            # eval/dynamic code user input dan
   agent-workflows/
+    AgentPlacedNewSkillInIncorrectCategoryFolderInsteadOfMatchingTopicToExistingOrCreatingAppropriateOne.md  # yangi skill noto'g'ri kategoriya papkasiga qo'yilgan
     AgentReceivedStructuredCardDataButDidNotEmitRenderCardXmlInsteadOfTextSummary.md  # card_id keldi lekin render_card XML chiqarilmadi, faqat matn
     AgentReliedOnWebSearchSnippetsForDetailedTechnicalContentInsteadOfOpeningFullPageWithOpenPageTool.md  # batafsil texnik kontent uchun faqat web_search snippet, open_page ishlatmaslik
     AgentDidNotPassSpecificDateParameterToWeatherForecastToolWhenUserNamedParticularDay.md  # aniq kun so'ralganda weather_forecast specific_date parametrini yubormaslik
