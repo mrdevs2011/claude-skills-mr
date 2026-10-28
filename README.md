@@ -118,6 +118,7 @@ skills/
       PythonUsedFloatForMoneyOrCurrencyCalculationsInsteadOfDecimalCausingPrecisionLoss.md  # pul hisobida float o'rniga Decimal
       PythonUsedPickleLoadOnUntrustedExternalDataCausingArbitraryCodeExecutionRisk.md  # untrusted data uchun pickle.load — RCE xavfi
       PythonUsedPrintStatementsForLoggingInsteadOfLoggingModule.md  # print() o'rniga logging moduli — daraja va boshqaruv
+      PythonUsedShallowCopyOnNestedMutableStructuresLeadingToUnexpectedSharedStateMutations.md  # nested mutable da shallow copy — ichki shared state
       PythonUsedBracketAccessOnDictWithoutGetOrInCheckCausingKeyError.md  # dict[key] o'rniga .get() yoki 'in' — KeyError oldini olish
       PythonOpenedBinaryFileInTextModeCausingUnicodeDecodeErrorOrDataCorruption.md  # binary faylni 'r'/'w' da ochish — UnicodeDecodeError yoki buzilish
       PythonOpenedTextFileWithoutSpecifyingEncodingCausingPlatformDependentUnicodeIssues.md  # matn fayl open() da encoding yo'q — platformaga bog'liq Unicode xato
