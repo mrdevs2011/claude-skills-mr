@@ -112,6 +112,7 @@ skills/
       UnquotedShellVariableInCommandCausesWordSplittingOrGlobExpansion.md  # qo'shtirnoqsiz $var — word splitting yoki glob expansion
       UsedForLoopWithAppendForSimpleListTransformationInsteadOfListComprehension.md  # oddiy list transform uchun for+append o'rniga list comprehension
       PythonUsedListComprehensionForSideEffectsInsteadOfExplicitForLoopReducingReadability.md  # list comprehension ichida side-effect — aniq for loop ishlat
+      PythonUsedRegularClassForSimpleDataHolderInsteadOfDataclassOrNamedTuple.md  # oddiy data uchun class o'rniga dataclass/namedtuple
       UsedNestedTernaryOperatorsInsteadOfClearIfElseOrHelperForComplexConditions.md  # nested ternary o'rniga aniq if-else yoki helper
       PythonUsedIsOperatorForValueEqualityCheckInsteadOfEquals.md  # qiymat solishtirishda is o'rniga ==
       PythonUsedEqualityOperatorToCheckNoneInsteadOfIsOperator.md  # None tekshiruvida == o'rniga is ishlatish
