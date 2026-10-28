@@ -139,6 +139,7 @@ skills/
       PythonOpenWithoutExplicitEncodingCausesPlatformDependentUnicodeErrors.md  # open() da encoding yo'q — platformaga bog'liq UnicodeDecodeError
       PythonUsedRequestsWithoutTimeoutParameterLeadingToPotentialHang.md  # requests.get/post da timeout yo'q — osilib qolishi mumkin
       PythonUsedOsPathFunctionsInsteadOfPathlibForModernPathOperations.md  # os.path o'rniga pathlib.Path — zamonaviy, zanjirlash mumkin, o'qilishi oson
+      PythonUsedMutableDefaultArgumentInFunctionDefinitionLeadingToSharedStateBetweenCalls.md  # mutable default arg (list/dict) — chaqiruvlar o'rtasida shared state
       UsedRegexForSimpleStringPrefixSuffixOrContainsCheckInsteadOfBuiltInStringMethods.md  # oddiy prefix/suffix/contains uchun regex o'rniga startswith/endswith/in
     react/
       ReactDirectStateMutationDoesNotTriggerRerender.md     # state'ni to'g'ridan-to'g'ri mutate
