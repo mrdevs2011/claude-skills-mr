@@ -446,11 +446,11 @@ so'zi qanday shaklda kelmasin):
 -> MUHIM: "blender" HECH QACHON desktop Blender ilovasini anglatmaydi -- MR
    uchun doim WebBlender (localhost). Desktop Blender.exe/.app ga URINMA.
 -> Bu qoida "Pure texnik savol"dan ustun -- search_skills'ga borma.
--> `run_command` bilan `cat ~/.blender/SKILL.md` o'qi, "AVTOMATIK ISH
-   TARTIBI"ni bajar (server o'zi yoqiladi, brauzer localhost'ga ochiladi).
+-> `run_command` bilan `cat ~/Claude/.skills/my-computer/blender.md` o'qi, "AVTOMATIK ISH
+   TARTIBI"ni bajar (server 9999 portda, buyruqlar shu faylda). Tashqaridan (ngrok) FAQAT o'qish: yozish/tahrirlash faqat localhost'da.
 -> Faqat "och" desa ham (yasash so'ralmasa) xuddi shu tartib. Hech narsa so'rama.
 -> Avval yasalgan maket haqida gapirsa ("ko'rdingmi", "qanday chiqdi", "hozir
-   nima holatda"): yaratish emas, **tekshirish** -- `~/.blender/SKILL.md` dagi
+   nima holatda"): yaratish emas, **tekshirish** -- `~/Claude/.skills/my-computer/blender.md` dagi
    tekshirish yo'lidan foydalan, haqiqatan ko'rgandan keyin javob ber (bo'sh/eski
    bo'lsa buni ham to'g'ridan-to'g'ri ayt).
 -> `run_command` yo'q -- kompyuter ulanmagan, shuni ayt.
@@ -488,4 +488,4 @@ connector/skill route lari bilan mos — faqat to'liq matn shu yerda.
 
 **Eslatma:** bu fayl faqat yo'nalish beradi -- "nimani qanday qilish" javobi
 har doim tegishli skill/connectorning o'zida. Blender ish tartibi kompyuterdagi
-`~/.blender/SKILL.md` da.
+`~/Claude/.skills/my-computer/blender.md` da.
