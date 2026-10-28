@@ -368,6 +368,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
    /skills/coding/null/CannotReadPropertiesOfUndefinedOrNullTypeErrorDiagnosis.md
    /skills/coding/null/FalsyZeroOrEmptyStringWronglyTreatedAsMissingValueBug.md
   /skills/coding/patterns/PythonUsedGlobalKeywordToModifyModuleLevelVariableInsteadOfReturningValue.md
+  /skills/coding/patterns/PythonUsedJsonDumpsOnDataContainingDatetimeSetOrCustomObjectWithoutDefaultHandlerCausingTypeError.md
    ```
 2. Vercel avtomatik qayta deploy qiladi (yoki `vercel --prod`).
 3. Tekshirish:
