@@ -231,6 +231,7 @@ skills/
     AgentReceivedStructuredCardDataButDidNotEmitRenderCardXmlInsteadOfTextSummary.md  # card_id keldi lekin render_card XML chiqarilmadi, faqat matn
     AgentReliedOnWebSearchSnippetsForDetailedTechnicalContentInsteadOfOpeningFullPageWithOpenPageTool.md  # batafsil texnik kontent uchun faqat web_search snippet, open_page ishlatmaslik
     AgentDidNotPassSpecificDateParameterToWeatherForecastToolWhenUserNamedParticularDay.md  # aniq kun so'ralganda weather_forecast specific_date parametrini yubormaslik
+    AgentDidNotPassScaleParameterToWeatherForecastWhenUserSpecifiedTemperatureUnit.md  # foydalanuvchi birlik (celsius/fahrenheit) aytganda scale parametrini yubormaslik
     AgentDidNotUseDeviceLatitudeLongitudeForWeatherWhenUserAskedAboutCurrentLocation.md  # current location weather uchun device lat/long ishlatmasdan shahar taxmin qilish
     AgentReportedSuccessfulPushWithoutVerifyingRemoteCommitAppearedViaGitLogOrStatus.md  # pushdan keyin remote commit tekshirmasdan muvaffaqiyatli deb hisobot
     AgentReportedSkillPushCompleteWithoutExactCommitHashInFinalReport.md  # skill push hisobotida aniq commit hash keltirilmagan
