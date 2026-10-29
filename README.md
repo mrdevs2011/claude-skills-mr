@@ -227,6 +227,7 @@ skills/
   agent-workflows/
     AgentAnsweredCodingErrorOrPatternQuestionFromMemoryWithoutCallingSearchSkillsFirst.md  # kod xatosi/pattern savoliga search_skills chaqirmasdan ichki bilimdan javob
     AgentPlacedNewSkillInIncorrectCategoryFolderInsteadOfMatchingTopicToExistingOrCreatingAppropriateOne.md  # yangi skill noto'g'ri kategoriya papkasiga qo'yilgan
+    AgentDidNotVerifySkillSearchabilityAfterCreationLeadingToUndiscoverableSkill.md  # skill yaratilgandan keyin search_skills orqali topilishini tekshirmaslik
     AgentReceivedStructuredCardDataButDidNotEmitRenderCardXmlInsteadOfTextSummary.md  # card_id keldi lekin render_card XML chiqarilmadi, faqat matn
     AgentReliedOnWebSearchSnippetsForDetailedTechnicalContentInsteadOfOpeningFullPageWithOpenPageTool.md  # batafsil texnik kontent uchun faqat web_search snippet, open_page ishlatmaslik
     AgentDidNotPassSpecificDateParameterToWeatherForecastToolWhenUserNamedParticularDay.md  # aniq kun so'ralganda weather_forecast specific_date parametrini yubormaslik
