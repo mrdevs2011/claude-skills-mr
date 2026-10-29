@@ -112,7 +112,8 @@ skills/
       PythonExceptPassSilentlySwallowsErrorsWithoutLoggingOrReraising.md  # except: pass — xato jim yutiladi, log/re-raise yo'q
       UnquotedShellVariableInCommandCausesWordSplittingOrGlobExpansion.md  # qo'shtirnoqsiz $var — word splitting yoki glob expansion
       UsedForLoopWithAppendForSimpleListTransformationInsteadOfListComprehension.md  # oddiy list transform uchun for+append o'rniga list comprehension
-      PythonUsedListComprehensionForSideEffectsInsteadOfExplicitForLoopReducingReadability.md  # list comprehension ichida side-effect — aniq for loop ishlat
+      PythonUsedListComprehensionForSideEffectsInsteadOfExplicitForLoopReducingReadability.md
+      PythonUsedSubprocessRunWithoutCheckTrueOrCaptureOutputLeadingToSilentFailuresOrUnseenStderr.md  # subprocess.run check=True yo'q — silent fail  # list comprehension ichida side-effect — aniq for loop ishlat
       PythonUsedRegularClassForSimpleDataHolderInsteadOfDataclassOrNamedTuple.md  # oddiy data uchun class o'rniga dataclass/namedtuple
       UsedNestedTernaryOperatorsInsteadOfClearIfElseOrHelperForComplexConditions.md  # nested ternary o'rniga aniq if-else yoki helper
       PythonUsedIsOperatorForValueEqualityCheckInsteadOfEquals.md  # qiymat solishtirishda is o'rniga ==
