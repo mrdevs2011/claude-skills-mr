@@ -130,6 +130,7 @@ skills/
       JavaScriptArraySortWithoutNumericComparatorCausesLexicographicOrderingInsteadOfNumerical.md  # JS array.sort() raqamlarga compare'siz — leksikografik tartib
       JavaScriptUsedVarKeywordInsteadOfLetOrConstCausingFunctionScopeHoistingAndUnexpectedRedeclaration.md  # var o'rniga let/const — function scope, hoisting, qayta e'lon
       PythonModifiedListWhileIteratingOverItCausingSkippedElementsOrIndexError.md  # listni for loop ichida mutate qilish — skip yoki IndexError
+      PythonModifiedDictWhileIteratingOverItCausingRuntimeErrorDictionaryChangedSize.md  # dictni for loop ichida mutate qilish — RuntimeError dictionary changed size
       PythonUsedListPopZeroAsQueueInsteadOfCollectionsDequeCausingQuadraticPerformance.md  # list.pop(0) navbat — O(n²), deque ishlat
       PythonZipOnUnequalLengthIterablesSilentlyTruncatesWithoutWarningOrError.md  # zip() teng bo'lmagan uzunlikda jim truncation — data loss
       PythonUsedGlobalMutableStateToShareDataBetweenFunctionsInsteadOfExplicitParametersOrReturnValues.md  # global mutable o'rniga aniq parametr/return
