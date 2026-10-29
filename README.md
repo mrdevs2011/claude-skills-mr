@@ -381,6 +381,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
   /skills/coding/patterns/PythonUsedGlobalKeywordToModifyModuleLevelVariableInsteadOfReturningValue.md
   /skills/coding/patterns/PythonUsedJsonDumpsOnDataContainingDatetimeSetOrCustomObjectWithoutDefaultHandlerCausingTypeError.md
   /skills/coding/patterns/PythonUsedJsonLoadsOnMalformedInputWithoutTryExceptCausingJSONDecodeError.md
+  /skills/coding/patterns/PythonUsedRequestsGetWithoutSessionForMultipleCallsToSameHostMissingConnectionPooling.md
    /skills/coding/patterns/TypeScriptNonNullAssertionOperatorUsedWithoutPriorNullCheckCausingRuntimeError.md
    ```
 2. Vercel avtomatik qayta deploy qiladi (yoki `vercel --prod`).
