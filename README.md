@@ -149,6 +149,7 @@ skills/
       PythonUsedRawInputStringWithoutStripAndTypeConversionCausingTypeErrorOrFailedComparisons.md  # input() natijasini strip va int/float qilmasdan ishlatish — TypeError yoki solishtirish xatosi
       PythonUsedMutableDefaultArgumentInFunctionDefinitionLeadingToSharedStateBetweenCalls.md  # mutable default arg (list/dict) — chaqiruvlar o'rtasida shared state
       UsedRegexForSimpleStringPrefixSuffixOrContainsCheckInsteadOfBuiltInStringMethods.md  # oddiy prefix/suffix/contains uchun regex o'rniga startswith/endswith/in
+      PythonUsedOsSystemForShellCommandsInsteadOfSubprocessCausingShellInjectionRiskAndPoorErrorHandling.md  # os.system o'rniga subprocess — shell injection va yomon error handling
     react/
       ReactDirectStateMutationDoesNotTriggerRerender.md     # state'ni to'g'ridan-to'g'ri mutate
       ReactMissingKeyPropInListCausesWrongUpdate.md         # ro'yxatda key yo'q yoki indeks
