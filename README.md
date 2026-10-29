@@ -102,6 +102,7 @@ skills/
       DeeplyNestedConditionalsInsteadOfEarlyReturnGuardClauses.md  # nested if o'rniga early return
       HardcodedMagicNumbersOrStringsScatteredInsteadOfNamedConstants.md  # magic number/string o'rniga named constant
       PythonOpenWithoutWithOrContextManagerCausesFileDescriptorLeak.md  # open() without with — file descriptor leak
+      PythonOpenedFileWithModeWTruncatingExistingContentWhenAppendOrReadWriteIntended.md  # open("w") mavjud faylni tozalaydi — append uchun "a", update uchun "r+"
       HardcodedFilePathsInsteadOfUsingPathlibOrOsPathJoinForPortability.md  # hardcoded path o'rniga pathlib/os.path.join
       HardcodedApiBaseUrlInSourceInsteadOfReadingFromEnvironmentVariable.md  # API URL hardcode o'rniga env var
       UsedManualIndexCounterInsteadOfEnumerateInPythonLoop.md  # qo'lda i += 1 o'rniga enumerate
