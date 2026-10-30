@@ -398,6 +398,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
    /skills/agent-workflows/AgentDidNotEnsureEnvAndGitignoreExistBeforeCommittingNewSkill.md
    /skills/agent-workflows/AgentPushedSkillOrFilesToUploadsRepoOrInvokedCmcDespiteStrictInstructionToOnlyTargetClaudeSkillsMrRepo.md  # skill push faqat claude-skills-mr, uploads/CMC taqiqlangan
    /skills/agent-workflows/AgentDidNotUseXThreadFetchForPostContextWhenUserAskedAboutSpecificTweetOrThread.md  # aniq X post/thread uchun x_thread_fetch ishlatilmagan
+   /skills/agent-workflows/AgentDidNotUseGitLogOnelineAfterSuccessfulPushToExtractCommitHashForRequiredReport.md  # pushdan keyin commit hash olinmagan
    ```
 2. Vercel avtomatik qayta deploy qiladi (yoki `vercel --prod`).
 3. Tekshirish:
