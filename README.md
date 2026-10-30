@@ -129,6 +129,7 @@ skills/
       PythonOpenedTextFileWithoutSpecifyingEncodingCausingPlatformDependentUnicodeIssues.md  # matn fayl open() da encoding yo'q — platformaga bog'liq Unicode xato
       UsedObjectSpreadOrDictCopyForNestedDataInsteadOfCopyDeepcopyCausingSharedNestedMutation.md  # shallow copy nested data'da shared mutation
       JavaScriptUsedLooseEqualityDoubleEqualsInsteadOfStrictTripleEqualsCausingTypeCoercionBugs.md  # JS == o'rniga === — type coercion bug
+      JavaScriptUsedParseIntWithoutRadixParameterCausingOctalOrUnexpectedParsing.md  # parseInt radix siz — leading zero/hex/trailing kutilmagan
       JavaScriptArraySortWithoutNumericComparatorCausesLexicographicOrderingInsteadOfNumerical.md  # JS array.sort() raqamlarga compare'siz — leksikografik tartib
       JavaScriptUsedVarKeywordInsteadOfLetOrConstCausingFunctionScopeHoistingAndUnexpectedRedeclaration.md  # var o'rniga let/const — function scope, hoisting, qayta e'lon
       JavaScriptUsedVarInForLoopWithAsyncCallbackOrTimeoutCapturingLastIterationValue.md  # for loop + var + async callback — har doim oxirgi qiymat
