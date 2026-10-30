@@ -131,6 +131,7 @@ skills/
       JavaScriptUsedLooseEqualityDoubleEqualsInsteadOfStrictTripleEqualsCausingTypeCoercionBugs.md  # JS == o'rniga === — type coercion bug
       JavaScriptArraySortWithoutNumericComparatorCausesLexicographicOrderingInsteadOfNumerical.md  # JS array.sort() raqamlarga compare'siz — leksikografik tartib
       JavaScriptUsedVarKeywordInsteadOfLetOrConstCausingFunctionScopeHoistingAndUnexpectedRedeclaration.md  # var o'rniga let/const — function scope, hoisting, qayta e'lon
+      JavaScriptUsedVarInForLoopWithAsyncCallbackOrTimeoutCapturingLastIterationValue.md  # for loop + var + async callback — har doim oxirgi qiymat
       PythonModifiedListWhileIteratingOverItCausingSkippedElementsOrIndexError.md  # listni for loop ichida mutate qilish — skip yoki IndexError
       PythonModifiedDictWhileIteratingOverItCausingRuntimeErrorDictionaryChangedSize.md  # dictni for loop ichida mutate qilish — RuntimeError dictionary changed size
       PythonUsedListPopZeroAsQueueInsteadOfCollectionsDequeCausingQuadraticPerformance.md  # list.pop(0) navbat — O(n²), deque ishlat
