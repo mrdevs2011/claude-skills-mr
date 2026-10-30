@@ -113,6 +113,7 @@ skills/
       PythonExceptPassSilentlySwallowsErrorsWithoutLoggingOrReraising.md  # except: pass — xato jim yutiladi, log/re-raise yo'q
       UnquotedShellVariableInCommandCausesWordSplittingOrGlobExpansion.md  # qo'shtirnoqsiz $var — word splitting yoki glob expansion
       UsedForLoopWithAppendForSimpleListTransformationInsteadOfListComprehension.md  # oddiy list transform uchun for+append o'rniga list comprehension
+      PythonUsedMapFilterInsteadOfGeneratorExpressionOrListComprehensionForSimpleTransforms.md  # oddiy map/filter + lambda o'rniga comprehension
       PythonUsedListComprehensionForSideEffectsInsteadOfExplicitForLoopReducingReadability.md
       PythonUsedSubprocessRunWithoutCheckTrueOrCaptureOutputLeadingToSilentFailuresOrUnseenStderr.md  # subprocess.run check=True yo'q — silent fail  # list comprehension ichida side-effect — aniq for loop ishlat
       PythonUsedRegularClassForSimpleDataHolderInsteadOfDataclassOrNamedTuple.md  # oddiy data uchun class o'rniga dataclass/namedtuple
