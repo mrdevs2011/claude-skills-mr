@@ -150,6 +150,7 @@ skills/
       PythonUsedOsPathFunctionsInsteadOfPathlibForModernPathOperations.md  # os.path o'rniga pathlib.Path — zamonaviy, zanjirlash mumkin, o'qilishi oson
       PythonUsedRawInputStringWithoutStripAndTypeConversionCausingTypeErrorOrFailedComparisons.md  # input() natijasini strip va int/float qilmasdan ishlatish — TypeError yoki solishtirish xatosi
       PythonUsedMutableDefaultArgumentInFunctionDefinitionLeadingToSharedStateBetweenCalls.md  # mutable default arg (list/dict) — chaqiruvlar o'rtasida shared state
+      PythonUsedClassLevelMutableVariableInsteadOfInstanceAttributeCausingSharedStateBetweenAllInstances.md  # class body'da mutable (list/dict) — barcha instance'lar shared state
       UsedRegexForSimpleStringPrefixSuffixOrContainsCheckInsteadOfBuiltInStringMethods.md  # oddiy prefix/suffix/contains uchun regex o'rniga startswith/endswith/in
       PythonUsedOsSystemForShellCommandsInsteadOfSubprocessCausingShellInjectionRiskAndPoorErrorHandling.md  # os.system o'rniga subprocess — shell injection va yomon error handling
     react/
