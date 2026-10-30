@@ -391,6 +391,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
    /skills/coding/patterns/TypeScriptNonNullAssertionOperatorUsedWithoutPriorNullCheckCausingRuntimeError.md
    /skills/coding/patterns/PythonComparedFloatsWithEqualityInsteadOfMathIscloseCausingFalseNegativesDueToPrecision.md
    /skills/coding/patterns/UsedLongIfElifChainForSimpleValueMappingInsteadOfDictionaryLookupOrStructuralMatch.md  # oddiy mapping uchun if-elif o'rniga dict yoki match-case
+  /skills/coding/patterns/PythonUsedOpenWithoutWithStatementLeavingFileHandleUnclosed.md  # open() without with — file handle unclosed, resource leak
     AgentDidNotReadFullGuidelinesIncludingArchitectureInstructionAndStyleBeforeCreatingSkill.md  # skill yaratishdan oldin architecture, instruction, style to'liq o'qilmagan
    /skills/agent-workflows/AgentDidNotEnsureEnvAndGitignoreExistBeforeCommittingNewSkill.md
    /skills/agent-workflows/AgentPushedSkillOrFilesToUploadsRepoOrInvokedCmcDespiteStrictInstructionToOnlyTargetClaudeSkillsMrRepo.md  # skill push faqat claude-skills-mr, uploads/CMC taqiqlangan
