@@ -398,6 +398,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
   /skills/coding/patterns/PythonUsedListRemoveOrDelWhileIteratingOverSameListCausingSkippedElementsOrIndexError.md  # for loop ichida list.remove() — elementlar o'tkazib yuboriladi
     AgentDidNotReadFullGuidelinesIncludingArchitectureInstructionAndStyleBeforeCreatingSkill.md  # skill yaratishdan oldin architecture, instruction, style to'liq o'qilmagan
    /skills/agent-workflows/AgentDidNotEnsureEnvAndGitignoreExistBeforeCommittingNewSkill.md
+   /skills/agent-workflows/AgentUsedSequentialToolCallsForIndependentOperationsInsteadOfParallelBatchingCausingUnnecessaryLatency.md
    /skills/agent-workflows/AgentPushedSkillOrFilesToUploadsRepoOrInvokedCmcDespiteStrictInstructionToOnlyTargetClaudeSkillsMrRepo.md  # skill push faqat claude-skills-mr, uploads/CMC taqiqlangan
    /skills/agent-workflows/AgentDidNotUseXThreadFetchForPostContextWhenUserAskedAboutSpecificTweetOrThread.md  # aniq X post/thread uchun x_thread_fetch ishlatilmagan
    /skills/agent-workflows/AgentDidNotUseGitLogOnelineAfterSuccessfulPushToExtractCommitHashForRequiredReport.md  # pushdan keyin commit hash olinmagan
