@@ -416,3 +416,4 @@ kodda yozilgan. Bu faqat shaxsiy loyiha uchun yetarli, lekin tokenni
 public repo'da oshkora qoldirish xavfsiz emas — xohlasang buni keyin
 `.env` / Vercel environment variable'ga o'tkazamiz.
       PythonAssignedReturnValueOfListSortOrOtherInPlaceMutatorMethodCausingVariableToBecomeNone.md  # list.sort() yoki update() natijasini qayta tayinlash — None bo'ladi
+      JavaScriptUsedArrowFunctionAndExpectedOuterThisBindingButGotUndefinedOrWindow.md  # arrow function'da kutilmagan this binding — regular function ishlat
