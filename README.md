@@ -396,6 +396,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
    /skills/coding/patterns/UsedLongIfElifChainForSimpleValueMappingInsteadOfDictionaryLookupOrStructuralMatch.md  # oddiy mapping uchun if-elif o'rniga dict yoki match-case
   /skills/coding/patterns/PythonUsedOpenWithoutWithStatementLeavingFileHandleUnclosed.md  # open() without with — file handle unclosed, resource leak
   /skills/coding/patterns/PythonUsedListRemoveOrDelWhileIteratingOverSameListCausingSkippedElementsOrIndexError.md  # for loop ichida list.remove() — elementlar o'tkazib yuboriladi
+  /skills/coding/patterns/PythonUsedListMultiplicationOperatorForNestedListsCreatingSharedMutableInnerLists.md  # [[]] * n shared mutable ichki listlar
     AgentDidNotReadFullGuidelinesIncludingArchitectureInstructionAndStyleBeforeCreatingSkill.md  # skill yaratishdan oldin architecture, instruction, style to'liq o'qilmagan
    /skills/agent-workflows/AgentDidNotEnsureEnvAndGitignoreExistBeforeCommittingNewSkill.md
    /skills/agent-workflows/AgentUsedSequentialToolCallsForIndependentOperationsInsteadOfParallelBatchingCausingUnnecessaryLatency.md
