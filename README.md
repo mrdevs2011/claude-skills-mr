@@ -398,6 +398,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
   /skills/coding/patterns/PythonUsedOpenWithoutWithStatementLeavingFileHandleUnclosed.md  # open() without with — file handle unclosed, resource leak
   /skills/coding/patterns/PythonUsedListRemoveOrDelWhileIteratingOverSameListCausingSkippedElementsOrIndexError.md  # for loop ichida list.remove() — elementlar o'tkazib yuboriladi
   /skills/coding/patterns/PythonUsedListMultiplicationOperatorForNestedListsCreatingSharedMutableInnerLists.md  # [[]] * n shared mutable ichki listlar
+  /skills/coding/patterns/PythonUsedTimeTimeForMeasuringElapsedDurationInsteadOfTimePerfCounter.md  # elapsed vaqt uchun time.time() o'rniga time.perf_counter() ishlat
     AgentDidNotReadFullGuidelinesIncludingArchitectureInstructionAndStyleBeforeCreatingSkill.md  # skill yaratishdan oldin architecture, instruction, style to'liq o'qilmagan
    /skills/agent-workflows/AgentDidNotEnsureEnvAndGitignoreExistBeforeCommittingNewSkill.md
    /skills/agent-workflows/AgentUsedSequentialToolCallsForIndependentOperationsInsteadOfParallelBatchingCausingUnnecessaryLatency.md
