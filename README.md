@@ -402,6 +402,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
   /skills/coding/patterns/PythonUsedListMultiplicationOperatorForNestedListsCreatingSharedMutableInnerLists.md  # [[]] * n shared mutable ichki listlar
   /skills/coding/patterns/PythonUsedTimeTimeForMeasuringElapsedDurationInsteadOfTimePerfCounter.md  # elapsed vaqt uchun time.time() o'rniga time.perf_counter() ishlat
   /skills/coding/patterns/PythonUsedLambdaForComplexLogicInsteadOfNamedFunctionReducingReadabilityAndDebuggability.md  # murakkab lambda o'rniga named def funksiya
+  /skills/coding/patterns/PythonUsedDictKeysOrValuesViewInPython3AsIfItWereListCausingTypeErrorOnIndexOrSlice.md  # Python 3 da dict.keys()/values() view — index/slice TypeError, list() bilan o'ra
     AgentDidNotReadFullGuidelinesIncludingArchitectureInstructionAndStyleBeforeCreatingSkill.md  # skill yaratishdan oldin architecture, instruction, style to'liq o'qilmagan
    /skills/agent-workflows/AgentDidNotEnsureEnvAndGitignoreExistBeforeCommittingNewSkill.md
    /skills/agent-workflows/AgentUsedSequentialToolCallsForIndependentOperationsInsteadOfParallelBatchingCausingUnnecessaryLatency.md
