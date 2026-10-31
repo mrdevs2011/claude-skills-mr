@@ -415,6 +415,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
    /skills/agent-workflows/AgentCitedSearchResultsWithPlainTextLinksOrNoCitationInsteadOfUsingRenderInlineCitationXmlComponent.md  # qidiruv natijalarini plain text o'rniga render_inline_citation XML bilan citation qil
     AgentFailedToExtractAndReportExactCommitHashAfterPushUsingGitRevParseOrLog.md  # pushdan keyin git rev-parse HEAD bilan aniq hash olinmagan  # pushdan keyin commit hash olinmagan
    /skills/agent-workflows/AgentUsedBrowserExecuteForSimpleStaticPageInsteadOfOpenPageToolWastingTimeAndResources.md  # oddiy static sahifa uchun browser_execute o'rniga open_page ishlat
+   /skills/agent-workflows/AgentUsedRelativePathInRenderFileXmlInsteadOfAbsolutePathCausingPreviewOrDownloadFailure.md  # render_file da relative o'rniga absolute path ishlat
    ```
 2. Vercel avtomatik qayta deploy qiladi (yoki `vercel --prod`).
 3. Tekshirish:
