@@ -118,6 +118,7 @@ skills/
       PythonUsedSubprocessRunWithoutCheckTrueOrCaptureOutputLeadingToSilentFailuresOrUnseenStderr.md  # subprocess.run check=True yo'q — silent fail  # list comprehension ichida side-effect — aniq for loop ishlat
       PythonUsedRegularClassForSimpleDataHolderInsteadOfDataclassOrNamedTuple.md  # oddiy data uchun class o'rniga dataclass/namedtuple
       UsedNestedTernaryOperatorsInsteadOfClearIfElseOrHelperForComplexConditions.md  # nested ternary o'rniga aniq if-else yoki helper
+      PythonIteratedOverDictAndModifiedItDuringLoopCausingRuntimeErrorOrSkippedKeys.md  # dict loop ichida o'zgartirish — RuntimeError yoki o'tkazib yuborish
       PythonUsedIsOperatorForValueEqualityCheckInsteadOfEquals.md  # qiymat solishtirishda is o'rniga ==
       PythonUsedEqualityOperatorToCheckNoneInsteadOfIsOperator.md  # None tekshiruvida == o'rniga is ishlatish
       PythonUsedFloatForMoneyOrCurrencyCalculationsInsteadOfDecimalCausingPrecisionLoss.md  # pul hisobida float o'rniga Decimal
@@ -403,6 +404,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
   /skills/coding/patterns/PythonUsedTypeFunctionForTypeCheckingInsteadOfIsinstanceMissingSubclassAndUnionSupport.md  # type() is Class o'rniga isinstance ishlat
   /skills/coding/patterns/PythonUsedOpenWithoutWithStatementLeavingFileHandleUnclosed.md  # open() without with — file handle unclosed, resource leak
   /skills/coding/patterns/PythonUsedListRemoveOrDelWhileIteratingOverSameListCausingSkippedElementsOrIndexError.md  # for loop ichida list.remove() — elementlar o'tkazib yuboriladi
+  /skills/coding/patterns/PythonIteratedOverDictAndModifiedItDuringLoopCausingRuntimeErrorOrSkippedKeys.md  # dict loop ichida o'zgartirish — RuntimeError
   /skills/coding/patterns/PythonUsedListMultiplicationOperatorForNestedListsCreatingSharedMutableInnerLists.md  # [[]] * n shared mutable ichki listlar
   /skills/coding/patterns/PythonUsedTimeTimeForMeasuringElapsedDurationInsteadOfTimePerfCounter.md  # elapsed vaqt uchun time.time() o'rniga time.perf_counter() ishlat
   /skills/coding/patterns/PythonUsedLambdaForComplexLogicInsteadOfNamedFunctionReducingReadabilityAndDebuggability.md  # murakkab lambda o'rniga named def funksiya
