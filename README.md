@@ -229,6 +229,7 @@ skills/
       SqlStringConcatenationInjectionRisk.md                # SQL string concat — injection
       HardcodedSecretInSourceOrCommittedEnv.md              # secret kodda yoki commit qilingan .env
       EvalOrDynamicCodeExecutionFromUserInput.md            # eval/dynamic code user input dan
+      PythonUsedOsSystemOrSubprocessShellTrueWithUnsanitizedUserInputCausingCommandInjection.md  # os.system / subprocess shell=True + unsanitized input — command injection
   agent-workflows/
     AgentAnsweredCodingErrorOrPatternQuestionFromMemoryWithoutCallingSearchSkillsFirst.md  # kod xatosi/pattern savoliga search_skills chaqirmasdan ichki bilimdan javob
     AgentPlacedNewSkillInIncorrectCategoryFolderInsteadOfMatchingTopicToExistingOrCreatingAppropriateOne.md  # yangi skill noto'g'ri kategoriya papkasiga qo'yilgan
