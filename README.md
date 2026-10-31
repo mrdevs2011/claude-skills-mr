@@ -421,6 +421,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
     AgentFailedToExtractAndReportExactCommitHashAfterPushUsingGitRevParseOrLog.md  # pushdan keyin git rev-parse HEAD bilan aniq hash olinmagan  # pushdan keyin commit hash olinmagan
    /skills/agent-workflows/AgentUsedBrowserExecuteForSimpleStaticPageInsteadOfOpenPageToolWastingTimeAndResources.md  # oddiy static sahifa uchun browser_execute o'rniga open_page ishlat
    /skills/agent-workflows/AgentUsedRelativePathInRenderFileXmlInsteadOfAbsolutePathCausingPreviewOrDownloadFailure.md  # render_file da relative o'rniga absolute path ishlat
+   /skills/agent-workflows/AgentDidNotDisambiguateAmbiguousTeamNameBeforeCallingSportsSearchTool.md  # sports_search da noaniq jamoa nomi ("New York") uzatilgan, disambiguate qilinmagan
    ```
 2. Vercel avtomatik qayta deploy qiladi (yoki `vercel --prod`).
 3. Tekshirish:
