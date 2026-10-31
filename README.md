@@ -409,7 +409,8 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
    /skills/agent-workflows/AgentUsedSequentialToolCallsForIndependentOperationsInsteadOfParallelBatchingCausingUnnecessaryLatency.md
    /skills/agent-workflows/AgentPushedSkillOrFilesToUploadsRepoOrInvokedCmcDespiteStrictInstructionToOnlyTargetClaudeSkillsMrRepo.md  # skill push faqat claude-skills-mr, uploads/CMC taqiqlangan
    /skills/agent-workflows/AgentDidNotUseXThreadFetchForPostContextWhenUserAskedAboutSpecificTweetOrThread.md  # aniq X post/thread uchun x_thread_fetch ishlatilmagan
-   /skills/agent-workflows/AgentDidNotUseGitLogOnelineAfterSuccessfulPushToExtractCommitHashForRequiredReport.md  # pushdan keyin commit hash olinmagan
+   /skills/agent-workflows/AgentDidNotUseGitLogOnelineAfterSuccessfulPushToExtractCommitHashForRequiredReport.md
+    AgentFailedToExtractAndReportExactCommitHashAfterPushUsingGitRevParseOrLog.md  # pushdan keyin git rev-parse HEAD bilan aniq hash olinmagan  # pushdan keyin commit hash olinmagan
    /skills/agent-workflows/AgentUsedBrowserExecuteForSimpleStaticPageInsteadOfOpenPageToolWastingTimeAndResources.md  # oddiy static sahifa uchun browser_execute o'rniga open_page ishlat
    ```
 2. Vercel avtomatik qayta deploy qiladi (yoki `vercel --prod`).
