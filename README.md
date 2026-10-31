@@ -427,3 +427,4 @@ public repo'da oshkora qoldirish xavfsiz emas — xohlasang buni keyin
 `.env` / Vercel environment variable'ga o'tkazamiz.
       PythonAssignedReturnValueOfListSortOrOtherInPlaceMutatorMethodCausingVariableToBecomeNone.md  # list.sort() yoki update() natijasini qayta tayinlash — None bo'ladi
       JavaScriptUsedArrowFunctionAndExpectedOuterThisBindingButGotUndefinedOrWindow.md  # arrow function'da kutilmagan this binding — regular function ishlat
+  /skills/coding/patterns/PythonUsedDatetimeNowWithoutTzinfoArgumentCreatingNaiveDatetimeCausingComparisonOrSerializationIssues.md  # datetime.now() tzinfo'siz — naive datetime, comparison TypeError
