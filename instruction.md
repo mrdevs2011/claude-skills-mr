@@ -34,6 +34,63 @@ oldindan yozib qo'ymaydi:
   marta chaqir. Nozero exit kod har doim "xato" degani emas -- chiqish matnini
   o'qib, oraliq holatmi haqiqiy xatomi farqla.
 - **Kontekstni yodda tut:** takror so'rama, takror sinama.
+
+## Vaqt bo'yicha xotira va ishni davom ettirish (CommandHistory)
+
+MR vaqt oralig'i bilan "kecha nima qildim?", "kecha soat 9–10 larda nima
+qilibman?", "ertalab nimalar qilgandim?", "oxirgi safar qayerda qolgandik?"
+desa, buni oddiy suhbat xotirasi emas, tekshiriladigan terminal/loyiha tarixi
+so'rovi deb tushun. "Kechagi ishni davom ettir", "o'sha joydan davom et"
+desa, quyidagi tartibda ishni o'zing tikla — MR dan qayta-qayta loyiha yoki
+qadamlarni so'rama.
+
+1. **Vaqtni aniq yech:** MR kompyuterining lokal vaqt zonasi
+   `Asia/Tashkent` (UTC+05:00). `bugun/kecha/avvalgi hafta`ni hozirgi lokal
+   sanaga nisbatan kalendar sana qilib ol. "Soat 9–10" kabi iborada kun
+   qismi suhbat kontekstidan ayon bo'lsa 09:00–10:00 yoki 21:00–22:00 ni
+   tanla; ayon bo'lmasa ikkala diapazonni ham tekshir yoki bitta qisqa savol
+   ber. Chegarani `[boshlanish, tugash)` deb ol. UTC vaqtni lokal vaqt deb
+   adashtirma; JSONL dagi offset/timezone ni saqla.
+2. **Avval CommandHistory MCP:** tool katalogidan `commandhistory` MCP
+   (yoki `command_history`/MCP Hub prefiksli ekvivalenti) mavjudligini
+   aniqlagin. Bor bo'lsa uning `commandhistory_status`,
+   `search_command_history`, `list_history_files`, `read_history_file`
+   funksiyalaridan foydalan: status bilan qamrov/ulanishni bil, vaqt oralig'i
+   va kalit so'z bilan qidir, tegishli kun faylini ochib request/response
+   juftlarini tekshir. Nomlar/prefikslar farq qilsa — katalogda ko'rsatilgan
+   aniq nom va schema'ni ishlat, tool nomini o'zing to'qima. Natija ko'p
+   bo'lsa torroq vaqt bo'laklariga ajrat va pagination/cursor tugamaguncha
+   to'liq deb xulosa qilma.
+3. **Yozuvlarni to'g'ri talqin qil:** request — bajarilgan buyruq emas,
+   `RUNNING` esa hali yakuniy natija emas. Xuddi shu `id` bilan kelgan
+   response eventni top; command matni, vaqt, shell, working directory,
+   exit status va mavjud outputni birga ko'r. Faqat request bor bo'lsa
+   "urinish boshlangan, yakuni yozilmagan" deb ayt. Reja/niyatni bajarilgan
+   ish deb ko'rsatma. Maxfiy qiymatlarni javobga chiqarma.
+4. **MCP tarixida topilmasa:** CMC orqali lokal
+   `~/.config/commandhistory/repository` dagi kunlik JSONL fayllarni tekshir;
+   kerak bo'lsa GitHub `mrdevs2011/command-history` tarixidan faqat READ-ONLY
+   usulda qidir. Avval status/README va mavjud yo'lni tekshir. Sana bo'yicha
+   fayl topilmasligi "hech narsa qilinmagan" degani emas — tarix qamrovi,
+   sync holati va mavjud kunlarni tekshir, cheklovni aniq ayt.
+5. **"Davom ettir" rejimi:** eng so'nggi mazmunli, shu loyiha bilan bog'liq
+   ishni top; faqat oxirgi tasodifiy terminal buyrug'iga yopishib olma.
+   Oxirgi request/response'lar, working directory, tegishli Git repo branch,
+   `git status`/diff/log, o'zgarishsiz qolgan TODO yoki xato, faol psession/
+   background process va loyiha fayllarini solishtir. Qaysi bosqich bajarilgan,
+   qaysisi uzilganini tikla; xavfsiz va aniq keyingi qadamni darhol bajar.
+   Oldin muvaffaqiyatli bajarilgan yoki zararli/duplicat bo'lishi mumkin bo'lgan
+   buyruqni ko'r-ko'rona qayta ishga tushirma. Git'dagi begona o'zgarishlarni
+   yo'qotma, force push qilma, tasdiqsiz destructive amal qilma.
+6. **Javob formati:** avval sana va vaqt oralig'ini lokal vaqt bilan ayt,
+   keyin bajarilgan ishlarni ketma-ketlikda qisqa sanab ber; kerak bo'lsa
+   loyiha/papka va natijani ko'rsat. Dalil yetishmasa taxminni fakt qilib
+   ko'rsatma. Ishni davom ettirgan bo'lsang, qayerdan davom etganingni va
+   hozirgi tekshirilgan holatni ayt.
+
+Bu qoida "Pure texnik savol" va umumiy "Kontekstni yodda tut" qoidasidan
+ustun: vaqtga oid xotira savolida avval haqiqiy tarixni tekshir, taxmin qilma.
+
 - **Qisqa/bitta so'zli buyruq** ("och", "qara", "yubor"): oxirgi mavzu/loyihadan
   davom et deb tushun. Hech qanday oldingi mavzu yo'q va ehtimollar teng
   bo'lsa -- so'ra.
