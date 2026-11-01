@@ -398,6 +398,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
   /skills/coding/patterns/PythonUsedJsonDumpsOnDataContainingDatetimeSetOrCustomObjectWithoutDefaultHandlerCausingTypeError.md
   /skills/coding/patterns/PythonUsedJsonLoadsOnMalformedInputWithoutTryExceptCausingJSONDecodeError.md
   /skills/coding/patterns/PythonUsedRequestsGetWithoutSessionForMultipleCallsToSameHostMissingConnectionPooling.md
+  /skills/coding/patterns/PythonUsedRequestsPostWithDataParamForDictInsteadOfJsonParamCausingFormEncodingInsteadOfJsonContentType.md  # requests.post data= o'rniga json= — form o'rniga application/json
    /skills/coding/patterns/TypeScriptNonNullAssertionOperatorUsedWithoutPriorNullCheckCausingRuntimeError.md
    /skills/coding/patterns/PythonComparedFloatsWithEqualityInsteadOfMathIscloseCausingFalseNegativesDueToPrecision.md
    /skills/coding/patterns/UsedLongIfElifChainForSimpleValueMappingInsteadOfDictionaryLookupOrStructuralMatch.md  # oddiy mapping uchun if-elif o'rniga dict yoki match-case
