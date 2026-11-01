@@ -90,6 +90,7 @@ skills/
       AwaitInLoopSequentialWhenParallelPossible.md          # loop ichida await — parallel mumkin edi
       MissingAbortControllerForFetchCancellation.md         # fetch bekor qilinmagan (AbortController)
       UsedTimeSleepInAsyncFunctionBlockingEventLoopInsteadOfAsyncioSleep.md  # time.sleep async da event loop bloklaydi
+      JavaScriptPreferredPromiseThenChainOverAsyncAwaitForSequentialOperationsReducingReadabilityAndErrorHandlingClarity.md  # sequential then chain o'rniga async/await
     null/
       CannotReadPropertiesOfUndefinedOrNullTypeErrorDiagnosis.md
       FalsyZeroOrEmptyStringWronglyTreatedAsMissingValueBug.md
