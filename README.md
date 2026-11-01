@@ -161,6 +161,7 @@ skills/
       PythonUsedMutableDefaultArgumentInFunctionDefinitionLeadingToSharedStateBetweenCalls.md  # mutable default arg (list/dict) — chaqiruvlar o'rtasida shared state
       PythonUsedClassLevelMutableVariableInsteadOfInstanceAttributeCausingSharedStateBetweenAllInstances.md  # class body'da mutable (list/dict) — barcha instance'lar shared state
       UsedRegexForSimpleStringPrefixSuffixOrContainsCheckInsteadOfBuiltInStringMethods.md  # oddiy prefix/suffix/contains uchun regex o'rniga startswith/endswith/in
+      PythonCompiledRegexInsideLoopInsteadOfOnceOutsideCausingRepeatedOverhead.md  # loop ichida re.compile — har safar qayta compile, bir marta tashqarida qiling
       PythonUsedOsSystemForShellCommandsInsteadOfSubprocessCausingShellInjectionRiskAndPoorErrorHandling.md  # os.system o'rniga subprocess — shell injection va yomon error handling
     react/
       ReactDirectStateMutationDoesNotTriggerRerender.md     # state'ni to'g'ridan-to'g'ri mutate
