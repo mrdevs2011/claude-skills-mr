@@ -399,6 +399,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
   /skills/coding/patterns/AgentOrDeveloperLeftDebugPrintOrConsoleLogStatementsInFinalCodeInsteadOfRemovingOrUsingProperLogger.md
   /skills/coding/patterns/PythonUsedJsonDumpsOnDataContainingDatetimeSetOrCustomObjectWithoutDefaultHandlerCausingTypeError.md
   /skills/coding/patterns/PythonUsedJsonLoadsOnMalformedInputWithoutTryExceptCausingJSONDecodeError.md
+  /skills/coding/patterns/PythonUsedBroadTryExceptAroundEntireFunctionOrLargeBlockMaskingUnexpectedErrorsAndHidingRootCause.md  # keng try-except butun blokni o'rab xatolarni yashiradi
   /skills/coding/patterns/PythonUsedRequestsGetWithoutSessionForMultipleCallsToSameHostMissingConnectionPooling.md
   /skills/coding/patterns/PythonUsedRequestsPostWithDataParamForDictInsteadOfJsonParamCausingFormEncodingInsteadOfJsonContentType.md  # requests.post data= o'rniga json= — form o'rniga application/json
    /skills/coding/patterns/TypeScriptNonNullAssertionOperatorUsedWithoutPriorNullCheckCausingRuntimeError.md
