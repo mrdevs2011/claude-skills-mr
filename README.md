@@ -415,7 +415,8 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
   /skills/coding/patterns/PythonIteratedOverDictAndModifiedItDuringLoopCausingRuntimeErrorOrSkippedKeys.md  # dict loop ichida o'zgartirish — RuntimeError
   /skills/coding/patterns/PythonUsedListMultiplicationOperatorForNestedListsCreatingSharedMutableInnerLists.md  # [[]] * n shared mutable ichki listlar
   /skills/coding/patterns/PythonUsedTimeTimeForMeasuringElapsedDurationInsteadOfTimePerfCounter.md  # elapsed vaqt uchun time.time() o'rniga time.perf_counter() ishlat
-  /skills/coding/patterns/PythonUsedLambdaForComplexLogicInsteadOfNamedFunctionReducingReadabilityAndDebuggability.md  # murakkab lambda o'rniga named def funksiya
+  /skills/coding/patterns/PythonUsedLambdaForComplexLogicInsteadOfNamedFunctionReducingReadabilityAndDebuggability.md
+  /skills/coding/patterns/NodeJsUsedSynchronousBlockingCallsInsideAsyncRequestHandlerOrEventLoopCausingLatencyForOtherRequests.md  # Node.js *Sync chaqiruvlar event loop ni bloklaydi  # murakkab lambda o'rniga named def funksiya
   /skills/coding/patterns/PythonUsedDictKeysOrValuesViewInPython3AsIfItWereListCausingTypeErrorOnIndexOrSlice.md
 /skills/coding/patterns/PythonRelativeImportFailsWhenScriptRunDirectlyWithPythonCommandCausingImportError.md  # relative import + python file.py → ImportError no known parent package  # Python 3 da dict.keys()/values() view — index/slice TypeError, list() bilan o'ra
     AgentDidNotReadFullGuidelinesIncludingArchitectureInstructionAndStyleBeforeCreatingSkill.md  # skill yaratishdan oldin architecture, instruction, style to'liq o'qilmagan
