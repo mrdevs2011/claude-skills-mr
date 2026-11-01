@@ -145,6 +145,7 @@ skills/
       PythonForgotToCallSuperInitInSubclassConstructorCausingMissingParentInitialization.md  # subclass __init__ da super().__init__() yo'q — parent holati yo'q, AttributeError
       PythonUsedTryExceptForExpectedConditionInsteadOfIfCheck.md  # try/except ni kutilgan holat uchun control flow sifatida ishlatish o'rniga if/get
       JavaScriptUsedForInLoopOnArrayInsteadOfForOfOrTraditionalForCausingIterationOverKeys.md  # massivda for...in — kalitlar (string), elementlar emas
+      JavaScriptUsedForEachWithReturnStatementExpectingLoopExitButReturnOnlyExitsCallbackFunction.md  # forEach ichida return — loop to'xtamaydi, faqat callback tugaydi
       TypeScriptUsedAnyTypeInsteadOfExplicitInterfaceOrTypeAliasLeadingToLossOfCompileTimeChecks.md  # TS any tipi — type safety yo'qoladi, runtime xato
       PythonUsedFromModuleImportStarInsteadOfExplicitImportsCausingNamespacePollutionAndHiddenDependencies.md  # from module import * — namespace ifloslanishi va yashirin dependensiya
       PythonUsedAssertForValidationThatGetsStrippedUnderOptimizationFlag.md  # assert validatsiya uchun — python -O da o'chiriladi, xato yashirinadi
