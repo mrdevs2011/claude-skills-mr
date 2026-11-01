@@ -302,6 +302,7 @@ skills/
     AgentAskedClarifyingQuestionForStraightforwardTaskInsteadOfMakingReasonableAssumptionAndProceeding.md  # oddiy vazifada keraksiz savol berish, oqilona taxmin bilan davom etish o'rniga
     AgentUsedRenderGeneratedImageInsteadOfRenderEditedImageWhenUserAskedToModifyExistingImage.md  # mavjud rasmni tahrirlash so'roviga render_generated_image ishlatish, render_edited_image + image_id o'rniga
   productivity/
+    AgentDidNotSetBlockUntilMsOrUseBackgroundForLongRunningBashCommandLeadingToToolTimeout.md  # uzun bash buyrug'ida block_until_ms yoki background sozlamasini unutish — timeout
     GeneratedLargeCodeBlockInChatInsteadOfWritingToArtifactsFile.md  # katta kod chatda, faylga yozilmagan
     AgentChoseComplexPathWhenDirectReliableToolExisted.md  # to'g'ridan-to'g'ri tool/buyruq bor bo'lsa ham murakkab brauzer/UI yo'li tanlandi
     RecomputedExpensiveOperationMultipleTimesInSameScopeWithoutMemoization.md  # bir xil qimmat operatsiyani qayta-qayta hisoblash, memoization yo'q
