@@ -95,6 +95,7 @@ skills/
       CannotReadPropertiesOfUndefinedOrNullTypeErrorDiagnosis.md
       FalsyZeroOrEmptyStringWronglyTreatedAsMissingValueBug.md
     patterns/
+      JavaScriptUsedSetTimeoutForDebouncingWithoutClearingPreviousTimerCausingMultipleRapidExecutions.md  # setTimeout debounce da oldingi timer clearTimeout qilinmagan — bir nechta bajarilish
       JavaScriptUsedTripleEqualsWithNaNReturningFalseInsteadOfObjectIsOrNumberIsNaN.md  # NaN === NaN false — Object.is yoki Number.isNaN ishlat
       PythonCalledLenOnGeneratorOrIteratorCausingTypeErrorOrConsumingIterator.md  # len() generator/iterator da TypeError — list() yoki sum(1 for _) ishlat
       PythonBuiltLargeListInMemoryThenIteratedWhenGeneratorOrIteratorWouldSuffice.md  # katta list yigib keyin iteratsiya — generator ishlat
