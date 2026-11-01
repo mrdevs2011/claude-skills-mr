@@ -416,6 +416,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
 /skills/coding/patterns/PythonRelativeImportFailsWhenScriptRunDirectlyWithPythonCommandCausingImportError.md  # relative import + python file.py → ImportError no known parent package  # Python 3 da dict.keys()/values() view — index/slice TypeError, list() bilan o'ra
     AgentDidNotReadFullGuidelinesIncludingArchitectureInstructionAndStyleBeforeCreatingSkill.md  # skill yaratishdan oldin architecture, instruction, style to'liq o'qilmagan
    /skills/agent-workflows/AgentDidNotEnsureEnvAndGitignoreExistBeforeCommittingNewSkill.md
+   /skills/agent-workflows/AgentIncludedGitHubAccessTokenInCloneUrlAndItAppearedInToolOutputOrLogs.md  # clone URL dagi token tool output yoki javobda ko'rinib qoldi
    /skills/agent-workflows/AgentUsedSequentialToolCallsForIndependentOperationsInsteadOfParallelBatchingCausingUnnecessaryLatency.md
    /skills/agent-workflows/AgentPushedSkillOrFilesToUploadsRepoOrInvokedCmcDespiteStrictInstructionToOnlyTargetClaudeSkillsMrRepo.md  # skill push faqat claude-skills-mr, uploads/CMC taqiqlangan
    /skills/agent-workflows/AgentPushedChangesWithoutVerifyingGitRemoteUrlMatchesExpectedClaudeSkillsMrRepo.md  # pushdan oldin git remote -v bilan origin tekshirilmagan, noto'g'ri repo xavfi
