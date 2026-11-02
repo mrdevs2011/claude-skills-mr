@@ -120,6 +120,7 @@ skills/
       UnquotedShellVariableInCommandCausesWordSplittingOrGlobExpansion.md  # qo'shtirnoqsiz $var — word splitting yoki glob expansion
       UsedForLoopWithAppendForSimpleListTransformationInsteadOfListComprehension.md  # oddiy list transform uchun for+append o'rniga list comprehension
       PythonUsedIfKeyInDictElseDefaultInsteadOfDictGetMethod.md  # if key in d else default o'rniga dict.get
+      PythonUsedOrOperatorForDefaultValueTreatingFalsyAsMissing.md  # or operatori default uchun — 0, "", False yo'qoladi
       PythonUsedMapFilterInsteadOfGeneratorExpressionOrListComprehensionForSimpleTransforms.md  # oddiy map/filter + lambda o'rniga comprehension
       PythonUsedListComprehensionForSideEffectsInsteadOfExplicitForLoopReducingReadability.md
       PythonUsedSubprocessRunWithoutCheckTrueOrCaptureOutputLeadingToSilentFailuresOrUnseenStderr.md  # subprocess.run check=True yo'q — silent fail  # list comprehension ichida side-effect — aniq for loop ishlat
