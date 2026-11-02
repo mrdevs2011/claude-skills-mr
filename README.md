@@ -102,6 +102,7 @@ skills/
       PythonBuiltLargeListInMemoryThenIteratedWhenGeneratorOrIteratorWouldSuffice.md  # katta list yigib keyin iteratsiya — generator ishlat
       HttpRequestWithoutTimeoutHangsForeverOnUnresponsiveEndpoint.md  # timeout yo'q — HTTP so'rov abadiy osilib qoladi
       PythonUsedUnboundedRecursionForDeepOrLargeInputRiskingRecursionError.md  # cheksiz rekursiya katta/chuqur inputda RecursionError
+      PythonRecursiveFunctionWithoutMemoizationOrLruCacheCausesExponentialTimeComplexityForOverlappingSubproblems.md  # recursive overlapping subproblems da memo/lru_cache yoq — eksponensial sekinlashish
       PythonMutableDefaultArgumentInFunctionSignatureCausesSharedStateAcrossCalls.md  # mutable default arg shared state
       DeeplyNestedConditionalsInsteadOfEarlyReturnGuardClauses.md  # nested if o'rniga early return
       HardcodedMagicNumbersOrStringsScatteredInsteadOfNamedConstants.md  # magic number/string o'rniga named constant
