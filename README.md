@@ -433,6 +433,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
    /skills/agent-workflows/AgentPushedSkillOrFilesToUploadsRepoOrInvokedCmcDespiteStrictInstructionToOnlyTargetClaudeSkillsMrRepo.md  # skill push faqat claude-skills-mr, uploads/CMC taqiqlangan
    /skills/agent-workflows/AgentPushedChangesWithoutVerifyingGitRemoteUrlMatchesExpectedClaudeSkillsMrRepo.md  # pushdan oldin git remote -v bilan origin tekshirilmagan, noto'g'ri repo xavfi
    /skills/agent-workflows/AgentDidNotUseXThreadFetchForPostContextWhenUserAskedAboutSpecificTweetOrThread.md  # aniq X post/thread uchun x_thread_fetch ishlatilmagan
+   /skills/agent-workflows/AgentUsedXKeywordSearchForSemanticOrConceptualQueryInsteadOfXSemanticSearchToolCausingMissedRelevantPosts.md  # semantik so'rov uchun x_keyword_search o'rniga x_semantic_search ishlat
    /skills/agent-workflows/AgentDidNotUseGitLogOnelineAfterSuccessfulPushToExtractCommitHashForRequiredReport.md
    /skills/agent-workflows/AgentCitedSearchResultsWithPlainTextLinksOrNoCitationInsteadOfUsingRenderInlineCitationXmlComponent.md  # qidiruv natijalarini plain text o'rniga render_inline_citation XML bilan citation qil
     AgentFailedToExtractAndReportExactCommitHashAfterPushUsingGitRevParseOrLog.md  # pushdan keyin git rev-parse HEAD bilan aniq hash olinmagan  # pushdan keyin commit hash olinmagan
