@@ -110,6 +110,7 @@ skills/
       HardcodedFilePathsInsteadOfUsingPathlibOrOsPathJoinForPortability.md  # hardcoded path o'rniga pathlib/os.path.join
       HardcodedApiBaseUrlInSourceInsteadOfReadingFromEnvironmentVariable.md  # API URL hardcode o'rniga env var
       UsedManualIndexCounterInsteadOfEnumerateInPythonLoop.md  # qo'lda i += 1 o'rniga enumerate
+      PythonUsedRangeLenInsteadOfEnumerateForIndexAccess.md  # range(len()) o'rniga enumerate — index xatolari
       PythonRepeatedStringConcatenationInLoopInsteadOfListAppendThenJoin.md  # loop ichida string += o'rniga list + join
       UsedInListMembershipCheckInLoopInsteadOfSetForO1Lookup.md  # loop ichida list in check o'rniga set O(1)
       UsedNestedLoopToFindMatchingItemsInsteadOfBuildingDictLookupForO1Access.md  # nested loop join o'rniga dict lookup O(1)
