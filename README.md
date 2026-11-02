@@ -97,6 +97,7 @@ skills/
     patterns/
       JavaScriptUsedSetTimeoutForDebouncingWithoutClearingPreviousTimerCausingMultipleRapidExecutions.md  # setTimeout debounce da oldingi timer clearTimeout qilinmagan — bir nechta bajarilish
       JavaScriptUsedTripleEqualsWithNaNReturningFalseInsteadOfObjectIsOrNumberIsNaN.md  # NaN === NaN false — Object.is yoki Number.isNaN ishlat
+      JavaScriptFormSubmitHandlerDidNotCallEventPreventDefaultCausingUnwantedPageReload.md  # form submit da preventDefault yoq — sahifa reload
       PythonCalledLenOnGeneratorOrIteratorCausingTypeErrorOrConsumingIterator.md  # len() generator/iterator da TypeError — list() yoki sum(1 for _) ishlat
       PythonBuiltLargeListInMemoryThenIteratedWhenGeneratorOrIteratorWouldSuffice.md  # katta list yigib keyin iteratsiya — generator ishlat
       HttpRequestWithoutTimeoutHangsForeverOnUnresponsiveEndpoint.md  # timeout yo'q — HTTP so'rov abadiy osilib qoladi
@@ -403,6 +404,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
    /skills/coding/null/CannotReadPropertiesOfUndefinedOrNullTypeErrorDiagnosis.md
    /skills/coding/null/FalsyZeroOrEmptyStringWronglyTreatedAsMissingValueBug.md
       PythonUsedOrForDefaultValueAssignmentOnPotentiallyFalsyValuesInsteadOfExplicitIsNoneCheck.md  # or bilan default — 0/""/False ham almashtiriladi, is None ishlat
+  /skills/coding/patterns/JavaScriptFormSubmitHandlerDidNotCallEventPreventDefaultCausingUnwantedPageReload.md  # form submit da preventDefault yoq — sahifa reload
   /skills/coding/patterns/PythonUsedGlobalKeywordToModifyModuleLevelVariableInsteadOfReturningValue.md
   /skills/coding/patterns/AgentOrDeveloperLeftDebugPrintOrConsoleLogStatementsInFinalCodeInsteadOfRemovingOrUsingProperLogger.md
   /skills/coding/patterns/PythonUsedJsonDumpsOnDataContainingDatetimeSetOrCustomObjectWithoutDefaultHandlerCausingTypeError.md
