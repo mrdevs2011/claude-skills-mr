@@ -417,6 +417,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
    /skills/coding/patterns/UsedLongIfElifChainForSimpleValueMappingInsteadOfDictionaryLookupOrStructuralMatch.md  # oddiy mapping uchun if-elif o'rniga dict yoki match-case
   /skills/coding/patterns/PythonUsedTypeFunctionForTypeCheckingInsteadOfIsinstanceMissingSubclassAndUnionSupport.md  # type() is Class o'rniga isinstance ishlat
   /skills/coding/patterns/PythonUsedOpenWithoutWithStatementLeavingFileHandleUnclosed.md  # open() without with — file handle unclosed, resource leak
+  /skills/coding/patterns/PythonUsedOsMkdirWithoutExistOkTrueCausingFileExistsErrorWhenDirectoryAlreadyExists.md  # os.mkdir exist_ok=True siz — FileExistsError
   /skills/coding/patterns/PythonUsedListRemoveOrDelWhileIteratingOverSameListCausingSkippedElementsOrIndexError.md  # for loop ichida list.remove() — elementlar o'tkazib yuboriladi
   /skills/coding/patterns/PythonIteratedOverDictAndModifiedItDuringLoopCausingRuntimeErrorOrSkippedKeys.md  # dict loop ichida o'zgartirish — RuntimeError
   /skills/coding/patterns/PythonUsedListMultiplicationOperatorForNestedListsCreatingSharedMutableInnerLists.md  # [[]] * n shared mutable ichki listlar
