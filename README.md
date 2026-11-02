@@ -423,6 +423,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
   /skills/coding/patterns/PythonUsedListRemoveOrDelWhileIteratingOverSameListCausingSkippedElementsOrIndexError.md  # for loop ichida list.remove() — elementlar o'tkazib yuboriladi
   /skills/coding/patterns/PythonIteratedOverDictAndModifiedItDuringLoopCausingRuntimeErrorOrSkippedKeys.md  # dict loop ichida o'zgartirish — RuntimeError
   /skills/coding/patterns/PythonUsedListMultiplicationOperatorForNestedListsCreatingSharedMutableInnerLists.md  # [[]] * n shared mutable ichki listlar
+  /skills/coding/patterns/PythonUsedSlashOperatorForDivisionExpectingIntegerResultButGotFloatInPython3.md  # Python 3 da / true division — float qaytaradi, integer uchun // ishlat
   /skills/coding/patterns/PythonUsedTimeTimeForMeasuringElapsedDurationInsteadOfTimePerfCounter.md  # elapsed vaqt uchun time.time() o'rniga time.perf_counter() ishlat
   /skills/coding/patterns/PythonUsedLambdaForComplexLogicInsteadOfNamedFunctionReducingReadabilityAndDebuggability.md
   /skills/coding/patterns/NodeJsUsedSynchronousBlockingCallsInsideAsyncRequestHandlerOrEventLoopCausingLatencyForOtherRequests.md  # Node.js *Sync chaqiruvlar event loop ni bloklaydi  # murakkab lambda o'rniga named def funksiya
