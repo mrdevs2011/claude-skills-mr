@@ -435,6 +435,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
     AgentDidNotReadFullGuidelinesIncludingArchitectureInstructionAndStyleBeforeCreatingSkill.md  # skill yaratishdan oldin architecture, instruction, style to'liq o'qilmagan
    /skills/agent-workflows/AgentDidNotEnsureEnvAndGitignoreExistBeforeCommittingNewSkill.md
    /skills/agent-workflows/AgentIncludedGitHubAccessTokenInCloneUrlAndItAppearedInToolOutputOrLogs.md  # clone URL dagi token tool output yoki javobda ko'rinib qoldi
+   /skills/agent-workflows/AgentFailedToMaskSensitiveTokensOrCredentialsInFinalResponseOrToolLogsDespiteExplicitInstruction.md  # maxfiy token final javob yoki logda mask qilinmagan
    /skills/agent-workflows/AgentUsedSequentialToolCallsForIndependentOperationsInsteadOfParallelBatchingCausingUnnecessaryLatency.md
    /skills/agent-workflows/AgentPushedSkillOrFilesToUploadsRepoOrInvokedCmcDespiteStrictInstructionToOnlyTargetClaudeSkillsMrRepo.md  # skill push faqat claude-skills-mr, uploads/CMC taqiqlangan
    /skills/agent-workflows/AgentPushedChangesWithoutVerifyingGitRemoteUrlMatchesExpectedClaudeSkillsMrRepo.md  # pushdan oldin git remote -v bilan origin tekshirilmagan, noto'g'ri repo xavfi
