@@ -466,3 +466,4 @@ public repo'da oshkora qoldirish xavfsiz emas — xohlasang buni keyin
       JavaScriptUsedArrowFunctionAndExpectedOuterThisBindingButGotUndefinedOrWindow.md  # arrow function'da kutilmagan this binding — regular function ishlat
   /skills/coding/patterns/PythonUsedDatetimeNowWithoutTzinfoArgumentCreatingNaiveDatetimeCausingComparisonOrSerializationIssues.md  # datetime.now() tzinfo'siz — naive datetime, comparison TypeError
   /skills/coding/patterns/PythonFunctionOrMethodDefinedWithoutTypeHintsReducingStaticAnalysisAndReadability.md  # funksiya type hintsiz — static analysis va readability yomon
+  /skills/coding/patterns/PythonOrJavaScriptUsedFixedSleepInRetryLoopInsteadOfExponentialBackoffWithJitter.md  # retry loop da fixed sleep o'rniga exponential backoff + jitter
