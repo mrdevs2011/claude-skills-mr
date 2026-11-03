@@ -99,6 +99,7 @@ skills/
       JavaScriptUsedTripleEqualsWithNaNReturningFalseInsteadOfObjectIsOrNumberIsNaN.md  # NaN === NaN false — Object.is yoki Number.isNaN ishlat
       JavaScriptFormSubmitHandlerDidNotCallEventPreventDefaultCausingUnwantedPageReload.md  # form submit da preventDefault yoq — sahifa reload
       PythonCalledLenOnGeneratorOrIteratorCausingTypeErrorOrConsumingIterator.md  # len() generator/iterator da TypeError — list() yoki sum(1 for _) ishlat
+      PythonMixedBytesAndStrTypesWithoutExplicitEncodeDecodeCausingTypeErrorInPython3.md  # bytes va str aralashtirish — TypeError, explicit encode/decode kerak
       PythonBuiltLargeListInMemoryThenIteratedWhenGeneratorOrIteratorWouldSuffice.md  # katta list yigib keyin iteratsiya — generator ishlat
       HttpRequestWithoutTimeoutHangsForeverOnUnresponsiveEndpoint.md  # timeout yo'q — HTTP so'rov abadiy osilib qoladi
       PythonUsedUnboundedRecursionForDeepOrLargeInputRiskingRecursionError.md  # cheksiz rekursiya katta/chuqur inputda RecursionError
