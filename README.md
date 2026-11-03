@@ -108,7 +108,8 @@ skills/
       HardcodedMagicNumbersOrStringsScatteredInsteadOfNamedConstants.md  # magic number/string o'rniga named constant
       PythonOpenWithoutWithOrContextManagerCausesFileDescriptorLeak.md  # open() without with — file descriptor leak
       PythonOpenedFileWithModeWTruncatingExistingContentWhenAppendOrReadWriteIntended.md  # open("w") mavjud faylni tozalaydi — append uchun "a", update uchun "r+"
-      HardcodedFilePathsInsteadOfUsingPathlibOrOsPathJoinForPortability.md  # hardcoded path o'rniga pathlib/os.path.join
+      HardcodedFilePathsInsteadOfUsingPathlibOrOsPathJoinForPortability.md
+      PythonUsedOsPathJoinWithAbsolutePathComponentDiscardingEarlierParts.md  # os.path.join da absolute keyingi arg oldingilarni tashlaydi  # hardcoded path o'rniga pathlib/os.path.join
       HardcodedApiBaseUrlInSourceInsteadOfReadingFromEnvironmentVariable.md  # API URL hardcode o'rniga env var
       UsedManualIndexCounterInsteadOfEnumerateInPythonLoop.md  # qo'lda i += 1 o'rniga enumerate
       PythonUsedRangeLenInsteadOfEnumerateForIndexAccess.md  # range(len()) o'rniga enumerate — index xatolari
@@ -134,7 +135,7 @@ skills/
       PythonUsedPickleLoadOnUntrustedExternalDataCausingArbitraryCodeExecutionRisk.md  # untrusted data uchun pickle.load — RCE xavfi
       PythonUsedPrintStatementsForLoggingInsteadOfLoggingModule.md  # print() o'rniga logging moduli — daraja va boshqaruv
       PythonUsedFStringInLoggingCallInsteadOfPercentOrLazyFormattingCausingUnnecessaryEvaluationWhenLogLevelDisabled.md  # logging da f-string — level o'chiq bo'lsa ham string hisoblanadi, % formatting ishlat
-      PythonUsedRandomWithoutSeedForReproducibleTestsOrExamplesCausingFlakyNonDeterministicResults.md  # random.seed yo'q — flaky test, non-deterministik natija
+      PythonUsedRandomWithoutSeedForReproducibleTestsOrExamplesCausingFlakyNonDeterministicResults.md
       PythonUsedShallowCopyOnNestedMutableStructuresLeadingToUnexpectedSharedStateMutations.md  # nested mutable da shallow copy — ichki shared state
       PythonUsedBracketAccessOnDictWithoutGetOrInCheckCausingKeyError.md  # dict[key] o'rniga .get() yoki 'in' — KeyError oldini olish
       PythonOpenedBinaryFileInTextModeCausingUnicodeDecodeErrorOrDataCorruption.md  # binary faylni 'r'/'w' da ochish — UnicodeDecodeError yoki buzilish
@@ -144,7 +145,8 @@ skills/
       JavaScriptUsedParseIntWithoutRadixParameterCausingOctalOrUnexpectedParsing.md  # parseInt radix siz — leading zero/hex/trailing kutilmagan
       JavaScriptArraySortWithoutNumericComparatorCausesLexicographicOrderingInsteadOfNumerical.md  # JS array.sort() raqamlarga compare'siz — leksikografik tartib
       JavaScriptUsedVarKeywordInsteadOfLetOrConstCausingFunctionScopeHoistingAndUnexpectedRedeclaration.md  # var o'rniga let/const — function scope, hoisting, qayta e'lon
-      JavaScriptUsedVarInForLoopWithAsyncCallbackOrTimeoutCapturingLastIterationValue.md  # for loop + var + async callback — har doim oxirgi qiymat
+      JavaScriptUsedVarInForLoopWithAsyncCallbackOrTimeoutCapturingLastIterationValue.md
+      JavaScriptUsedAwaitKeywordOutsideOfAsyncFunctionCausingSyntaxError.md  # await async tashqarisida — SyntaxError, funksiyani async qil  # for loop + var + async callback — har doim oxirgi qiymat
       JavaScriptUsedIndexOfMethodForMembershipCheckInsteadOfIncludesCausingLessReadableCodeAndPotentialConfusionWithNegativeOne.md  # indexOf !== -1 o'rniga includes() — o'qilishi yaxshi, 0 bilan aralashmaydi
       PythonModifiedListWhileIteratingOverItCausingSkippedElementsOrIndexError.md  # listni for loop ichida mutate qilish — skip yoki IndexError
       PythonModifiedDictWhileIteratingOverItCausingRuntimeErrorDictionaryChangedSize.md  # dictni for loop ichida mutate qilish — RuntimeError dictionary changed size
@@ -156,7 +158,8 @@ skills/
       PythonUsedTryExceptForExpectedConditionInsteadOfIfCheck.md  # try/except ni kutilgan holat uchun control flow sifatida ishlatish o'rniga if/get
       JavaScriptUsedForInLoopOnArrayInsteadOfForOfOrTraditionalForCausingIterationOverKeys.md  # massivda for...in — kalitlar (string), elementlar emas
       JavaScriptUsedForEachWithReturnStatementExpectingLoopExitButReturnOnlyExitsCallbackFunction.md  # forEach ichida return — loop to'xtamaydi, faqat callback tugaydi
-      JavaScriptUsedMapCallbackWithBlockBodyMissingExplicitReturnCausingArrayOfUndefined.md  # map() block body'da return yo'q — undefinedlar massivi
+      JavaScriptUsedMapCallbackWithBlockBodyMissingExplicitReturnCausingArrayOfUndefined.md
+      JavaScriptUsedObjectOrArrayAsDefaultFunctionParameterCausingSharedMutableStateAcrossCalls.md  # JS default param {} yoki [] shared mutable state  # map() block body'da return yo'q — undefinedlar massivi
       TypeScriptUsedAnyTypeInsteadOfExplicitInterfaceOrTypeAliasLeadingToLossOfCompileTimeChecks.md  # TS any tipi — type safety yo'qoladi, runtime xato
       PythonUsedFromModuleImportStarInsteadOfExplicitImportsCausingNamespacePollutionAndHiddenDependencies.md  # from module import * — namespace ifloslanishi va yashirin dependensiya
       PythonUsedAssertForValidationThatGetsStrippedUnderOptimizationFlag.md  # assert validatsiya uchun — python -O da o'chiriladi, xato yashirinadi
