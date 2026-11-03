@@ -95,6 +95,7 @@ skills/
       CannotReadPropertiesOfUndefinedOrNullTypeErrorDiagnosis.md
       FalsyZeroOrEmptyStringWronglyTreatedAsMissingValueBug.md
     patterns/
+      JavaScriptUsedFetchApiWithoutCheckingResponseOkOrStatusBeforeParsingBodyLeadingToUnexpectedErrorsOnHttpFailures.md  # fetch da response.ok tekshirilmasdan .json() — HTTP xatoda parse error
       PythonUsedPositiveIndexToGetLastListElementInsteadOfNegativeIndexCausingOffByOneOrEmptyListError.md  # len()-1 orniga [-1] negative index
       JavaScriptUsedSetTimeoutForDebouncingWithoutClearingPreviousTimerCausingMultipleRapidExecutions.md  # setTimeout debounce da oldingi timer clearTimeout qilinmagan — bir nechta bajarilish
       JavaScriptUsedTripleEqualsWithNaNReturningFalseInsteadOfObjectIsOrNumberIsNaN.md  # NaN === NaN false — Object.is yoki Number.isNaN ishlat
