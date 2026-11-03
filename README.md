@@ -95,6 +95,7 @@ skills/
       CannotReadPropertiesOfUndefinedOrNullTypeErrorDiagnosis.md
       FalsyZeroOrEmptyStringWronglyTreatedAsMissingValueBug.md
     patterns/
+      PythonUsedPositiveIndexToGetLastListElementInsteadOfNegativeIndexCausingOffByOneOrEmptyListError.md  # len()-1 orniga [-1] negative index
       JavaScriptUsedSetTimeoutForDebouncingWithoutClearingPreviousTimerCausingMultipleRapidExecutions.md  # setTimeout debounce da oldingi timer clearTimeout qilinmagan — bir nechta bajarilish
       JavaScriptUsedTripleEqualsWithNaNReturningFalseInsteadOfObjectIsOrNumberIsNaN.md  # NaN === NaN false — Object.is yoki Number.isNaN ishlat
       JavaScriptFormSubmitHandlerDidNotCallEventPreventDefaultCausingUnwantedPageReload.md  # form submit da preventDefault yoq — sahifa reload
