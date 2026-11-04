@@ -477,3 +477,4 @@ public repo'da oshkora qoldirish xavfsiz emas — xohlasang buni keyin
   /skills/coding/patterns/PythonFunctionOrMethodDefinedWithoutTypeHintsReducingStaticAnalysisAndReadability.md  # funksiya type hintsiz — static analysis va readability yomon
   /skills/coding/patterns/PythonOrJavaScriptUsedFixedSleepInRetryLoopInsteadOfExponentialBackoffWithJitter.md  # retry loop da fixed sleep o'rniga exponential backoff + jitter
   /skills/coding/patterns/PythonUsedUnionTypeHintSyntaxInsteadOfPipeOperatorForPython310PlusCodeReducingModernReadability.md  # Python 3.10+ da Union o'rniga | type hint
+  /skills/coding/patterns/PythonUsedReMatchExpectingEntireStringMatchButOnlyMatchesFromStartInsteadOfReFullmatch.md  # re.match butun satr o'rniga faqat boshidan — re.fullmatch ishlat
