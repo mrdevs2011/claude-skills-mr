@@ -279,6 +279,7 @@ skills/
     PushedToRemoteMainWithoutPullingOrRebasingLatestFirst.md  # pushdan oldin pull/rebase qilmaslik, rejected push
     CreatedDuplicateSkillBecauseDidNotSearchExistingSkillsFirst.md  # yangi skill yaratishdan oldin mavjudlarni qidirmaslik, duplicate
     UsedEditFileOrReplaceWithoutReadingFileContentFirst.md  # edit_file ishlatishdan oldin faylni o'qimaslik, replace xato
+    AgentRepeatedIdenticalFailedToolCallWithoutChangingApproach.md  # xato olgandan keyin bir xil argumentlar bilan toolni takrorlash, yondashuvni o'zgartirmaslik
     RepeatedSameToolCallWithIdenticalArgumentsInsteadOfReusingPriorResult.md  # bir xil tool argumentlari bilan qayta chaqirish, oldingi natijani ishlatmaslik
     CalledDependentToolsInSameParallelBatchCausingOrderOrRaceIssues.md  # bog'liq tool'larni parallel batchda chaqirish, tartib/race xato
     AssumedWorkingDirectoryWasCorrectWithoutVerifyingBeforeFileOrGitOperations.md  # ish papkasini tekshirmasdan file/git operatsiya
