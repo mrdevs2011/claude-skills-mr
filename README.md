@@ -481,3 +481,4 @@ public repo'da oshkora qoldirish xavfsiz emas — xohlasang buni keyin
   /skills/coding/patterns/PythonUsedUnionTypeHintSyntaxInsteadOfPipeOperatorForPython310PlusCodeReducingModernReadability.md  # Python 3.10+ da Union o'rniga | type hint
   /skills/coding/patterns/PythonUsedReMatchExpectingEntireStringMatchButOnlyMatchesFromStartInsteadOfReFullmatch.md  # re.match butun satr o'rniga faqat boshidan — re.fullmatch ishlat
   /skills/coding/patterns/PythonUsedOpenReadWriteInsteadOfPathlibReadWriteTextForSimpleFileOperations.md  # oddiy matn fayl uchun open() o'rniga Path.read_text()/write_text()
+      PythonUsedOsPathExistsBeforeOpenCreatingToctouRaceCondition.md  # os.path.exists keyin open — TOCTOU race condition
