@@ -138,6 +138,7 @@ skills/
       PythonUsedFloatForMoneyOrCurrencyCalculationsInsteadOfDecimalCausingPrecisionLoss.md  # pul hisobida float o'rniga Decimal
       PythonUsedPickleLoadOnUntrustedExternalDataCausingArbitraryCodeExecutionRisk.md  # untrusted data uchun pickle.load — RCE xavfi
       PythonUsedPrintStatementsForLoggingInsteadOfLoggingModule.md  # print() o'rniga logging moduli — daraja va boshqaruv
+      PythonUsedWalrusOperatorInIncompatiblePythonVersionCausingSyntaxError.md  # walrus := ishlatilgan lekin Python < 3.8 — SyntaxError
       PythonUsedFStringInLoggingCallInsteadOfPercentOrLazyFormattingCausingUnnecessaryEvaluationWhenLogLevelDisabled.md  # logging da f-string — level o'chiq bo'lsa ham string hisoblanadi, % formatting ishlat
       PythonUsedRandomWithoutSeedForReproducibleTestsOrExamplesCausingFlakyNonDeterministicResults.md
       PythonUsedShallowCopyOnNestedMutableStructuresLeadingToUnexpectedSharedStateMutations.md  # nested mutable da shallow copy — ichki shared state
