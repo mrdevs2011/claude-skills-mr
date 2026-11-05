@@ -94,6 +94,7 @@ skills/
     null/
       CannotReadPropertiesOfUndefinedOrNullTypeErrorDiagnosis.md
       FalsyZeroOrEmptyStringWronglyTreatedAsMissingValueBug.md
+      JavaScriptUsedSpreadOperatorOnNullOrUndefinedCausingTypeError.md  # spread ...null/undefined — TypeError is not iterable
     patterns/
       PythonListMultiplicationWithMutableObjectsSharesInnerReferences.md  # list * mutable — shared inner references, comprehension ishlat
       JavaScriptUsedFetchApiWithoutCheckingResponseOkOrStatusBeforeParsingBodyLeadingToUnexpectedErrorsOnHttpFailures.md  # fetch da response.ok tekshirilmasdan .json() — HTTP xatoda parse error
