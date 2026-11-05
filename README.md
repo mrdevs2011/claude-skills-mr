@@ -80,6 +80,7 @@ skills/
       ArrayMapWithAsyncCallbackReturnsPromiseArrayNotValues.md
       UnhandledPromiseRejectionCrashMissingTryCatchAroundAwait.md
       AsyncRaceConditionDependentTasksStartedInParallelWithPromiseAll.md
+   /skills/coding/async/PythonCalledAsyncioRunFromInsideRunningEventLoopCausingRuntimeError.md  # asyncio.run() ishlayotgan event loop ichida — RuntimeError, await ishlat
       ForgotToAwaitInMapForEachOrThenChain.md               # map/forEach ichida await unutilgan
       RaceConditionSharedStateWithoutLockOrQueue.md         # shared state parallel o'zgaradi
       AsyncFunctionNotMarkedAsyncButUsesAwait.md            # await bor, async yo'q
@@ -417,6 +418,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
    /skills/coding/async/ArrayMapWithAsyncCallbackReturnsPromiseArrayNotValues.md
    /skills/coding/async/UnhandledPromiseRejectionCrashMissingTryCatchAroundAwait.md
    /skills/coding/async/AsyncRaceConditionDependentTasksStartedInParallelWithPromiseAll.md
+   /skills/coding/async/PythonCalledAsyncioRunFromInsideRunningEventLoopCausingRuntimeError.md  # asyncio.run() ishlayotgan event loop ichida — RuntimeError, await ishlat
    /skills/coding/null/CannotReadPropertiesOfUndefinedOrNullTypeErrorDiagnosis.md
    /skills/coding/null/FalsyZeroOrEmptyStringWronglyTreatedAsMissingValueBug.md
       PythonUsedOrForDefaultValueAssignmentOnPotentiallyFalsyValuesInsteadOfExplicitIsNoneCheck.md  # or bilan default — 0/""/False ham almashtiriladi, is None ishlat
