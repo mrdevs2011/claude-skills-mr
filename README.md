@@ -421,6 +421,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
       PythonUsedOrForDefaultValueAssignmentOnPotentiallyFalsyValuesInsteadOfExplicitIsNoneCheck.md  # or bilan default — 0/""/False ham almashtiriladi, is None ishlat
   /skills/coding/patterns/JavaScriptFormSubmitHandlerDidNotCallEventPreventDefaultCausingUnwantedPageReload.md  # form submit da preventDefault yoq — sahifa reload
   /skills/coding/patterns/PythonUsedSortedWithKeyLambdaInsteadOfOperatorItemgetterForLargeListsCausingUnnecessaryPerformanceOverhead.md  # katta list sort da lambda o'rniga itemgetter — tezroq
+  /skills/coding/patterns/PythonUsedWalrusOperatorInComplexExpressionReducingReadabilityWithoutBenefit.md  # murakkab ifoda ichida walrus — oqilish yomon
   /skills/coding/patterns/PythonUsedGlobalKeywordToModifyModuleLevelVariableInsteadOfReturningValue.md
   /skills/coding/patterns/AgentOrDeveloperLeftDebugPrintOrConsoleLogStatementsInFinalCodeInsteadOfRemovingOrUsingProperLogger.md
   /skills/coding/patterns/PythonUsedJsonDumpsOnDataContainingDatetimeSetOrCustomObjectWithoutDefaultHandlerCausingTypeError.md
