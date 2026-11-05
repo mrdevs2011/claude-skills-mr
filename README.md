@@ -487,4 +487,5 @@ public repo'da oshkora qoldirish xavfsiz emas — xohlasang buni keyin
   /skills/coding/patterns/PythonUsedReMatchExpectingEntireStringMatchButOnlyMatchesFromStartInsteadOfReFullmatch.md  # re.match butun satr o'rniga faqat boshidan — re.fullmatch ishlat
   /skills/coding/patterns/PythonUsedOpenReadWriteInsteadOfPathlibReadWriteTextForSimpleFileOperations.md  # oddiy matn fayl uchun open() o'rniga Path.read_text()/write_text()
       PythonUsedOsPathExistsBeforeOpenCreatingToctouRaceCondition.md  # os.path.exists keyin open — TOCTOU race condition
+  /skills/coding/patterns/PythonUsedManualLoopWithFlagToCheckAnyOrAllConditionInsteadOfBuiltinAnyAllFunctions.md  # any()/all() o'rniga manual flag+loop — verbose va xato-prone
   /skills/coding/patterns/PythonMixedBytesAndStrTypesInPython3CausingTypeErrorOnConcatenationOrFormatting.md  # Python 3 da str va bytes aralashtirish — TypeError, encode/decode ishlat
