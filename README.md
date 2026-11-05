@@ -455,6 +455,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
    /skills/agent-workflows/AgentDidNotUseXThreadFetchForPostContextWhenUserAskedAboutSpecificTweetOrThread.md  # aniq X post/thread uchun x_thread_fetch ishlatilmagan
    /skills/agent-workflows/AgentUsedXKeywordSearchForSemanticOrConceptualQueryInsteadOfXSemanticSearchToolCausingMissedRelevantPosts.md  # semantik so'rov uchun x_keyword_search o'rniga x_semantic_search ishlat
    /skills/agent-workflows/AgentDidNotUseGitLogOnelineAfterSuccessfulPushToExtractCommitHashForRequiredReport.md
+   /skills/agent-workflows/AgentDidNotVerifySkillFileFormatBeforeCommit.md  # skill yaratilgandan keyin architecture formatini commitdan oldin tekshirmaslik
    /skills/agent-workflows/AgentDidNotVerifyPushSuccessByCheckingRemoteLogOrStatusAfterPush.md  # pushdan keyin remote log yoki status bilan tasdiqlanmagan
    /skills/agent-workflows/AgentCompletedSkillGenerationAndPushButOmittedRequiredReportDetailsSkillNameGuidelinesReadCommitHashPushStatus.md  # skill pushdan keyin to'liq hisobot (nom, qo'llanmalar, hash, push status) berilmagan
    /skills/agent-workflows/AgentCitedSearchResultsWithPlainTextLinksOrNoCitationInsteadOfUsingRenderInlineCitationXmlComponent.md  # qidiruv natijalarini plain text o'rniga render_inline_citation XML bilan citation qil
