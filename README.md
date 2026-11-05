@@ -453,6 +453,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
    /skills/agent-workflows/AgentIncludedGitHubAccessTokenInCloneUrlAndItAppearedInToolOutputOrLogs.md  # clone URL dagi token tool output yoki javobda ko'rinib qoldi
    /skills/agent-workflows/AgentFailedToMaskSensitiveTokensOrCredentialsInFinalResponseOrToolLogsDespiteExplicitInstruction.md  # maxfiy token final javob yoki logda mask qilinmagan
    /skills/agent-workflows/AgentUsedSequentialToolCallsForIndependentOperationsInsteadOfParallelBatchingCausingUnnecessaryLatency.md
+  /skills/agent-workflows/AgentUsedStandardWebSearchForExplicitPictureRequestInsteadOfImageOnlyMode.md  # aniq rasm so'rovi uchun image_only=true ishlatilmagan
    /skills/agent-workflows/AgentPushedSkillOrFilesToUploadsRepoOrInvokedCmcDespiteStrictInstructionToOnlyTargetClaudeSkillsMrRepo.md  # skill push faqat claude-skills-mr, uploads/CMC taqiqlangan
    /skills/agent-workflows/AgentPushedChangesWithoutVerifyingGitRemoteUrlMatchesExpectedClaudeSkillsMrRepo.md  # pushdan oldin git remote -v bilan origin tekshirilmagan, noto'g'ri repo xavfi
    /skills/agent-workflows/AgentDidNotUseXThreadFetchForPostContextWhenUserAskedAboutSpecificTweetOrThread.md  # aniq X post/thread uchun x_thread_fetch ishlatilmagan
