@@ -492,3 +492,4 @@ public repo'da oshkora qoldirish xavfsiz emas — xohlasang buni keyin
       PythonUsedOsPathExistsBeforeOpenCreatingToctouRaceCondition.md  # os.path.exists keyin open — TOCTOU race condition
   /skills/coding/patterns/PythonUsedManualLoopWithFlagToCheckAnyOrAllConditionInsteadOfBuiltinAnyAllFunctions.md  # any()/all() o'rniga manual flag+loop — verbose va xato-prone
   /skills/coding/patterns/PythonMixedBytesAndStrTypesInPython3CausingTypeErrorOnConcatenationOrFormatting.md  # Python 3 da str va bytes aralashtirish — TypeError, encode/decode ishlat
+  /skills/coding/patterns/PythonUsedFileObjectAfterWithBlockExitCausingIOoperationOnClosedFile.md  # with blokidan keyin f.read()/write() — ValueError closed file
