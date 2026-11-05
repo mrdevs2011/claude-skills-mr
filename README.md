@@ -455,6 +455,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
    /skills/agent-workflows/AgentUsedSequentialToolCallsForIndependentOperationsInsteadOfParallelBatchingCausingUnnecessaryLatency.md
   /skills/agent-workflows/AgentUsedStandardWebSearchForExplicitPictureRequestInsteadOfImageOnlyMode.md  # aniq rasm so'rovi uchun image_only=true ishlatilmagan
    /skills/agent-workflows/AgentPushedSkillOrFilesToUploadsRepoOrInvokedCmcDespiteStrictInstructionToOnlyTargetClaudeSkillsMrRepo.md  # skill push faqat claude-skills-mr, uploads/CMC taqiqlangan
+   /skills/agent-workflows/AgentUsedCmcOrOtherRepoDespiteExplicitInstructionToOnlyPushToClaudeSkillsMr.md  # foydalanuvchi "CMC ishlatma, faqat claude-skills-mr" deb yozganda baribir CMC yoki boshqa remote ishlatilgan
    /skills/agent-workflows/AgentPushedChangesWithoutVerifyingGitRemoteUrlMatchesExpectedClaudeSkillsMrRepo.md  # pushdan oldin git remote -v bilan origin tekshirilmagan, noto'g'ri repo xavfi
    /skills/agent-workflows/AgentDidNotUseXThreadFetchForPostContextWhenUserAskedAboutSpecificTweetOrThread.md  # aniq X post/thread uchun x_thread_fetch ishlatilmagan
    /skills/agent-workflows/AgentUsedXKeywordSearchForSemanticOrConceptualQueryInsteadOfXSemanticSearchToolCausingMissedRelevantPosts.md  # semantik so'rov uchun x_keyword_search o'rniga x_semantic_search ishlat
