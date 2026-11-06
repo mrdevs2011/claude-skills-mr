@@ -498,3 +498,4 @@ public repo'da oshkora qoldirish xavfsiz emas — xohlasang buni keyin
   /skills/coding/patterns/PythonMixedBytesAndStrTypesInPython3CausingTypeErrorOnConcatenationOrFormatting.md  # Python 3 da str va bytes aralashtirish — TypeError, encode/decode ishlat
   /skills/coding/patterns/PythonUsedFileObjectAfterWithBlockExitCausingIOoperationOnClosedFile.md  # with blokidan keyin f.read()/write() — ValueError closed file
   /skills/coding/patterns/JavaScriptUsedForEachToBuildNewArrayViaPushInsteadOfMapForDataTransformation.md  # forEach + push o'rniga map() — transformatsiya uchun
+      PythonUsedDatetimeReplaceTzinfoForTimezoneConversionInsteadOfAstimezoneCausingIncorrectLocalTime.md  # replace(tzinfo) o'rniga astimezone — noto'g'ri konvertatsiya
