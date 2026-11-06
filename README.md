@@ -103,6 +103,7 @@ skills/
       JavaScriptUsedSetTimeoutForDebouncingWithoutClearingPreviousTimerCausingMultipleRapidExecutions.md  # setTimeout debounce da oldingi timer clearTimeout qilinmagan — bir nechta bajarilish
       JavaScriptUsedTripleEqualsWithNaNReturningFalseInsteadOfObjectIsOrNumberIsNaN.md  # NaN === NaN false — Object.is yoki Number.isNaN ishlat
       JavaScriptFormSubmitHandlerDidNotCallEventPreventDefaultCausingUnwantedPageReload.md  # form submit da preventDefault yoq — sahifa reload
+      JavaScriptUsedJSONParseOnUntrustedOrMalformedInputWithoutTryCatchCausingUncaughtSyntaxError.md  # JSON.parse try-catch yoq — uncaught SyntaxError
       PythonCalledLenOnGeneratorOrIteratorCausingTypeErrorOrConsumingIterator.md  # len() generator/iterator da TypeError — list() yoki sum(1 for _) ishlat
       PythonMixedBytesAndStrTypesWithoutExplicitEncodeDecodeCausingTypeErrorInPython3.md  # bytes va str aralashtirish — TypeError, explicit encode/decode kerak
       PythonBuiltLargeListInMemoryThenIteratedWhenGeneratorOrIteratorWouldSuffice.md  # katta list yigib keyin iteratsiya — generator ishlat
@@ -426,6 +427,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
    /skills/coding/null/FalsyZeroOrEmptyStringWronglyTreatedAsMissingValueBug.md
       PythonUsedOrForDefaultValueAssignmentOnPotentiallyFalsyValuesInsteadOfExplicitIsNoneCheck.md  # or bilan default — 0/""/False ham almashtiriladi, is None ishlat
   /skills/coding/patterns/JavaScriptFormSubmitHandlerDidNotCallEventPreventDefaultCausingUnwantedPageReload.md  # form submit da preventDefault yoq — sahifa reload
+      JavaScriptUsedJSONParseOnUntrustedOrMalformedInputWithoutTryCatchCausingUncaughtSyntaxError.md  # JSON.parse try-catch yoq — uncaught SyntaxError
   /skills/coding/patterns/PythonUsedSortedWithKeyLambdaInsteadOfOperatorItemgetterForLargeListsCausingUnnecessaryPerformanceOverhead.md  # katta list sort da lambda o'rniga itemgetter — tezroq
   /skills/coding/patterns/PythonUsedRandomModuleForSecuritySensitiveValueGenerationInsteadOfSecretsModule.md  # xavfsizlik uchun random o'rniga secrets — bashorat qilinmaydigan token/parol
   /skills/coding/patterns/PythonUsedWalrusOperatorInComplexExpressionReducingReadabilityWithoutBenefit.md  # murakkab ifoda ichida walrus — oqilish yomon
