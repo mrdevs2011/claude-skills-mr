@@ -457,6 +457,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
   /skills/coding/patterns/UsedStringConcatenationOrHardcodedSeparatorsForFilePathConstructionInsteadOfPathlib.md  # path yigish uchun string + yoki hardcoded / o'rniga pathlib
     AgentDidNotReadFullGuidelinesIncludingArchitectureInstructionAndStyleBeforeCreatingSkill.md  # skill yaratishdan oldin architecture, instruction, style to'liq o'qilmagan
    /skills/agent-workflows/AgentDidNotEnsureEnvAndGitignoreExistBeforeCommittingNewSkill.md
+  /skills/agent-workflows/AgentCommittedCodeChangesWithoutReviewingGitDiffOrStatusFirst.md  # commitdan oldin git status va diff tekshirilmagan
    /skills/agent-workflows/AgentLeftAccessTokenEmbeddedInGitRemoteOriginUrlAfterCloningWithXAccessTokenUrlExposingSecretInConfigAndLogs.md  # clone dan keyin remote URL da token qolgan
    /skills/agent-workflows/AgentIncludedGitHubAccessTokenInCloneUrlAndItAppearedInToolOutputOrLogs.md  # clone URL dagi token tool output yoki javobda ko'rinib qoldi
    /skills/agent-workflows/AgentFailedToMaskSensitiveTokensOrCredentialsInFinalResponseOrToolLogsDespiteExplicitInstruction.md  # maxfiy token final javob yoki logda mask qilinmagan
