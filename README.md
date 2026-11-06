@@ -497,3 +497,4 @@ public repo'da oshkora qoldirish xavfsiz emas — xohlasang buni keyin
   /skills/coding/patterns/PythonUsedManualLoopWithFlagToCheckAnyOrAllConditionInsteadOfBuiltinAnyAllFunctions.md  # any()/all() o'rniga manual flag+loop — verbose va xato-prone
   /skills/coding/patterns/PythonMixedBytesAndStrTypesInPython3CausingTypeErrorOnConcatenationOrFormatting.md  # Python 3 da str va bytes aralashtirish — TypeError, encode/decode ishlat
   /skills/coding/patterns/PythonUsedFileObjectAfterWithBlockExitCausingIOoperationOnClosedFile.md  # with blokidan keyin f.read()/write() — ValueError closed file
+  /skills/coding/patterns/JavaScriptUsedForEachToBuildNewArrayViaPushInsteadOfMapForDataTransformation.md  # forEach + push o'rniga map() — transformatsiya uchun
