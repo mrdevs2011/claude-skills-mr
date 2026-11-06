@@ -257,6 +257,7 @@ skills/
       EvalOrDynamicCodeExecutionFromUserInput.md            # eval/dynamic code user input dan
       PythonUsedOsSystemOrSubprocessShellTrueWithUnsanitizedUserInputCausingCommandInjection.md  # os.system / subprocess shell=True + unsanitized input — command injection
   agent-workflows/
+    AgentDidNotVerifyCloneSuccessByInspectingDirectoryContentsOrExitCodeBeforeContinuingWorkflow.md  # clone muvaffaqiyatini exit code yoki .git mavjudligi bilan tekshirmasdan davom etish
     AgentCalledSportsSearchWithIncompleteOrInvalidParametersMissingRequiredTeamPlayerOrLeague.md  # sports_search tooliga majburiy parametrlar to'liq berilmagan
     AgentAnsweredCodingErrorOrPatternQuestionFromMemoryWithoutCallingSearchSkillsFirst.md  # kod xatosi/pattern savoliga search_skills chaqirmasdan ichki bilimdan javob
     AgentPlacedNewSkillInIncorrectCategoryFolderInsteadOfMatchingTopicToExistingOrCreatingAppropriateOne.md  # yangi skill noto'g'ri kategoriya papkasiga qo'yilgan
