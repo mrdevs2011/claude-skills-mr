@@ -509,3 +509,4 @@ public repo'da oshkora qoldirish xavfsiz emas — xohlasang buni keyin
       PythonUsedDatetimeReplaceTzinfoForTimezoneConversionInsteadOfAstimezoneCausingIncorrectLocalTime.md  # replace(tzinfo) o'rniga astimezone — noto'g'ri konvertatsiya
   /skills/coding/patterns/PythonUsedOsListdirAndAssumedStableAlphabeticalOrderWithoutExplicitSortCausingNonDeterministicResults.md  # os.listdir tartibini taxmin qilish — nostabil natija
   /skills/coding/patterns/PythonUsedMultipleIsinstanceCallsInIfElifInsteadOfSingleIsinstanceWithTupleForMultipleAllowedTypes.md  # bir nechta alohida isinstance o'rniga tuple ishlat
+  /skills/coding/patterns/PythonUsedDictGetWithAlwaysEvaluatedComputedDefaultCausingUnnecessaryComputationOrSideEffects.md  # dict.get(key, expensive()) — default har doim hisoblanadi
