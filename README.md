@@ -343,6 +343,7 @@ skills/
     VagueWebSearchQueryProducedLowRelevanceResultsInsteadOfPreciseOperators.md  # noaniq qidiruv so'rovi past relevantlik
     AgentLeftTemporaryFilesOrClonesInTmpWithoutCleanupAfterTask.md  # /tmp dagi vaqtinchalik papka/fayllarni vazifa oxirida tozalamagan
     AgentAttemptedToGenerateDocxPdfPptxXlsxWithoutReadingCorrespondingBundledSkillMdLeadingToInvalidStructureOrMissingCapabilities.md  # maxsus hujjat formatini yaratishdan oldin bundled skill o'qilmagan
+    AgentAttemptedToProcessMediaWithFfmpegWithoutReadingBundledFfmpegSkillMdLeadingToIncorrectCommandsOrMissingFeatures.md  # media/ffmpeg ishlashdan oldin bundled skill o'qilmagan
     AgentDidNotUseKaTeXForSymbolicTechnicalContentInResponseLeadingToPlainTextFormulas.md  # simvolik/texnik kontentni KaTeX'siz oddiy matn sifatida chiqarish
     AgentCreatedDeliverableFileInsideNewSubfolderUnderArtifactsInsteadOfDirectlyInArtifactsRoot.md  # deliverable fayl artifacts root o'rniga yangi subfolder ga yozilgan
     AgentUsedGeneralWebSearchForKnownDocumentationSiteInsteadOfDirectOpenPageOrSiteOperator.md  # ma'lum rasmiy docs uchun umumiy web_search o'rniga site: yoki to'g'ridan-to'g'ri open_page
