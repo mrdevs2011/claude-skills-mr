@@ -515,3 +515,4 @@ public repo'da oshkora qoldirish xavfsiz emas — xohlasang buni keyin
   /skills/coding/patterns/PythonUsedDictGetWithAlwaysEvaluatedComputedDefaultCausingUnnecessaryComputationOrSideEffects.md  # dict.get(key, expensive()) — default har doim hisoblanadi
    /skills/agent-workflows/AgentDidNotUseGitRevParseHeadAfterSuccessfulPushToObtainExactFullCommitHashForMandatoryReport.md  # pushdan keyin to'liq hash uchun git rev-parse HEAD ishlatilmagan
   /skills/coding/patterns/PythonUsedTimeTimeForElapsedTimeMeasurementInsteadOfTimePerfCounterOrMonotonicCausingIncorrectOrNegativeDurationsOnClockAdjustments.md  # time.time() o'rniga perf_counter — soat o'zgarsa noto'g'ri duration
+  /skills/coding/patterns/PythonUsedStrJoinOnNonStringElementsWithoutExplicitConversionCausingTypeError.md  # str.join non-string elementlarda TypeError — map(str, ...) yoki generator expression ishlat
