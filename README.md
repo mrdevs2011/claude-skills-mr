@@ -198,6 +198,7 @@ skills/
       WrongPackageVersionOrPeerDependencyConflict.md        # noto'g'ri versiya / peer conflict
       ImportPathWrongOrCaseSensitiveMismatch.md             # import yo'li / case mismatch (Linux)
       ForgotToAddTypesPackageForTypeScript.md               # @types paketi o'rnatilmagan
+      UnpinnedDependencyVersionsInRequirementsOrPackageJsonCauseNonReproducibleBuilds.md  # versiyalar pin qilinmagan, non-reproducible
     logic/
       InvertedConditionOrWrongBooleanCausesOppositeBehavior.md  # teskari shart, jim noto'g'ri natija
       UsedWrongVariableOrShadowedNameSilentBug.md               # noto'g'ri o'zgaruvchi / shadowing
