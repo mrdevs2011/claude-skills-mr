@@ -101,6 +101,7 @@ skills/
       JavaScriptUsedFetchApiWithoutCheckingResponseOkOrStatusBeforeParsingBodyLeadingToUnexpectedErrorsOnHttpFailures.md  # fetch da response.ok tekshirilmasdan .json() — HTTP xatoda parse error
       PythonUsedPositiveIndexToGetLastListElementInsteadOfNegativeIndexCausingOffByOneOrEmptyListError.md  # len()-1 orniga [-1] negative index
       JavaScriptUsedSetTimeoutForDebouncingWithoutClearingPreviousTimerCausingMultipleRapidExecutions.md  # setTimeout debounce da oldingi timer clearTimeout qilinmagan — bir nechta bajarilish
+      JavaScriptUsedArrayPushInsideMapOrReduceCallbackMutatingExternalStateInsteadOfReturningValue.md  # map/reduce ichida tashqi array.push — yon ta'sir, return qil
       JavaScriptUsedTripleEqualsWithNaNReturningFalseInsteadOfObjectIsOrNumberIsNaN.md  # NaN === NaN false — Object.is yoki Number.isNaN ishlat
       JavaScriptFormSubmitHandlerDidNotCallEventPreventDefaultCausingUnwantedPageReload.md  # form submit da preventDefault yoq — sahifa reload
       JavaScriptUsedJSONParseOnUntrustedOrMalformedInputWithoutTryCatchCausingUncaughtSyntaxError.md  # JSON.parse try-catch yoq — uncaught SyntaxError
