@@ -508,3 +508,4 @@ public repo'da oshkora qoldirish xavfsiz emas — xohlasang buni keyin
   /skills/coding/patterns/JavaScriptUsedForEachToBuildNewArrayViaPushInsteadOfMapForDataTransformation.md  # forEach + push o'rniga map() — transformatsiya uchun
       PythonUsedDatetimeReplaceTzinfoForTimezoneConversionInsteadOfAstimezoneCausingIncorrectLocalTime.md  # replace(tzinfo) o'rniga astimezone — noto'g'ri konvertatsiya
   /skills/coding/patterns/PythonUsedOsListdirAndAssumedStableAlphabeticalOrderWithoutExplicitSortCausingNonDeterministicResults.md  # os.listdir tartibini taxmin qilish — nostabil natija
+  /skills/coding/patterns/PythonUsedMultipleIsinstanceCallsInIfElifInsteadOfSingleIsinstanceWithTupleForMultipleAllowedTypes.md  # bir nechta alohida isinstance o'rniga tuple ishlat
