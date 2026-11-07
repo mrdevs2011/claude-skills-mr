@@ -114,6 +114,7 @@ skills/
       DeeplyNestedConditionalsInsteadOfEarlyReturnGuardClauses.md  # nested if o'rniga early return
       HardcodedMagicNumbersOrStringsScatteredInsteadOfNamedConstants.md  # magic number/string o'rniga named constant
       PythonOpenWithoutWithOrContextManagerCausesFileDescriptorLeak.md  # open() without with — file descriptor leak
+      PythonUsedJsonLoadOnOpenFileWithoutWithStatementCausingFileHandleLeak.md  # json.load(open()) without with — file handle leak
       PythonOpenedFileWithModeWTruncatingExistingContentWhenAppendOrReadWriteIntended.md  # open("w") mavjud faylni tozalaydi — append uchun "a", update uchun "r+"
       HardcodedFilePathsInsteadOfUsingPathlibOrOsPathJoinForPortability.md
       PythonUsedOsPathJoinWithAbsolutePathComponentDiscardingEarlierParts.md  # os.path.join da absolute keyingi arg oldingilarni tashlaydi  # hardcoded path o'rniga pathlib/os.path.join
