@@ -258,6 +258,7 @@ skills/
       EvalOrDynamicCodeExecutionFromUserInput.md            # eval/dynamic code user input dan
       PythonUsedOsSystemOrSubprocessShellTrueWithUnsanitizedUserInputCausingCommandInjection.md  # os.system / subprocess shell=True + unsanitized input — command injection
   agent-workflows/
+    AgentCreatedSkillCoveringMultipleRelatedIssuesOrGeneralAdviceInsteadOfOneNarrowSpecificSymptom.md  # bir nechta simptom yoki umumiy maslahat bitta skillga yig'ilgan — tor bitta simptom kerak
     AgentDidNotVerifyCloneSuccessByInspectingDirectoryContentsOrExitCodeBeforeContinuingWorkflow.md  # clone muvaffaqiyatini exit code yoki .git mavjudligi bilan tekshirmasdan davom etish
     AgentCreatedExcessivelyLongSkillMarkdownFileWithUnnecessarySectionsOrExamplesReducingFocusAndReadability.md  # skill.md haddan tashqari uzun, keraksiz misollar bilan yaratilgan — fokus yo'qolgan
     AgentCalledSportsSearchWithIncompleteOrInvalidParametersMissingRequiredTeamPlayerOrLeague.md  # sports_search tooliga majburiy parametrlar to'liq berilmagan
