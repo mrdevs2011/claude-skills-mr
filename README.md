@@ -461,6 +461,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
   /skills/coding/patterns/PythonUsedLambdaForComplexLogicInsteadOfNamedFunctionReducingReadabilityAndDebuggability.md
   /skills/coding/patterns/NodeJsUsedSynchronousBlockingCallsInsideAsyncRequestHandlerOrEventLoopCausingLatencyForOtherRequests.md  # Node.js *Sync chaqiruvlar event loop ni bloklaydi  # murakkab lambda o'rniga named def funksiya
   /skills/coding/patterns/PythonUsedDictKeysOrValuesViewInPython3AsIfItWereListCausingTypeErrorOnIndexOrSlice.md
+  /skills/coding/patterns/PythonCustomClassMissingEqAndHashForSetOrDictKeyCausingIdentityBasedDuplicatesOrKeyError.md  # custom class set/dict key uchun __eq__ va __hash__ yo'q — identity asosida dublikat
 /skills/coding/patterns/PythonRelativeImportFailsWhenScriptRunDirectlyWithPythonCommandCausingImportError.md  # relative import + python file.py → ImportError no known parent package  # Python 3 da dict.keys()/values() view — index/slice TypeError, list() bilan o'ra
   /skills/coding/patterns/UsedStringConcatenationOrHardcodedSeparatorsForFilePathConstructionInsteadOfPathlib.md  # path yigish uchun string + yoki hardcoded / o'rniga pathlib
     AgentDidNotReadFullGuidelinesIncludingArchitectureInstructionAndStyleBeforeCreatingSkill.md  # skill yaratishdan oldin architecture, instruction, style to'liq o'qilmagan
