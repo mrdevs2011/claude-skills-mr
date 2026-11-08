@@ -432,6 +432,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
    /skills/coding/null/FalsyZeroOrEmptyStringWronglyTreatedAsMissingValueBug.md
       PythonUsedOrForDefaultValueAssignmentOnPotentiallyFalsyValuesInsteadOfExplicitIsNoneCheck.md  # or bilan default — 0/""/False ham almashtiriladi, is None ishlat
   /skills/coding/patterns/JavaScriptFormSubmitHandlerDidNotCallEventPreventDefaultCausingUnwantedPageReload.md  # form submit da preventDefault yoq — sahifa reload
+  /skills/coding/patterns/JavaScriptUsedVarInForLoopWithCallbackOrAsyncFunctionCausingAllIterationsToShareFinalLoopValue.md  # for (var i) + callback — barcha callback oxirgi i ni ko'radi
       JavaScriptUsedJSONParseOnUntrustedOrMalformedInputWithoutTryCatchCausingUncaughtSyntaxError.md  # JSON.parse try-catch yoq — uncaught SyntaxError
   /skills/coding/patterns/PythonUsedSortedWithKeyLambdaInsteadOfOperatorItemgetterForLargeListsCausingUnnecessaryPerformanceOverhead.md  # katta list sort da lambda o'rniga itemgetter — tezroq
   /skills/coding/patterns/PythonUsedRandomModuleForSecuritySensitiveValueGenerationInsteadOfSecretsModule.md  # xavfsizlik uchun random o'rniga secrets — bashorat qilinmaydigan token/parol
