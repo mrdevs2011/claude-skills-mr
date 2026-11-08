@@ -92,6 +92,7 @@ skills/
       MissingAbortControllerForFetchCancellation.md         # fetch bekor qilinmagan (AbortController)
       UsedTimeSleepInAsyncFunctionBlockingEventLoopInsteadOfAsyncioSleep.md  # time.sleep async da event loop bloklaydi
       JavaScriptPreferredPromiseThenChainOverAsyncAwaitForSequentialOperationsReducingReadabilityAndErrorHandlingClarity.md  # sequential then chain o'rniga async/await
+      PythonUsedAsyncioCreateTaskWithoutStoringReferenceCausingTaskGarbageCollectionBeforeCompletion.md  # create_task reference saqlanmagan — GC taskni tugatishdan oldin o'chirishi mumkin
     null/
       CannotReadPropertiesOfUndefinedOrNullTypeErrorDiagnosis.md
       FalsyZeroOrEmptyStringWronglyTreatedAsMissingValueBug.md
