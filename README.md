@@ -473,6 +473,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
    /skills/agent-workflows/AgentFailedToMaskSensitiveTokensOrCredentialsInFinalResponseOrToolLogsDespiteExplicitInstruction.md  # maxfiy token final javob yoki logda mask qilinmagan
    /skills/agent-workflows/AgentUsedSequentialToolCallsForIndependentOperationsInsteadOfParallelBatchingCausingUnnecessaryLatency.md
   /skills/agent-workflows/AgentUsedStandardWebSearchForExplicitPictureRequestInsteadOfImageOnlyMode.md  # aniq rasm so'rovi uchun image_only=true ishlatilmagan
+   /skills/agent-workflows/AgentUsedWebSearchForInformationPresentInLocalWorkingDirectoryOrClonedRepository.md  # lokal fayldagi ma'lumotni web_search bilan qidirish
    /skills/agent-workflows/AgentPushedSkillOrFilesToUploadsRepoOrInvokedCmcDespiteStrictInstructionToOnlyTargetClaudeSkillsMrRepo.md  # skill push faqat claude-skills-mr, uploads/CMC taqiqlangan
    /skills/agent-workflows/AgentUsedCmcOrOtherRepoDespiteExplicitInstructionToOnlyPushToClaudeSkillsMr.md  # foydalanuvchi "CMC ishlatma, faqat claude-skills-mr" deb yozganda baribir CMC yoki boshqa remote ishlatilgan
    /skills/agent-workflows/AgentPushedChangesWithoutVerifyingGitRemoteUrlMatchesExpectedClaudeSkillsMrRepo.md  # pushdan oldin git remote -v bilan origin tekshirilmagan, noto'g'ri repo xavfi
