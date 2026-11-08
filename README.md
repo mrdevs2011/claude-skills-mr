@@ -519,3 +519,4 @@ public repo'da oshkora qoldirish xavfsiz emas — xohlasang buni keyin
   /skills/coding/patterns/PythonUsedTimeTimeForElapsedTimeMeasurementInsteadOfTimePerfCounterOrMonotonicCausingIncorrectOrNegativeDurationsOnClockAdjustments.md  # time.time() o'rniga perf_counter — soat o'zgarsa noto'g'ri duration
   /skills/coding/patterns/PythonUsedStrJoinOnNonStringElementsWithoutExplicitConversionCausingTypeError.md  # str.join non-string elementlarda TypeError — map(str, ...) yoki generator expression ishlat
   /skills/agent-workflows/AgentGroupedAllCitationsAtBottomOfResponseInsteadOfPlacingEachRenderInlineCitationImmediatelyAfterTheRelevantClaim.md  # citationlar oxirida guruhlangan, inline emas
+  /skills/coding/patterns/PythonUsedManualDictMergeLoopInsteadOfDictUnionOperatorOrUpdateMethod.md  # dict merge uchun manual loop o'rniga | yoki update()
