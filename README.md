@@ -523,3 +523,4 @@ public repo'da oshkora qoldirish xavfsiz emas — xohlasang buni keyin
   /skills/coding/patterns/PythonUsedStrJoinOnNonStringElementsWithoutExplicitConversionCausingTypeError.md  # str.join non-string elementlarda TypeError — map(str, ...) yoki generator expression ishlat
   /skills/agent-workflows/AgentGroupedAllCitationsAtBottomOfResponseInsteadOfPlacingEachRenderInlineCitationImmediatelyAfterTheRelevantClaim.md  # citationlar oxirida guruhlangan, inline emas
   /skills/coding/patterns/PythonUsedManualDictMergeLoopInsteadOfDictUnionOperatorOrUpdateMethod.md  # dict merge uchun manual loop o'rniga | yoki update()
+  /skills/coding/patterns/PythonUsedListComprehensionWithSideEffectsInConditionOrBodyReducingReadabilityAndCausingUnexpectedExecutionOrder.md  # list comprehension ichida side-effect — aniq for loop ishlat
