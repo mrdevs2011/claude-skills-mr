@@ -113,6 +113,7 @@ skills/
       PythonRecursiveFunctionWithoutMemoizationOrLruCacheCausesExponentialTimeComplexityForOverlappingSubproblems.md  # recursive overlapping subproblems da memo/lru_cache yoq — eksponensial sekinlashish
       PythonMutableDefaultArgumentInFunctionSignatureCausesSharedStateAcrossCalls.md  # mutable default arg shared state
       DeeplyNestedConditionalsInsteadOfEarlyReturnGuardClauses.md  # nested if o'rniga early return
+      PythonUsedItertoolsGroupbyWithoutSortingKeyFirstCausingNonConsecutiveEqualKeysToFormSeparateGroups.md  # groupby ishlatishdan oldin sort qil — aks holda guruhlar bo'linadi
       HardcodedMagicNumbersOrStringsScatteredInsteadOfNamedConstants.md  # magic number/string o'rniga named constant
       PythonOpenWithoutWithOrContextManagerCausesFileDescriptorLeak.md  # open() without with — file descriptor leak
       PythonUsedJsonLoadOnOpenFileWithoutWithStatementCausingFileHandleLeak.md  # json.load(open()) without with — file handle leak
