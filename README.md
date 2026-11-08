@@ -120,6 +120,7 @@ skills/
       PythonUsedJsonLoadOnOpenFileWithoutWithStatementCausingFileHandleLeak.md  # json.load(open()) without with — file handle leak
       PythonOpenedFileWithModeWTruncatingExistingContentWhenAppendOrReadWriteIntended.md  # open("w") mavjud faylni tozalaydi — append uchun "a", update uchun "r+"
       HardcodedFilePathsInsteadOfUsingPathlibOrOsPathJoinForPortability.md
+      PythonUsedOsPathJoinOrStringConcatenationForPathsInsteadOfPathlibPathReducingReadabilityAndSafety.md  # os.path.join yoki string + o'rniga pathlib.Path — o'qilishi va xavfsizlik
       PythonUsedOsPathJoinWithAbsolutePathComponentDiscardingEarlierParts.md  # os.path.join da absolute keyingi arg oldingilarni tashlaydi  # hardcoded path o'rniga pathlib/os.path.join
       HardcodedApiBaseUrlInSourceInsteadOfReadingFromEnvironmentVariable.md  # API URL hardcode o'rniga env var
       UsedManualIndexCounterInsteadOfEnumerateInPythonLoop.md  # qo'lda i += 1 o'rniga enumerate
