@@ -354,6 +354,7 @@ skills/
     AgentDidNotUseKaTeXForSymbolicTechnicalContentInResponseLeadingToPlainTextFormulas.md  # simvolik/texnik kontentni KaTeX'siz oddiy matn sifatida chiqarish
     AgentCreatedDeliverableFileInsideNewSubfolderUnderArtifactsInsteadOfDirectlyInArtifactsRoot.md  # deliverable fayl artifacts root o'rniga yangi subfolder ga yozilgan
     AgentUsedGeneralWebSearchForKnownDocumentationSiteInsteadOfDirectOpenPageOrSiteOperator.md  # ma'lum rasmiy docs uchun umumiy web_search o'rniga site: yoki to'g'ridan-to'g'ri open_page
+    AgentOutputtedLargeOrStructuredContentAsChatCodeBlockInsteadOfWritingToArtifactsFileAndUsingRenderFile.md  # katta/strukturali kontentni chat code block qilib chiqarish, artifacts + render_file o'rniga
 
 Skillar ataylab **juda tor va bitta nuqtaga qaratilgan**: har biri faqat
 BITTA aniq simptom (masalan "aynan shu xato matni", "aynan shu holat") →
