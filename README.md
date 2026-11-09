@@ -532,3 +532,4 @@ public repo'da oshkora qoldirish xavfsiz emas — xohlasang buni keyin
   /skills/coding/patterns/PythonUsedManualDictMergeLoopInsteadOfDictUnionOperatorOrUpdateMethod.md  # dict merge uchun manual loop o'rniga | yoki update()
   /skills/coding/patterns/PythonUsedListComprehensionWithSideEffectsInConditionOrBodyReducingReadabilityAndCausingUnexpectedExecutionOrder.md  # list comprehension ichida side-effect — aniq for loop ishlat
   /skills/productivity/AgentLoadedFullPageWithOpenPageToolWithoutUsingPatternOrStartLineParametersCausingUnnecessaryContextBloatWhenOnlySpecificSectionNeeded.md  # open_page da pattern/start_line ishlatilmagan — context bloat
+  /skills/agent-workflows/AgentUsedGitAddDotWithoutCheckingGitStatusFirstLeadingToUnintendedFilesStagedAndCommitted.md  # git add . dan oldin status tekshirilmagan — keraksiz fayllar commitga tushadi
