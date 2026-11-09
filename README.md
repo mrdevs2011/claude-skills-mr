@@ -492,6 +492,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
    /skills/agent-workflows/AgentCompletedSkillGenerationAndPushButOmittedRequiredReportDetailsSkillNameGuidelinesReadCommitHashPushStatus.md  # skill pushdan keyin to'liq hisobot (nom, qo'llanmalar, hash, push status) berilmagan
    /skills/agent-workflows/AgentCitedSearchResultsWithPlainTextLinksOrNoCitationInsteadOfUsingRenderInlineCitationXmlComponent.md  # qidiruv natijalarini plain text o'rniga render_inline_citation XML bilan citation qil
    /skills/agent-workflows/AgentUsedOpenPagePatternSearchWithoutSettingContextLinesOrMaxMatchesLeadingToUnusableOrTruncatedResults.md  # open_page pattern da context_lines/max_matches sozlanmagan
+   /skills/agent-workflows/AgentUsedOpenPagePatternSearchWithDefaultOrLowMaxMatchesMissingCriticalMatchesBeyondFirstResults.md  # open_page pattern da max_matches default/past — keyingi muhim mosliklar tushib qoladi
     AgentFailedToExtractAndReportExactCommitHashAfterPushUsingGitRevParseOrLog.md  # pushdan keyin git rev-parse HEAD bilan aniq hash olinmagan  # pushdan keyin commit hash olinmagan
    /skills/agent-workflows/AgentUsedBrowserExecuteForSimpleStaticPageInsteadOfOpenPageToolWastingTimeAndResources.md  # oddiy static sahifa uchun browser_execute o'rniga open_page ishlat
    /skills/agent-workflows/AgentUsedRelativePathInRenderFileXmlInsteadOfAbsolutePathCausingPreviewOrDownloadFailure.md  # render_file da relative o'rniga absolute path ishlat
