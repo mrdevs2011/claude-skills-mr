@@ -99,6 +99,7 @@ skills/
       JavaScriptUsedSpreadOperatorOnNullOrUndefinedCausingTypeError.md  # spread ...null/undefined — TypeError is not iterable
     patterns/
       PythonListMultiplicationWithMutableObjectsSharesInnerReferences.md  # list * mutable — shared inner references, comprehension ishlat
+      PythonUsedMutableDefaultArgumentLikeListOrDictCausingSharedStateAcrossFunctionCalls.md  # mutable default arg shared state across calls
       JavaScriptUsedFetchApiWithoutCheckingResponseOkOrStatusBeforeParsingBodyLeadingToUnexpectedErrorsOnHttpFailures.md  # fetch da response.ok tekshirilmasdan .json() — HTTP xatoda parse error
       PythonUsedPositiveIndexToGetLastListElementInsteadOfNegativeIndexCausingOffByOneOrEmptyListError.md  # len()-1 orniga [-1] negative index
       JavaScriptUsedSetTimeoutForDebouncingWithoutClearingPreviousTimerCausingMultipleRapidExecutions.md  # setTimeout debounce da oldingi timer clearTimeout qilinmagan — bir nechta bajarilish
