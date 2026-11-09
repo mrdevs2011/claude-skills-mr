@@ -447,6 +447,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
   /skills/coding/patterns/PythonUsedJsonDumpsOnDataContainingDatetimeSetOrCustomObjectWithoutDefaultHandlerCausingTypeError.md
   /skills/coding/patterns/PythonUsedJsonDumpsWithoutEnsureAsciiFalseForNonAsciiTextCausingEscapedUnicode.md  # non-ASCII uchun ensure_ascii=False yoq — escaped unicode
   /skills/coding/patterns/PythonUsedJsonLoadsOnMalformedInputWithoutTryExceptCausingJSONDecodeError.md
+  /skills/coding/patterns/PythonUsedStringFormatWithUnescapedBracesInFormatStringCausingKeyErrorOrValueError.md  # format string da literal {} uchun {{ }} ishlatilmagan — KeyError/ValueError
   /skills/coding/patterns/PythonUsedBroadTryExceptAroundEntireFunctionOrLargeBlockMaskingUnexpectedErrorsAndHidingRootCause.md  # keng try-except butun blokni o'rab xatolarni yashiradi
   /skills/coding/patterns/PythonUsedTryExceptPassToSilenceExceptionsInsteadOfLoggingOrProperHandling.md  # try/except/pass — xato jim ou2018chiriladi, log you2018q
   /skills/coding/patterns/PythonUsedRequestsGetWithoutSessionForMultipleCallsToSameHostMissingConnectionPooling.md
