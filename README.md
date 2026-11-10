@@ -127,7 +127,6 @@ skills/
       HardcodedApiBaseUrlInSourceInsteadOfReadingFromEnvironmentVariable.md  # API URL hardcode o'rniga env var
       UsedManualIndexCounterInsteadOfEnumerateInPythonLoop.md  # qo'lda i += 1 o'rniga enumerate
       PythonUsedRangeLenInsteadOfEnumerateForIndexAccess.md  # range(len()) o'rniga enumerate — index xatolari
-      PythonRepeatedStringConcatenationInLoopInsteadOfListAppendThenJoin.md  # loop ichida string += o'rniga list + join
       PythonUsedListPlusOperatorInsideLoopForAccumulationInsteadOfExtendOrAppendCausingQuadraticTimeComplexity.md  # loop ichida list += [item] o'rniga append/extend
       UsedInListMembershipCheckInLoopInsteadOfSetForO1Lookup.md  # loop ichida list in check o'rniga set O(1)
       UsedNestedLoopToFindMatchingItemsInsteadOfBuildingDictLookupForO1Access.md  # nested loop join o'rniga dict lookup O(1)
@@ -531,6 +530,7 @@ public repo'da oshkora qoldirish xavfsiz emas — xohlasang buni keyin
   /skills/coding/patterns/PythonMixedBytesAndStrTypesInPython3CausingTypeErrorOnConcatenationOrFormatting.md  # Python 3 da str va bytes aralashtirish — TypeError, encode/decode ishlat
   /skills/coding/patterns/PythonUsedFileObjectAfterWithBlockExitCausingIOoperationOnClosedFile.md  # with blokidan keyin f.read()/write() — ValueError closed file
   /skills/coding/patterns/JavaScriptUsedForEachToBuildNewArrayViaPushInsteadOfMapForDataTransformation.md  # forEach + push o'rniga map() — transformatsiya uchun
+  /skills/coding/patterns/JavaScriptUsedPromiseThenCatchInsteadOfAsyncAwaitForLinearAsyncCodeReducingReadability.md  # .then/.catch zanjiri o'rniga async/await — oqilish yaxshi
       PythonUsedDatetimeReplaceTzinfoForTimezoneConversionInsteadOfAstimezoneCausingIncorrectLocalTime.md  # replace(tzinfo) o'rniga astimezone — noto'g'ri konvertatsiya
   /skills/coding/patterns/PythonUsedOsListdirAndAssumedStableAlphabeticalOrderWithoutExplicitSortCausingNonDeterministicResults.md  # os.listdir tartibini taxmin qilish — nostabil natija
   /skills/coding/patterns/PythonUsedMultipleIsinstanceCallsInIfElifInsteadOfSingleIsinstanceWithTupleForMultipleAllowedTypes.md  # bir nechta alohida isinstance o'rniga tuple ishlat
