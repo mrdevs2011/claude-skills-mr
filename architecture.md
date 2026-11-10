@@ -145,6 +145,7 @@ architecture.md        — shu fayl
 skill_search.py         — to'liq modul: index, qidiruv, fallback, tool schema
 app_example.py           — Flask'ga ulash namunasi (ishga tushirish uchun emas)
 skills/                  — barcha skill'lar (kategoriya papkalari bilan)
+  playbooks/          — batafsil diagnosis tree skilllar (ffmpeg va boshqalar)
   coding/
     async/
     null/

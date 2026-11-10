@@ -63,6 +63,8 @@ batafsil qoidalar (masalan, kod yozishda xatolik chiqsa nima qilish kerak)
 
 ```
 skills/
+  playbooks/
+    ffmpeg-ss-before-i-with-c-copy-cuts-to-nearest-keyframe-not-exact-time.md  # -ss -c copy keyframe ga kesadi
   coding/
     GeneralDebuggingProcessWhenCodeErrorsOrBreaks.md        # umumiy debug tartibi (meta-skill)
     StayScopedToRequestedTaskAvoidUnrequestedChanges.md     # umumiy "vazifaga aniq qolish" (meta-skill)
