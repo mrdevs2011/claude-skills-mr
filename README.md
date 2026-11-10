@@ -170,6 +170,7 @@ skills/
       PythonUsedGlobalMutableStateToShareDataBetweenFunctionsInsteadOfExplicitParametersOrReturnValues.md  # global mutable o'rniga aniq parametr/return
       PythonForgotExistOkOrParentsTrueWhenCreatingDirectoriesCausingFileExistsErrorOnRerun.md  # mkdir exist_ok/parents yo'q — FileExistsError qayta ishga tushirishda
       PythonForgotToCallSuperInitInSubclassConstructorCausingMissingParentInitialization.md  # subclass __init__ da super().__init__() yo'q — parent holati yo'q, AttributeError
+  /skills/coding/patterns/PythonUsedExplicitSuperClassNameSelfInitCallInsteadOfSuperInPython3CausingMroOrMultipleInheritanceIssues.md  # explicit Parent.__init__(self) o'rniga super() ishlat — MRO/multiple inheritance
       PythonUsedTryExceptForExpectedConditionInsteadOfIfCheck.md  # try/except ni kutilgan holat uchun control flow sifatida ishlatish o'rniga if/get
       JavaScriptUsedForInLoopOnArrayInsteadOfForOfOrTraditionalForCausingIterationOverKeys.md  # massivda for...in — kalitlar (string), elementlar emas
       JavaScriptUsedForEachWithReturnStatementExpectingLoopExitButReturnOnlyExitsCallbackFunction.md  # forEach ichida return — loop to'xtamaydi, faqat callback tugaydi
