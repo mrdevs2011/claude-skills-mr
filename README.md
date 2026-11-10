@@ -476,6 +476,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
   /skills/coding/patterns/UsedStringConcatenationOrHardcodedSeparatorsForFilePathConstructionInsteadOfPathlib.md  # path yigish uchun string + yoki hardcoded / o'rniga pathlib
     AgentDidNotReadFullGuidelinesIncludingArchitectureInstructionAndStyleBeforeCreatingSkill.md  # skill yaratishdan oldin architecture, instruction, style to'liq o'qilmagan
    /skills/agent-workflows/AgentDidNotEnsureEnvAndGitignoreExistBeforeCommittingNewSkill.md
+  /skills/agent-workflows/AgentCreatedNewSkillFileOutsideSkillsDirectoryOrWrongSubfolderMakingItUnsearchable.md  # skill skills/ tashqarisida yaratilgan, search topmaydi
    /skills/agent-workflows/AgentPushedSkillChangesToWrongBranchOrFeatureBranchInsteadOfOriginMainAsRequiredByTaskInstructions.md  # push origin main o'rniga boshqa branchga push qilingan
   /skills/agent-workflows/AgentCommittedCodeChangesWithoutReviewingGitDiffOrStatusFirst.md  # commitdan oldin git status va diff tekshirilmagan
    /skills/agent-workflows/AgentDidNotVerifyStagedFilesWithGitStatusAndDiffBeforeCommit.md  # add dan keyin status va cached diff tekshirilmagan, keraksiz fayllar staged qolishi mumkin
