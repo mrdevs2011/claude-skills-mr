@@ -485,6 +485,7 @@ yozib qo'yish yetarli, kodga tegish shart emas — `search_skills` va
    /skills/agent-workflows/AgentIncludedGitHubAccessTokenInCloneUrlAndItAppearedInToolOutputOrLogs.md  # clone URL dagi token tool output yoki javobda ko'rinib qoldi
    /skills/agent-workflows/AgentFailedToMaskSensitiveTokensOrCredentialsInFinalResponseOrToolLogsDespiteExplicitInstruction.md  # maxfiy token final javob yoki logda mask qilinmagan
    /skills/agent-workflows/AgentUsedSequentialToolCallsForIndependentOperationsInsteadOfParallelBatchingCausingUnnecessaryLatency.md
+  /skills/agent-workflows/AgentUsedGenerateImageToolForOneShotImageGenerationInsteadOfRenderGeneratedImageXmlComponent.md  # oddiy rasm so'rovida generate_image tool o'rniga render_generated_image XML
   /skills/agent-workflows/AgentUsedStandardWebSearchForExplicitPictureRequestInsteadOfImageOnlyMode.md  # aniq rasm so'rovi uchun image_only=true ishlatilmagan
    /skills/agent-workflows/AgentUsedWebSearchForInformationPresentInLocalWorkingDirectoryOrClonedRepository.md  # lokal fayldagi ma'lumotni web_search bilan qidirish
    /skills/agent-workflows/AgentPushedSkillOrFilesToUploadsRepoOrInvokedCmcDespiteStrictInstructionToOnlyTargetClaudeSkillsMrRepo.md  # skill push faqat claude-skills-mr, uploads/CMC taqiqlangan
