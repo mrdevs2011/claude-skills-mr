@@ -544,3 +544,4 @@ public repo'da oshkora qoldirish xavfsiz emas — xohlasang buni keyin
   /skills/productivity/AgentLoadedFullPageWithOpenPageToolWithoutUsingPatternOrStartLineParametersCausingUnnecessaryContextBloatWhenOnlySpecificSectionNeeded.md  # open_page da pattern/start_line ishlatilmagan — context bloat
   /skills/agent-workflows/AgentUsedGitAddDotWithoutCheckingGitStatusFirstLeadingToUnintendedFilesStagedAndCommitted.md  # git add . dan oldin status tekshirilmagan — keraksiz fayllar commitga tushadi
   /skills/coding/patterns/PythonUsedListComprehensionInsideAnyOrAllInsteadOfGeneratorExpressionCausingUnnecessaryMemoryAllocation.md  # any()/all() ichida list comprehension o'rniga generator expression — xotira va short-circuit
+  /skills/coding/patterns/PythonUsedEqualityOperatorToCheckForNoneInsteadOfIsNoneIdiomReducingClarityAndRiskingUnexpectedBehaviorWithCustomObjects.md  # == None o'rniga is None — idiomatik va custom __eq__ xavfsiz
