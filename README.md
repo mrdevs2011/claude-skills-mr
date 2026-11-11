@@ -66,6 +66,7 @@ skills/
   playbooks/
     ffmpeg-ss-before-i-with-c-copy-cuts-to-nearest-keyframe-not-exact-time.md  # -ss -c copy keyframe ga kesadi
     supabase-select-returns-empty-array-despite-data-because-rls-enabled-no-policy.md  # RLS on no policy → empty array not error
+    telegram-mini-app-initdata-hash-mismatch-wrong-hmac-secret-key-or-data-check-string.md  # initData hash mismatch — noto'g'ri HMAC secret key yoki data-check-string
   coding/
     GeneralDebuggingProcessWhenCodeErrorsOrBreaks.md        # umumiy debug tartibi (meta-skill)
     StayScopedToRequestedTaskAvoidUnrequestedChanges.md     # umumiy "vazifaga aniq qolish" (meta-skill)
