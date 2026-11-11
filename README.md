@@ -72,6 +72,7 @@ skills/
     python-json-dumps-nan-inf-produces-invalid-json-use-allow-nan-false.md  # json.dumps NaN/Inf — allow_nan=False yoki sanitize
     python-pty-fork-child-reports-wrong-terminal-size-unless-tiocswinsz-on-master-fd.md  # pty.fork child size 0/80 unless TIOCSWINSZ on master
     ffmpeg-filter-complex-loop-1-image-overlay-runs-forever-use-shortest-1.md  # -loop 1 image overlay never terminates — shortest=1
+    chrome-mv3-getusermedia-microphone-fails-in-service-worker-use-offscreen-document-with-user-media.md  # MV3 SW da getUserMedia yo'q — offscreen + USER_MEDIA, permission visible page da
   coding/
     GeneralDebuggingProcessWhenCodeErrorsOrBreaks.md        # umumiy debug tartibi (meta-skill)
     StayScopedToRequestedTaskAvoidUnrequestedChanges.md     # umumiy "vazifaga aniq qolish" (meta-skill)
