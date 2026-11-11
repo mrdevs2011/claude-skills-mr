@@ -71,6 +71,7 @@ skills/
     react-controlled-input-set-from-outside-reverts-without-native-setter-and-input-event.md  # React controlled input tashqaridan set qilinsa reverts — native setter + input event
     python-json-dumps-nan-inf-produces-invalid-json-use-allow-nan-false.md  # json.dumps NaN/Inf — allow_nan=False yoki sanitize
     python-pty-fork-child-reports-wrong-terminal-size-unless-tiocswinsz-on-master-fd.md  # pty.fork child size 0/80 unless TIOCSWINSZ on master
+    ffmpeg-filter-complex-loop-1-image-overlay-runs-forever-use-shortest-1.md  # -loop 1 image overlay never terminates — shortest=1
   coding/
     GeneralDebuggingProcessWhenCodeErrorsOrBreaks.md        # umumiy debug tartibi (meta-skill)
     StayScopedToRequestedTaskAvoidUnrequestedChanges.md     # umumiy "vazifaga aniq qolish" (meta-skill)
