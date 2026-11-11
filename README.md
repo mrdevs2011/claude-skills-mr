@@ -69,6 +69,7 @@ skills/
     telegram-mini-app-initdata-hash-mismatch-wrong-hmac-secret-key-or-data-check-string.md  # initData hash mismatch — noto'g'ri HMAC secret key yoki data-check-string
     chrome-mv3-service-worker-terminates-after-30s-idle-losing-in-memory-state-use-storage-alarms.md  # MV3 SW 30s idle'da o'ladi, in-memory state yo'qoladi — storage/alarms ishlat
     react-controlled-input-set-from-outside-reverts-without-native-setter-and-input-event.md  # React controlled input tashqaridan set qilinsa reverts — native setter + input event
+    python-json-dumps-nan-inf-produces-invalid-json-use-allow-nan-false.md  # json.dumps NaN/Inf — allow_nan=False yoki sanitize
   coding/
     GeneralDebuggingProcessWhenCodeErrorsOrBreaks.md        # umumiy debug tartibi (meta-skill)
     StayScopedToRequestedTaskAvoidUnrequestedChanges.md     # umumiy "vazifaga aniq qolish" (meta-skill)
