@@ -73,6 +73,7 @@ skills/
     python-pty-fork-child-reports-wrong-terminal-size-unless-tiocswinsz-on-master-fd.md  # pty.fork child size 0/80 unless TIOCSWINSZ on master
     ffmpeg-filter-complex-loop-1-image-overlay-runs-forever-use-shortest-1.md  # -loop 1 image overlay never terminates — shortest=1
     chrome-mv3-getusermedia-microphone-fails-in-service-worker-use-offscreen-document-with-user-media.md  # MV3 SW da getUserMedia yo'q — offscreen + USER_MEDIA, permission visible page da
+    chrome-mv3-wasm-compile-fails-csp-missing-wasm-unsafe-eval.md  # MV3 WASM compile fails CSP — add wasm-unsafe-eval to extension_pages
   coding/
     GeneralDebuggingProcessWhenCodeErrorsOrBreaks.md        # umumiy debug tartibi (meta-skill)
     StayScopedToRequestedTaskAvoidUnrequestedChanges.md     # umumiy "vazifaga aniq qolish" (meta-skill)
