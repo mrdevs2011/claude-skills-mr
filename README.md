@@ -79,6 +79,7 @@ skills/
     python-runtimeerror-event-loop-is-closed-after-loop-close-use-asyncio-run.md  # RuntimeError: Event loop is closed — asyncio.run ishlat
     agent-unstuck-protocol-after-two-similar-failures-explain-problem-clearly.md  # 2 marta bir xil xato — unstuck protokoli, aniq tushuntir
     ydotool-mousemove-absolute-mode-crashes-immediately-use-relative-or-click-at.md  # ydotool -a absolute crash, use relative or click-at.sh
+    shell-script-cannot-execute-required-file-not-found-due-to-crlf-in-shebang.md  # ./script "cannot execute: required file not found" — CRLF in shebang
   coding/
     GeneralDebuggingProcessWhenCodeErrorsOrBreaks.md        # umumiy debug tartibi (meta-skill)
     StayScopedToRequestedTaskAvoidUnrequestedChanges.md     # umumiy "vazifaga aniq qolish" (meta-skill)
