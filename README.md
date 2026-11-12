@@ -81,6 +81,7 @@ skills/
     ydotool-mousemove-absolute-mode-crashes-immediately-use-relative-or-click-at.md  # ydotool -a absolute crash, use relative or click-at.sh
     shell-script-cannot-execute-required-file-not-found-due-to-crlf-in-shebang.md  # ./script "cannot execute: required file not found" — CRLF in shebang
     bash-tool-output-truncated-full-log-at-tmp-sessions-read-file-to-get-complete.md  # truncated output — full at /tmp/sessions/.../terminal/XXXX.log, read_file ishlat
+    python-venv-activation-does-not-persist-across-separate-bash-tool-calls-use-full-path-or-chain.md  # venv activate keyingi bash chaqiruvda yo'qoladi — to'liq path yoki zanjir
   coding/
     GeneralDebuggingProcessWhenCodeErrorsOrBreaks.md        # umumiy debug tartibi (meta-skill)
     StayScopedToRequestedTaskAvoidUnrequestedChanges.md     # umumiy "vazifaga aniq qolish" (meta-skill)
