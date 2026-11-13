@@ -83,6 +83,7 @@ skills/
     bash-tool-output-truncated-full-log-at-tmp-sessions-read-file-to-get-complete.md  # truncated output — full at /tmp/sessions/.../terminal/XXXX.log, read_file ishlat
     python-venv-activation-does-not-persist-across-separate-bash-tool-calls-use-full-path-or-chain.md  # venv activate keyingi bash chaqiruvda yo'qoladi — to'liq path yoki zanjir
     extract-relevant-part-from-huge-tool-output-or-session-log-without-loading-entire-into-context.md  # katta log/output dan filter/offset bilan kerakli qism ol, butunini yuklama
+    bpy-ops-poll-failed-context-is-incorrect-use-temp-override.md  # bpy.ops poll() failed, context is incorrect — temp_override (3.2+)
   coding/
     GeneralDebuggingProcessWhenCodeErrorsOrBreaks.md        # umumiy debug tartibi (meta-skill)
     StayScopedToRequestedTaskAvoidUnrequestedChanges.md     # umumiy "vazifaga aniq qolish" (meta-skill)
