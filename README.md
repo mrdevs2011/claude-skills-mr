@@ -85,6 +85,7 @@ skills/
     extract-relevant-part-from-huge-tool-output-or-session-log-without-loading-entire-into-context.md  # katta log/output dan filter/offset bilan kerakli qism ol, butunini yuklama
     bpy-ops-poll-failed-context-is-incorrect-use-temp-override.md  # bpy.ops poll() failed, context is incorrect — temp_override (3.2+)
     systemd-user-service-stops-after-logout-or-failed-to-connect-to-bus-enable-linger.md  # user service logoutda toxtaydi yoki bus "No medium found" — enable-linger
+    python-input-eoferror-non-interactive-stdin-in-bash-tool-use-argv-or-file.md  # input() EOFError in non-interactive bash tool — use argv or file
   coding/
     GeneralDebuggingProcessWhenCodeErrorsOrBreaks.md        # umumiy debug tartibi (meta-skill)
     StayScopedToRequestedTaskAvoidUnrequestedChanges.md     # umumiy "vazifaga aniq qolish" (meta-skill)
