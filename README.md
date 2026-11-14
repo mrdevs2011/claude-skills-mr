@@ -88,6 +88,7 @@ skills/
     python-input-eoferror-non-interactive-stdin-in-bash-tool-use-argv-or-file.md  # input() EOFError in non-interactive bash tool — use argv or file
     sh-syntax-error-open-parenthesis-unexpected-bash-array-or-feature-use-bash-shebang.md  # sh da bash array "(" unexpected — bash shebang yoki posix
     node-esm-cjs-mismatch-import-outside-module-or-require-not-defined.md  # Node import outside module yoki require is not defined — type module yoki .mjs/.cjs
+    deferred-tools-require-tool-search-before-call-unknown-tool-or-no-matching.md  # deferred tools need tool_search first, unknown tool or No matching
   coding/
     GeneralDebuggingProcessWhenCodeErrorsOrBreaks.md        # umumiy debug tartibi (meta-skill)
     StayScopedToRequestedTaskAvoidUnrequestedChanges.md     # umumiy "vazifaga aniq qolish" (meta-skill)
