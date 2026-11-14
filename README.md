@@ -87,6 +87,7 @@ skills/
     systemd-user-service-stops-after-logout-or-failed-to-connect-to-bus-enable-linger.md  # user service logoutda toxtaydi yoki bus "No medium found" — enable-linger
     python-input-eoferror-non-interactive-stdin-in-bash-tool-use-argv-or-file.md  # input() EOFError in non-interactive bash tool — use argv or file
     sh-syntax-error-open-parenthesis-unexpected-bash-array-or-feature-use-bash-shebang.md  # sh da bash array "(" unexpected — bash shebang yoki posix
+    node-esm-cjs-mismatch-import-outside-module-or-require-not-defined.md  # Node import outside module yoki require is not defined — type module yoki .mjs/.cjs
   coding/
     GeneralDebuggingProcessWhenCodeErrorsOrBreaks.md        # umumiy debug tartibi (meta-skill)
     StayScopedToRequestedTaskAvoidUnrequestedChanges.md     # umumiy "vazifaga aniq qolish" (meta-skill)
