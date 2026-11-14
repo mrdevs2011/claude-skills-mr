@@ -87,6 +87,7 @@ skills/
     systemd-user-service-stops-after-logout-or-failed-to-connect-to-bus-enable-linger.md  # user service logoutda toxtaydi yoki bus "No medium found" — enable-linger
     python-input-eoferror-non-interactive-stdin-in-bash-tool-use-argv-or-file.md  # input() EOFError in non-interactive bash tool — use argv or file
     sh-syntax-error-open-parenthesis-unexpected-bash-array-or-feature-use-bash-shebang.md  # sh da bash array "(" unexpected — bash shebang yoki posix
+    fish-shell-bash-syntax-unsupported-equals-or-array-index-0-use-set-and-1-based.md  # fish da bash syntax "Unsupported use of =' yoki array[0] — set va 1-based
     node-esm-cjs-mismatch-import-outside-module-or-require-not-defined.md  # Node import outside module yoki require is not defined — type module yoki .mjs/.cjs
     deferred-tools-require-tool-search-before-call-unknown-tool-or-no-matching.md  # deferred tools need tool_search first, unknown tool or No matching
     bash-pipeline-exit-status-is-last-command-unless-set-o-pipefail.md  # pipeline exit status is last command unless set -o pipefail; set -e ignores pipe errors
