@@ -90,6 +90,7 @@ skills/
     node-esm-cjs-mismatch-import-outside-module-or-require-not-defined.md  # Node import outside module yoki require is not defined — type module yoki .mjs/.cjs
     deferred-tools-require-tool-search-before-call-unknown-tool-or-no-matching.md  # deferred tools need tool_search first, unknown tool or No matching
     bash-pipeline-exit-status-is-last-command-unless-set-o-pipefail.md  # pipeline exit status is last command unless set -o pipefail; set -e ignores pipe errors
+    server-listen-eaddrinuse-address-already-in-use-find-and-stop-process.md  # EADDRINUSE / Errno 98 Address already in use — portni topib processni to'xtat
   coding/
     GeneralDebuggingProcessWhenCodeErrorsOrBreaks.md        # umumiy debug tartibi (meta-skill)
     StayScopedToRequestedTaskAvoidUnrequestedChanges.md     # umumiy "vazifaga aniq qolish" (meta-skill)
