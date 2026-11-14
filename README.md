@@ -89,6 +89,7 @@ skills/
     sh-syntax-error-open-parenthesis-unexpected-bash-array-or-feature-use-bash-shebang.md  # sh da bash array "(" unexpected — bash shebang yoki posix
     node-esm-cjs-mismatch-import-outside-module-or-require-not-defined.md  # Node import outside module yoki require is not defined — type module yoki .mjs/.cjs
     deferred-tools-require-tool-search-before-call-unknown-tool-or-no-matching.md  # deferred tools need tool_search first, unknown tool or No matching
+    bash-pipeline-exit-status-is-last-command-unless-set-o-pipefail.md  # pipeline exit status is last command unless set -o pipefail; set -e ignores pipe errors
   coding/
     GeneralDebuggingProcessWhenCodeErrorsOrBreaks.md        # umumiy debug tartibi (meta-skill)
     StayScopedToRequestedTaskAvoidUnrequestedChanges.md     # umumiy "vazifaga aniq qolish" (meta-skill)
