@@ -97,6 +97,7 @@ skills/
     python-attempted-relative-import-with-no-known-parent-package-run-as-module.md  # relative import no known parent — python -m yoki absolute
     python-asyncio-run-cannot-be-called-from-running-event-loop-use-await.md  # asyncio.run from running event loop — await yoki create_task
     python-sqlite3-operationalerror-database-is-locked-timeout-or-wal-or-close.md  # sqlite3.OperationalError: database is locked — timeout, WAL yoki close connection
+    python-filenotfounderror-open-relative-path-fails-because-cwd-differs-from-script-dir-use-path-file-parent.md  # open relative FileNotFoundError cwd != script dir — Path(__file__).parent
   coding/
     GeneralDebuggingProcessWhenCodeErrorsOrBreaks.md        # umumiy debug tartibi (meta-skill)
     StayScopedToRequestedTaskAvoidUnrequestedChanges.md     # umumiy "vazifaga aniq qolish" (meta-skill)
