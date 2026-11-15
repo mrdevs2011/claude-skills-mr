@@ -95,6 +95,7 @@ skills/
     server-listen-eaddrinuse-address-already-in-use-find-and-stop-process.md  # EADDRINUSE / Errno 98 Address already in use — portni topib processni to'xtat
     python-ssl-certificate-verify-failed-self-signed-or-unable-to-get-local-issuer-use-certifi-or-system-ca.md  # SSL CERTIFICATE_VERIFY_FAILED self-signed yoki unable to get local issuer — certifi yoki system CA
     python-attempted-relative-import-with-no-known-parent-package-run-as-module.md  # relative import no known parent — python -m yoki absolute
+    python-asyncio-run-cannot-be-called-from-running-event-loop-use-await.md  # asyncio.run from running event loop — await yoki create_task
   coding/
     GeneralDebuggingProcessWhenCodeErrorsOrBreaks.md        # umumiy debug tartibi (meta-skill)
     StayScopedToRequestedTaskAvoidUnrequestedChanges.md     # umumiy "vazifaga aniq qolish" (meta-skill)
