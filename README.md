@@ -74,6 +74,7 @@ skills/
     ffmpeg-filter-complex-loop-1-image-overlay-runs-forever-use-shortest-1.md  # -loop 1 image overlay never terminates — shortest=1
     chrome-mv3-getusermedia-microphone-fails-in-service-worker-use-offscreen-document-with-user-media.md  # MV3 SW da getUserMedia yo'q — offscreen + USER_MEDIA, permission visible page da
     chrome-mv3-wasm-compile-fails-csp-missing-wasm-unsafe-eval.md  # MV3 WASM compile fails CSP — add wasm-unsafe-eval to extension_pages
+    chrome-content-script-isolated-world-cannot-access-page-js-variables-use-main-world-or-inject.md  # content script isolated world — page JS var undefined, use MAIN or inject
     bash-tool-long-command-times-out-after-30s-backgrounds-poll-output-with-get-terminal-command-output.md  # bash tool 30s timeout, background + get_terminal_command_output poll
     never-paste-base64-for-file-transfer-sandbox-to-user-computer-use-uploads-flow.md  # base64 chatda yozma, uploads oqimi ishlat
     python-runtimeerror-event-loop-is-closed-after-loop-close-use-asyncio-run.md  # RuntimeError: Event loop is closed — asyncio.run ishlat
