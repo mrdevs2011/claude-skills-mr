@@ -65,6 +65,7 @@ batafsil qoidalar (masalan, kod yozishda xatolik chiqsa nima qilish kerak)
 skills/
   playbooks/
     ffmpeg-ss-before-i-with-c-copy-cuts-to-nearest-keyframe-not-exact-time.md  # -ss -c copy keyframe ga kesadi
+    ffmpeg-no-such-filter-parsing-error-unescaped-comma-special-chars-in-filter-params.md  # No such filter parsing error unescaped comma in vf params
     supabase-select-returns-empty-array-despite-data-because-rls-enabled-no-policy.md  # RLS on no policy → empty array not error
     telegram-mini-app-initdata-hash-mismatch-wrong-hmac-secret-key-or-data-check-string.md  # initData hash mismatch — noto'g'ri HMAC secret key yoki data-check-string
     chrome-mv3-service-worker-terminates-after-30s-idle-losing-in-memory-state-use-storage-alarms.md  # MV3 SW 30s idle'da o'ladi, in-memory state yo'qoladi — storage/alarms ishlat
