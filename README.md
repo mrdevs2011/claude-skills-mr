@@ -103,6 +103,7 @@ skills/
     python-filenotfounderror-open-relative-path-fails-because-cwd-differs-from-script-dir-use-path-file-parent.md  # open relative FileNotFoundError cwd != script dir — Path(__file__).parent
     python-subprocess-run-string-command-without-shell-true-raises-filenotfounderror-use-list-or-shlex.md  # subprocess.run("cmd args") string shell=False → FileNotFoundError 'cmd args' — list yoki shell=True / shlex
     python-subprocess-partial-env-dict-causes-filenotfounderror-or-missing-vars-use-os-environ-copy.md  # partial env dict FileNotFoundError — os.environ.copy ishlat
+    python-subprocess-timeout-shell-true-leaves-child-processes-running-use-start-new-session-killpg-or-exec.md  # shell=True timeout leaves child processes — start_new_session + killpg yoki exec
     python-processpoolexecutor-cant-pickle-lambda-or-local-function-use-module-level-def.md  # ProcessPoolExecutor Can't pickle lambda/local — module-level def ishlat
     python-unicodedecodeerror-open-text-non-utf8-or-binary-specify-encoding-or-errors-replace.md  # UnicodeDecodeError open text non-UTF8 or binary — encoding or errors=replace or rb
     python-pip-failed-to-build-wheel-pg-config-not-found-use-binary-or-libpq-dev.md  # pg_config not found / failed to build wheel — use psycopg2-binary or libpq-dev
