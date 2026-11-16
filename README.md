@@ -100,6 +100,7 @@ skills/
     python-sqlite3-operationalerror-database-is-locked-timeout-or-wal-or-close.md  # sqlite3.OperationalError: database is locked — timeout, WAL yoki close connection
     python-filenotfounderror-open-relative-path-fails-because-cwd-differs-from-script-dir-use-path-file-parent.md  # open relative FileNotFoundError cwd != script dir — Path(__file__).parent
     python-subprocess-run-string-command-without-shell-true-raises-filenotfounderror-use-list-or-shlex.md  # subprocess.run("cmd args") string shell=False → FileNotFoundError 'cmd args' — list yoki shell=True / shlex
+    python-subprocess-partial-env-dict-causes-filenotfounderror-or-missing-vars-use-os-environ-copy.md  # partial env dict FileNotFoundError — os.environ.copy ishlat
   coding/
     GeneralDebuggingProcessWhenCodeErrorsOrBreaks.md        # umumiy debug tartibi (meta-skill)
     StayScopedToRequestedTaskAvoidUnrequestedChanges.md     # umumiy "vazifaga aniq qolish" (meta-skill)
