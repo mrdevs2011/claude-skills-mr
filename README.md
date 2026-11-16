@@ -104,6 +104,7 @@ skills/
     python-subprocess-run-string-command-without-shell-true-raises-filenotfounderror-use-list-or-shlex.md  # subprocess.run("cmd args") string shell=False → FileNotFoundError 'cmd args' — list yoki shell=True / shlex
     python-subprocess-partial-env-dict-causes-filenotfounderror-or-missing-vars-use-os-environ-copy.md  # partial env dict FileNotFoundError — os.environ.copy ishlat
     python-processpoolexecutor-cant-pickle-lambda-or-local-function-use-module-level-def.md  # ProcessPoolExecutor Can't pickle lambda/local — module-level def ishlat
+    python-unicodedecodeerror-open-text-non-utf8-or-binary-specify-encoding-or-errors-replace.md  # UnicodeDecodeError open text non-UTF8 or binary — encoding or errors=replace or rb
   coding/
     GeneralDebuggingProcessWhenCodeErrorsOrBreaks.md        # umumiy debug tartibi (meta-skill)
     StayScopedToRequestedTaskAvoidUnrequestedChanges.md     # umumiy "vazifaga aniq qolish" (meta-skill)
