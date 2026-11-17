@@ -102,6 +102,7 @@ skills/
     python-asyncio-run-cannot-be-called-from-running-event-loop-use-await.md  # asyncio.run from running event loop — await yoki create_task
     python-sqlite3-operationalerror-database-is-locked-timeout-or-wal-or-close.md  # sqlite3.OperationalError: database is locked — timeout, WAL yoki close connection
     python-filenotfounderror-open-relative-path-fails-because-cwd-differs-from-script-dir-use-path-file-parent.md  # open relative FileNotFoundError cwd != script dir — Path(__file__).parent
+    linux-case-sensitive-fs-modulenotfounderror-or-cannot-find-module-wrong-case-import-require.md  # Linux case-sensitive FS: import/require wrong case → ModuleNotFoundError / Cannot find module
     python-subprocess-run-string-command-without-shell-true-raises-filenotfounderror-use-list-or-shlex.md  # subprocess.run("cmd args") string shell=False → FileNotFoundError 'cmd args' — list yoki shell=True / shlex
     python-subprocess-partial-env-dict-causes-filenotfounderror-or-missing-vars-use-os-environ-copy.md  # partial env dict FileNotFoundError — os.environ.copy ishlat
     python-subprocess-timeout-shell-true-leaves-child-processes-running-use-start-new-session-killpg-or-exec.md  # shell=True timeout leaves child processes — start_new_session + killpg yoki exec
