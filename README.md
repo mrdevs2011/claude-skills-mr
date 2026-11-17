@@ -95,6 +95,7 @@ skills/
     node-esm-cjs-mismatch-import-outside-module-or-require-not-defined.md  # Node import outside module yoki require is not defined — type module yoki .mjs/.cjs
     deferred-tools-require-tool-search-before-call-unknown-tool-or-no-matching.md  # deferred tools need tool_search first, unknown tool or No matching
     bash-pipeline-exit-status-is-last-command-unless-set-o-pipefail.md  # pipeline exit status is last command unless set -o pipefail; set -e ignores pipe errors
+    bash-stale-hash-table-causes-no-such-file-or-command-not-found-after-move-or-install-use-hash-r.md  # stale hash after move/install → No such file or command not found, hash -r
     server-listen-eaddrinuse-address-already-in-use-find-and-stop-process.md  # EADDRINUSE / Errno 98 Address already in use — portni topib processni to'xtat
     python-ssl-certificate-verify-failed-self-signed-or-unable-to-get-local-issuer-use-certifi-or-system-ca.md  # SSL CERTIFICATE_VERIFY_FAILED self-signed yoki unable to get local issuer — certifi yoki system CA
     python-attempted-relative-import-with-no-known-parent-package-run-as-module.md  # relative import no known parent — python -m yoki absolute
