@@ -109,6 +109,7 @@ skills/
     python-unicodedecodeerror-open-text-non-utf8-or-binary-specify-encoding-or-errors-replace.md  # UnicodeDecodeError open text non-UTF8 or binary — encoding or errors=replace or rb
     python-pip-failed-to-build-wheel-pg-config-not-found-use-binary-or-libpq-dev.md  # pg_config not found / failed to build wheel — use psycopg2-binary or libpq-dev
     git-push-rejected-remote-contains-work-you-do-not-have-locally-pull-rebase-then-push.md  # git push rejected remote contains work — pull --rebase then push
+    git-commit-fails-author-identity-unknown-please-tell-me-who-you-are-set-user-email-name.md  # Author identity unknown — set user.name + user.email
   coding/
     GeneralDebuggingProcessWhenCodeErrorsOrBreaks.md        # umumiy debug tartibi (meta-skill)
     StayScopedToRequestedTaskAvoidUnrequestedChanges.md     # umumiy "vazifaga aniq qolish" (meta-skill)
