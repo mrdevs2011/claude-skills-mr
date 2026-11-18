@@ -111,6 +111,7 @@ skills/
     python-unicodedecodeerror-open-text-non-utf8-or-binary-specify-encoding-or-errors-replace.md  # UnicodeDecodeError open text non-UTF8 or binary — encoding or errors=replace or rb
     python-pip-failed-to-build-wheel-pg-config-not-found-use-binary-or-libpq-dev.md  # pg_config not found / failed to build wheel — use psycopg2-binary or libpq-dev
     git-push-rejected-remote-contains-work-you-do-not-have-locally-pull-rebase-then-push.md  # git push rejected remote contains work — pull --rebase then push
+    git-refusing-to-merge-unrelated-histories-use-allow-unrelated-histories.md  # fatal: refusing to merge unrelated histories — --allow-unrelated-histories
     git-commit-fails-author-identity-unknown-please-tell-me-who-you-are-set-user-email-name.md  # Author identity unknown — set user.name + user.email
     git-rebase-or-merge-conflict-markers-left-resolve-with-edit-add-continue-not-manual-commit.md  # CONFLICT (content) markers left — edit, add, rebase --continue (not manual commit)
   coding/
