@@ -95,6 +95,7 @@ skills/
     sh-syntax-error-open-parenthesis-unexpected-bash-array-or-feature-use-bash-shebang.md  # sh da bash array "(" unexpected — bash shebang yoki posix
     fish-shell-bash-syntax-unsupported-equals-or-array-index-0-use-set-and-1-based.md  # fish da bash syntax "Unsupported use of =' yoki array[0] — set va 1-based
     node-esm-cjs-mismatch-import-outside-module-or-require-not-defined.md  # Node import outside module yoki require is not defined — type module yoki .mjs/.cjs
+    node-esm-relative-import-missing-file-extension-err-module-not-found.md  # ESM relative import missing .js — ERR_MODULE_NOT_FOUND Did you mean .js
     deferred-tools-require-tool-search-before-call-unknown-tool-or-no-matching.md  # deferred tools need tool_search first, unknown tool or No matching
     bash-pipeline-exit-status-is-last-command-unless-set-o-pipefail.md  # pipeline exit status is last command unless set -o pipefail; set -e ignores pipe errors
     bash-stale-hash-table-causes-no-such-file-or-command-not-found-after-move-or-install-use-hash-r.md  # stale hash after move/install → No such file or command not found, hash -r
