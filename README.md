@@ -71,6 +71,7 @@ skills/
     chrome-mv3-service-worker-terminates-after-30s-idle-losing-in-memory-state-use-storage-alarms.md  # MV3 SW 30s idle'da o'ladi, in-memory state yo'qoladi — storage/alarms ishlat
     react-controlled-input-set-from-outside-reverts-without-native-setter-and-input-event.md  # React controlled input tashqaridan set qilinsa reverts — native setter + input event
     python-json-dumps-nan-inf-produces-invalid-json-use-allow-nan-false.md  # json.dumps NaN/Inf — allow_nan=False yoki sanitize
+    python-requests-jsondecodeerror-expecting-value-char-0-empty-or-non-json-response.md  # requests .json() Expecting value char 0 — status/content-type tekshir
     python-pty-fork-child-reports-wrong-terminal-size-unless-tiocswinsz-on-master-fd.md  # pty.fork child size 0/80 unless TIOCSWINSZ on master
     ffmpeg-filter-complex-loop-1-image-overlay-runs-forever-use-shortest-1.md  # -loop 1 image overlay never terminates — shortest=1
     chrome-mv3-getusermedia-microphone-fails-in-service-worker-use-offscreen-document-with-user-media.md  # MV3 SW da getUserMedia yo'q — offscreen + USER_MEDIA, permission visible page da
