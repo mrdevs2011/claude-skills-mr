@@ -23,6 +23,25 @@ Standart `json` moduli faqat asosiy tiplarni qo'llab-quvvatlaydi. `datetime`, `s
 3. `data` ni print/repr qilib, ichida non-serializable tip bormi?
 4. `default=` yoki custom `JSONEncoder` ishlatilganmi?
 
+[SANDBOX] Python 3.10.21 da:
+```
+python3 -c 'import json, datetime; print(json.dumps({"now": datetime.datetime.now()}))'
+```
+EXPECTED: TypeError: Object of type datetime is not JSON serializable
+
+To'g'ri:
+```
+python3 -c 'import json, datetime; print(json.dumps({"now": datetime.datetime.now().isoformat()}))'
+```
+EXPECTED: {"now": "2026-11-19T11:02:09.913202"}
+
+Yoki:
+```
+python3 -c 'import json, datetime; print(json.dumps({"now": datetime.datetime.now()}, default=str))'
+```
+EXPECTED: {"now": "2026-11-19 11:02:30.187849"}
+
+
 ## Tuzatish (aynan shu)
 Har doim `default=` parametrini bering yoki ma'lumotni oldindan tozalang.
 
