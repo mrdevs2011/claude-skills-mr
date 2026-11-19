@@ -74,6 +74,7 @@ skills/
     python-requests-jsondecodeerror-expecting-value-char-0-empty-or-non-json-response.md  # requests .json() Expecting value char 0 — status/content-type tekshir
     python-pty-fork-child-reports-wrong-terminal-size-unless-tiocswinsz-on-master-fd.md  # pty.fork child size 0/80 unless TIOCSWINSZ on master
     ffmpeg-filter-complex-loop-1-image-overlay-runs-forever-use-shortest-1.md  # -loop 1 image overlay never terminates — shortest=1
+    ffmpeg-filtergraph-with-codec-copy-fails-filtering-and-streamcopy-cannot-be-used-together-reencode.md  # filter + -c copy: Filtering and streamcopy cannot be used together — reencode
     chrome-mv3-getusermedia-microphone-fails-in-service-worker-use-offscreen-document-with-user-media.md  # MV3 SW da getUserMedia yo'q — offscreen + USER_MEDIA, permission visible page da
     chrome-mv3-wasm-compile-fails-csp-missing-wasm-unsafe-eval.md  # MV3 WASM compile fails CSP — add wasm-unsafe-eval to extension_pages
     chrome-content-script-isolated-world-cannot-access-page-js-variables-use-main-world-or-inject.md  # content script isolated world — page JS var undefined, use MAIN or inject
