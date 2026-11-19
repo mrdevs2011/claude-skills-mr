@@ -88,6 +88,7 @@ skills/
     shell-script-cannot-execute-required-file-not-found-due-to-crlf-in-shebang.md  # ./script "cannot execute: required file not found" — CRLF in shebang
     bash-tool-output-truncated-full-log-at-tmp-sessions-read-file-to-get-complete.md  # truncated output — full at /tmp/sessions/.../terminal/XXXX.log, read_file ishlat
     python-venv-activation-does-not-persist-across-separate-bash-tool-calls-use-full-path-or-chain.md  # venv activate keyingi bash chaqiruvda yo'qoladi — to'liq path yoki zanjir
+    bash-tool-each-call-is-new-shell-cd-export-source-do-not-persist-use-full-paths-or-chain.md  # har bash tool yangi shell, cd/export saqlanmaydi — to'liq path yoki zanjir
     extract-relevant-part-from-huge-tool-output-or-session-log-without-loading-entire-into-context.md  # katta log/output dan filter/offset bilan kerakli qism ol, butunini yuklama
     bpy-ops-poll-failed-context-is-incorrect-use-temp-override.md  # bpy.ops poll() failed, context is incorrect — temp_override (3.2+)
     systemd-user-service-stops-after-logout-or-failed-to-connect-to-bus-enable-linger.md  # user service logoutda toxtaydi yoki bus "No medium found" — enable-linger
