@@ -65,6 +65,7 @@ batafsil qoidalar (masalan, kod yozishda xatolik chiqsa nima qilish kerak)
 skills/
   playbooks/
     ffmpeg-ss-before-i-with-c-copy-cuts-to-nearest-keyframe-not-exact-time.md  # -ss -c copy keyframe ga kesadi
+    ffmpeg-moov-atom-not-found-or-invalid-data-found-when-processing-input-check-integrity-or-faststart.md  # moov atom not found / Invalid data — check integrity or faststart
     ffmpeg-no-such-filter-parsing-error-unescaped-comma-special-chars-in-filter-params.md  # No such filter parsing error unescaped comma in vf params
     supabase-select-returns-empty-array-despite-data-because-rls-enabled-no-policy.md  # RLS on no policy → empty array not error
     telegram-mini-app-initdata-hash-mismatch-wrong-hmac-secret-key-or-data-check-string.md  # initData hash mismatch — noto'g'ri HMAC secret key yoki data-check-string
