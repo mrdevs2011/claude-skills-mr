@@ -65,6 +65,7 @@ batafsil qoidalar (masalan, kod yozishda xatolik chiqsa nima qilish kerak)
 skills/
   playbooks/
     ffmpeg-ss-before-i-with-c-copy-cuts-to-nearest-keyframe-not-exact-time.md  # -ss -c copy keyframe ga kesadi
+    ffmpeg-libx264-height-or-width-not-divisible-by-2-yuv420p-even-dimensions.md  # libx264 yuv420p odd height/width not divisible by 2
     ffmpeg-moov-atom-not-found-or-invalid-data-found-when-processing-input-check-integrity-or-faststart.md  # moov atom not found / Invalid data — check integrity or faststart
     ffmpeg-no-such-filter-parsing-error-unescaped-comma-special-chars-in-filter-params.md  # No such filter parsing error unescaped comma in vf params
     supabase-select-returns-empty-array-despite-data-because-rls-enabled-no-policy.md  # RLS on no policy → empty array not error
