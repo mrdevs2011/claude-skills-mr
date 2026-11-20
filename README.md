@@ -64,6 +64,7 @@ batafsil qoidalar (masalan, kod yozishda xatolik chiqsa nima qilish kerak)
 ```
 skills/
   playbooks/
+    python-modulenotfounderror-after-pip-install-different-interpreter-use-python-m-pip.md  # ModuleNotFoundError after pip install — different interpreter, use python -m pip
     bash-tool-no-errexit-by-default-continues-after-nonzero-use-set-e-pipefail-or-check-exit.md  # default no set -e, continues after non-zero
     ffmpeg-ss-before-i-with-c-copy-cuts-to-nearest-keyframe-not-exact-time.md  # -ss -c copy keyframe ga kesadi
     ffmpeg-libx264-height-or-width-not-divisible-by-2-yuv420p-even-dimensions.md  # libx264 yuv420p odd height/width not divisible by 2
